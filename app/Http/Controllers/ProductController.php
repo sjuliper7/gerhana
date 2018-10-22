@@ -48,7 +48,7 @@ class ProductController extends Controller
 
         $file       = $request->file('image');
         $fileName   = $file->getClientOriginalName();
-        $request->file('image')->move('image/',$fileName);
+        $request->file('image')->move('images/',$fileName);
 
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
@@ -110,7 +110,7 @@ class ProductController extends Controller
         $file       = $request->file('image');
         $fileName   = $file->getClientOriginalName();
         if($fileName != $product->image){
-            $request->file('image')->move('image/',$fileName);
+            $request->file('image')->move('images/',$fileName);
             $product->image = $fileName;
         }
 
