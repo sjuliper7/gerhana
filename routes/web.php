@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
@@ -39,3 +39,5 @@ Route::resource('status-products','StatusProductController');
 Route::resource('category-products','CategoryProductController');
 
 Route::resource('products','ProductController');
+
+Route::get('/', 'LandingPageController@index')->name('landing-page');
