@@ -88,6 +88,7 @@
                             <ul class="standard_dropdown main_nav_dropdown">
                                 <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="contact.html">Store<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
 
