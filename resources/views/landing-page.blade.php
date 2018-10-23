@@ -24,12 +24,9 @@
                                             <span class="custom_dropdown_placeholder clc">All Categories</span>
                                             <i class="fas fa-chevron-down"></i>
                                             <ul class="custom_list clc">
-                                                <li><a class="clc" href="#">All Categories</a></li>
-                                                <li><a class="clc" href="#">Computers</a></li>
-                                                <li><a class="clc" href="#">Laptops</a></li>
-                                                <li><a class="clc" href="#">Cameras</a></li>
-                                                <li><a class="clc" href="#">Hardware</a></li>
-                                                <li><a class="clc" href="#">Smartphones</a></li>
+                                                @foreach($categoryProducts as $categoryProduct)
+                                                    <li><a class="clc" href="#">{{$categoryProduct->name}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
