@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f03e45e778c92660544e837a9bebf852",
+    "content-hash": "f6afb5645f2acea4e28e4109eb846353",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -2991,16 +2991,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v3.0.10",
+            "version": "v4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "8bfb9f01ae09d1d9ca3ce53e36b1f020c0f8dc8f"
+                "reference": "9810f8609c8b53d9a3bac7d38c56530e0d77a6bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/8bfb9f01ae09d1d9ca3ce53e36b1f020c0f8dc8f",
-                "reference": "8bfb9f01ae09d1d9ca3ce53e36b1f020c0f8dc8f",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/9810f8609c8b53d9a3bac7d38c56530e0d77a6bb",
+                "reference": "9810f8609c8b53d9a3bac7d38c56530e0d77a6bb",
                 "shasum": ""
             },
             "require": {
@@ -3048,7 +3048,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2018-08-06T20:22:46+00:00"
+            "time": "2018-10-03T15:37:05+00:00"
         },
         {
             "name": "mockery/mockery",
