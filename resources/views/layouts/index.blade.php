@@ -14,7 +14,6 @@
     <link href="{!! asset('template/plugins/slick-1.8.0/slick.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/main_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
@@ -31,8 +30,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-row">
-                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+38 068 005 3570</div>--}}
-                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>--}}
+                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="template/images/phone.png" alt=""></div>+38 068 005 3570</div>
+                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="template/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                         <div class="top_bar_content ml-auto">
                             <div class="top_bar_menu">
                                 <ul class="standard_dropdown top_bar_dropdown">
@@ -43,11 +42,11 @@
                                             <li><a href="#">Spanish</a></li>
                                             <li><a href="#">Japanese</a></li>
                                         </ul>
-                                    </li
+                                    </li>
                                 </ul>
                             </div>
                             <div class="top_bar_user">
-                                <div class="user_icon"><img src="images/user.svg" alt=""></div>
+                                <div class="user_icon"><img src="template/images/user.svg" alt=""></div>
                                 <div><a href="#">Register</a></div>
                                 <div><a href="#">Sign in</a></div>
                             </div>
@@ -156,10 +155,10 @@
                         </div>
                         <div class="logos ml-sm-auto">
                             <ul class="logos_list">
-                                <li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
+                                <li><a href="#"><img src="template/images/logos_1.png" alt=""></a></li>
+                                <li><a href="#"><img src="template/images/logos_2.png" alt=""></a></li>
+                                <li><a href="#"><img src="template/images/logos_3.png" alt=""></a></li>
+                                <li><a href="#"><img src="template/images/logos_4.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
