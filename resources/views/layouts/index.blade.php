@@ -14,6 +14,7 @@
     <link href="{!! asset('template/plugins/slick-1.8.0/slick.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/main_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js')}}"></script>
 </head>
 
 <body>

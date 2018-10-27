@@ -14,7 +14,10 @@
     <link href="{!! asset('template/styles/product_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/product_responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
 
+    {{--JQuery--}}
     <script type="text/javascript" src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
+    {{--Validator--}}
+    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js')}}"></script>
 </head>
 
 <body>
@@ -43,7 +46,7 @@
                                             <li><a href="#">Spanish</a></li>
                                             <li><a href="#">Japanese</a></li>
                                         </ul>
-                                    </li
+                                    </li>
                                 </ul>
                             </div>
                             <div class="top_bar_user">
