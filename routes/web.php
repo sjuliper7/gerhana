@@ -45,3 +45,5 @@ Route::get('/', 'LandingPageController@index')->name('landing-page');
 Route::resource('store','StoreController');
 
 Route::get('/my-store','StoreController@myStore')->name('my-store');
+
+Route::resource('status-stores','StatusStoreController');
