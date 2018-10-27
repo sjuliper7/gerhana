@@ -6,18 +6,18 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCategoryProductsTable extends Migration
 {
-    public function up()
-    {
-        Schema::create('category_products', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
-        });
-    }
-
-
-    public function down()
-    {
-        Schema::dropIfExists('category_products');
-    }
+//    public function up()
+//    {
+//        Schema::create('category_products', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->string('name');
+//            $table->timestamps();
+//        });
+//    }
+//
+//
+//    public function down()
+//    {
+//        Schema::dropIfExists('category_products');
+//    }
 }
