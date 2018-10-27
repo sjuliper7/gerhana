@@ -159,32 +159,32 @@
         <div class="row">
             <div class="col-md-10 mx-auto" >
                 <center><h3>Request Toko</h3></center><br>
-                <form>
-                    <div class="tab">Data Toko
+                <form action="/products" method="post" id="myForm" role="form" enctype="multipart/form-data">
+                    <div class="tab">
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nama Toko</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Nama Toko">
+                                <input type="text" class="form-control" id="storeName" placeholder="Nama Toko" name="store-name">
                             </div>
                             <div class="col-sm-6">
                                 <label>Nama Pemilik</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nama Pemilik">
+                                <input type="text" class="form-control" id="storeOwner" placeholder="Nama Pemilik" name="store-owner">
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Email</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Email">
+                                <input type="text" class="form-control" id="storeName" placeholder="Email" name="store-email">
                             </div>
                             <div class="col-sm-6">
-                                <label>Nomor Telepom</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon">
+                                <label>Nomor Telepon</label>
+                                <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon" name="store-phone">
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label>Alamat</label>
-                                <textarea class="form-control"></textarea>
+                                <textarea class="form-control" name="store-address"></textarea>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor KTP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor KTP">
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor KTP" name="store-ktp">
                             </div>
                             <div class="col-sm-6">
                                 <label>Foto KTP</label>
@@ -203,7 +203,7 @@
                                 <div class="form-group">
                                     <label class="btn btn-info center-block">
                                         Browse
-                                        <input type="file" id="input_ktp" name="image" style="display: none">
+                                        <input type="file" id="input_ktp" name="ktp-image" style="display: none">
                                     </label>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor NPWP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP">
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp">
                             </div>
                             <div class="col-sm-6">
                                 <label>Foto NPWP</label>
@@ -224,7 +224,7 @@
                                 <div class="form-group">
                                     <label class="btn btn-info center-block">
                                         Browse
-                                        <input type="file" id="input_npwp" name="image" style="display: none">
+                                        <input type="file" id="input_npwp" name="npwp-image" style="display: none">
                                     </label>
                                 </div>
                             </div>
@@ -234,10 +234,10 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor Rekening</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor Rekening">
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor Rekening" name="store-account-number">
                                 <br>
                                 <label>Jenis Bank</label>
-                                <select class="custom-select custom-select-lg mb-3">
+                                <select class="custom-select custom-select-lg mb-3" name="type-bank">
                                     <option selected>Pilih Bank</option>
                                     <option value="1">BRI</option>
                                     <option value="2">BNI</option>
@@ -253,7 +253,7 @@
                                 <div class="form-group">
                                     <label class="btn btn-info center-block">
                                         Browse
-                                        <input type="file" id="input_account" name="image" style="display: none">
+                                        <input type="file" id="input_account" name="acoount-image" style="display: none">
                                     </label>
                                 </div>
                             </div>
