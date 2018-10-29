@@ -8,10 +8,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Edit Status Product</h1>
+            <h1>Edit Status Store</h1>
             <hr>
 
-            <form action="{{ url('status-products/'.$statusStore->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">
+            <form action="{{ url('status-stores/'.$statusStore->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
                 <div class="form-group">
