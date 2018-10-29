@@ -49,5 +49,3 @@ Route::get('/my-store','StoreController@myStore')->name('my-store');
 Route::resource('status-stores','StatusStoreController');
 
 Route::get('/store-request','StoreController@indexStoreRequest')->name('index-store-request');
-
-Route::resource('test@tetsCOnt');
