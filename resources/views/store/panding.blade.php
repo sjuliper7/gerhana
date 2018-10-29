@@ -134,7 +134,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto" >
                 <div class="card bg-warning">
-                    <div class="card-header text-center">Permohonan Anda masih dalam request</div>
+                    <div class="card-header text-center"><p>Permohonan Anda masih dalam request</p></div>
                 </div>
             </div>
         </div>
