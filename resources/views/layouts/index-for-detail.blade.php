@@ -180,7 +180,7 @@
 <script type="text/javascript" src="{!! asset('template/plugins/greensock/ScrollToPlugin.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('template/plugins/easing/easing.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/js/custom.js') !!}"></script>
+{{--<script type="text/javascript" src="{!! asset('template/js/custom.js') !!}"></script>--}}
 
 </body>
 
