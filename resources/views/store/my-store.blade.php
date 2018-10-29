@@ -129,238 +129,33 @@
 
 
 @section('content')
-    <style>
-        .tab{
-            display: none;
-        }
 
-        /* Step marker: Place in the form. */
-        .step {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbbbbb;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 0.5;
-        }
-
-        .step.active {
-            opacity: 1;
-        }
-
-        /* Mark the steps that are finished and valid: */
-        .step.finish {
-            background-color: #4CAF50;
-        }
-    </style>
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-10 mx-auto" >
-                <center><h3>Request Toko</h3></center><br>
-                <form action="/products" method="post" id="myForm" role="form" enctype="multipart/form-data">
-                    <div class="tab">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Nama Toko</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Nama Toko" name="store-name">
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Nama Pemilik</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nama Pemilik" name="store-owner">
-                            </div>
+            <div class="col-sm-6">
+                <div class="card " style="width: 16rem; background-color: #00c0ef;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Product</h3>
+                        <div class="inner">
+                            <h3 class="text-white">150</h3>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Email</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Email" name="store-email">
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Nomor Telepon</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon" name="store-phone">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <label>Alamat</label>
-                                <textarea class="form-control" name="store-address"></textarea>
-                            </div>
-                        </div>
+                        <a href="#" class="card-link small-box text-white">More Info >></a>
                     </div>
-                    <div class="tab">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Nomor KTP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor KTP" name="store-ktp">
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Foto KTP</label>
-                                <div class="form-group">
-                                    <img src="http://placehold.it/400x400" id="show_ktp" style="max-width:200px;max-height:200px;" class="center-block" />
-                                </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-success" style="width: 16rem;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white"> New Orders</h3>
+                        <div class="inner">
+                            <h3 class="text-white">150</h3>
 
-                                <div class="form-group">
-                                    <label class="btn btn-info center-block">
-                                        Browse
-                                        <input type="file" id="input_ktp" name="ktp-image" style="display: none">
-                                    </label>
-                                </div>
-                            </div>
                         </div>
+                        <a href="#" class="card-link text-white">More Info >></a>
                     </div>
-                    <div class="tab">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Nomor NPWP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp">
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Foto NPWP</label>
-                                <div class="form-group">
-                                    <img src="http://placehold.it/400x400" id="show_npwp" style="max-width:200px;max-height:200px;" class="center-block" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="btn btn-info center-block">
-                                        Browse
-                                        <input type="file" id="input_npwp" name="npwp-image" style="display: none">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Nomor Rekening</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor Rekening" name="store-account-number">
-                                <br>
-                                <label>Jenis Bank</label>
-                                <select class="custom-select custom-select-lg mb-3" name="type-bank">
-                                    <option selected>Pilih Bank</option>
-                                    <option value="1">BRI</option>
-                                    <option value="2">BNI</option>
-                                    <option value="3">MANDIRI</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Foto Rekening</label>
-                                <div class="form-group">
-                                    <img src="http://placehold.it/400x400" id="show_account" style="max-width:200px;max-height:200px;" class="center-block" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="btn btn-info center-block">
-                                        Browse
-                                        <input type="file" id="input_account" name="acoount-image" style="display: none">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div style="float:right;">
-                            <button type="button"  id="prevBtn" class="btn btn-default" onclick="nextPrev(-1)" style="margin-left: 20px">Previous</button>
-                            <button type="button"  id="nextBtn" class="btn btn-success" onclick="nextPrev(1)">Next</button>
-                            <button type="submit"  id="submit" class="btn btn-success" style="display: none">Submit</button>
-                        </div>
-                    </div>
-
-                    <!-- Circles which indicates the steps of the form: -->
-                    <div style="text-align:center;margin-top:40px;">
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- alerts are for fun of it -->
-    <div class="alerts-container">
-
-        <div class="row">
-            <div id="click-alert" class="alert alert-warning" role="alert">
-            </div>
-        </div>
-
-    </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#input_ktp").change(function () {
-                var ktp = '#show_ktp';
-                readURL(this, ktp);
-            });
-            $("#input_npwp").change(function () {
-                var npwp = '#show_npwp';
-                readURL(this, npwp)
-            })
-            $("#input_account").change(function () {
-                var account = '#show_account';
-                readURL(this, account)
-            })
-        })
-
-        function readURL(input, target) {
-
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $(target).attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        var currentTab = 0; // Current tab is set to be the first tab (0)
-        showTab(currentTab); // Display the crurrent tab
-
-        function showTab(n) {
-            var x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            //... and fix the Previous/Next buttons:
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").hidden = true;
-                $("#submit").show();
-            } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
-            }
-
-            fixStepIndicator(n)
-        }
-
-        function nextPrev(n) {
-            var x = document.getElementsByClassName("tab");
-            x[currentTab].style.display = "none";
-            currentTab = currentTab + n
-            if (currentTab >= x.length) {
-                document.getElementById("regForm").submit();
-                return false;
-            }
-            showTab(currentTab);
-        }
-
-
-        function fixStepIndicator(n) {
-            var i, x = document.getElementsByClassName("step");
-            for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-            }
-            x[n].className += " active";
-        }
-
-    </script>
 
 @endsection
