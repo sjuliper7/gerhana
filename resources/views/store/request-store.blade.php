@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto" >
                 <center><h3>Request Toko</h3></center><br>
-                <form action="/stores" method="post" id="myForm" enctype="multipart/form-data">
+                <form action="request-stores" method="post" id="myForm" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="tab">
                         <div class="form-group row">
@@ -240,9 +240,9 @@
                                 <label>Jenis Bank</label>
                                 <select class="custom-select custom-select-lg mb-3" name="type-bank">
                                     <option selected>Pilih Bank</option>
-                                    <option value="1">BRI</option>
-                                    <option value="2">BNI</option>
-                                    <option value="3">MANDIRI</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="Mandiri">Mandiri</option>
                                 </select>
                             </div>
                             <div class="col-sm-6">
