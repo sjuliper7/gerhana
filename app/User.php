@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Store','id_user');
     }
+
+    public function requestStore()
+    {
+        return $this->hasOne('App\RequestStore','id_user');
+    }
 }
