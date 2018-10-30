@@ -50,7 +50,7 @@
                         <div class="icon">
                             <i class="fa fa-paper-plane" style="font-size:72px" ></i>
                         </div>
-                        <a href="/store-request" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="/store-requests" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
