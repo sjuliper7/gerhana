@@ -48,4 +48,4 @@ Route::get('/my-store','StoreController@myStore')->name('my-store');
 
 Route::resource('status-stores','StatusStoreController');
 
-Route::resource('store-requests','StoreRequestController');
+Route::resource('request-stores','StoreRequestController');
