@@ -38,12 +38,6 @@ class StoreController extends Controller
         //
     }
 
-    public function indexStoreRequest(){
-        $status = StatusStore::where('name','PANDING')->firstOrFail();
-        $stores = Store::where('id_status',$status->id )->orderby('id', 'desc')->get();
-        return view('adminlte::stores.request-store',compact('stores'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -108,7 +102,7 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        dd($id);
+        //
     }
 
     /**
