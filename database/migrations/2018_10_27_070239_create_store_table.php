@@ -27,11 +27,11 @@ class CreateStoreTable extends Migration
             $table->string('store_account_bank');
             $table->string('store_account_type');
             $table->string('store_account_bank_image');
-            $table->integer('id_status')->unsigned();
             $table->integer('id_user')->unsigned();
+            $table->integer('id_request')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_status')->references('id')->on('status_stores');
+            $table->foreign('id_request')->references('id')->on('request_stores');
             $table->foreign('id_user')->references('id')->on('users');
         });
     }
