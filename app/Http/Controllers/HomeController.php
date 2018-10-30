@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\RequestStore;
 use App\StatusStore;
 use App\Store;
 use App\User;
@@ -27,13 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $status = StatusStore::where('name','PANDING')->firstOrFail();
-
-        $products = Product::all();
+        $status = StatusStore::where('name','PENDING')->firstOrFail();
+//        $products = Product::all();
         $users = User::all();
+        $requestStores = RequestStore::where(["id_status" => $status->id])->get();
 
-        $storeRequest = Store::where(["id_status" => $status->id])->get();
-
-        return view('adminlte::home', compact('users','products','storeRequest'));
+        return view('adminlte::home', compact('requestStores','users'));
     }
 }
