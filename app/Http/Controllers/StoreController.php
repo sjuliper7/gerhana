@@ -17,9 +17,9 @@ class StoreController extends Controller
     public function myStore(){
 
         if(Auth::user()->store == null){
-            return view('store.request-store');
+            return redirect('request-stores/create');
         }else{
-            if(Auth::user()->store->status->name === "PANDING"){
+            if(Auth::user()->requestStore->status->name === "PENDING"){
                 return view('store.panding');
             }else{
                 return view('store.my-store');
@@ -56,42 +56,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-
-        $status = StatusStore::where('name','PANDING')->firstOrFail();
-
-        //instance object for StatusStore
-        $store = new Store();
-        $store->store_name         = $request['store-name'];
-        $store->store_owner        = $request['store-owner'];
-        $store->store_email        = $request['store-email'];
-        $store->store_phone        = $request['store-phone'];
-        $store->store_address      = $request['store-address'];
-        $store->store_ktp          = $request['store-ktp'];
-        $store->store_npwp         = $request['store-npwp'];
-        $store->store_account_bank = $request['store-account-number'];
-        $store->store_account_type = $request['type-bank'];
-        $store->id_status          = $status->id;
-        $store->id_user            = Auth::user()->id;
-
-        $ktpFile    = $request->file('ktp-image');
-        $ktpFileName   = $ktpFile->getClientOriginalName();
-        $request->file('ktp-image')->move('images/',$ktpFileName);
-
-        $npwpFile    = $request->file('npwp-image');
-        $npwpFileName   = $npwpFile->getClientOriginalName();
-        $request->file('npwp-image')->move('images/',$npwpFileName);
-
-        $accountFile    = $request->file('account-image');
-        $accountFileName   = $accountFile->getClientOriginalName();
-        $request->file('account-image')->move('images/',$accountFileName);
-
-        $store->store_ktp_image             = $ktpFileName;
-        $store->store_npwp_image            = $npwpFileName;
-        $store->store_account_bank_image    = $accountFileName;
-
-        $store->save();
-
-        return redirect('my-store');
+        //
     }
 
     /**
