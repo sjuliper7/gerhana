@@ -29,7 +29,7 @@
                         <td>{{ $store->created_at->format('F d, Y h:ia') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
 
                         <td>
-                            <a href="{{ route('stores.show', $store->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
+                            <a href="{{ route('request-stores.show', $store->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
                         </td>
                     </tr>
                 @endforeach
