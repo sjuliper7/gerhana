@@ -40,4 +40,6 @@ Route::resource('category-products','CategoryProductController');
 
 Route::resource('products','ProductController');
 
+Route::resource('ref-banks','RefBankController');
+
 Route::get('/', 'LandingPageController@index')->name('landing-page');
