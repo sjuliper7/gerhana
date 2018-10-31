@@ -43,3 +43,11 @@ Route::resource('products','ProductController');
 Route::resource('ref-banks','RefBankController');
 
 Route::get('/', 'LandingPageController@index')->name('landing-page');
+
+Route::resource('stores','StoreController');
+
+Route::get('/my-store','StoreController@myStore')->name('my-store');
+
+Route::resource('status-stores','StatusStoreController');
+
+Route::resource('request-stores','RequestStoreController');

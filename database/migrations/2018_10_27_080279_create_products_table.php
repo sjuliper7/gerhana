@@ -17,10 +17,12 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('id_status')->unsigned();
             $table->integer('id_category')->unsigned();
+            $table->integer('id_store')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_status')->references('id')->on('status_products');
             $table->foreign('id_category')->references('id')->on('category_products');
+            $table->foreign('id_store')->references('id')->on('stores');
 
         });
     }

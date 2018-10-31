@@ -88,6 +88,7 @@
                             <ul class="standard_dropdown main_nav_dropdown">
                                 <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="/my-store">My Store<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
 
@@ -150,8 +151,8 @@
                         </ul>
 
                         <div class="menu_contact">
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/phone_white.png" alt=""></div>+38 068 005 3570</div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
