@@ -5,6 +5,14 @@
 @section('main-content')
 
     <div class="col-lg-10 col-lg-offset-1">
+
+        @if ($message = Session::get('flash_message'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+
         <h1><i class="fa fa-paper-plane"></i>Store Request</h1>
         <hr>
         <div class="table-responsive">
