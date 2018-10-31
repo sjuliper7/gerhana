@@ -10,7 +10,7 @@ class StatusStore extends Model
         'name',
     ];
 
-    public function stores(){
-        return $this->hasMany('App\Store','id_status');
+    public function storeRequests(){
+        return $this->hasMany('App\RequestStore','id_status');
     }
 }
