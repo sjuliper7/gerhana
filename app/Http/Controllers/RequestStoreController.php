@@ -86,8 +86,8 @@ class RequestStoreController extends Controller
      */
     public function show($id)
     {
-        $store = Store::findOrFail($id);
-        return view("adminlte::store-requests.show",compact('store'));
+        $requestStore = RequestStore::findOrFail($id);
+        return view("adminlte::store-requests.show",compact('requestStore'));
     }
 
     /**
@@ -110,7 +110,18 @@ class RequestStoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $status = StatusStore::where('name','ACCEPTED')->firstOrFail();
+        $requestStore = RequestStore::findOrFail($id);
+        $requestStore->id_status = $status->id;
+
+        //create instance for store
+        $store = new Store();
+        //attributes
+
+
+        $store->save();
+        $requestStore->save();
+        dd($status->id);
     }
 
     /**
