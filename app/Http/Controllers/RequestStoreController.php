@@ -29,7 +29,7 @@ class RequestStoreController extends Controller
      */
     public function create()
     {
-        return view('store.request-store');
+        return view('stores.request-store');
     }
 
     /**
@@ -98,7 +98,7 @@ class RequestStoreController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -116,12 +116,30 @@ class RequestStoreController extends Controller
 
         //create instance for store
         $store = new Store();
+        $store->store_name = $requestStore['store_name'];
+        $store->store_owner = $requestStore['store_owner'];
+        $store->store_email= $requestStore['store_email'];
+        $store->store_phone = $requestStore['store_phone'];
+        $store->store_address = $requestStore['store_address'];
+        $store->store_ktp = $requestStore['store_ktp'];
+        $store->store_ktp_image = $requestStore['store_ktp_image'];
+        $store->store_npwp = $requestStore['store_npwp'];
+        $store->store_npwp_image = $requestStore['store_npwp_image'];
+        $store->store_account_bank= $requestStore['store_account_bank'];
+        $store->store_account_type = $requestStore['store_account_type'];
+        $store->store_account_bank_image = $requestStore['store_account_bank_image'];
+        $store->id_request = $requestStore['id'];
+        $store->id_user = $requestStore['id_user'];
         //attributes
-
 
         $store->save();
         $requestStore->save();
-        dd($status->id);
+
+        //return view('stores.my-store');
+        return redirect()->route('my-store',
+            $store->id)->with('flash_message',
+            'Store, '. $store->store_name.' updated');
+
     }
 
     /**
