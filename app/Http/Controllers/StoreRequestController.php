@@ -71,6 +71,7 @@ class StoreRequestController extends Controller
         $requestStore->store_ktp_image             = $ktpFileName;
         $requestStore->store_npwp_image            = $npwpFileName;
         $requestStore->store_account_bank_image    = $accountFileName;
+        $requestStore->comment                     = "-";
 
         $requestStore->save();
 
