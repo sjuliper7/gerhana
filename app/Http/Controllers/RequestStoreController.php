@@ -114,7 +114,6 @@ class RequestStoreController extends Controller
         $requestStore = RequestStore::findOrFail($id);
         $requestStore->id_status = $status->id;
 
-        //create instance for store
         $store = new Store();
         $store->store_name = $requestStore['store_name'];
         $store->store_owner = $requestStore['store_owner'];
@@ -130,15 +129,12 @@ class RequestStoreController extends Controller
         $store->store_account_bank_image = $requestStore['store_account_bank_image'];
         $store->id_request = $requestStore['id'];
         $store->id_user = $requestStore['id_user'];
-        //attributes
 
         $store->save();
         $requestStore->save();
 
-        //return view('stores.my-store');
-        return redirect()->route('my-store',
-            $store->id)->with('flash_message',
-            'Store, '. $store->store_name.' updated');
+        return redirect()->route('request-stores.index')->with('flash_message',
+            'Store, '. $store->store_name.' has been Accepted');
 
     }
 
