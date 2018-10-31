@@ -16,10 +16,18 @@
                 <div class="form-group">
                     <label>Name</label>
                     <label>Name</label>
-                    <input type="text" name="account_vendor" class="form-control" value="{{$refBanks->account_vendor}}" data-error="Please enter name" required> <br>
-                    <input type="text" name="account_number" class="form-control" value="{{$refBanks->account_number}}" data-error="Please enter name" required>
+                    <input type="text" name="account_vendor" class="form-control" value="{{$refBanks->account_vendor}}" data-error="Please enter name" required>
+
                     <div class="help-block with-errors"></div>
                 </div>
+
+                <div class="form-group">
+                    <label>Account Number</label>
+
+                    <input type="text" name="account_vendor" class="form-control" value="{{$refBanks->account_number}}" data-error="Please enter name" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
                 <input type="submit" value="Edit Ref Bank" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
             </form>
         </div>
