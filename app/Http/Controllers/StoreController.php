@@ -15,14 +15,13 @@ class StoreController extends Controller
     }
 
     public function myStore(){
-
-        if(Auth::user()->store == null){
+        if(Auth::user()->requestStore == null){
             return redirect('request-stores/create');
         }else{
             if(Auth::user()->requestStore->status->name === "PENDING"){
-                return view('store.panding');
+                return view('stores.pending');
             }else{
-                return view('store.my-store');
+                return view('stores.my-store');
             }
 
         }
