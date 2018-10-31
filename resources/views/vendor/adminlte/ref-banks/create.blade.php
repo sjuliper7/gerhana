@@ -14,12 +14,18 @@
             <form action="/ref-banks" method="post" data-toggle="validator" role="form">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Account Vendor</label>
                     <input type="text" name="account_vendor" class="form-control" placeholder="Account Vendor" data-error="Please enter account vendor" required>
+
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label>Account Number</label>
+
                     <input type="text" name="account_number" class="form-control" placeholder="Account Number" data-error="Please enter account number" required>
                     <div class="help-block with-errors"></div>
                 </div>
-                <input type="submit" value="Create Account Number" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
+                <input type="submit" value="Create Reference Bank" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
             </form>
         </div>
     </div>
