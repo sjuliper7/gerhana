@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto" >
                 <center><h3>Request Toko</h3></center><br>
-                <form action="request-stores" method="post" id="myForm" enctype="multipart/form-data">
+                <form action="{{url('request-stores')}}" method="post" id="myForm" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="tab">
                         <div class="form-group row">
