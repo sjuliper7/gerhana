@@ -132,8 +132,8 @@
 
     <div class="container py-5">
         <div class="row">
-            <div class="col-sm-6">
-                <div class="card " style="width: 16rem; background-color: #00c0ef;">
+            <div class="col-sm-3">
+                <div class="card " style="width: 14rem; background-color: #fe9920;">
                     <div class="card-body">
                         <h3 class="card-title text-white">Product</h3>
                         <div class="inner">
@@ -143,13 +143,36 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card bg-success" style="width: 16rem;">
+            <div class="col-sm-3">
+                <div class="card" style="width: 14rem; background-color: #3fe77e">
                     <div class="card-body">
                         <h3 class="card-title text-white"> New Orders</h3>
                         <div class="inner">
                             <h3 class="text-white">150</h3>
 
+                        </div>
+                        <a href="#" class="card-link text-white">More Info >></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 14rem; background-color: #87a8ee">
+                    <div class="card-body">
+                        <h3 class="card-title text-white"> Total Orders</h3>
+                        <div class="inner">
+                            <h3 class="text-white">150</h3>
+
+                        </div>
+                        <a href="#" class="card-link text-white">More Info >></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 14rem; background-color: #7fffd4">
+                    <div class="card-body">
+                        <h3 class="card-title text-white"> On Shipment</h3>
+                        <div class="inner">
+                            <h3 class="text-white">150</h3>
                         </div>
                         <a href="#" class="card-link text-white">More Info >></a>
                     </div>
