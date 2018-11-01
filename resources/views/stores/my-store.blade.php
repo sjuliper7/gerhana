@@ -135,11 +135,11 @@
             <div class="col-sm-3">
                 <div class="card " style="width: 14rem; background-color: #fe9920;">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Product</h3>
+                        <h3 class="card-title text-white">Products</h3>
                         <div class="inner">
                             <h3 class="text-white">150</h3>
                         </div>
-                        <a href="#" class="card-link small-box text-white">More Info >></a>
+                        <a href="/owner-products" class="card-link small-box text-white">More Info >></a>
                     </div>
                 </div>
             </div>
