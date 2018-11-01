@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BatakZone</title>
+    <title>Shop</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="OneTech shop project">
+    <meta name="description" content="BatakZone shop project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/plugins/OwlCarousel2-2.2.1/animate.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/plugins/jquery-ui-1.12.1.custom/jquery-ui.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/styles/shop_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('template/styles/shop_responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/jquery-ui-1.12.1.custom/jquery-ui.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/OwlCarousel2-2.2.1/animate.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/shop_styles.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/shop_responsive.css') !!}">
 
-    {{--JQuery--}}
-    <script type="text/javascript" src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
 </head>
 
 <body>
 
 <div class="super_container">
+
+    <!-- Header -->
 
     <header class="header">
 
@@ -328,7 +328,10 @@
 
     </header>
 
+    <!-- Home -->
+
     @yield('content')
+
 
     <!-- Newsletter -->
 
@@ -416,24 +419,47 @@
         </div>
     </footer>
 
+    <!-- Copyright -->
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+                        <div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <div class="logos ml-sm-auto">
+                            <ul class="logos_list">
+                                <li><a href="#"><img src="images/logos_1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/logos_2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/logos_3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/logos_4.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-<script type="text/javascript" src="{!! asset('template/styles/bootstrap4/popper.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/styles/bootstrap4/bootstrap.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/TweenMax.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/TimelineMax.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/scrollmagic/ScrollMagic.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/animation.gsap.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/ScrollToPlugin.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/easing/easing.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/Isotope/isotope.pkgd.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/jquery-ui-1.12.1.custom/jquery-ui.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/parallax-js-master/parallax.min.js') !!}"></script>
-{{--<script type="text/javascript" src="{!! asset('template/js/shop_custom.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('template/js/custom.js') !!}"></script>--}}
-
+<script src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
+<script src="{!! asset('template/styles/bootstrap4/popper.js') !!}"></script>
+<script src="{!! asset('template/styles/bootstrap4/bootstrap.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/greensock/TweenMax.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/greensock/TimelineMax.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/scrollmagic/ScrollMagic.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/greensock/animation.gsap.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/greensock/ScrollToPlugin.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
+<script src="{!! asset('template/plugins/easing/easing.js') !!}"></script>
+<script src="{!! asset('template/plugins/Isotope/isotope.pkgd.min.js') !!}"></script>
+<script src="{!! asset('template/plugins/jquery-ui-1.12.1.custom/jquery-ui.js') !!}"></script>
+<script src="{!! asset('template/plugins/parallax-js-master/parallax.min.js') !!}"></script>
+<script src="{!! asset('template/js/shop_custom.js') !!}"></script>
 </body>
 
 </html>
