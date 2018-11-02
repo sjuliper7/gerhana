@@ -130,55 +130,80 @@
 
 @section('content')
 
-    <div class="container py-5">
-        <div class="row">
+    <div class="container py-3">
+        <div class="row" style="margin-left: 0em">
             <div class="col-sm-3">
-                <div class="card " style="width: 14rem; background-color: #fe9920;">
+                <div class="body" style="height: 25rem;">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Products</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
-                        </div>
-                        <a href="/owner-products" class="card-link small-box text-white">More Info >></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 14rem; background-color: #3fe77e">
-                    <div class="card-body">
-                        <h3 class="card-title text-white"> New Orders</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
+                        <h4 class="card-title text-black"> Pemilik</h4>
+                        <img src="template/images/14.jpg" class="img-thumbnail" alt="Responsive image">
+                        <div class="inner"style="margin-top: 2em">
+                            <h5 class="text-black">Johan Store</h5>
+                            <h5 class="text-black">Bergabung 02-11-2018</h5>
 
                         </div>
                         <a href="#" class="card-link text-white">More Info >></a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 14rem; background-color: #87a8ee">
-                    <div class="card-body">
-                        <h3 class="card-title text-white"> Total Orders</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
+            <div class="col-sm-9 ">
+                <div class="row"style="margin-left:2em;">
+                    <div class="card" style="width: 14rem; background-color: #0dc93f;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> Produk</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
 
+                    <div class="card" style="width: 14rem; background-color: #a83838;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> New Order</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
                         </div>
-                        <a href="#" class="card-link text-white">More Info >></a>
+                    </div>
+
+                    <div class="card" style="width: 14rem; background-color: #7fffd4;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> On Shipment</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row"style="margin-left:2em;">
+
+
+                    <div class="card" style="width: 14rem; background-color: #e6b740;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> Total Order</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 14rem; background-color: #7fffd4">
-                    <div class="card-body">
-                        <h3 class="card-title text-white"> On Shipment</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
-                        </div>
-                        <a href="#" class="card-link text-white">More Info >></a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
 
 @endsection
