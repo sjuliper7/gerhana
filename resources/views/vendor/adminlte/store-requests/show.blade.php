@@ -127,10 +127,10 @@
     </div>
 
     <script>
-        var uri = 'request-stores/'+'{{$requestStore->id}}';
+        //var uri = 'request-stores/'+'{{$requestStore->id}}';
         function cancelRequest() {
 
-            console.log(url);
+            //console.log(url);
             var check = confirm("Apakah anda yakin untuk menolak nya??");
             var fiedl = document.getElementById('comment');
 
@@ -152,6 +152,8 @@
                             console.log("success")
                         }
                         // window.location.reload(true);
+
+
 
                     });
                 }
