@@ -49,3 +49,5 @@ Route::get('/my-store','StoreController@myStore')->name('my-store');
 Route::resource('status-stores','StatusStoreController');
 
 Route::resource('request-stores','RequestStoreController');
+
+Route::POST('cancel-request','RequestStoreController@cancelRequest');
