@@ -148,4 +148,16 @@ class RequestStoreController extends Controller
     {
         //
     }
+
+
+    public function cancelRequest(Request $request){
+        $req = RequestStore::find($request->requestID);
+            $req->status = 2;
+            $req->notif = 1;
+            $req->pesan = $request->pesan;
+            $req->update();
+
+        return view('stores.request-store');
+
+    }
 }
