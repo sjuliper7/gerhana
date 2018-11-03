@@ -51,3 +51,5 @@ Route::get('/my-store','StoreController@myStore')->name('my-store');
 Route::resource('status-stores','StatusStoreController');
 
 Route::resource('request-stores','RequestStoreController');
+
+Route::resource('notifications','NotificationController');
