@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
              CategoryProductTableSeeder::class,
              RefBankTableSeeder::class,
              RequestStoreTableSeeder::class,
-             StoreTableSeeder::class,
+             StoresTableSeeder::class,
 
          ]);
 
