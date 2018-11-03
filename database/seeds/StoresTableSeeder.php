@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class StoreTableSeeder extends Seeder
+class StoresTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,8 @@ class StoreTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+
         DB::table('stores')->insert(
             [
                 'store_name' => 'Johan Toko Kita',
@@ -27,6 +29,7 @@ class StoreTableSeeder extends Seeder
                 'store_account_bank_image' => "account.jpeg",
                 'id_request' => '1',
                 'id_user' => '2',
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
     }
