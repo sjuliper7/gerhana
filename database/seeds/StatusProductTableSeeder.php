@@ -11,15 +11,19 @@ class StatusProductTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+
         DB::table('status_products')->insert(
             [
                 'name' => "BARU",
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
         DB::table('status_products')->insert(
             [
                 'name' => "BEKAS",
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
     }

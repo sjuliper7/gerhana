@@ -12,11 +12,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+
         DB::table('users')->insert(
             [
                 'name' => "Juliper Simanjuntak",
                 'email' => 'sjuliper7@gmail.com',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
@@ -25,6 +28,7 @@ class UsersTableSeeder extends Seeder
                 'name' => "Jhon Sipahutar",
                 'email' => 'sjhon7@gmail.com',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
@@ -33,6 +37,7 @@ class UsersTableSeeder extends Seeder
                 'name' => "Johan Lumbanbatu",
                 'email' => 'lbjohan7@gmail.com',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
