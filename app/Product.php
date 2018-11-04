@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'price', 'stock', 'description', 'id_category','image','id_status',
+        'name', 'price', 'stock', 'description','images','id_status','id_category','id_store'
     ];
 
     public function status(){
@@ -16,5 +16,9 @@ class Product extends Model
 
     public function category(){
         return $this->belongsTo('App\CategoryProduct','id_category');
+    }
+
+    public function store(){
+        return $this->belongsTo('App\Store','id_store');
     }
 }
