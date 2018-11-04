@@ -130,6 +130,14 @@
 
 @section('content')
 
+    <div class="home">
+        <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+        <div class="home_overlay"></div>
+        <div class="home_content d-flex flex-column align-items-center justify-content-center">
+            <h2 class="home_title">{{$store->store_name}}</h2>
+        </div>
+    </div>
+
     <div class="container py-3">
         <div class="row" style="margin-left: 0em">
             <div class="col-sm-3">
@@ -138,9 +146,9 @@
                         <h4 class="card-title text-black"> Pemilik</h4>
                         <img src="template/images/14.jpg" class="img-thumbnail" alt="Responsive image">
                         <div class="inner"style="margin-top: 2em">
-                            <h5 class="text-black">Johan Store</h5>
-                            <h5 class="text-black">Bergabung 02-11-2018</h5>
-
+                            <h5 class="text-black">{{$store->store_name}}</h5>
+                            <h5 class="text-black">{{$store->store_owner}}</h5>
+                            <h5 class="text-black">Bergabung {{$store->created_at}}</h5>
                         </div>
                         <a href="#" class="card-link text-white">More Info >></a>
                     </div>
@@ -154,7 +162,7 @@
                             <div class="inner">
                                 <h3 class="text-white">150</h3>
                             </div>
-                            <a href="#" class="card-link text-white">More Info >></a>
+                            <a href="{{ url($store->store_name.'/products') }}" class="card-link text-white">More Info >></a>
                         </div>
                     </div>
 
