@@ -5,6 +5,12 @@
 @section('content')
     {{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>--}}
     {{--<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"></script>--}}
+    <script src="{{asset('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}"></script>
+    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')}}"></script>
+    <script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')}}"></script>
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css')}}" rel="stylesheet">
+    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js')}}"></script>
+
     <div class="container py-3">
         <div class="container">
             <h2>Create Product</h2>
@@ -44,7 +50,7 @@
 
                              </div>
 
-                             <div class="form-group col-md-5">
+                             <div class="form-group col-md-6">
                                  <label>Status Product</label>
                                  <select name="status-select" id="select-status" class="form-control" style="width: auto">
                                      <option selected="selected" name="status-selected">Select Status</option>
@@ -55,23 +61,12 @@
                              </div>
 
                          </div>
-                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-                         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-                         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-                         <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
-                         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
-                         </head>
-                         <body>
-                         <div id="summernote"></div>
-                         <script>
-                             $('#summernote').summernote({
-                                 placeholder: 'Hello bootstrap 4',
-                                 tabsize: 2,
-                                 height: 100
-                             });
-                         </script>
-                         </body>
+                         <div class="form-row">
+                             <div class="form-group col-md-6">
+                                 <label>Description</label>
+                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required></textarea>
+                             </div>
+                         </div>
 
                          <div style="float: right;margin-bottom: 20px">
                              <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
@@ -107,6 +102,14 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
+            $('#summernote').summernote({
+                placeholder: 'Hello bootstrap 4',
+                tabsize: 2,
+                height: 100,
+                width : 550,
+            });
+
             var i=1;
             $('#more').click(function(){
                 i++;
