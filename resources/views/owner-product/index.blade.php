@@ -63,11 +63,20 @@
                                 <!-- Product Item -->
                                     <div class="product_item">
                                         <div class="product_border"></div>
-                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="template/images/14.jpg" alt=""></div>
+                                        <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                            <?php
+                                                $images = json_decode($product->images);
+                                            ?>
+                                            <img src="{{ asset('images/'.$images[0]) }}" alt="" style="width:150px;height:150px; object-fit: cover;" >
+                                        </div>
                                         <div class="product_content">
-                                            <div class="product_price">Rp225.000</div>
-                                            <div class="product_name"><div><a href="product.html" tabindex="0">Baju Tenun</a></div></div>
-
+                                            <div class="product_price">Rp {{$product->price}}</div>
+                                            <div class="product_name">
+                                                <div>
+                                                    <a href="product.html" tabindex="0">{{$product->name}}
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="product_fav"><i class="fas fa-heart"></i></div>
                                         <ul class="product_marks">
