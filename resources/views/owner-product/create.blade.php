@@ -55,13 +55,23 @@
                              </div>
 
                          </div>
-                         <div class="form-row">
-                             <div class="form-group col-md-12">
-                             <label>Description</label>
-                             <textarea name="description" class="form-control" rows="4" placeholder="Description" data-error="Please enter description"  required></textarea>
-                             <div class="help-block with-errors"></div>
-                             </div>
-                         </div>
+                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+                         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+                         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+                         </head>
+                         <body>
+                         <div id="summernote"></div>
+                         <script>
+                             $('#summernote').summernote({
+                                 placeholder: 'Hello bootstrap 4',
+                                 tabsize: 2,
+                                 height: 100
+                             });
+                         </script>
+                         </body>
 
                          <div style="float: right;margin-bottom: 20px">
                              <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
