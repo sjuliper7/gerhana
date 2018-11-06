@@ -21,7 +21,8 @@ class StoreController extends Controller
             if(Auth::user()->requestStore->status->name === "PENDING"){
                 return view('stores.pending');
             }else{
-                return view('stores.my-store');
+                $store = Auth::user()->store;
+                return view('stores.my-store',compact('store'));
             }
 
         }
