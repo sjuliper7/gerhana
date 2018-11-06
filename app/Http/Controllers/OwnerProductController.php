@@ -55,4 +55,8 @@ class OwnerProductController extends Controller
 
         return redirect(url($store->store_name.'/products'));
     }
+
+    public function show($id){
+        dd($id);
+    }
 }

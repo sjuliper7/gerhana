@@ -84,8 +84,7 @@
                                             <li class="product_mark product_new">new</li>
                                         </ul>
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary" style="margin:0.5em;">Detail</button>
-
+                                            <a href="{{url('owner-products/'.$product->id)}}" class="btn btn-info" >Detail</a>
                                         </div>
                                     </div>
 

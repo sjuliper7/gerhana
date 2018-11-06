@@ -450,7 +450,7 @@
 <script src="{!! asset('template/plugins/Isotope/isotope.pkgd.min.js') !!}"></script>
 <script src="{!! asset('template/plugins/jquery-ui-1.12.1.custom/jquery-ui.js') !!}"></script>
 <script src="{!! asset('template/plugins/parallax-js-master/parallax.min.js') !!}"></script>
-{{--<script src="{!! asset('template/js/shop_custom.js') !!}"></script>--}}
+<script src="{!! asset('template/js/shop_custom.js') !!}"></script>
 </body>
 
 </html>
