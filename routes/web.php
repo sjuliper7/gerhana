@@ -40,6 +40,8 @@ Route::resource('category-products','CategoryProductController');
 
 Route::resource('products','ProductController');
 
+Route::resource('ref-banks','RefBankController');
+
 Route::get('/', 'LandingPageController@index')->name('landing-page');
 
 Route::resource('stores','StoreController');
@@ -51,3 +53,7 @@ Route::resource('status-stores','StatusStoreController');
 Route::resource('request-stores','RequestStoreController');
 
 Route::POST('cancel-request','RequestStoreController@cancelRequest');
+
+Route::get('{name}/products','OwnerProductController@index');
+
+Route::resource('owner-products','OwnerProductController');

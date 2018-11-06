@@ -130,32 +130,88 @@
 
 @section('content')
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card " style="width: 16rem; background-color: #00c0ef;">
-                    <div class="card-body">
-                        <h3 class="card-title text-white">Product</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
-                        </div>
-                        <a href="#" class="card-link small-box text-white">More Info >></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card bg-success" style="width: 16rem;">
-                    <div class="card-body">
-                        <h3 class="card-title text-white"> New Orders</h3>
-                        <div class="inner">
-                            <h3 class="text-white">150</h3>
+    <div class="home">
+        <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+        <div class="home_overlay"></div>
+        <div class="home_content d-flex flex-column align-items-center justify-content-center">
+            <h2 class="home_title">{{$store->store_name}}</h2>
+        </div>
+    </div>
 
+    <div class="container py-3">
+        <div class="row" style="margin-left: 0em">
+            <div class="col-sm-3">
+                <div class="body" style="height: 25rem;">
+                    <div class="card-body">
+                        <h4 class="card-title text-black"> Pemilik</h4>
+                        <img src="template/images/14.jpg" class="img-thumbnail" alt="Responsive image">
+                        <div class="inner"style="margin-top: 2em">
+                            <h5 class="text-black">{{$store->store_name}}</h5>
+                            <h5 class="text-black">{{$store->store_owner}}</h5>
+                            <h5 class="text-black">Bergabung {{$store->created_at}}</h5>
                         </div>
                         <a href="#" class="card-link text-white">More Info >></a>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-9 ">
+                <div class="row"style="margin-left:2em;">
+                    <div class="card" style="width: 14rem; background-color: #0dc93f;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> Produk</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="{{ url($store->store_name.'/products') }}" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem; background-color: #a83838;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> New Order</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem; background-color: #7fffd4;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> On Shipment</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row"style="margin-left:2em;">
+
+
+                    <div class="card" style="width: 14rem; background-color: #e6b740;margin: 1em;">
+                        <div class="card-body">
+                            <h3 class="card-title text-white"> Total Order</h3>
+                            <div class="inner">
+                                <h3 class="text-white">150</h3>
+                            </div>
+                            <a href="#" class="card-link text-white">More Info >></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
 
 @endsection
