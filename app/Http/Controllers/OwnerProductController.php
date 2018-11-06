@@ -57,6 +57,8 @@ class OwnerProductController extends Controller
     }
 
     public function show($id){
-        dd($id);
+        $product = Product::with('status','category')->findOrFail($id);
+//        dd($product);
+        return view ('owner-product.show', compact('product'));
     }
 }
