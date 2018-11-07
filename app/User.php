@@ -35,6 +35,6 @@ class User extends Authenticatable
 
     public function requestStore()
     {
-        return $this->hasOne('App\RequestStore','id_user');
+        return $this->hasMany('App\RequestStore','id_user');
     }
 }
