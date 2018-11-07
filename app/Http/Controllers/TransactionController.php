@@ -13,7 +13,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        return view('transaction.confirm-payment');
     }
 
     /**
@@ -23,7 +23,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        return view('transaction.upload-payment-transfer');
     }
 
     /**
