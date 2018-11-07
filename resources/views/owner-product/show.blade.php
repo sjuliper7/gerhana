@@ -5,10 +5,13 @@
 @section('content')
     <div class="container py-3">
         <div class="row">
-            <div class="col-md-6">
+
+            <div class="col-md-6"style="background: #0b2e13">
                 <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
+
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-6"style="background: #0d82d3">
                 <h1>{{ $product->name}}</h1>
                 <hr>
                 <p class="lead">Price : Rp {{ number_format($product->price,2) }} </p>
@@ -20,7 +23,7 @@
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $product->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 {{--@can('Edit Post')--}}
-                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info" role="button">Edit</a>
+                <a href="{{ route('owner-products.edit', $product->id) }}" class="btn btn-info" role="button">Edit</a>
                 {{--@endcan--}}
                 {{--@can('Delete Post')--}}
                 <form action="{{url('products/'.$product->id)}}" method="post">
@@ -32,7 +35,28 @@
                 {{--@endcan--}}
                 {!! Form::close() !!}
             </div>
-        </div>
+            <div class="col-md-6"style="background: #5d59a6">
+                <div class="row">
+                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
+                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
+                    </div>
+                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
+                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
+                    </div>
+                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
+                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
+                    </div>
+                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
+                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
+                    </div>
+                </div>
+            </div>
 
+
+
+            </div>
+
+        </div>
     </div>
+
 @endsection
