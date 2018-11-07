@@ -19,7 +19,7 @@
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td style="border: none;">ID Transaksi</td>
+                                    <td style="border: none;">Nomor Pemesanan</td>
                                     <td style="border: none;">1452145663CD</td>
                                 </tr>
                                 <tr>
@@ -37,11 +37,11 @@
                         <div class="col-md-3">
                             <img src="images/bank_icon/Mandiri.png" alt="" style="height: 25px; ">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pt-2">
                             Bank Mandiri
                         </div>
-                        <div class="col-md-5">
-                            456789009876
+                        <div class="col-md-5 pt-2">
+                            <h4>456789009876</h4>
                         </div>
                     </div>
                 </div>
@@ -51,11 +51,11 @@
                         <div class="col-md-3">
                             <img src="images/bank_icon/BNI.png" alt="" style="height: 25px; ">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pt-2">
                             Bank BNI
                         </div>
-                        <div class="col-md-5">
-                            1234676654347
+                        <div class="col-md-5 pt-2">
+                            <h4>1234676654347</h4>
                         </div>
                     </div>
                 </div>
@@ -65,17 +65,17 @@
                         <div class="col-md-3">
                             <img src="images/bank_icon/1.png" alt="" style="height: 30px; ">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pt-2">
                             Bank BRI
                         </div>
-                        <div class="col-md-5">
-                            0987484394954
+                        <div class="col-md-5 pt-2">
+                            <h4>0987484394954</h4>
                         </div>
                     </div>
                 </div>
 
                 <div class="container col-4 py-4">
-                    <form action="{{ url('') }}" method="" >
+                    <form action="{{ url('transaction/create') }}" method="" >
                         <button type="submit" class="btn" style="background-color: darkred; color: white">Konfirmasi Pembayaran</button>
                     </form>
                 </div>
