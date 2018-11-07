@@ -61,4 +61,35 @@ class OwnerProductController extends Controller
 //        dd($product);
         return view ('owner-product.show', compact('product'));
     }
+
+    public function update(Request $request, $id)
+    {
+
+        $product = Product::findOrFail($id);
+        $product->name = $request['name'];
+        $product->price = $request['price'];
+        $product->stock = $request['stock'];
+        $product->description = $request['description'];
+
+        $file       = $request->file('image');
+        $fileName   = $file->getClientOriginalName();
+        if($fileName != $product->image){
+            $request->file('image')->move('images/',$fileName);
+            $product->image = $fileName;
+        }
+
+        $product->save();
+
+        return redirect()->route('owner-product.show',
+            $product->id)->with('flash_message',
+            'Article, '. $product->name.' updated');
+    }
+
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        $statusProducts  = StatusProduct::all();
+        $categoryProducts = CategoryProduct::all();
+        return view ('owner-product.edit', compact('product','statusProducts','categoryProducts'));
+    }
 }
