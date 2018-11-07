@@ -36,7 +36,7 @@ class RequestStoreTableSeeder extends Seeder
 
         DB::table('request_stores')->insert(
             [
-                'store_name' => 'Johan Toko Kita',
+                'store_name' => 'Andalan Toko Kita',
                 'store_owner' => "Johan Amanada",
                 'store_email' => "johan-toko-kita@gmail.com",
                 'store_phone' => "0812321345111",
@@ -50,7 +50,7 @@ class RequestStoreTableSeeder extends Seeder
                 'store_account_bank_image' => "account.jpeg",
                 'comment' => '-',
                 'id_status' => '1',
-                'id_user' => '2',
+                'id_user' => '3',
                 'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
