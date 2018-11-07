@@ -36,6 +36,11 @@
                     <td>{{$requestStore->store_address}}</td>
                 </tr>
                 <tr>
+                    <th>User</th>
+                    <td>: </td>
+                    <td>{{$requestStore->user->name}}</td>
+                </tr>
+                <tr>
                     <th>No KTP</th>
                     <td>: </td>
                     <td>{{$requestStore->store_ktp}}</td>
@@ -104,17 +109,19 @@
                     <th></th>
                     <td>
                         <div style="float: right;">
-                            <div class="col-sm-6">
-                                <form action="{{url('request-stores/'.$requestStore->id)}}" method="post">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="_method" value="PUT">
-                                    <input type="hidden" name="value" value="1">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-check"> Terima</i></button>
-                                </form>
-                            </div>
-                            <div class="col-sm-4">
-                                <a class="btn btn-danger" onclick="cancelRequest()"> <i class="fa fa-close"></i>Tolak</a>
-                            </div>
+                            @if($requestStore->status->name === "PENDING")
+                                <div class="col-sm-6">
+                                    <form action="{{url('request-stores/'.$requestStore->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="_method" value="PUT">
+                                        <input type="hidden" name="value" value="1">
+                                        <button type="submit" class="btn btn-info" onclick="return confirm('Are you sure?')"><i class="fa fa-check"> Terima</i></button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a class="btn btn-danger" onclick="cancelRequest()"> <i class="fa fa-close"></i>Tolak</a>
+                                </div>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -141,20 +148,15 @@
                 if (check) {
                     $.ajax({
                         data: {
-                            value: fiedl.value,
-                            requestID: '{{$requestStore->id}}',
-                            _method : 'PUT',
-                            _token: '{{ csrf_token() }}',
+                            comment     : fiedl.value,
+                            requestID   : '{{$requestStore->id}}',
+                            _token      : '{{ csrf_token() }}',
                         },
-                        url: uri,
+                        url: '{{url('cancel-request')}}',
                         type: 'POST',
                         success: function (data) {
-                            console.log("success")
+                           window.location.replace(data);
                         }
-                        // window.location.reload(true);
-
-
-
                     });
                 }
             }
