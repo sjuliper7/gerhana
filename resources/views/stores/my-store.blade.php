@@ -156,7 +156,7 @@
             </div>
             <div class="col-sm-9 ">
                 <div class="row"style="margin-left:2em;">
-                    <div class="card" style="width: 14rem; background-color: #0dc93f;margin: 1em;">
+                    <div class="card" style="width: 14rem; background-color: #c5c9c6;margin: 1em;">
                         <div class="card-body">
                             <h3 class="card-title text-white"> Produk</h3>
                             <div class="inner">
@@ -166,7 +166,7 @@
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem; background-color: #a83838;margin: 1em;">
+                    <div class="card" style="width: 14rem; background-color: #a0a89e;margin: 1em;">
                         <div class="card-body">
                             <h3 class="card-title text-white"> New Order</h3>
                             <div class="inner">
@@ -176,7 +176,7 @@
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem; background-color: #7fffd4;margin: 1em;">
+                    <div class="card" style="width: 14rem; background-color: #d6f3ff;margin: 1em;">
                         <div class="card-body">
                             <h3 class="card-title text-white"> On Shipment</h3>
                             <div class="inner">
@@ -191,7 +191,7 @@
                 <div class="row"style="margin-left:2em;">
 
 
-                    <div class="card" style="width: 14rem; background-color: #e6b740;margin: 1em;">
+                    <div class="card" style="width: 14rem; background-color: #d9e0e6;margin: 1em;">
                         <div class="card-body">
                             <h3 class="card-title text-white"> Total Order</h3>
                             <div class="inner">
