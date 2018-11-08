@@ -4,21 +4,34 @@
 
 @section('content')
     <div class="container py-3">
+        @if ($message = Session::get('flash_message'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <div class="row">
-
-            <div class="col-md-6"style="background: #0b2e13">
-                <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
-
+            <div class="col-md-6">
+                <div class="row">
+                    <img src="{{ asset('images/'.$images[0])  }}" class="rounded mx-auto d-block"  style="max-height:425px;max-width:425px;margin-top:10px; object-fit: cover;">
+                </div>
+                <div class="row">
+                    @for($i = 1; $i<count($images);$i++)
+                        <img src="{{ asset('images/'.$images[$i])  }}" class="rounded mx-auto d-block" style="max-height:70px;max-width:70px;margin-top:10px; object-fit: cover;">
+                    @endfor
+                </div>
             </div>
 
-            <div class="col-md-6"style="background: #0d82d3">
+            <div class="col-md-6">
                 <h1>{{ $product->name}}</h1>
                 <hr>
-                <p class="lead">Price : Rp {{ number_format($product->price,2) }} </p>
-                <p class="lead">Stock : {{ $product->stock }} pcs</p>
-                <p class="lead">Desc  : {!! $product->description !!} </p>
-                <p class="lead">Status  : {{ $product->status->name}} </p>
-                <p class="lead">Status  : {{ $product->category->name}} </p>
+                <p class="lead text-danger">Price : Rp {{ number_format($product->price,2) }} </p>
+                <p class="lead text-success">Stock : {{ $product->stock }} pcs</p>
+                <p class="lead text-success">Category  : {{ $product->category->name}} </p>
+                <p class="lead text-success">Status  : {{ $product->status->name}} </p>
+                <p class="small">Desc  : {!! $product->description !!} </p>
+
+
                 <hr>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $product->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
@@ -35,23 +48,6 @@
                 {{--@endcan--}}
                 {!! Form::close() !!}
             </div>
-            <div class="col-md-6"style="background: #5d59a6">
-                <div class="row">
-                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
-                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
-                    </div>
-                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
-                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
-                    </div>
-                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
-                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
-                    </div>
-                    <div class="col-sm-2"style="background: #0d82d3;margin:1em;">
-                        <img src="{{ asset('image/'.$product->image)  }}" style="max-height:300px;max-width:300px;margin-top:10px;">
-                    </div>
-                </div>
-            </div>
-
 
 
             </div>
