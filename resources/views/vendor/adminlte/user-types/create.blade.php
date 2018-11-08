@@ -1,6 +1,6 @@
 @extends('adminlte::layouts.app')
 
-@section('title', '| Create New Tipe User')
+@section('title', '| Create New User Type')
 
 @section('main-content')
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -8,17 +8,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Create New Tipe User</h1>
+            <h1>Create New User Type</h1>
             <hr>
 
-            <form action="/tipe-users" method="post" data-toggle="validator" role="form">
+            <form action="/user-types" method="post" data-toggle="validator" role="form">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Name" data-error="Please enter name" required>
                     <div class="help-block with-errors"></div>
                 </div>
-                <input type="submit" value="Create Tipe User" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
+                <input type="submit" value="Create User Type" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
             </form>
         </div>
     </div>
