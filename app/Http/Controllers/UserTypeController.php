@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TipeUser;
+use App\UserType;
 
-class TipeUserController extends Controller
+class UserTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class TipeUserController extends Controller
      */
     public function index()
     {
-        $tipeUsers = TipeUser::orderby('id', 'desc')->get();
+        $userTypes = UserType::orderby('id', 'desc')->get();
 
-        return view('adminlte::tipe-users.index', compact('tipeUsers'));
+        return view('adminlte::user-types.index', compact('userTypes'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TipeUserController extends Controller
 
     public function create()
     {
-        return view('adminlte::tipe-users.create');
+        return view('adminlte::user-types.create');
     }
 
 
@@ -39,14 +39,14 @@ class TipeUserController extends Controller
      */
     public function store(Request $request)
     {
-        $tipeUser = new TipeUser();
-        $tipeUser->name = $request['name'];
+        $userType = new UserType();
+        $userType->name = $request['name'];
 
-        $tipeUser->save();
+        $userType->save();
 
-        return redirect()->route('tipe-users.index')
-            ->with('flash_message', 'Tipe User,
-             '. $tipeUser->name.' created');
+        return redirect()->route('user-types.index')
+            ->with('flash_message', 'User Type,
+             '. $userType->name.' created');
     }
 
     /**
@@ -68,8 +68,8 @@ class TipeUserController extends Controller
      */
     public function edit($id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        return view ('adminlte::tipe-users.edit', compact('tipeUser'));
+        $userType = UserType::findOrFail($id);
+        return view ('adminlte::user-types.edit', compact('userType'));
     }
 
     /**
@@ -81,14 +81,14 @@ class TipeUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        $tipeUser->name = $request['name'];
+        $UserType = UserType::findOrFail($id);
+        $UserType->name = $request['name'];
 
-        $tipeUser->save();
+        $UserType->save();
 
-        return redirect()->route('tipe-users.index',
-            $tipeUser->id)->with('flash_message',
-            'Status, '. $tipeUser->name.' updated');
+        return redirect()->route('user-types.index',
+            $UserType->id)->with('flash_message',
+            'Status, '. $UserType->name.' updated');
     }
 
     /**
@@ -99,12 +99,12 @@ class TipeUserController extends Controller
      */
     public function destroy($id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        $tipeUser ->delete();
+        $userType = UserType::findOrFail($id);
+        $userType ->delete();
 
-        return redirect()->route('tipe-users.index')
+        return redirect()->route('user-types.index')
                 ->with('flash-message',
-                    'TipeUser successfully deleted');
+                    'User Type successfully deleted');
 
     }
 
