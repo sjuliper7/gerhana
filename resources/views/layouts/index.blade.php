@@ -14,7 +14,6 @@
     <link href="{!! asset('template/plugins/slick-1.8.0/slick.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/main_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js')}}"></script>
 </head>
 
 <body>
@@ -49,7 +48,7 @@
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="template/images/user.svg" alt=""></div>
                                 <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+                                <div><a href="/login">Sign in</a></div>
                             </div>
                         </div>
                     </div>
