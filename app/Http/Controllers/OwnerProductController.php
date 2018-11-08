@@ -58,8 +58,8 @@ class OwnerProductController extends Controller
 
     public function show($id){
         $product = Product::with('status','category')->findOrFail($id);
-//        dd($product);
-        return view ('owner-product.show', compact('product'));
+        $images = json_decode($product->images);
+        return view ('owner-product.show', compact('product','images'));
     }
 
     public function update(Request $request, $id)
@@ -70,26 +70,36 @@ class OwnerProductController extends Controller
         $product->price = $request['price'];
         $product->stock = $request['stock'];
         $product->description = $request['description'];
+        $product->id_status = $request['status-select'];
+        $product->id_category = $request['category-select'];
 
-        $file       = $request->file('image');
-        $fileName   = $file->getClientOriginalName();
-        if($fileName != $product->image){
-            $request->file('image')->move('images/',$fileName);
-            $product->image = $fileName;
+        if($request->hasfile('images'))
+        {
+            foreach($request->file('images') as $image)
+            {
+                $name = $image->getClientOriginalName();
+                $image->move('images/', $name);
+                $data[] = $name;
+            }
+
+            $images = json_encode($data);
+            $product->images = $images;
         }
 
         $product->save();
 
-        return redirect()->route('owner-product.show',
+        return redirect()->route('owner-products.show',
             $product->id)->with('flash_message',
-            'Article, '. $product->name.' updated');
+            'Product, '. $product->name.' updated');
     }
 
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::with('status','category')->findOrFail($id);
+        $images = json_decode($product->images);
+
         $statusProducts  = StatusProduct::all();
         $categoryProducts = CategoryProduct::all();
-        return view ('owner-product.edit', compact('product','statusProducts','categoryProducts'));
+        return view ('owner-product.edit', compact('product','statusProducts','categoryProducts','images'));
     }
 }
