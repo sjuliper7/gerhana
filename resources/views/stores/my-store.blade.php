@@ -138,72 +138,42 @@
         </div>
     </div>
 
-    <div class="container py-3">
-        <div class="row" style="margin-left: 0em">
-            <div class="col-sm-3">
-                <div class="body" style="height: 25rem;">
-                    <div class="card-body">
-                        <h4 class="card-title text-black"> Pemilik</h4>
-                        <img src="template/images/14.jpg" class="img-thumbnail" alt="Responsive image">
-                        <div class="inner"style="margin-top: 2em">
-                            <h5 class="text-black">{{$store->store_name}}</h5>
-                            <h5 class="text-black">{{$store->store_owner}}</h5>
-                            <h5 class="text-black">Bergabung {{$store->created_at}}</h5>
-                        </div>
-                        <a href="#" class="card-link text-white">More Info >></a>
-                    </div>
-                </div>
+
+
+    <div class="container-py-3">
+        <div class="row"style="margin: 1em">
+
+            <div class="col">
+                <img src="images/shop.png" class="rounded mx-auto d-block" alt="...">
             </div>
-            <div class="col-sm-9 ">
-                <div class="row"style="margin-left:2em;">
-                    <div class="card" style="width: 14rem; background-color: #c5c9c6;margin: 1em;">
-                        <div class="card-body">
-                            <h3 class="card-title text-white"> Produk</h3>
-                            <div class="inner">
-                                <h3 class="text-white">150</h3>
-                            </div>
-                            <a href="{{ url($store->store_name.'/products') }}" class="card-link text-white">More Info >></a>
-                        </div>
-                    </div>
 
-                    <div class="card" style="width: 14rem; background-color: #a0a89e;margin: 1em;">
-                        <div class="card-body">
-                            <h3 class="card-title text-white"> New Order</h3>
-                            <div class="inner">
-                                <h3 class="text-white">150</h3>
-                            </div>
-                            <a href="#" class="card-link text-white">More Info >></a>
-                        </div>
-                    </div>
+        </div>
 
-                    <div class="card" style="width: 14rem; background-color: #d6f3ff;margin: 1em;">
-                        <div class="card-body">
-                            <h3 class="card-title text-white"> On Shipment</h3>
-                            <div class="inner">
-                                <h3 class="text-white">150</h3>
-                            </div>
-                            <a href="#" class="card-link text-white">More Info >></a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row"style="margin-left:2em;">
-
-
-                    <div class="card" style="width: 14rem; background-color: #d9e0e6;margin: 1em;">
-                        <div class="card-body">
-                            <h3 class="card-title text-white"> Total Order</h3>
-                            <div class="inner">
-                                <h3 class="text-white">150</h3>
-                            </div>
-                            <a href="#" class="card-link text-white">More Info >></a>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="row"style="margin-top: 1em">
+            <div class="col text-center">
+                <b><h4>Toko anda sudah aktif </h4></b>
+                <h5>Jangan sampai toko Anda kosong begitu saja.</h5>
+                <h5>Tambahkan produk pertamamu,dan mulai berjualan</h5>
+                <h5>sekarang.</h5>
             </div>
         </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <a href="/owner-product"> <button type="button" class="btn btn-danger btn-lg btn-block">Tambah Produk</button></a>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
