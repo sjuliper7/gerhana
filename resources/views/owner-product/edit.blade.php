@@ -15,26 +15,27 @@
         <div class="container">
             <h2>Create Product</h2>
             <hr>
-            <form action="/owner-products" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
+            <form action="{{url('/owner-products/'.$product->id)}}" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
                 <div class="form-row">
                      <div class="col-md-6">
                          <div class="form-row">
                              <div class="form-group col-md-12">
                                  <label>Name</label>
-                                 <input type="text" name="name" class="form-control" placeholder="Name" data-error="Please enter name" required>
+                                 <input type="text" name="name" value="{{$product->name}}" class="form-control" placeholder="Name" data-error="Please enter name" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-6">
                                  <label>Price</label>
-                                 <input type="text" name="price" class="form-control" placeholder="Price" data-error="Please enter price" required>
+                                 <input type="text" name="price" value="{{$product->price}}" class="form-control" placeholder="Price" data-error="Please enter price" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                              <div class="form-group col-md-6">
                                  <label>Stock</label>
-                                 <input type="text" name="stock" class="form-control" placeholder="stock" data-error="Please enter stock" required>
+                                 <input type="text" name="stock" value="{{$product->stock}}" class="form-control" placeholder="stock" data-error="Please enter stock" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
@@ -42,8 +43,10 @@
                              <div class="form-group col-md-5">
                                  <label>Category Product</label>
                                  <select name="category-select" id="select-category" class="form-control" required style="width: 100%">
-                                     <option selected="selected" name="category-selected">Select Category</option>
                                      @foreach($categoryProducts as $categoryProduct)
+                                         @if($categoryProduct->id == $product->id_category)
+                                             <option selected="selected" value="{{$categoryProduct->id}}">{{$categoryProduct->name}}</option>
+                                         @endif
                                          <option value="{{$categoryProduct->id}}">{{$categoryProduct->name}}</option>
                                      @endforeach
                                  </select>
@@ -53,8 +56,10 @@
                              <div class="form-group col-md-6">
                                  <label>Status Product</label>
                                  <select name="status-select" id="select-status" class="form-control" style="width: auto">
-                                     <option selected="selected" name="status-selected">Select Status</option>
                                      @foreach($statusProducts as $statusProduct)
+                                         @if($statusProduct->id == $product->id_status)
+                                             <option selected="selected" value="{{$statusProduct->id}}">{{$statusProduct->name}}</option>
+                                         @endif
                                          <option value="{{$statusProduct->id}}">{{$statusProduct->name}}</option>
                                      @endforeach
                                  </select>
@@ -64,32 +69,27 @@
                          <div class="form-row">
                              <div class="form-group col-md-6">
                                  <label>Description</label>
-                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required></textarea>
+                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required>{{$product->description}}</textarea>
                              </div>
                          </div>
-
                          <div style="float: right;margin-bottom: 20px">
                              <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
-                             <input type="submit" id="add"value="Create Product" class="btn btn-info" style="margin-top: 10px;">
+                             <input type="submit" id="add"value="Update Product" class="btn btn-info" style="margin-top: 10px;">
                          </div>
 
                      </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-5" style="margin-left: 20px   ">
                         <div class="form-group">
                             <label>Images</label>
+                            <div class="form-row">
+                                @for($i = 0; $i<count($images);$i++)
+                                    <img src="{{ asset('images/'.$images[$i])  }}" style="max-height:70px;max-width:70px;margin-bottom:10px; margin-right: 20px; object-fit: cover;">
+                                @endfor
+                            </div>
+
                             <table class="table" id="dynamic_field">
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <img src="http://placehold.it/400x400" id="show_image-" style="max-width:100px;max-height:100px;" class="center-block" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <label class="btn btn-info">Browse<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
-                                    </td>
-                                    <td><button type="button" name="addImages" id="more" class="btn btn-success">Add More</button></td>
-                                </tr>
+                                <button type="button" name="addImages" id="more" class="btn btn-success">Update Images</button>
                             </table>
                         </div>
                     </div>
@@ -102,6 +102,7 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
 
             $('#summernote').summernote({
                 placeholder: 'Hello bootstrap 4',
@@ -144,18 +145,6 @@
             }
 
         }
-
-        $(function () {
-            $("#input_image").change(function () {
-                console.log("test")
-                // readURL(this);
-            });
-
-            $('#cancel').click(function () {
-                $('#myForm')[0].reset();
-            });
-
-        });
 
 
 

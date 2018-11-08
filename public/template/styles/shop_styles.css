@@ -1402,7 +1402,7 @@ select option
 {
     display: block;
     position: absolute;
-    top: 52px;
+    top: 42px;
     right: 1px;
     width: 1px;
     height: calc(100% - 71px);
