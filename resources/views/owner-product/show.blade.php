@@ -1,7 +1,58 @@
 @extends('layouts.index-for-detail')
 
-@section('title', '| Create New Product')
+@section('title', '| View Product')
 
 @section('content')
-    <h1>Test</h1>
+    <div class="container py-3">
+        @if ($message = Session::get('flash_message'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <img src="{{ asset('images/'.$images[0])  }}" class="rounded mx-auto d-block"  style="max-height:425px;max-width:425px;margin-top:10px; object-fit: cover;">
+                </div>
+                <div class="row">
+                    @for($i = 1; $i<count($images);$i++)
+                        <img src="{{ asset('images/'.$images[$i])  }}" class="rounded mx-auto d-block" style="max-height:70px;max-width:70px;margin-top:10px; object-fit: cover;">
+                    @endfor
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h1>{{ $product->name}}</h1>
+                <hr>
+                <p class="lead text-danger">Price : Rp {{ number_format($product->price,2) }} </p>
+                <p class="lead text-success">Stock : {{ $product->stock }} pcs</p>
+                <p class="lead text-success">Category  : {{ $product->category->name}} </p>
+                <p class="lead text-success">Status  : {{ $product->status->name}} </p>
+                <p class="small">Desc  : {!! $product->description !!} </p>
+
+
+                <hr>
+                {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $product->id] ]) !!}
+                <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                {{--@can('Edit Post')--}}
+                <a href="{{ route('owner-products.edit', $product->id) }}" class="btn btn-info" role="button">Edit</a>
+                {{--@endcan--}}
+                {{--@can('Delete Post')--}}
+                <form action="{{url('products/'.$product->id)}}" method="post">
+                    {{csrf_field()}}
+                    <input name="_method" type="hidden" value="DELETE">
+                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
+                </form>
+                {{--onclick="return confirm('Are you sure?')"--}}
+                {{--@endcan--}}
+                {!! Form::close() !!}
+            </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
 @endsection
