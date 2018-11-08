@@ -1,6 +1,6 @@
 @extends('adminlte::layouts.app')
 
-@section('title', '| Edit Tipe User')
+@section('title', '| Edit User Type')
 
 @section('main-content')
 
@@ -10,15 +10,15 @@
             <h1>Edit Tipe User</h1>
             <hr>
 
-            <form action="{{ url('tipe-users/'.$tipeUser->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">
+            <form action="{{ url('user-types/'.$userType->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control" value="{{$tipeUser->name}}" data-error="Please enter name" required>
+                    <input type="text" name="name" class="form-control" value="{{$userType->name}}" data-error="Please enter name" required>
                     <div class="help-block with-errors"></div>
                 </div>
-                <input type="submit" value="Edit Tipe User" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
+                <input type="submit" value="Edit User Type" class="btn btn-success btn-lg btn-block" id="add" style="margin-top: 70px;">
             </form>
         </div>
     </div>
