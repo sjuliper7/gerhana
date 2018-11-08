@@ -37,4 +37,25 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\RequestStore','id_user');
     }
+
+
+    public function tipeUser()
+    {
+        return $this->hasOne('App\TipeUser','id_user');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile','id_user');
+    }
+
+    public function userStatus()
+    {
+        return $this->hasOne('App\UserStatus','id_user');
+    }
+
+
+
+
+
 }
