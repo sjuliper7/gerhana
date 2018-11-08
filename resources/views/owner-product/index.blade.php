@@ -59,54 +59,27 @@
                         <div class="product_grid">
                             <div class="product_grid_border"></div>
 
+
                             @foreach($products as $product)
+                                <?php
+                                    $images = json_decode($product->images);
+                                ?>
                                 <!-- Product Item -->
-                                    <div class="product_item">
-                                        <div class="product_border"></div>
-                                        <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                            <?php
-                                                $images = json_decode($product->images);
-                                            ?>
-                                            <img src="{{ asset('images/'.$images[0]) }}" alt="" style="width:150px;height:150px; object-fit: cover;" >
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="product_price">Rp {{$product->price}}</div>
-                                            <div class="product_name">
-                                                <div>
-                                                    <a href="product.html" tabindex="0">{{$product->name}}
-                                                    </a>
-                                                </div>
+                                    <a href="{{url('owner-products/'.$product->id)}}">
+                                        <div class="product_item discount">
+                                            <div class="product_border"></div>
+                                            <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                                <img src="{{ asset('images/'.$images[0]) }}" style="width:120px;height:120px; object-fit: cover;"  >
+                                            </div>
+                                            <div class="product_content">
+                                                <div class="product_price">Rp {{number_format($product->price)}}</div>
+                                                <div class="product_name"><div><a href="product.html" tabindex="0">{{$product->name}}</a></div></div>
                                             </div>
                                         </div>
-                                        <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                        <ul class="product_marks">
-                                            <li class="product_mark product_discount">-25%</li>
-                                            <li class="product_mark product_new">new</li>
-                                        </ul>
-                                        <div class="row">
-                                            <a href="{{url('owner-products/'.$product->id)}}" class="btn btn-info" >Detail</a>
-                                        </div>
-                                    </div>
-
-                                @endforeach
-
+                                    </a>
+                            @endforeach
 
                         </div>
-
-                        <!-- Shop Page Navigation -->
-
-                        <div class="shop_page_nav d-flex flex-row">
-                            <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
-                            <ul class="page_nav d-flex flex-row">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">21</a></li>
-                            </ul>
-                            <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
-                        </div>
-
                     </div>
 
                 </div>

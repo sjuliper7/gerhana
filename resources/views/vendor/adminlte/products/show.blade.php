@@ -11,7 +11,7 @@
                 <hr>
                 <p class="lead">Price : Rp {{ number_format($product->price,2) }} </p>
                 <p class="lead">Stock : {{ $product->stock }} pcs</p>
-                <p class="lead">Desc  : {{ $product->description }} </p>
+                <p class="lead">Desc  : {!! $product->description !!} </p>
                 <p class="lead">Status  : {{ $product->status->name}} </p>
                 <p class="lead">Status  : {{ $product->category->name}} </p>
                 <hr>
