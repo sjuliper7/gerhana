@@ -29,7 +29,9 @@ class StoreController extends Controller
                     return view('stores.rejected',compact('requestStore'));
                 }else{
                     $store = Auth::user()->store;
-                    return view('stores.my-store',compact('store'));
+                    $products = $store->products;
+
+                    return view('owner-product.index',compact('products'));
                 }
             }
 
