@@ -55,3 +55,9 @@ Route::resource('request-stores','RequestStoreController');
 Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
+
+Route::resource('tipe-users','TipeUserController');
+
+Route::resource('user-status','UserStatusController');
+
+Route::resource('user-profile','UserProfileController');
