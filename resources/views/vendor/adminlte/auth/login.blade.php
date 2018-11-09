@@ -17,7 +17,6 @@
                 <a href="{{ url('/home') }}">
                     <img src="images/login.png" alt="Responsive image" style="width: 50%;height: 50%">
                 </a>
-                <b></b>
                 <h3> Selamat Datang di BatakZone</h3></b>
                 <h5>Masuk dan penuhi berbagai kebutuhanmu disini</h5>
 
@@ -30,6 +29,7 @@
                     <div class="card card-signin my-5" >
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
+                            <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
                             <form class="form-signin form-group">
 
                                 <div class="form-label-group">
@@ -47,14 +47,13 @@
                                 <div class="form-group">
                                     <div class="form-check" style="margin-left: 25px">
                                         <input type="checkbox" class="form-check-input " id="exampleCheck1" >
-                                        <label class="form-check-label" for="exampleCheck1" style="padding-left: 0px">Check
-                                            me out</label>
+                                        <label class="form-check-label" for="exampleCheck1" style="padding-left: 0px">Remember me </label>
                                     </div>
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase rounded" type="submit">Sign in
                                 </button>
 
-                                <hr class="my-4">
+                                <hr class="my-2">
 
                                 <button class="btn btn-lg btn-google btn-block text-uppercase rounded" type="submit"
                                         style="background: #ea4335"><i class="fab fa-google mr-2"></i> Sign in with
