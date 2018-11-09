@@ -56,7 +56,7 @@ Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
 
-Route::resource('tipe-users','TipeUserController');
+Route::resource('user-types','UserTypeController');
 
 Route::resource('user-status','UserStatusController');
 

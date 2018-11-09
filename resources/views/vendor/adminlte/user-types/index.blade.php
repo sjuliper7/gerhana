@@ -1,6 +1,6 @@
 @extends('adminlte::layouts.app')
 
-@section('title', '| Tipe User')
+@section('title', '| User Type')
 
 @section('main-content')
     <div class="container">
@@ -8,7 +8,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Tipe User</h3></div>
-                    <a href="{{ URL::to('tipe-users/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Category Product</a>
+                    <a href="{{ URL::to('user-types/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Category Product</a>
                     <table class="table table-hover">
                         <thead>
                         <tr>
@@ -17,14 +17,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($tipeUsers as $tipeUser)
+                        @foreach($userTypes as $userType)
                             <tr>
-                                <td>{{$tipeUser->name}}</td>
+                                <td>{{$userType->name}}</td>
                                 <td>
-                                    <a class="btn btn-small btn-info" href="{{ URL::to('tipe-users/' . $tipeUser->id . '/edit') }}">Edit</a>
+                                    <a class="btn btn-small btn-info" href="{{ URL::to('user-types/' . $userType->id . '/edit') }}">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{url('tipe-users/'.$tipeUser->id)}}" method="post">
+                                    <form action="{{url('user-types'.$userType->id)}}" method="post">
                                         {{csrf_field()}}
                                         <input name="_method" type="hidden" value="DELETE">
                                         <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>

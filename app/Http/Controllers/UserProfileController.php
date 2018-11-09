@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\UserProfile;
 use Illuminate\Http\Request;
-use App\TipeUser;
+use Illuminate\Support\Facades\Auth;
 
-class TipeUserController extends Controller
+class UserProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class TipeUserController extends Controller
      */
     public function index()
     {
-        $tipeUsers = TipeUser::orderby('id', 'desc')->get();
-
-        return view('adminlte::tipe-users.index', compact('tipeUsers'));
+        $userProfiles= UserProfile::where('user_id','=',Auth::id()->get()->first());
+        return view('adminlte::user-profile.index');
     }
 
     /**
@@ -24,12 +24,10 @@ class TipeUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
-        return view('adminlte::tipe-users.create');
+        return view('adminlte::user-profile.create');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -39,14 +37,15 @@ class TipeUserController extends Controller
      */
     public function store(Request $request)
     {
-        $tipeUser = new TipeUser();
-        $tipeUser->name = $request['name'];
+        $userProfile= new UserProfile();
+        $userProfile->full_name = $request['full_name'];
+        $userProfile->address = $request['address'];
 
-        $tipeUser->save();
+        $userProfile->save();
 
-        return redirect()->route('tipe-users.index')
-            ->with('flash_message', 'Tipe User,
-             '. $tipeUser->name.' created');
+        return redirect()->route('user-profile.index')
+            ->with('flash_message', 'User Profile,
+             '. $userProfile->name.' created');
     }
 
     /**
@@ -57,7 +56,11 @@ class TipeUserController extends Controller
      */
     public function show($id)
     {
-        //
+//        $userProfiles= UserProfile::where($id)==Auth::User->get();
+//        return view("adminlte::user-profiles.index",compact('userProfiles'));
+//
+//        $requestStore = RequestStore::findOrFail($id);
+//        return view("adminlte::store-requests.show",compact('requestStore'));
     }
 
     /**
@@ -68,8 +71,7 @@ class TipeUserController extends Controller
      */
     public function edit($id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        return view ('adminlte::tipe-users.edit', compact('tipeUser'));
+        //
     }
 
     /**
@@ -81,14 +83,7 @@ class TipeUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        $tipeUser->name = $request['name'];
-
-        $tipeUser->save();
-
-        return redirect()->route('tipe-users.index',
-            $tipeUser->id)->with('flash_message',
-            'Status, '. $tipeUser->name.' updated');
+        //
     }
 
     /**
@@ -99,13 +94,6 @@ class TipeUserController extends Controller
      */
     public function destroy($id)
     {
-        $tipeUser = TipeUser::findOrFail($id);
-        $tipeUser ->delete();
-
-        return redirect()->route('tipe-users.index')
-                ->with('flash-message',
-                    'TipeUser successfully deleted');
-
+        //
     }
-
 }

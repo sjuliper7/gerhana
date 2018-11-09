@@ -39,14 +39,14 @@ class User extends Authenticatable
     }
 
 
-    public function tipeUser()
+    public function userType()
     {
-        return $this->hasOne('App\TipeUser','id_user');
+        return $this->hasOne('App\UserType','id_user');
     }
 
-    public function profile()
+    public function userProfile()
     {
-        return $this->hasOne('App\Profile','id_user');
+        return $this->hasOne('App\UserProfile','id_user');
     }
 
     public function userStatus()
