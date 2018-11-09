@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\UserProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
 {
@@ -13,7 +15,8 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-
+        $userProfiles= UserProfile::where('user_id','=',Auth::id()->get()->first());
+        return view('adminlte::user-profile.index');
     }
 
     /**
@@ -23,7 +26,7 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminlte::user-profile.create');
     }
 
     /**
@@ -34,7 +37,15 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userProfile= new UserProfile();
+        $userProfile->full_name = $request['full_name'];
+        $userProfile->address = $request['address'];
+
+        $userProfile->save();
+
+        return redirect()->route('user-profile.index')
+            ->with('flash_message', 'User Profile,
+             '. $userProfile->name.' created');
     }
 
     /**
@@ -45,7 +56,11 @@ class UserProfileController extends Controller
      */
     public function show($id)
     {
-        //
+//        $userProfiles= UserProfile::where($id)==Auth::User->get();
+//        return view("adminlte::user-profiles.index",compact('userProfiles'));
+//
+//        $requestStore = RequestStore::findOrFail($id);
+//        return view("adminlte::store-requests.show",compact('requestStore'));
     }
 
     /**
