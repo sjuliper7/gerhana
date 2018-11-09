@@ -14,7 +14,6 @@
     <link href="{!! asset('template/plugins/slick-1.8.0/slick.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/main_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js')}}"></script>
 </head>
 
 <body>
@@ -47,9 +46,37 @@
                                 </ul>
                             </div>
                             <div class="top_bar_user">
-                                <div class="user_icon"><img src="template/images/user.svg" alt=""></div>
-                                <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+                                @if(Auth::guest())
+                                    <div></div>
+                                    <div><a href="#">Register</a></div>
+                                    <div><a href="/login">Sign in</a></div>
+                                @else
+                                    <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                <span class="glyphicon glyphicon-user"></span> 
+                                                <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="navbar-login">
+                                                        <div class="row">
+                                                            <div class="col-lg-12" style="margin-left: 5px">
+                                                                <a href=""><p class="text-left">Pesanan</p></a>
+                                                                <a href="" class="btn">Profile</a>
+                                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                                                                    {{ csrf_field() }}
+                                                                    <input type="submit" value="logout">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                @endif
+
+
                             </div>
                         </div>
                     </div>
