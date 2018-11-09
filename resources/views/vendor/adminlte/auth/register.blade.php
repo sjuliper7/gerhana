@@ -30,6 +30,7 @@
                     <div class="card card-signin my-5" >
                         <div class="card-body">
                             <b><h5 class="card-title text-center">Daftar Sekarang</h5></b>
+                            <p class="text-center font-weight-normal">Sudah punya akun BatakZone? <a href="{{ url('/login') }}"> Masuk</a></p><br>
                             <form class="form-signin form-group">
 
                                 <div class="form-label-group">
