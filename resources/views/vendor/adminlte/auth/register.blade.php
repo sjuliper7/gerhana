@@ -13,12 +13,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="text-center" style="margin-top: 15em">
+            <div class="text-center" style="margin-top: 0em">
                 <a href="{{ url('/home') }}">
-                    <img src="images/register_new.png" alt="Responsive image" style="width: 50%;height: 50%">
+                    <img src="images/register.png" alt="" style="width: 100%;height: 100%">
                 </a>
                 <b></b>
-                <h3> Jual Beli Mudah Hanya di BatakZone</h3></b>
+                <h3> Jual beli mudah hanya di BatakZone</h3></b>
                 <b><h5 class="font-weight-normal">Gabung dan rasakan kemudahan bertransaksi di BatakZone</h5></b>
 
             </div>
