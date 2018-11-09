@@ -202,35 +202,24 @@
 
                             @foreach($products as $product)
                                 <!-- Slider Item -->
-                                    <div class="featured_slider_item" style="margin-bottom: 20px">
+                                        <div class="featured_slider_item" style="margin-bottom: 20px">
                                         <div class="border_active"></div>
                                         <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
                                             <?php
                                                 $images = json_decode($product->images);
                                             ?>
                                             <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <a href="{{ URL::to('detail-product/' . $product->id ) }}">
+                                                <a href="{{ URL::to('buy/' . $product->name ) }}">
                                                     <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
                                                 </a>
                                             </div>
 
-
                                             <div class="product_content">
                                                 <div class="product_price discount">Rp. {{$product->price}}</div>
-                                                <div class="product_name"><div><a href="{{ URL::to('detail-product/' . $product->id ) }}">{{$product->name}}</a></div></div>
-                                                <div class="product_extras">
-                                                    <a href="{{ URL::to('detail-product/' . $product->id ) }}">
-                                                        <button class="product_cart_button">Buy</button>
-                                                    </a>
-                                                </div>
+                                                <div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>
                                             </div>
-                                            <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                            <ul class="product_marks">
-                                                <li class="product_mark product_discount">-25%</li>
-                                                <li class="product_mark product_new">new</li>
-                                            </ul>
                                         </div>
-                                    </div>
+                                        </div>
                                 @endforeach
 
                             </div>
