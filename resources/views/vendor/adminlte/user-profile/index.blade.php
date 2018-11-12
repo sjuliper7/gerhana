@@ -13,7 +13,7 @@
                         <thead>
                         <thead>
                         <tr>
-                            <td>ID</td><td>:</td><td>{{$user->id}}</td>
+                            <td>ID</td><td>:</td><td>{{$user->id_user}}</td>
                         </tr>
                         <tr>
                             <td>ID profile</td><td>:</td><td>{{$profile->id}}</td>
@@ -35,7 +35,9 @@
                             <td>Image Profile</td><td>:</td><td>{{$profile->profile_image}}</td>
                         </tr>
                         <tr>
-                            <td class="btn btn-small btn-info" href="{{ URL::to('user-profile/' . $profile->id . '/edit') }}">Edit Profile</td>
+                            <td>
+                            <a class="btn btn-small btn-info" href="{{ URL::to('user-profile/' . $profile->id . '/edit') }}">Edit Profile</a>
+                            </td>
                         </tr>
                         </thead>
                         <tbody>
