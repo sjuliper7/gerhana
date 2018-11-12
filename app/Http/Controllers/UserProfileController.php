@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserProfileController extends Controller
 {
@@ -15,8 +16,12 @@ class UserProfileController extends Controller
      */
     public function index()
     {
+        $profiles = DB::table('user_profiles')->get();
         $user = Auth::user();
-        return view('adminlte::user-profile.index');
+        return view('adminlte::user-profile.index', compact('profiles'));
+
+//        $profile = Profile::orderby('id', 'desc')->get();
+//        return view('adminlte::products.index', compact('profiles'));
     }
 
     /**
@@ -26,7 +31,8 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-        return view('adminlte::user-profile.create');
+        $users = Auth::user();
+        return view('adminlte::user-profile.create',compact('userProfiles'));
     }
 
     /**
@@ -38,12 +44,16 @@ class UserProfileController extends Controller
     public function store(Request $request)
     {
         $userProfile= new UserProfile();
-        $userProfile->full_name = $request['full_name'];
-        $userProfile->address = $request['address'];
+        $userProfile->profile_image=$request['profile_image'];
+//        $request->file('image')->move('images/',$fileName);l''
 
+        $userProfile->full_name = $request['full_name'];
+        $userProfile->date_of_birth= $request['date_of_birth'];
+        $userProfile->address = $request['address'];
+        $userProfile->id_user = Auth::user()->id;
         $userProfile->save();
 
-        return redirect()->route('user-profile.index')
+        return redirect()->route('user-profile.create')
             ->with('flash_message', 'User Profile,
              '. $userProfile->name.' created');
     }
@@ -71,7 +81,9 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $profile = Profile::findOrFail($id);
+        return view ('adminlte::profile.edit', compact('profile'));
+
     }
 
     /**
@@ -83,7 +95,24 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $profile = Profile::findOrFail($id);
+        $profile->name = $request['name'];
+        $profile->price = $request['price'];
+        $profile->stock = $request['stock'];
+        $profile->description = $request['description'];
+
+        $file       = $request->file('image_profile');
+        $fileName   = $file->getClientOriginalName();
+        if($fileName != $profile->image){
+            $request->file('image')->move('images/',$fileName);
+            $profile->profile_image = $fileName;
+        }
+
+        $profile->save();
+
+        return redirect()->route('profile.index',
+            $profile->id)->with('flash_message',
+            'Article, '. $profile->name.' updated');
     }
 
     /**
