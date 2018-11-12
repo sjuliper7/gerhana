@@ -87,8 +87,8 @@ class RegisterController extends Controller
 //            $fields['username'] = $data['username'];
 //        }
 
-        User::create($fields);
+        $user = User::create($fields);
 
-        return redirect()->route('/');
+        return $user;
     }
 }
