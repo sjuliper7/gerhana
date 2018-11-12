@@ -3,10 +3,13 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}">
-    <link rel="stylesheet" type="text/css"
-          href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
-
+    <div class="text-center" style="margin-top: 0em">
+        <a href="{{ url('/home') }}">
+            <img src="images/tittle.png" alt="Responsive image" style="width: 15%;height: 15%">
+        </a>
+    </div>
 </head>
 
 <body>
@@ -15,7 +18,7 @@
         <div class="col-md-6">
             <div class="text-center" style="margin-top: 5em">
                 <a href="{{ url('/home') }}">
-                    <img src="images/new_login.png" alt="Responsive image" style="width: 70%;height: 70%">
+                    <img src="images/new_login.png" alt="Responsive image" style="width: 80%;height: 80%">
                 </a>
                 <h3> Selamat datang di BatakZone</h3></b>
                 <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini</h5>
@@ -25,7 +28,7 @@
 
         <div class="col-md-6">
             <div class="row">
-                <div class="col-sm-9 ">
+                <div class="col-sm-9 " style="margin-left: 5em">
                     <div class="card card-signin my-5" >
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
