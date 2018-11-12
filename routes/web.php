@@ -59,3 +59,9 @@ Route::resource('owner-products','OwnerProductController');
 Route::resource('transaction','TransactionController');
 
 Route::get('buy/{name}','LandingPageController@buyProduct');
+
+Route::POST('carts','CartController@addToCart');
+
+Route::get('carts','CartController@index');
+
+Route::POST('/update-quantity','CartController@toUpdateQuantity');
