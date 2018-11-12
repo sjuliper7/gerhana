@@ -16,8 +16,12 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $profiles = DB::table('user_profiles')->get();
-        $user = Auth::user();
+        $user=Auth::user();
+        $profiles = DB::table('user_profiles')
+//            ->join('users','user_profiles.id_user','=','users.id')
+//            ->select('user_profiles.*','users.*')
+//            ->where('id_user','=',Auth::user()->id)
+            ->get();
         return view('adminlte::user-profile.index', compact('profiles'));
 
 //        $profile = Profile::orderby('id', 'desc')->get();
@@ -81,8 +85,8 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        $profile = Profile::findOrFail($id);
-        return view ('adminlte::profile.edit', compact('profile'));
+        $profile = UserProfile::findOrFail($id);
+        return view ('adminlte::user-profile.edit', compact('profile'));
 
     }
 
@@ -95,18 +99,18 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        $profile->name = $request['name'];
-        $profile->price = $request['price'];
-        $profile->stock = $request['stock'];
-        $profile->description = $request['description'];
-
-        $file       = $request->file('image_profile');
-        $fileName   = $file->getClientOriginalName();
-        if($fileName != $profile->image){
-            $request->file('image')->move('images/',$fileName);
-            $profile->profile_image = $fileName;
-        }
+        $profile = UserProfile::findOrFail($id);
+        $profile->full_name = $request['full_name'];
+        $profile->address = $request['address'];
+        $profile->profile_image = $request['profile_image'];
+//        $profile->description = $request['description'];
+//
+//        $file       = $request->file('image_profile');
+//        $fileName   = $file->getClientOriginalName();
+//        if($fileName != $profile->image){
+//            $request->file('image')->move('images/',$fileName);
+//            $profile->profile_image = $fileName;
+//        }
 
         $profile->save();
 
