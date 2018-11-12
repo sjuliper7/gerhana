@@ -28,13 +28,14 @@
                         <div class="product_name">{{$product->name}}</div>
                         <div class="product_text"><p>{!! $product->description !!}</p></div>
                         <div class="order_info d-flex flex-row">
-                            <form action="#">
+                            <form action="{{url('/carts')}}" method="POST">
+                                {{ csrf_field() }}
                                 <div class="clearfix" style="z-index: 1000;">
-
+                                    <input type="text" value="{{$product->id}}" name="id_product" hidden>
                                     <!-- Product Quantity -->
                                     <div class="product_quantity clearfix">
                                         <span>Quantity: </span>
-                                        <input id="quantity_input" type="text" pattern="[0-9]*" value="1">  
+                                        <input id="quantity_input" name="quantity" type="text" pattern="[0-9]*" value="1">
                                         <div class="quantity_buttons">
                                             <div id="quantity_inc_button" class="quantity_inc quantity_control" onclick="up()"><i class="fas fa-chevron-up"></i></div>
                                             <div id="quantity_dec_button" class="quantity_dec quantity_control" onclick="down()"><i class="fas fa-chevron-down"></i></div>
@@ -45,8 +46,7 @@
 
                                 <div class="product_price" id="price">Rp {{number_format($product->price)}}</div>
                                 <div class="button_container">
-                                    <a href="cart.html" type="button" class="button cart_button">Add to Cart</a>
-                                    <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                    <input type="submit" value="Add to Cart" class="button cart_button">
                                 </div>
 
                             </form>
