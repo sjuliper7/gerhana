@@ -15,6 +15,19 @@
     <link href="{!! asset('template/styles/main_styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('template/styles/responsive.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js')}}"></script>
+    <script type="text/javascript" src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/styles/bootstrap4/popper.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/styles/bootstrap4/bootstrap.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/greensock/TweenMax.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/greensock/TimelineMax.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/scrollmagic/ScrollMagic.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/greensock/animation.gsap.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/greensock/ScrollToPlugin.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/slick-1.8.0/slick.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/plugins/easing/easing.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('template/js/custom.js') !!}"></script>
 </head>
 
 <body>
@@ -169,20 +182,6 @@
     </div>
 </div>
 
-
-<script type="text/javascript" src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/styles/bootstrap4/popper.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/styles/bootstrap4/bootstrap.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/TweenMax.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/TimelineMax.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/scrollmagic/ScrollMagic.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/animation.gsap.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/greensock/ScrollToPlugin.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/OwlCarousel2-2.2.1/owl.carousel.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/slick-1.8.0/slick.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/plugins/easing/easing.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('template/js/custom.js') !!}"></script>
 
 
 </body>
