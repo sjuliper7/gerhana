@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\CategoryProduct;
-use App\Product;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -91,13 +89,6 @@ class RegisterController extends Controller
 
         User::create($fields);
 
-        dd(User);
-
-        $categoryProducts = CategoryProduct::all();
-        $products = Product::all();
-
-        return redirect()->route('landing-page',compact('categoryProducts', 'products'))
-            ->with('flash_message',
-                'Account successfully created');
+        return redirect()->route('/');
     }
 }
