@@ -18,9 +18,9 @@ class UserProfileController extends Controller
     {
         $user=Auth::user();
         $profiles = DB::table('user_profiles')
-//            ->join('users','user_profiles.id_user','=','users.id')
-//            ->select('user_profiles.*','users.*')
-//            ->where('id_user','=',Auth::user()->id)
+            ->join('users','user_profiles.id_user','=','users.id')
+            ->select('user_profiles.*','users.*')
+            ->where('id_user','=',Auth::user()->id)
             ->get();
         return view('adminlte::user-profile.index', compact('profiles'));
 
