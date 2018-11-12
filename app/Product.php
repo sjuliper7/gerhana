@@ -21,4 +21,8 @@ class Product extends Model
     public function store(){
         return $this->belongsTo('App\Store','id_store');
     }
+
+    public function cart(){
+        return $this->hasOne('App\Cart','id_product');
+    }
 }
