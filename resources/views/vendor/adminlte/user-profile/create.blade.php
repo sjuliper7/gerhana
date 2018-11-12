@@ -27,7 +27,7 @@
                             Browse
                             <input type="file" id="input_image_profile" name="profile_image" style="display: none">
                         </label>
-
+                    
                 </div>
 
                 <div class="form-group">
