@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\CategoryProduct;
+use App\Product;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -83,9 +85,19 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ];
-        if (config('auth.providers.users.field', 'email') === 'username' && isset($data['username'])) {
-            $fields['username'] = $data['username'];
-        }
-        return User::create($fields);
+//        if (config('auth.providers.users.field', 'email') === 'username' && isset($data['username'])) {
+//            $fields['username'] = $data['username'];
+//        }
+
+        User::create($fields);
+
+        dd(User);
+
+        $categoryProducts = CategoryProduct::all();
+        $products = Product::all();
+
+        return redirect()->route('landing-page',compact('categoryProducts', 'products'))
+            ->with('flash_message',
+                'Account successfully created');
     }
 }
