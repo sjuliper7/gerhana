@@ -15,7 +15,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $userProfiles= UserProfile::where('user_id','=',Auth::id()->get()->first());
+        $user = Auth::user();
         return view('adminlte::user-profile.index');
     }
 
