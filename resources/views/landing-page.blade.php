@@ -47,7 +47,7 @@
                                     <div class="cart_count"><span>5</span></div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="#">Cart</a></div>
+                                    <div class="cart_text"><a href="/carts">Cart</a></div>
                                     <div class="cart_price">$85</div>
                                 </div>
                             </div>
@@ -159,6 +159,13 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("tests");
+        })
+    </script>
+
 @endsection
 
 @section('content')
