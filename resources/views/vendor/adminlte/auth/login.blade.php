@@ -21,7 +21,7 @@
                     <img src="images/new_login.png" alt="Responsive image" style="width: 100%;height: 100%">
                 </a>
                 <h3> Selamat datang di BatakZone</h3></b>
-                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini</h5>
+                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini.</h5>
 
             </div>
         </div>
