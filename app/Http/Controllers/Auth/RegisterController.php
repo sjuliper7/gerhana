@@ -99,13 +99,13 @@ class RegisterController extends Controller
             ]
         );
 
-        $userProfile = new UserProfile();
-        $userProfile->profile_image="---";
-        $userProfile->full_name = $data['name'];
-        $userProfile->date_of_birth= "---";
-        $userProfile->address = "---";
-        $userProfile->id_user = $user->id;
-        $userProfile->save();
+//        $userProfile = new UserProfile();
+//        $userProfile->profile_image="---";
+//        $userProfile->full_name = $data['name'];
+//        $userProfile->date_of_birth= "---";
+//        $userProfile->address = "---";
+//        $userProfile->id_user = $user->id;
+//        $userProfile->save();
 
         return $user;
 
