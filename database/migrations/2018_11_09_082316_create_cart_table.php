@@ -17,6 +17,7 @@ class CreateCartTable extends Migration
             $table->increments('id');
             $table->integer('quantity');
             $table->double('sub_total_price');
+            $table->longText('comment');
             $table->boolean('is_active');
             $table->integer('id_product')->unsigned();
             $table->integer('id_user')->unsigned();
