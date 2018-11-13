@@ -37,8 +37,8 @@
 
                 <div class="form-group">
                     <label>Image Profile</label>
-                    <img src="{{ asset('image/'.$profile->profile-image) }}" id="showgambar" style="max-width:200px;max-height:200px;float:left;" />
-                    {{--<input type="text" name="profile_image" class="form-control" value="{{$profile->profile_image}}" data-error="Please enter Profile Image" required>--}}
+                    {{--<img src="{{ asset('image/'.$profile->profile-image) }}" id="showgambar" style="max-width:200px;max-height:200px;float:left;" />--}}
+                    <input type="text" name="profile_image" class="form-control" value="{{$profile->profile_image}}" data-error="Please enter Profile Image" required>
                     <div class="help-block with-errors"></div>
                 </div>
 
