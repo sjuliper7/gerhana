@@ -6,6 +6,7 @@ use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class CartController extends Controller
 {
@@ -20,7 +21,12 @@ class CartController extends Controller
 
             return view('cart',compact('carts', 'total'));
         }else{
-            return redirect('/login');
+            $total = 0;
+            $carts = Session::get('carts');
+            foreach ($carts as $cart){
+                $total += $cart->sub_total_price;
+            }
+            return view('cart',compact('carts', 'total'));
         }
     }
 
@@ -28,7 +34,6 @@ class CartController extends Controller
         if(!Auth::guest()){
             $getCart = Cart::where(['id_product' => $request['id_product'] , 'id_user' => Auth::user()->id, 'is_active' => true])->get();
             $product = Product::find($request['id_product']);
-
             if(count($getCart) == 0){
                 $cart  = new Cart();
                 $cart->id_product = $request['id_product'];
@@ -38,13 +43,47 @@ class CartController extends Controller
                 $cart->is_active = true;
                 $cart->save();
             }else{
-                $getCart[0]->quantity =  $getCart->quantity + 1;
-                $getCart[0]->sub_total_price =  $getCart->sub_total_price + ($product->price);
+                $getCart[0]->quantity =  $getCart[0]->quantity + $request['quantity'];
+                $getCart[0]->sub_total_price =  $getCart[0]->sub_total_price + ($product->price * $request['quantity']);
                 $getCart[0]->save();
             }
 
         }else{
-            dd("guest");
+            $carts = Session::get('carts');
+            $product = Product::find($request['id_product']);
+
+            if($carts == null){
+                $cart  = new Cart();
+                $cart->id_product = $request['id_product'];
+                $cart->id_user = 0;
+                $cart->quantity = $request['quantity'];
+                $cart->sub_total_price = $request['quantity'] * $product->price;
+                $cart->is_active = true;
+                array_push($carts, $cart);
+                Session::put('carts',$carts);
+
+            }else{
+                $check = false;
+                $carts = Session::get('carts');
+                foreach ($carts as $cart){
+                    if($cart->id_product == $request['id_product']){
+                        $check = true;
+                        $cart->quantity = $cart->quantity + $request['quantity'];
+                        $cart->sub_total_price = $cart->sub_total_price + ($product->price * $request['quantity']);
+                    }
+                }
+
+                if(!$check){
+                    $cart  = new Cart();
+                    $cart->id_product = $request['id_product'];
+                    $cart->id_user = 0;
+                    $cart->quantity = $request['quantity'];
+                    $cart->sub_total_price = $request['quantity'] * $product->price;
+                    $cart->is_active = true;
+                    array_push($carts, $cart);
+                    Session::put('carts',$carts);
+                }
+            }
         }
 
         return redirect('/carts');
