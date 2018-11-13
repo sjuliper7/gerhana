@@ -105,12 +105,6 @@ class RegisterController extends Controller
             ]
         );
 
-//        $role = new ModelHasRole();
-//        $role->role_id = 2;
-//        $role->model_type = "App\User";
-//        $role->model_id = $user->id;
-//        $role->save();
-
         return redirect('/');
 
     }
