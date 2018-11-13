@@ -91,17 +91,6 @@ class RegisterController extends Controller
 
         $user = User::create($fields);
 
-//        DB::table('user_profiles')->insert(
-//            [
-//                'full_name' => $data['name'],
-//                'date_of_birth' => "---",
-//                'address' => "---",
-//                'profile_image' => "---",
-//                'id_user' => $user->id,
-//            ]
-//        );
-
-
         DB::table('model_has_roles')->insert(
             [
                 'role_id' => 2,
@@ -109,6 +98,14 @@ class RegisterController extends Controller
                 'model_id' => $user->id,
             ]
         );
+
+        $userProfile = new UserProfile();
+        $userProfile->profile_image="---";
+        $userProfile->full_name = $data['name'];
+        $userProfile->date_of_birth= "---";
+        $userProfile->address = "---";
+        $userProfile->id_user = $user->id;
+        $userProfile->save();
 
         return $user;
 
