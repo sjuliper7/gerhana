@@ -62,7 +62,7 @@
 
                          </div>
                          <div class="form-row">
-                             <div class="form-group col-md-6">
+                             <div class="form-group col-md-12">
                                  <label>Description</label>
                                  <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required></textarea>
                              </div>
@@ -70,7 +70,7 @@
                          <div class="form-row">
                              <div class="form-group col-md-12">
                                  <label for="comment">Story:</label>
-                                 <textarea class="form-control" rows="5" id="story" name="story"></textarea>
+                                 <textarea class="form-control" rows="5" id="story" name="story" placeholder="Story" required></textarea>
                              </div>
                          </div>
 
@@ -113,8 +113,11 @@
             $('#summernote').summernote({
                 placeholder: 'Hello bootstrap 4',
                 tabsize: 2,
-                height: 100,
-                width : 550,
+            });
+
+            $('#story').summernote({
+                placeholder: 'Buat Story',
+                tabsize: 2,
             });
 
 
