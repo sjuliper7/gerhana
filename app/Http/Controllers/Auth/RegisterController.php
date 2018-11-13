@@ -83,11 +83,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $user = new User();
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->password = bcrypt($data['password']);
-        $user->save();
+        $fields = [
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'password' => bcrypt($data['password']),
+        ];
+
+        $user = User::create($fields);
 
         DB::table('user_profiles')->insert(
             [
@@ -108,7 +110,7 @@ class RegisterController extends Controller
             ]
         );
 
-        return redirect('/');
+        return $user;
 
     }
 }
