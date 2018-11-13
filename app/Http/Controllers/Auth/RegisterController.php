@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\ModelHasRole;
+use Illuminate\Support\Facades\DB;
 use App\UserProfile;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use Validator;
@@ -84,38 +85,27 @@ class RegisterController extends Controller
 
 //        dd("Test!!");
 
-        $fields = [
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => bcrypt($data['password']),
-        ];
+//        $fields = [
+//            'name'     => $data['name'],
+//            'email'    => $data['email'],
+//            'password' => bcrypt($data['password']),
+//        ];
 
-//        if (config('auth.providers.users.field', 'email') === 'username' && isset($data['username'])) {
-//            $fields['username'] = $data['username'];
-//        }
+        $user = new User();
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = bcrypt($data['password']);
+        $user->save();
 
-        $user = User::create($fields);
-
-        $userId = $user->id;
-
-        $newRole = [
-            'role_id' => '2',
-            'model_type' => 'App\User',
-            'model_id' => $userId,
-        ];
-
-        $user->modelHasRoles = ModelHasRole::create($newRole);
-
-        $newProfile = [
-            'full_name' => '----',
-            'date_of_birth' => '----',
-            'address' => '----',
-            'profile_image' => '----',
-            'id_user' => $userId,
-        ];
-
-        $user->userProfiles = UserProfile::create($newProfile);
+        $profile = new UserProfile();
+        $profile->full_name = $data['name'];
+        $profile->date_of_birth = "---";
+        $profile->address = "---";
+        $profile->profile_image = "---";
+        $profile->id_user = $user->id;
+        $profile->save();
 
         return $user;
+
     }
 }
