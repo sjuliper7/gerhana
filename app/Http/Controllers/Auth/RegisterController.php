@@ -82,7 +82,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        dd("Test!!");
+//        dd("Test!!");
 
         $fields = [
             'name'     => $data['name'],
