@@ -18,8 +18,8 @@ class UserProfileController extends Controller
     {
         $user=Auth::user();
         $profiles = DB::table('user_profiles')
-            ->join('users','user_profiles.id_user','=','users.id')
-            ->select('user_profiles.*','users.*')
+//            ->join('users','user_profiles.id_user','=','users.id')
+//            ->select('user_profiles.*','users.*')
             ->where('id_user','=',Auth::user()->id)
             ->get();
         return view('adminlte::user-profile.index', compact('profiles'));
@@ -114,7 +114,7 @@ class UserProfileController extends Controller
 
         $profile->save();
 
-        return redirect()->route('profile.index',
+        return redirect()->route('user-profile.index',
             $profile->id)->with('flash_message',
             'Article, '. $profile->name.' updated');
     }
