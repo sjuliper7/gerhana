@@ -83,14 +83,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-//        dd("Test!!");
-
-//        $fields = [
-//            'name'     => $data['name'],
-//            'email'    => $data['email'],
-//            'password' => bcrypt($data['password']),
-//        ];
-
         $user = new User();
         $user->name = $data['name'];
         $user->email = $data['email'];
@@ -105,13 +97,21 @@ class RegisterController extends Controller
 //        $profile->id_user = $user->id;
 //        $profile->save();
 
-        $role = new ModelHasRole();
-        $role->role_id = 2;
-        $role->model_type = "App\User";
-        $role->model_id = $user->id;
-        $role->save();
+        DB::table('model_has_roles')->insert(
+            [
+                'role_id' => 2,
+                'model_type' => "App\User",
+                'model_id' => $user->id,
+            ]
+        );
 
-        return $user;
+//        $role = new ModelHasRole();
+//        $role->role_id = 2;
+//        $role->model_type = "App\User";
+//        $role->model_id = $user->id;
+//        $role->save();
+
+        return redirect('/');
 
     }
 }
