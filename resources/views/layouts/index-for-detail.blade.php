@@ -86,7 +86,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">BatakZone</a></div>
+                            <div class="logo"><a href="#" style="color: black">BatakZone</a></div>
                         </div>
                     </div>
 
@@ -364,7 +364,7 @@
                                 <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
                                 <button class="newsletter_button">Subscribe</button>
                             </form>
-                            <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
+                            {{--<div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>--}}
                         </div>
                     </div>
                 </div>

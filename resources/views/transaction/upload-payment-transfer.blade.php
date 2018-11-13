@@ -9,7 +9,7 @@
             </div>
 
             <div class="container col-8 mt-5 py-4" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                <form action="" method="POST">
+                <form action="" method="">
                     <div class="container form-group row">
                         <label for="idTransaction" class="container col-sm-3 col-form-label">ID Transaksi</label>
                         <div class="container col-8">

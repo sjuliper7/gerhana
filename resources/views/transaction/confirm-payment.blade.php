@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="container col-4 py-4">
-                    <form action="{{ url('/upload-payment') }}" method="POST" >
+                    <form action="{{ url('/upload-payment') }}" method="" >
                         <button type="submit" class="btn" style="background-color: darkred; color: white">Konfirmasi Pembayaran</button>
                     </form>
                 </div>
