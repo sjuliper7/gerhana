@@ -35,37 +35,61 @@
             <div class="col-sm-9 " style="margin-left: 5em">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <b><h5 class="card-title text-center">Daftar Sekarang</h5></b>
                         <p class="text-center font-weight-normal">Sudah punya akun BatakZone? <a
                                 href="{{ url('/login') }}"> Masuk</a></p><br>
-                        <form class="form-signin form-group">
 
+                        <form action="{{ url('/register') }}" method="post" class="form-signin form-group">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-label-group">
-                                <input type="nama" id="inputNama" style="width: 21em" class="rounded-0"
+                                <input type="text" name="name" id="inputNama" style="width: 21em" class="rounded-0"
                                        placeholder="Nama"
                                        required autofocus>
                                 <label for="inputNama">Nama</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="email" id="inputEmail" style="width: 21em" class="rounded-0"
+                                <input type="email" name="email" id="inputEmail" style="width: 21em" class="rounded-0"
                                        placeholder="Email address"
                                        required autofocus>
                                 <label for="inputEmail">Email address</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" style="width: 21em" class="rounded-0"
+                                <input type="password" name="password" id="inputPassword" style="width: 21em" class="rounded-0"
                                        placeholder="Password" required>
                                 <label for="inputPassword">Password</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputRePassword" style="width: 21em" class="rounded-0"
+                                <input type="password" name="password_confirmation" id="inputRePassword" style="width: 21em" class="rounded-0"
                                        placeholder="Retype-Password" required>
                                 <label for="inputRePassword">Retype-Password</label>
                             </div>
-
+                            <div class="form-label-group">
+                                <div class="col-xs-1">
+                                    <label>
+                                        <div class="checkbox_register icheck">
+                                            <label>
+                                                <input type="checkbox" name="terms">
+                                            </label>
+                                            <button type="button" class="btn btn-block btn-flat" data-toggle="modal" data-target="#termsModal">{{ trans('adminlte_lang::message.terms') }}</button>
+                                        </div>
+                                    </label>
+                                </div><!-- /.col -->
+                            </div>
 
                             <button class="btn btn-lg btn-primary btn-block text-uppercase rounded" type="submit">Daftar
                                 Sekarang

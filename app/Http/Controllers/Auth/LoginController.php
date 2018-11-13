@@ -23,6 +23,14 @@ class LoginController extends Controller
         attemptLogin as attemptLoginAtAuthenticatesUsers;
     }
 
+    protected function authenticated(Request $request, $user)
+    {
+        if ( $user->hasRole('Customer') ) {// do your margic here
+            return redirect()->route('landing-page');
+        }
+
+        return redirect('/home');
+    }
     /**
      * Show the application's login form.
      *
