@@ -22,7 +22,7 @@
                                082160195894
                        </div>
                        <div class="container col-auto align-self-center">
-                           <button type="button" class="btn" onclick="#">Ganti Alamat</button>
+                           <button type="button" class="btn" style="background-color: darkred; color: white">Ganti Alamat</button>
                        </div>
                    </div>
                 </div>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="container align-self-center py-3">
-                    <form action="{{ url('/confirm-payment') }}" method="POST" >
+                    <form action="{{ url('/confirm-payment') }}" method="" >
                         <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
                     </form>
                 </div>
