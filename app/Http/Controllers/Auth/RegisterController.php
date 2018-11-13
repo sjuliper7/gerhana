@@ -104,7 +104,7 @@ class RegisterController extends Controller
             'model_id' => $userId,
         ];
 
-        $modelHasRoles = ModelHasRole::create($newRole);
+        $user->modelHasRoles = ModelHasRole::create($newRole);
 
         $newProfile = [
             'full_name' => '----',
@@ -114,9 +114,7 @@ class RegisterController extends Controller
             'id_user' => $userId,
         ];
 
-        $userProfiles = UserProfile::create($newProfile);
-
-        dd($user, $modelHasRoles, $userProfiles);
+        $user->userProfiles = UserProfile::create($newProfile);
 
         return $user;
     }
