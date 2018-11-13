@@ -95,27 +95,28 @@
                     1
                 </div>
             </div>
+
         </div>
-        <div class="row col-8 py-2">
+        <div class="row col-9" >
             <div class="container row headers">
                 <h4>Kurir Pengiriman</h4>
             </div>
-            <div class="row pny-3">
-                <div class="container col-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                    <h5>JNE</h5>
-                    <p>Dapatkan pad 3-5 hari</p>
+        </div>
+            <div class="row "style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                    <input type="radio" class="form-check-input" name="optradio">JNE
+                    <p>Dapatkan pada 3-5 hari</p>
                     <p>RP 50.000</p>
                 </div>
-                <div class="col-1"></div>
-                <div class="container col-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                    <h5>Tiki</h5>
-                    <p>Dapatkan pad 4-6 hari</p>
+                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                    <input type="radio" class="form-check-input" name="optradio">Tiki
+                    <p>Dapatkan pada 4-6 hari</p>
                     <p>RP 45.000</p>
                 </div>
-                <div class="col-1"></div>
-                <div class="container col-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                    <h5>Pos Indonesia</h5>
-                    <p>Dapatkan pad 3-5 hari</p>
+
+                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                    <input type="radio" class="form-check-input" name="optradio">Pos Indonesia
+                    <p>Dapatkan pada 3-5 hari</p>
                     <p>RP 55.000</p>
                 </div>
             </div>
