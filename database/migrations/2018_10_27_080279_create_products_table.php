@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->string('images');
             $table->longText('description');
+            $table->longText('story');
             $table->integer('id_status')->unsigned();
             $table->integer('id_category')->unsigned();
             $table->integer('id_store')->unsigned();
