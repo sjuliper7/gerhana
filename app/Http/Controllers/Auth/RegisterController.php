@@ -83,19 +83,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $user = new User();
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->password = bcrypt($data['password']);
-        $user->save();
+        $fields = [
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'password' => bcrypt($data['password']),
+        ];
 
-//        $profile = new UserProfile();
-//        $profile->full_name = $data['name'];
-//        $profile->date_of_birth = "---";
-//        $profile->address = "---";
-//        $profile->profile_image = "---";
-//        $profile->id_user = $user->id;
-//        $profile->save();
+        $user = User::create($fields);
 
         DB::table('model_has_roles')->insert(
             [
@@ -105,7 +99,15 @@ class RegisterController extends Controller
             ]
         );
 
-        return redirect('/');
+//        $userProfile = new UserProfile();
+//        $userProfile->profile_image="---";
+//        $userProfile->full_name = $data['name'];
+//        $userProfile->date_of_birth= "---";
+//        $userProfile->address = "---";
+//        $userProfile->id_user = $user->id;
+//        $userProfile->save();
+
+        return $user;
 
     }
 }
