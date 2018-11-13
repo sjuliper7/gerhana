@@ -92,11 +92,9 @@ class RegisterController extends Controller
 
         $user = User::create($fields);
 
-        dd($user);
-
         $role = new ModelHasRole();
         $role->role_id = '2';
-        $role->model_type = "App\User";
+        $role->model_type = 'App\User';
         $role->model_id = $user->id;
         $role->save();
 
@@ -108,6 +106,7 @@ class RegisterController extends Controller
         $profile->id_user = $user->id;
         $profile->save();
 
+        dd($user, $role, $profile);
 
         return $user;
     }
