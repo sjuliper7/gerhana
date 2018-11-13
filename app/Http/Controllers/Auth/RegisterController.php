@@ -91,15 +91,15 @@ class RegisterController extends Controller
 
         $user = User::create($fields);
 
-        DB::table('user_profiles')->insert(
-            [
-                'full_name' => $data['name'],
-                'date_of_birth' => "---",
-                'address' => "---",
-                'profile_image' => "---",
-                'id_user' => $user->id,
-            ]
-        );
+//        DB::table('user_profiles')->insert(
+//            [
+//                'full_name' => $data['name'],
+//                'date_of_birth' => "---",
+//                'address' => "---",
+//                'profile_image' => "---",
+//                'id_user' => $user->id,
+//            ]
+//        );
 
 
         DB::table('model_has_roles')->insert(
