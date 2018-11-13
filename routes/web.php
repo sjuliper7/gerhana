@@ -52,6 +52,8 @@ Route::resource('status-stores','StatusStoreController');
 
 Route::resource('request-stores','RequestStoreController');
 
+Route::POST('cancel-request','RequestStoreController@cancelRequest');
+
 Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');

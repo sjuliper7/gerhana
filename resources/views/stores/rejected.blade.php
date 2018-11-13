@@ -130,58 +130,18 @@
 
 @section('content')
 
-    <div class="home">
-        <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
-        <div class="home_overlay"></div>
-        <div class="home_content d-flex flex-column align-items-center justify-content-center">
-            <h2 class="home_title">{{$store->store_name}}</h2>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-10 mx-auto" >
+                <div class="card bg-danger">
+                    <div class="card-header text-center">
+                        <p class="text-white">Permohonan Anda Ditolak</p>
+                        <p class="text-white">Comment :  {{$requestStore->comment}}</p>
+                    </div>
+                </div>
+                <p class="text-bold text-center" style="margin-top: 20px"><a href="{{url('/request-stores/create')}}">Request Store</a></p>
+            </div>
         </div>
     </div>
-
-
-
-    <div class="container-py-3">
-        <div class="row"style="margin: 1em">
-
-            <div class="col">
-                <img src="images/shop.png" class="rounded mx-auto d-block" alt="...">
-            </div>
-
-        </div>
-
-        <div class="row"style="margin-top: 1em">
-            <div class="col text-center">
-                <b><h4>Toko anda sudah aktif </h4></b>
-                <h5>Jangan sampai toko Anda kosong begitu saja.</h5>
-                <h5>Tambahkan produk pertamamu,dan mulai berjualan</h5>
-                <h5>sekarang.</h5>
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-
-                </div>
-                <div class="col-md-4">
-                    <a href="/owner-product"> <button type="button" class="btn btn-danger btn-lg btn-block">Tambah Produk</button></a>
-                </div>
-                <div class="col-md-4">
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-
-
-
-
-
 
 @endsection

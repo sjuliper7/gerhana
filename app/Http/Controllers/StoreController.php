@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\RequestStore;
 use App\StatusStore;
 use App\Store;
 use Illuminate\Http\Request;
@@ -18,11 +19,20 @@ class StoreController extends Controller
         if(Auth::user()->requestStore == null){
             return redirect('request-stores/create');
         }else{
-            if(Auth::user()->requestStore->status->name === "PENDING"){
+            $request = Auth::user()->requestStore;
+
+            if($request[count($request)-1]->status->name === "PENDING"){
                 return view('stores.pending');
             }else{
-                $store = Auth::user()->store;
-                return view('stores.my-store',compact('store'));
+                if($request[count($request)-1]->status->name === "REJECTED"){
+                    $requestStore = $request[count($request)-1];
+                    return view('stores.rejected',compact('requestStore'));
+                }else{
+                    $store = Auth::user()->store;
+                    $products = $store->products;
+
+                    return view('owner-product.index',compact('products'));
+                }
             }
 
         }

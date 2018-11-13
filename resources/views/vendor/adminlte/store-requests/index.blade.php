@@ -37,7 +37,15 @@
                         <td>{{ $store->created_at->format('F d, Y h:ia') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
 
                         <td>
-                            <a href="{{ route('request-stores.show', $store->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
+                            @if($store->status->name === "PENDING")
+                                <a href="{{ route('request-stores.show', $store->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
+                            @else
+                                @if($store->status->name === "REJECTED")
+                                    <p class="text-danger text-bold">{{$store->status->name}}</p>
+                                @else
+                                    <p class="text-success text-bold">{{$store->status->name}}</p>
+                                @endif
+                            @endif
                         </td>
                     </tr>
                 @endforeach
