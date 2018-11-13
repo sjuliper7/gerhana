@@ -89,13 +89,16 @@ class RegisterController extends Controller
         $user->password = bcrypt($data['password']);
         $user->save();
 
-//        $profile = new UserProfile();
-//        $profile->full_name = $data['name'];
-//        $profile->date_of_birth = "---";
-//        $profile->address = "---";
-//        $profile->profile_image = "---";
-//        $profile->id_user = $user->id;
-//        $profile->save();
+        DB::table('user_profiles')->insert(
+            [
+                'full_name' => $data['name'],
+                'date_of_birth' => "---",
+                'address' => "---",
+                'profile_image' => "---",
+                'id_user' => $user->id,
+            ]
+        );
+
 
         DB::table('model_has_roles')->insert(
             [
