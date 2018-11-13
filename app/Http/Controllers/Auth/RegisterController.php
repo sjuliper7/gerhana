@@ -97,13 +97,19 @@ class RegisterController extends Controller
         $user->password = bcrypt($data['password']);
         $user->save();
 
-        $profile = new UserProfile();
-        $profile->full_name = $data['name'];
-        $profile->date_of_birth = "---";
-        $profile->address = "---";
-        $profile->profile_image = "---";
-        $profile->id_user = $user->id;
-        $profile->save();
+//        $profile = new UserProfile();
+//        $profile->full_name = $data['name'];
+//        $profile->date_of_birth = "---";
+//        $profile->address = "---";
+//        $profile->profile_image = "---";
+//        $profile->id_user = $user->id;
+//        $profile->save();
+
+        $role = new ModelHasRole();
+        $role->role_id = 2;
+        $role->model_type = "App\User";
+        $role->model_id = $user->id;
+        $role->save();
 
         return $user;
 
