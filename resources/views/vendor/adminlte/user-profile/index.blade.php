@@ -13,8 +13,9 @@
                         <thead>
                         <thead>
                         <tr>
-                            <td>ID</td><td>:</td><td>{{$user->id_user}}</td>
+                            <td>ID</td><td>:</td><td>{{Auth::user()->id}}</td>
                         </tr>
+
                         <tr>
                             <td>ID profile</td><td>:</td><td>{{$profile->id}}</td>
                         </tr>
@@ -32,6 +33,7 @@
                             <td>Tanggal Lahir</td><td>:</td><td>{{$profile->date_of_birth}}</td>
                         </tr>
                         <tr>
+
                             <td>Image Profile</td><td>:</td><td>{{$profile->profile_image}}</td>
                         </tr>
                         <tr>
