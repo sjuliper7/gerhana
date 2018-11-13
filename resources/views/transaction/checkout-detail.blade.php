@@ -15,15 +15,12 @@
                 </div>
                 <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
                    <div class="row">
-                       <div class="container col-8 py-3 align-self-center">
-                               Irene Deborah Panjaitan<br>
-                               Institut Teknologi Del, Laguboti<br>
-                               Kab. Toba Samosir, Sumatera Utara<br>
-                               082160195894
+                       <div class="container col-lg-12   py-3 align-self-center">
+                               <textarea class="form-control" placeholder="Alamat"></textarea>
                        </div>
-                       <div class="container col-auto align-self-center">
-                           <button type="button" class="btn" style="background-color: darkred; color: white">Ganti Alamat</button>
-                       </div>
+                       {{--<div class="container col-auto align-self-center">--}}
+                           {{--<button type="button" class="btn" style="background-color: darkred; color: white">Ganti Alamat</button>--}}
+                       {{--</div>--}}
                    </div>
                 </div>
             </div>
