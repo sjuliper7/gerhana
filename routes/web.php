@@ -56,7 +56,11 @@ Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
 
-Route::resource('transaction','TransactionController');
+Route::get('/checkout-detail','TransactionController@checkoutDetail');
+
+Route::get('/upload-payment','TransactionController@uploadPayment');
+
+Route::get('/confirm-payment','TransactionController@confirmPayment');
 
 Route::get('buy/{name}','LandingPageController@buyProduct');
 

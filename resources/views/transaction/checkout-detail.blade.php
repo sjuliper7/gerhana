@@ -60,7 +60,9 @@
                     </div>
                 </div>
                 <div class="container align-self-center py-3">
-                    <button type="button" class="btn btn-block" onclick="#">Bayar</button>
+                    <form action="{{ url('/confirm-payment') }}" method="POST" >
+                        <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
+                    </form>
                 </div>
             </div>
         </div>

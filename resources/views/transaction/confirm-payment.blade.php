@@ -8,9 +8,9 @@
                 <h2>Pembayaran</h2>
             </div>
 
-            <div class="container col-8 mt-5 py-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+            <div class="container col-8 mt-5 py-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12); min-width: 576px">
                 <div class="container">
-                    <label class="shadow p-3 rounded">
+                    <label class="p-3 container text-center">
                         Silahkan lakukan pembayaran via bank transfer ke salah satu nomor rekening berikut.
                     </label>
 
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="container col-4 py-4">
-                    <form action="{{ url('transaction/create') }}" method="" >
+                    <form action="{{ url('/upload-payment') }}" method="POST" >
                         <button type="submit" class="btn" style="background-color: darkred; color: white">Konfirmasi Pembayaran</button>
                     </form>
                 </div>
