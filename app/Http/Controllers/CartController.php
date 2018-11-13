@@ -23,9 +23,14 @@ class CartController extends Controller
         }else{
             $total = 0;
             $carts = Session::get('carts');
-            foreach ($carts as $cart){
-                $total += $cart->sub_total_price;
+            if($carts !== null){
+                foreach ($carts as $cart){
+                    $total += $cart->sub_total_price;
+                }
+            }else{
+                $carts = array();
             }
+
             return view('cart',compact('carts', 'total'));
         }
     }
