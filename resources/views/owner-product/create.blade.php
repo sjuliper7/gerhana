@@ -67,6 +67,13 @@
                                  <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required></textarea>
                              </div>
                          </div>
+                         <div class="form-row">
+                             <div class="form-group col-md-12">
+                                 <label for="comment">Story:</label>
+                                 <textarea class="form-control" rows="5" id="story" name="story"></textarea>
+                             </div>
+                         </div>
+
 
                          <div style="float: right;margin-bottom: 20px">
                              <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
@@ -109,6 +116,7 @@
                 height: 100,
                 width : 550,
             });
+
 
             var i=1;
             $('#more').click(function(){
