@@ -41,6 +41,13 @@
                         <form class="form-signin form-group">
 
                             <div class="form-label-group">
+                                <input type="nama" id="inputNama" style="width: 21em" class="rounded-0"
+                                       placeholder="Nama"
+                                       required autofocus>
+                                <label for="inputNama">Nama</label>
+                            </div>
+
+                            <div class="form-label-group">
                                 <input type="email" id="inputEmail" style="width: 21em" class="rounded-0"
                                        placeholder="Email address"
                                        required autofocus>
@@ -51,6 +58,12 @@
                                 <input type="password" id="inputPassword" style="width: 21em" class="rounded-0"
                                        placeholder="Password" required>
                                 <label for="inputPassword">Password</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputRePassword" style="width: 21em" class="rounded-0"
+                                       placeholder="Retype-Password" required>
+                                <label for="inputRePassword">Retype-Password</label>
                             </div>
 
 
