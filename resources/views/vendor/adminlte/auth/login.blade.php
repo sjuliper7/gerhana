@@ -3,33 +3,36 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}">
-    <link rel="stylesheet" type="text/css"
-          href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
-
+    <div class="text-center" style="margin-top: 0em">
+        <a href="{{ url('/home') }}">
+            <img src="images/tittle.png" alt="Responsive image" style="width: 15%;height: 15%">
+        </a>
+    </div>
 </head>
 
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="text-center" style="margin-top: 15em">
+            <div class="text-center" style="margin-top: 5em">
                 <a href="{{ url('/home') }}">
-                    <img src="images/login.png" alt="Responsive image" style="width: 50%;height: 50%">
+                    <img src="images/new_login.png" alt="Responsive image" style="width: 80%;height: 80%">
                 </a>
-                <b></b>
-                <h3> Selamat Datang di BatakZone</h3></b>
-                <h5>Masuk dan penuhi berbagai kebutuhanmu disini</h5>
+                <h3> Selamat datang di BatakZone</h3></b>
+                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini</h5>
 
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="row">
-                <div class="col-sm-9 ">
+                <div class="col-sm-9 " style="margin-left: 5em">
                     <div class="card card-signin my-5" >
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
+                            <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
                             <form class="form-signin form-group">
 
                                 <div class="form-label-group">
@@ -47,14 +50,13 @@
                                 <div class="form-group">
                                     <div class="form-check" style="margin-left: 25px">
                                         <input type="checkbox" class="form-check-input " id="exampleCheck1" >
-                                        <label class="form-check-label" for="exampleCheck1" style="padding-left: 0px">Check
-                                            me out</label>
+                                        <label class="form-check-label" for="exampleCheck1" style="padding-left: 0px">Remember me </label>
                                     </div>
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase rounded" type="submit">Sign in
                                 </button>
 
-                                <hr class="my-4">
+                                <hr class="my-2">
 
                                 <button class="btn btn-lg btn-google btn-block text-uppercase rounded" type="submit"
                                         style="background: #ea4335"><i class="fab fa-google mr-2"></i> Sign in with
