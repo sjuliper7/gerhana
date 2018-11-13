@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\ModelHasRole;
 use App\UserProfile;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -92,21 +93,27 @@ class RegisterController extends Controller
 
         $user = User::create($fields);
 
-        $role = new ModelHasRole();
-        $role->role_id = '2';
-        $role->model_type = 'App\User';
-        $role->model_id = $user->id;
-        $role->save();
+        $userId = $user->id;
 
-        $profile = new UserProfile();
-        $profile->full_name = '---';
-        $profile->date_of_birth = '---';
-        $profile->address = '---';
-        $profile->profile_image = '---';
-        $profile->id_user = $user->id;
-        $profile->save();
+        $newRole = [
+            'role_id' => '2',
+            'model_type' => 'App\User',
+            'model_id' => $userId,
+        ];
 
-        dd($user, $role, $profile);
+        $modelHasRoles = ModelHasRole::create($newRole);
+
+        $newProfile = [
+            'full_name' => '----',
+            'date_of_birth' => '----',
+            'address' => '----',
+            'profile_image' => '----',
+            'id_user' => $userId,
+        ];
+
+        $userProfiles = UserProfile::create($newProfile);
+
+        dd($user, $modelHasRoles, $userProfiles);
 
         return $user;
     }
