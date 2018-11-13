@@ -27,13 +27,13 @@
                         <div class="product_category">{{$product->category->name}}</div>
                         <div class="product_name">{{$product->name}}</div>
                         <div class="product_text"><p>{!! $product->description !!}</p></div>
-                        <div class="order_info d-flex flex-row">
+                        <div class="order_info d-flex flex-row col-md-12">
                             <form action="{{url('/carts')}}" method="POST">
                                 {{ csrf_field() }}
                                 <div class="clearfix" style="z-index: 1000;">
                                     <input type="text" value="{{$product->id}}" name="id_product" hidden>
                                     <!-- Product Quantity -->
-                                    <div class="product_quantity clearfix">
+                                    <div class="product_quantity clearfix" style="margin-bottom: 40px">
                                         <span>Quantity: </span>
                                         <input id="quantity_input" name="quantity" type="text" pattern="[0-9]*" value="1">
                                         <div class="quantity_buttons">
@@ -41,9 +41,10 @@
                                             <div id="quantity_dec_button" class="quantity_dec quantity_control" onclick="down()"><i class="fas fa-chevron-down"></i></div>
                                         </div>
                                     </div>
-
                                 </div>
-
+                                <div>
+                                    <textarea class="form-control" placeholder="Catatan Untuk Penjual"></textarea>
+                                </div>
                                 <div class="product_price" id="price">Rp {{number_format($product->price)}}</div>
                                 <div class="button_container">
                                     <input type="submit" value="Add to Cart" class="button cart_button">
