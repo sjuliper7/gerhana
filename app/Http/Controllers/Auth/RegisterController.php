@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\ModelHasRole;
+use App\UserProfile;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -83,11 +85,29 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ];
+
 //        if (config('auth.providers.users.field', 'email') === 'username' && isset($data['username'])) {
 //            $fields['username'] = $data['username'];
 //        }
 
         $user = User::create($fields);
+
+        dd($user);
+
+        $role = new ModelHasRole();
+        $role->role_id = '2';
+        $role->model_type = "App\User";
+        $role->model_id = $user->id;
+        $role->save();
+
+        $profile = new UserProfile();
+        $profile->full_name = '---';
+        $profile->date_of_birth = '---';
+        $profile->address = '---';
+        $profile->profile_image = '---';
+        $profile->id_user = $user->id;
+        $profile->save();
+
 
         return $user;
     }
