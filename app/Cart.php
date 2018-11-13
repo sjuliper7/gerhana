@@ -8,6 +8,7 @@ class Cart extends Model
 {
     protected $fillable = [
         'quantity', 'sub_total_price', 'is_active', 'id_product','id_user',
+        'comment',
     ];
 
     public function user(){
