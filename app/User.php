@@ -49,11 +49,6 @@ class User extends Authenticatable
         return $this->hasOne('App\UserProfile','id_user');
     }
 
-    public function userRole()
-    {
-        return $this->hasOne('App\ModelHasRole','model_id');
-    }
-
     public function userStatus()
     {
         return $this->hasOne('App\UserStatus','id_user');

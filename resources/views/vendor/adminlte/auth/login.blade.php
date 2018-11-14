@@ -18,10 +18,10 @@
         <div class="col-md-6">
             <div class="text-center" style="margin-top: 5em">
                 <a href="{{ url('/home') }}">
-                    <img src="images/new_login.png" alt="Responsive image" style="width: 80%;height: 80%">
+                    <img src="images/new_login.png" alt="Responsive image" style="width: 100%;height: 100%">
                 </a>
                 <h3> Selamat datang di BatakZone</h3></b>
-                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini</h5>
+                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini.</h5>
 
             </div>
         </div>
@@ -33,16 +33,16 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
                             <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
-                            <form class="form-signin form-group">
-
+                            <form class="form-signin form-group" action="{{ url('/login') }}" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-label-group">
-                                    <input type="email" id="inputEmail" style="width: 21em" class="rounded-0" placeholder="Email address"
+                                    <input type="email" id="inputEmail" name="email" style="width: 21em" class="rounded-0" placeholder="Email address"
                                            required autofocus>
                                     <label for="inputEmail">Email address</label>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputPassword" style="width: 21em" class="rounded-0"
+                                    <input type="password" id="inputPassword" name="password" style="width: 21em" class="rounded-0"
                                            placeholder="Password" required>
                                     <label for="inputPassword">Password</label>
                                 </div>
