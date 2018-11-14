@@ -57,7 +57,7 @@ class ProductController extends Controller
         $product->save();
 
         //Display a successful message upon save
-        return redirect()->route('products.index')
+        return redirect()->route('my-store')
             ->with('flash_message', 'Product,
              '. $product->name.' created');
 
