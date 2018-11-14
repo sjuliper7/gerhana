@@ -79,3 +79,9 @@ Route::resource('user-types','UserTypeController');
 Route::resource('user-status','UserStatusController');
 
 Route::resource('user-profile','UserProfileController');
+
+Route::get('get-provinces','RajaOngkirController@getProvince');
+
+Route::get('get-cities','RajaOngkirController@getCity');
+
+Route::get('estimate-cost','RajaOngkirController@estimateCost');
