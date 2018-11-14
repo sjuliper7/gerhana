@@ -69,3 +69,5 @@ Route::POST('carts','CartController@addToCart');
 Route::get('carts','CartController@index');
 
 Route::POST('/update-quantity','CartController@toUpdateQuantity');
+
+Route::get('checkout','CheckoutController@index');
