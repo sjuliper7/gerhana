@@ -82,11 +82,14 @@
                                 <div class="col-xs-1">
                                     <label>
                                         <div class="checkbox_register icheck">
-                                            <label>
+
                                                 <input type="checkbox" name="terms">
-                                            </label>
-                                            <button type="button" class="btn btn-block btn-flat" data-toggle="modal" data-target="#termsModal">{{ trans('adminlte_lang::message.terms') }}</button>
+                                                <button type="button" class=" text-center btn btn-outline-light text-dark" data-toggle="modal" data-target="#termsModal">{{ trans('adminlte_lang::message.terms') }}</button>
+
+
                                         </div>
+
+
                                     </label>
                                 </div><!-- /.col -->
                             </div>
