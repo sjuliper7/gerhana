@@ -52,6 +52,8 @@ Route::resource('status-stores','StatusStoreController');
 
 Route::resource('request-stores','RequestStoreController');
 
+Route::POST('cancel-request','RequestStoreController@cancelRequest');
+
 Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
@@ -71,3 +73,9 @@ Route::get('carts','CartController@index');
 Route::POST('/update-quantity','CartController@toUpdateQuantity');
 
 Route::get('checkout','CheckoutController@index');
+
+Route::resource('user-types','UserTypeController');
+
+Route::resource('user-status','UserStatusController');
+
+Route::resource('user-profile','UserProfileController');

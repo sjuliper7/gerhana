@@ -2,44 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\RequestStore;
-use App\StatusStore;
-use App\Store;
+use App\UserStatus;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class StoreController extends Controller
+class UserStatusController extends Controller
 {
-
-    public function __construct() {
-        $this->middleware(['auth', 'isCustomer']);//isAdmin middleware lets only users with a //specific permission permission to access these resources
-    }
-
-    public function myStore(){
-        if(Auth::user()->requestStore == null){
-            return redirect('request-stores/create');
-        }else{
-            $request = Auth::user()->requestStore;
-
-            if($request[count($request)-1]->status->name === "PENDING"){
-                return view('stores.pending');
-            }elseif(Auth::user()->requestStore->status->name === "REJECTED"){
-                return view('stores.pending');
-            }else{
-                if($request[count($request)-1]->status->name === "REJECTED"){
-                    $requestStore = $request[count($request)-1];
-                    return view('stores.rejected',compact('requestStore'));
-                }else{
-                    $store = Auth::user()->store;
-                    $products = $store->products;
-
-                    return view('owner-product.index',compact('products'));
-                }
-            }
-
-        }
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +14,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        $userStatuss = UserStatus::orderby('id', 'desc')->get();
+        return view('adminlte::user-status.index', compact('userStatuss'));
     }
 
     /**
@@ -57,7 +25,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-
+        return view('adminlte::user-status.create');
     }
 
     /**
@@ -66,9 +34,17 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+        $userStatus= new UserStatus();
+        $userStatus->name = $request['name'];
+
+        $userStatus->save();
+
+        return redirect()->route('user-status.index')
+            ->with('flash_message', 'Tipe User,
+             '. $userStatus->name.' created');
     }
 
     /**
@@ -90,7 +66,9 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userStatus= UserStatus::findOrFail($id);
+        return view('adminlte::user-status.edit',compact('userStatus'));
+
     }
 
     /**
@@ -102,7 +80,14 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userStatus = UserStatus::findOrFail($id);
+        $userStatus->name = $request['name'];
+
+        $userStatus->save();
+
+        return redirect()->route('user-status.index',
+            $userStatus->id)->with('flash_message',
+            'Status, '. $userStatus->name.' updated');
     }
 
     /**
@@ -113,6 +98,11 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userStatus = UserStatus::findOrFail($id);
+        $userStatus ->delete();
+
+        return redirect()->route('user-status.index')
+            ->with('flash-message',
+                    'UserStatus successfully deleted');
     }
 }

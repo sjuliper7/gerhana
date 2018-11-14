@@ -32,6 +32,7 @@ class OwnerProductController extends Controller
         $product->price = $request['price'];
         $product->stock = $request['stock'];
         $product->description = $request['description'];
+        $product->story = $request['story'];
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
         $product->id_store = $store->id;
@@ -70,6 +71,7 @@ class OwnerProductController extends Controller
         $product->price = $request['price'];
         $product->stock = $request['stock'];
         $product->description = $request['description'];
+        $product->story = $request['story'];
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
 

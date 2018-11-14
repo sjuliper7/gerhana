@@ -30,6 +30,7 @@
                 <p class="lead text-success">Category  : {{ $product->category->name}} </p>
                 <p class="lead text-success">Status  : {{ $product->status->name}} </p>
                 <p class="small">Desc  : {!! $product->description !!} </p>
+                <p class="small">Story  : {!! $product->story !!} </p>
 
 
                 <hr>

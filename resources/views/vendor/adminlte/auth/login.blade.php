@@ -1,44 +1,84 @@
-@extends('adminlte::layouts.auth')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('htmlheader_title')
-    Log in
-@endsection
+<head>
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
+    <div class="text-center" style="margin-top: 0em">
+        <a href="{{ url('/home') }}">
+            <img src="images/tittle.png" alt="Responsive image" style="width: 15%;height: 15%">
+        </a>
+    </div>
+</head>
 
-@section('content')
-<body class="hold-transition login-page">
-    <div id="app" v-cloak>
-        <div class="login-box">
-            <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>Batak</b>Zone</a>
-            </div><!-- /.login-logo -->
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center" style="margin-top: 5em">
+                <a href="{{ url('/home') }}">
+                    <img src="images/new_login.png" alt="Responsive image" style="width: 100%;height: 100%">
+                </a>
+                <h3> Selamat datang di BatakZone</h3></b>
+                <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini.</h5>
 
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
             </div>
-        @endif
+        </div>
 
-        <div class="login-box-body">
-        <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-9 " style="margin-left: 5em">
+                    <div class="card card-signin my-5" >
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sign In</h5>
+                            <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
+                            <form class="form-signin form-group" action="{{ url('/login') }}" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="form-label-group">
+                                    <input type="email" id="inputEmail" name="email" style="width: 21em" class="rounded-0" placeholder="Email address"
+                                           required autofocus>
+                                    <label for="inputEmail">Email address</label>
+                                </div>
 
-        <login-form name="{{ config('auth.providers.users.field','email') }}"
-                    domain="{{ config('auth.defaults.domain','') }}"></login-form>
+                                <div class="form-label-group">
+                                    <input type="password" id="inputPassword" name="password" style="width: 21em" class="rounded-0"
+                                           placeholder="Password" required>
+                                    <label for="inputPassword">Password</label>
+                                </div>
 
+                                <div class="form-group">
+                                    <div class="form-check" style="margin-left: 25px">
+                                        <input type="checkbox" class="form-check-input " id="exampleCheck1" >
+                                        <label class="form-check-label" for="exampleCheck1" style="padding-left: 0px">Remember me </label>
+                                    </div>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase rounded" type="submit">Sign in
+                                </button>
 
+                                <hr class="my-2">
 
-        <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br>
-        <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
-
+                                <button class="btn btn-lg btn-google btn-block text-uppercase rounded" type="submit"
+                                        style="background: #ea4335"><i class="fab fa-google mr-2"></i> Sign in with
+                                    Google
+                                </button>
+                                <button class="btn btn-lg btn-facebook btn-block text-uppercase rounded" type="submit"><i
+                                        class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    </div>
-    </div>
-    @include('adminlte::layouts.partials.scripts_auth')
+</div>
+
+<script src="{!! asset('template/js/jquery-3.3.1.min.js') !!}"></script>
+<script src="{!! asset('template/js/bootstrap.bundle.min.js') !!}"></script>
+
 </body>
+</html>
 
-@endsection
+

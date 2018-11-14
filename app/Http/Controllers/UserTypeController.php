@@ -2,44 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\RequestStore;
-use App\StatusStore;
-use App\Store;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\UserType;
 
-class StoreController extends Controller
+class UserTypeController extends Controller
 {
-
-    public function __construct() {
-        $this->middleware(['auth', 'isCustomer']);//isAdmin middleware lets only users with a //specific permission permission to access these resources
-    }
-
-    public function myStore(){
-        if(Auth::user()->requestStore == null){
-            return redirect('request-stores/create');
-        }else{
-            $request = Auth::user()->requestStore;
-
-            if($request[count($request)-1]->status->name === "PENDING"){
-                return view('stores.pending');
-            }elseif(Auth::user()->requestStore->status->name === "REJECTED"){
-                return view('stores.pending');
-            }else{
-                if($request[count($request)-1]->status->name === "REJECTED"){
-                    $requestStore = $request[count($request)-1];
-                    return view('stores.rejected',compact('requestStore'));
-                }else{
-                    $store = Auth::user()->store;
-                    $products = $store->products;
-
-                    return view('owner-product.index',compact('products'));
-                }
-            }
-
-        }
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +14,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        $userTypes = UserType::orderby('id', 'desc')->get();
+
+        return view('adminlte::user-types.index', compact('userTypes'));
     }
 
     /**
@@ -55,10 +24,12 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-
+        return view('adminlte::user-types.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -68,7 +39,14 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userType = new UserType();
+        $userType->name = $request['name'];
+
+        $userType->save();
+
+        return redirect()->route('user-types.index')
+            ->with('flash_message', 'User Type,
+             '. $userType->name.' created');
     }
 
     /**
@@ -90,7 +68,8 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userType = UserType::findOrFail($id);
+        return view ('adminlte::user-types.edit', compact('userType'));
     }
 
     /**
@@ -102,7 +81,14 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $UserType = UserType::findOrFail($id);
+        $UserType->name = $request['name'];
+
+        $UserType->save();
+
+        return redirect()->route('user-types.index',
+            $UserType->id)->with('flash_message',
+            'Status, '. $UserType->name.' updated');
     }
 
     /**
@@ -113,6 +99,13 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userType = UserType::findOrFail($id);
+        $userType ->delete();
+
+        return redirect()->route('user-types.index')
+                ->with('flash-message',
+                    'User Type successfully deleted');
+
     }
+
 }

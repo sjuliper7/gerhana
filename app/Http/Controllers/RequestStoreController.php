@@ -17,8 +17,7 @@ class RequestStoreController extends Controller
      */
     public function index()
     {
-        $status = StatusStore::where('name','PENDING')->firstOrFail();
-        $stores = RequestStore::where('id_status',$status->id )->orderby('id', 'desc')->get();
+        $stores = RequestStore::orderby('id', 'desc')->get();
         return view('adminlte::store-requests.index',compact('stores'));
     }
 
@@ -147,5 +146,19 @@ class RequestStoreController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function cancelRequest(Request $request){
+
+        $status = StatusStore::where('name','REJECTED')->firstOrFail();
+        $requestStore = RequestStore::findOrFail($request->requestID);
+
+        $requestStore->id_status = $status->id;
+        $requestStore->comment = $request->comment;
+
+        $requestStore->update();
+
+        return "/request-stores";
     }
 }

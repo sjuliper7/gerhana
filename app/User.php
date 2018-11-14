@@ -35,10 +35,26 @@ class User extends Authenticatable
 
     public function requestStore()
     {
-        return $this->hasOne('App\RequestStore','id_user');
+        return $this->hasMany('App\RequestStore','id_user');
     }
 
     public function carts(){
         return$this->hasMany('App\Cart','id_user');
     }
+
+    public function userType()
+    {
+        return $this->hasOne('App\UserType','id_user');
+    }
+
+    public function userProfile()
+    {
+        return $this->hasOne('App\UserProfile','id_user');
+    }
+
+    public function userStatus()
+    {
+        return $this->hasOne('App\UserStatus','id_user');
+    }
+
 }

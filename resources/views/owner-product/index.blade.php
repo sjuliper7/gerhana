@@ -5,7 +5,7 @@
         <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
         <div class="home_overlay"></div>
         <div class="home_content d-flex flex-column align-items-center justify-content-center">
-            <h2 class="home_title">My Products</h2>
+            <h2 class="home_title">Toko</h2>
         </div>
     </div>
 
@@ -34,11 +34,30 @@
                 </div>
 
                 <div class="col-lg-9">
+                    <div class="row">
+                    <div class="col-sm-2"style="margin-left:-1em">
+                        <img src="images/shop.png" class="img-thumbnail" alt="...">
+                    </div>
+                    <div class="col-sm-7">
+                        <h3>Toko TB Silalahi</h3>
+                        <h5>johanlbatu@gmail.com</h5>
+                        <h5> Laguboti, Kab. Toba Samosir, Sumatra Utara</h5>
+                    </div>
+                    </div>
 
                     <!-- Shop Content -->
 
+
                     <div class="shop_content">
-                        <a class="btn btn-info" href="{{url('owner-products/create')}}">Create Product</a>
+                        <div class="row"style="margin-top: 1em">
+                            <button type="button" class="btn btn-primary"style="margin: 0.5em">Menu 1</button>
+                            <button type="button" class="btn btn-secondary"style="margin: 0.5em">Menu 2</button>
+                            <button type="button" class="btn btn-success"style="margin: 0.5em">Menu 3</button>
+                            <a href="{{url('owner-products/create')}}">
+                                <button type="button" class="btn btn-primary"style="margin: 0.5em">Create Product</button>
+                                </a>
+                        </div>
+
                         <div class="shop_bar clearfix">
                             <div class="shop_product_count"><span>186</span> products found</div>
                             <div class="shop_sorting">
@@ -58,7 +77,6 @@
 
                         <div class="product_grid">
                             <div class="product_grid_border"></div>
-
 
                             @foreach($products as $product)
                                 <?php
