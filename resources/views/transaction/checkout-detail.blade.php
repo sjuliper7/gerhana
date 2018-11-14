@@ -35,7 +35,7 @@
                                 Total Harga (1 Barang)
                             </div>
                             <div class="col-auto">
-                                Rp 935.000
+                                Rp {{number_format($total)}}
                             </div>
                         </div>
                         <div class="row py-2">
@@ -43,7 +43,7 @@
                                 Biaya Pengiriman
                             </div>
                             <div class="col-auto">
-                                Rp 50.000
+                                -
                             </div>
                         </div>
                         <div class="row py-2">
@@ -51,7 +51,7 @@
                                 Total Belanja
                             </div>
                             <div class="col-auto">
-                                Rp 985.000
+                                Rp {{number_format($total)}}
                             </div>
                         </div>
                     </div>
@@ -63,10 +63,35 @@
                 </div>
             </div>
         </div>
-        <div class="row py-2">
+
+        <div class="row col-9" >
+            <div class="container row headers">
+                <h4>Kurir Pengiriman</h4>
+            </div>
+        </div>
+        <div class="row "style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                <input type="radio" class="form-check-input" name="optradio">JNE
+                <p>Dapatkan pada 3-5 hari</p>
+                <p>RP 50.000</p>
+            </div>
+            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                <input type="radio" class="form-check-input" name="optradio">Tiki
+                <p>Dapatkan pada 4-6 hari</p>
+                <p>RP 45.000</p>
+            </div>
+
+            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
+                <input type="radio" class="form-check-input" name="optradio">Pos Indonesia
+                <p>Dapatkan pada 3-5 hari</p>
+                <p>RP 55.000</p>
+            </div>
+        </div>
+
+        <div class="row py-4" >
             <div class="container row py-2">
                 <div class="header col-2">
-                    <h4>Semua Barang(1)</h4>
+                    <h4>Semua Barang({{count($carts)}})</h4>
                 </div>
                 <div class="header col-2">
                     <h4>Nama Produk</h4>
@@ -77,46 +102,34 @@
                 <div class="header col-2">
                     <h4>Kuantitas</h4>
                 </div>
-            </div>
-            <div class="container row col-8" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                <div class="col-3 py-3 align-self-center">
-                    Gambar
-                </div>
-                <div class="col-3 py-3 align-self-center">
-                    Outer Amara Tenun Ulos
-                </div>
-                <div class="col-3 py-3 align-self-center">
-                    Rp 935.000
-                </div>
-                <div class="col-3 py-3 align-self-center">
-                    1
+                <div class="header col-2">
+                    <h4>Sub Total Harga</h4>
                 </div>
             </div>
+            @foreach($carts as $cart)
+                <div class="container row col-10" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+                    <?php
+                        $images = json_decode($cart->product->images);
+                    ?>
+                        <div class="col-3 py-3 align-self-center">
+                            <img src="{{ asset('images/'.$images[0])  }}" style="max-height:70px;max-width:70px;">
+                        </div>
+                        <div class="col-2 py-3 align-self-center">
+                            {{$cart->product->name}}
+                        </div>
+                        <div class="col-3 py-3 align-self-center">
+                            Rp {{number_format($cart->product->price)}}
+                        </div>
+                        <div class="col-2 py-3 align-self-center">
+                            {{$cart->quantity}}
+                        </div>
+                        <div class="col-2 py-3 align-self-center">
+                            Rp {{number_format($cart->sub_total_price)}}
+                        </div>
+                </div>
+            @endforeach
 
         </div>
-        <div class="row col-9" >
-            <div class="container row headers">
-                <h4>Kurir Pengiriman</h4>
-            </div>
-        </div>
-            <div class="row "style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                    <input type="radio" class="form-check-input" name="optradio">JNE
-                    <p>Dapatkan pada 3-5 hari</p>
-                    <p>RP 50.000</p>
-                </div>
-                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                    <input type="radio" class="form-check-input" name="optradio">Tiki
-                    <p>Dapatkan pada 4-6 hari</p>
-                    <p>RP 45.000</p>
-                </div>
-
-                <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                    <input type="radio" class="form-check-input" name="optradio">Pos Indonesia
-                    <p>Dapatkan pada 3-5 hari</p>
-                    <p>RP 55.000</p>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
