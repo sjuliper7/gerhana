@@ -22,6 +22,9 @@ class CreateCartTable extends Migration
             $table->integer('id_product')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_product')->references('id')->on('products');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
