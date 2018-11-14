@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <textarea class="form-control" placeholder="Catatan Untuk Penjual"></textarea>
+                                    <textarea class="form-control" name="comment" placeholder="Catatan Untuk Penjual"></textarea>
                                 </div>
                                 <div class="product_price" id="price">Rp {{number_format($product->price)}}</div>
                                 <div class="button_container">
