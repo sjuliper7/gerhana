@@ -57,7 +57,7 @@
 
                         <div class="cart_buttons">
                             <a href="/" button type="button" class="button cart_button_clear">Cancel</a>
-                            <a href="checkout.html" type="button" class="button cart_button_checkout">Checkout</a>
+                            <a href="{{url('/checkout')}}" type="button" class="button cart_button_checkout">Checkout</a>
                         </div>
                     </div>
                 </div>
