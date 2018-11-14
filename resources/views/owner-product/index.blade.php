@@ -39,9 +39,9 @@
                         <img src="images/shop.png" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col-sm-7">
-                        <h3>Toko TB Silalahi</h3>
-                        <h5>johanlbatu@gmail.com</h5>
-                        <h5> Laguboti, Kab. Toba Samosir, Sumatra Utara</h5>
+                        <h3>{{$store->store_name}}</h3>
+                        <h5>{{$store->store_email}}</h5>
+                        <h5>{{$store->store_address}}</h5>
                     </div>
                     </div>
 
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="shop_bar clearfix">
-                            <div class="shop_product_count"><span>186</span> products found</div>
+                            <div class="shop_product_count"><span>{{count($products)}}</span> products found</div>
                             <div class="shop_sorting">
                                 <span>Urutkan berdasarkan:</span>
                                 <ul>
