@@ -10,7 +10,7 @@ use Session;
 
 class CartController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         if(!Auth::guest()){
             $carts = Cart::where(['id_user' => Auth::user()->id, 'is_active' => true])->get();
             $total = 0;
@@ -36,6 +36,10 @@ class CartController extends Controller
     }
 
     public function addToCart(Request $request){
+        if($request['comment'] == null){
+            $request['comment'] = "-";
+        }
+
         if(!Auth::guest()){
             $getCart = Cart::where(['id_product' => $request['id_product'] , 'id_user' => Auth::user()->id, 'is_active' => true])->get();
             $product = Product::find($request['id_product']);
@@ -44,6 +48,7 @@ class CartController extends Controller
                 $cart->id_product = $request['id_product'];
                 $cart->id_user = Auth::user()->id;
                 $cart->quantity = $request['quantity'];
+                $cart->comment = $request['comment'];
                 $cart->sub_total_price = $request['quantity'] * $product->price;
                 $cart->is_active = true;
                 $cart->save();
@@ -58,9 +63,11 @@ class CartController extends Controller
             $product = Product::find($request['id_product']);
 
             if($carts == null){
+                $carts = array();
                 $cart  = new Cart();
                 $cart->id_product = $request['id_product'];
                 $cart->id_user = 0;
+                $cart->comment = $request['comment'];
                 $cart->quantity = $request['quantity'];
                 $cart->sub_total_price = $request['quantity'] * $product->price;
                 $cart->is_active = true;
@@ -75,6 +82,7 @@ class CartController extends Controller
                         $check = true;
                         $cart->quantity = $cart->quantity + $request['quantity'];
                         $cart->sub_total_price = $cart->sub_total_price + ($product->price * $request['quantity']);
+                        Session::put('carts',$carts);
                     }
                 }
 
@@ -83,6 +91,7 @@ class CartController extends Controller
                     $cart->id_product = $request['id_product'];
                     $cart->id_user = 0;
                     $cart->quantity = $request['quantity'];
+                    $cart->comment = $request['comment'];
                     $cart->sub_total_price = $request['quantity'] * $product->price;
                     $cart->is_active = true;
                     array_push($carts, $cart);
@@ -95,17 +104,23 @@ class CartController extends Controller
     }
 
     function toUpdateQuantity(Request $request){
+//        $temp = Session::get('carts');
         if($request['type'] === "up"){
-            $cart = Cart::find($request['cart_id']);
-            $cart->quantity = $cart->quantity+1;
-            $cart->sub_total_price = ($cart->sub_total_price) + ($cart->product->price);
-            $cart->update();
+            if(!Auth::guest()){
+                $cart = Cart::find($request['cart_id']);
+                $cart->quantity = $cart->quantity+1;
+                $cart->sub_total_price = ($cart->sub_total_price) + ($cart->product->price);
+                $cart->update();
+            }
         }else{
-            $cart = Cart::find($request['cart_id']);
-            $cart->quantity = $cart->quantity+1;
-            $cart->sub_total_price = ($cart->sub_total_price) + ($cart->product->price);
-            $cart->update();
+            if(!Auth::guest()){
+                $cart = Cart::find($request['cart_id']);
+                $cart->quantity = $cart->quantity - 1;
+                $cart->sub_total_price = ($cart->sub_total_price) - ($cart->product->price);
+                $cart->update();
+            }
         }
+//        dd($temp,Session::get('carts'));
         return "success";
     }
 }
