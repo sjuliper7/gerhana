@@ -44,6 +44,7 @@ class ProductController extends Controller
         $product->name = $request['name'];
         $product->price = $request['price'];
         $product->stock = $request['stock'];
+        $product->weight = $request['weight'];
         $product->description = $request['description'];
 
         $file       = $request->file('image');
@@ -105,6 +106,7 @@ class ProductController extends Controller
         $product->name = $request['name'];
         $product->price = $request['price'];
         $product->stock = $request['stock'];
+        $product->weight = $request['weight'];
         $product->description = $request['description'];
 
         $file       = $request->file('image');
