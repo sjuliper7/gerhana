@@ -26,4 +26,8 @@ class Product extends Model
     public function cart(){
         return $this->hasOne('App\Cart','id_product');
     }
+
+    public function detailTransaction(){
+        return $this->hasOne('App\DetailTransaction','id_product');
+    }
 }
