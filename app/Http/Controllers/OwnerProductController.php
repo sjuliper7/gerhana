@@ -33,6 +33,7 @@ class OwnerProductController extends Controller
         $product->stock = $request['stock'];
         $product->description = $request['description'];
         $product->story = $request['story'];
+        $product->weight = $request['weight'];
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
         $product->id_store = $store->id;
@@ -70,6 +71,7 @@ class OwnerProductController extends Controller
         $product->name = $request['name'];
         $product->price = $request['price'];
         $product->stock = $request['stock'];
+        $product->weight = $request['weight'];
         $product->description = $request['description'];
         $product->story = $request['story'];
         $product->id_status = $request['status-select'];
@@ -90,7 +92,7 @@ class OwnerProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('owner-products.show',
+        return redirect()->route('my-store',
             $product->id)->with('flash_message',
             'Product, '. $product->name.' updated');
     }
