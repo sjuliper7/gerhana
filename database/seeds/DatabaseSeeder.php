@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
              RefBankTableSeeder::class,
              RequestStoreTableSeeder::class,
              StoresTableSeeder::class,
+             ProductTableSeeder::class,
 
          ]);
 
