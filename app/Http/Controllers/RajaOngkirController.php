@@ -36,7 +36,7 @@ class RajaOngkirController extends Controller
     }
 
     public function estimateCost(Request $request){
-        $costs = $this->rajaongkir->getCost(['city' => $request["origin_id"]],
+        $costs = $this->rajaongkir->getCost(['city' => 481],
             ['subdistrict' => $request["subdistrict_id"]],
             1000, 'jne');
 
