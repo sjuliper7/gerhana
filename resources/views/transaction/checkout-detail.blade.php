@@ -5,94 +5,99 @@
         <div class="container">
             <h2>Checkout</h2>
             <hr>
-            <div class="form-row">
-                    <div class="col-md-6" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label>Alamat</label>
-                                <textarea type="text" name="name" class="form-control" placeholder="Alamat" data-error="Please enter name" required></textarea>
-                                <div class="help-block with-errors"></div>
+            <form action="{{ url('/confirm-payment') }}" method="post" >
+                {{ csrf_field() }}
+                <div class="form-row">
+                        <div class="col-md-6" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label>Alamat</label>
+                                    <textarea type="text" name="address" class="form-control" placeholder="Alamat" data-error="Please enter name" required></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label>Provinsi</label>
-                                <select name="category-select" id="province" class="form-control" onclick="getCites()" required style="width: auto">
-                                    <option selected="selected" name="category-selected">Pilih Provinsi</option>
-                                    @foreach($provinces as $province)
-                                        <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label>Provinsi</label>
+                                    <select name="province-select" id="province" class="form-control" onclick="getCites()" required style="width: auto">
+                                        <option selected="selected" name="category-selected">Pilih Provinsi</option>
+                                        @foreach($provinces as $province)
+                                            <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Kota/Kabupaten</label>
-                                <select name="status-select" id="cities" class="form-control" onchange="getSubDistrict()" style="width: auto">
-                                    <option selected="selected" name="status-selected">Pilih Kabupaten/Kota</option>
-                                </select>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Kota/Kabupaten</label>
+                                    <select name="city-select" id="cities" class="form-control" onchange="getSubDistrict()" style="width: auto">
+                                        <option selected="selected" name="status-selected">Pilih Kabupaten/Kota</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Kecamatan</label>
-                                <select name="status-select" id="sub-district" class="form-control" style="width: auto">
-                                    <option selected="selected" name="status-selected">Pilih Kecamatan</option>
-                                </select>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Kecamatan</label>
+                                    <select name="sub-district-select" id="sub-district" class="form-control" style="width: auto">
+                                        <option selected="selected" name="status-selected">Pilih Kecamatan</option>
+                                    </select>
+                                </div>
                             </div>
+
+                            <div style="float: right;margin-bottom: 20px">
+                                <input type="button" id="add"value="Periksa Ongkis Kirim" onclick="estimateCost()" class="btn btn-info" style="margin-top: 10px;">
+                            </div>
+
                         </div>
 
-                        <div style="float: right;margin-bottom: 20px">
-                            <input type="submit" id="add"value="Periksa Ongkis Kirim" onclick="estimateCost()" class="btn btn-info" style="margin-top: 10px;">
-                        </div>
+                        <div class="col-md-5" style="margin-left: 20px">
+                            <div class="form-group">
+                                <h4>Ringkasan Belanja</h4>
+                                <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+                                    <div class="container">
+                                        <div class="row py-2">
+                                            <div class="col-8">
+                                                Total Harga (1 Barang)
+                                            </div>
+                                            <div class="col-auto">
+                                                Rp {{number_format($total)}}
+                                            </div>
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="col-8">
+                                                Biaya Pengiriman JNE
+                                            </div>
+                                            <div class="col-auto" id="est-cost">
+                                                -
+                                            </div>
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="col-8">
+                                                Estimasi Pengiriman
+                                            </div>
+                                            <div class="col-auto" id="est-day">
+                                                -
+                                            </div>
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="col-8 text-bold">
+                                                Total Belanja
+                                            </div>
+                                            <div class="col-auto" id="total-price">Rp {{number_format($total)}}</div>
+                                        </div>
+                                        <div class="container align-self-center py-3">
+                                                <input type="text" name="total" id="total-price2"  hidden>
+                                                <input type="text" id="shipment_fee" name="shipment_fee" hidden>
+                                                <input type="text" id="shipment_etd" name="shipment_etd" hidden>
 
-                    </div>
-
-                    <div class="col-md-5" style="margin-left: 20px">
-                        <div class="form-group">
-                            <h4>Ringkasan Belanja</h4>
-                            <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                                <div class="container">
-                                    <div class="row py-2">
-                                        <div class="col-8">
-                                            Total Harga (1 Barang)
+                                                <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
                                         </div>
-                                        <div class="col-auto">
-                                            Rp {{number_format($total)}}
-                                        </div>
-                                    </div>
-                                    <div class="row py-2">
-                                        <div class="col-8">
-                                            Biaya Pengiriman JNE
-                                        </div>
-                                        <div class="col-auto" id="est-cost">
-                                            -
-                                        </div>
-                                    </div>
-                                    <div class="row py-2">
-                                        <div class="col-8">
-                                            Estimasi Pengiriman
-                                        </div>
-                                        <div class="col-auto" id="est-day">
-                                            -
-                                        </div>
-                                    </div>
-                                    <div class="row py-2">
-                                        <div class="col-8 text-bold">
-                                            Total Belanja
-                                        </div>
-                                        <div class="col-auto" id="total-price">Rp {{number_format($total)}}</div>
-                                    </div>
-                                    <div class="container align-self-center py-3">
-                                        <form action="{{ url('/confirm-payment') }}" method="" >
-                                            <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
+            </form>
         </div>
         <div class="form-row" style="margin-top: 30px">
                 <div class="container row py-2">
@@ -171,12 +176,7 @@
 
         function getSubDistrict() {
             var city_id  =   $("#cities").val();
-            $.ajax({
-                type: "POST",
-                url: "get-subdistricts",
-                data: {
-                    city_id : city_id,
-                    _token: '{{ csrf_token() }}',
+            $.ajax({type: "POST", url: "get-subdistricts", data: {city_id : city_id, _token: '{{ csrf_token() }}',
                 }
             }).done(function(result) {
                 var $el = $("#sub-district");
@@ -212,7 +212,9 @@
                 var total = toNumberWithoutCommna(totals[1]);
 
                 var rest = parseInt(total) + parseInt(result.value);
-
+                $("#total-price2").val(rest);
+                $("#shipment_etd").val(result.etd);
+                $("#shipment_fee").val(result.value);
                 $("#est-cost").text("Rp "+addCommas(result.value))
                 $("#est-day").text(result.etd +" Hari");
                 $("#total-price").text("Rp "+addCommas(rest));
