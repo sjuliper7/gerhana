@@ -16,16 +16,13 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $user=Auth::user();
-        $profiles = DB::table('user_profiles')
+            $user=Auth::user();
+            $profiles = DB::table('user_profiles')
 //            ->join('users','user_profiles.id_user','=','users.id')
 //            ->select('user_profiles.*','users.*')
-            ->where('id_user','=',Auth::user()->id)
-            ->get();
-        return view('adminlte::user-profile.index', compact('profiles'));
-
-//        $profile = Profile::orderby('id', 'desc')->get();
-//        return view('adminlte::products.index', compact('profiles'));
+                ->where('id_user','=',Auth::user()->id)
+                ->get();
+            return view('adminlte::user-profile.index', compact('profiles','user'));
     }
 
     /**
@@ -49,12 +46,13 @@ class UserProfileController extends Controller
     {
         $userProfile= new UserProfile();
         $userProfile->profile_image=$request['profile_image'];
-//        $request->file('image')->move('images/',$fileName);l''
+//        $request->file('image')->move('images/',$userProfile);
 
         $userProfile->full_name = $request['full_name'];
         $userProfile->date_of_birth= $request['date_of_birth'];
         $userProfile->address = $request['address'];
         $userProfile->id_user = Auth::user()->id;
+
         $userProfile->save();
 
         return redirect()->route('user-profile.create')
@@ -70,11 +68,7 @@ class UserProfileController extends Controller
      */
     public function show($id)
     {
-//        $userProfiles= UserProfile::where($id)==Auth::User->get();
-//        return view("adminlte::user-profiles.index",compact('userProfiles'));
-//
-//        $requestStore = RequestStore::findOrFail($id);
-//        return view("adminlte::store-requests.show",compact('requestStore'));
+
     }
 
     /**
@@ -102,7 +96,16 @@ class UserProfileController extends Controller
         $profile = UserProfile::findOrFail($id);
         $profile->full_name = $request['full_name'];
         $profile->address = $request['address'];
-        $profile->profile_image = $request['profile_image'];
+
+
+        $img= $request->file('profile_image');
+        $filename = $img->getClientOriginalName();
+        if($filename != $profile->profille_image){
+            $request->file('profile_image')->move('images/',$filename);
+            $profile->profile_image = $filename;
+        }
+
+//        $profile->profile_image = $request['profile_image'];
 //        $profile->description = $request['description'];
 //
 //        $file       = $request->file('image_profile');
