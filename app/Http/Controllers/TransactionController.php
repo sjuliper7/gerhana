@@ -19,10 +19,10 @@ class TransactionController extends Controller
     public function confirmPayment(Request $request)
     {
         $carts = Auth::user()->carts;
-        $statusTransactions = StatusTransaction::where(['name'=> "Menunggu Pembayaran"])->firstOrFail();
+        $statusTransactions = StatusTransaction::where(['name' => "Menunggu Pembayaran"])->firstOrFail();
 
         $transaction = new Transaction();
-        $transaction->total_price =$request["total"];
+        $transaction->total_price = $request["total"];
         $transaction->shipment_fee = $request["shipment_fee"];
         $transaction->shipment_etd = $request["shipment_etd"];
         $transaction->prove_payment = "-";
@@ -31,7 +31,7 @@ class TransactionController extends Controller
         $transaction->id_status = $statusTransactions->id;
         $transaction->save();
 
-        foreach ($carts as $cart){
+        foreach ($carts as $cart) {
             $detailTransaksi = new DetailTransaction();
             $detailTransaksi->quantity = $cart->quantity;
             $detailTransaksi->comment = $cart->comment;
@@ -43,9 +43,7 @@ class TransactionController extends Controller
             $cart->is_active = false;
             $cart->save();
         }
-        
-        dd($request["address"], $request["total"], $request["shipment_fee"], $request["shipment_etd"]);
+
         return view('transaction.confirm-payment');
     }
-
 }
