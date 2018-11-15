@@ -79,3 +79,7 @@ Route::resource('user-types','UserTypeController');
 Route::resource('user-status','UserStatusController');
 
 Route::resource('user-profile','UserProfileController');
+
+Route::resource('status-transactions','StatusTransactionController');
+
+
