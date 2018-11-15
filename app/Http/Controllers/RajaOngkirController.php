@@ -9,33 +9,37 @@ use Steevenz\Rajaongkir;
 
 class RajaOngkirController extends Controller
 {
-    private $key = "5c7f26bc5e3613a723b4240d192aff90";
     private $rajaongkir;
 
     public function __construct()
     {
-        $config['api_key'] = $this->key;
-        $config['account_type'] = 'starter';
+        $config['api_key'] = env("RAJAONGKIR_KEY");
+        $config['account_type'] = 'pro';
 
         $this->rajaongkir = new Rajaongkir($config);
     }
 
 
-    public function getProvince(){
+    public function getProvinces(){
         $provinces = $this->rajaongkir->getProvinces();
-        dd($provinces);
         return $provinces;
     }
 
-    public function getCity(){
-        $cities = $this->rajaongkir->getCities();
+    public function getCities(Request $request){
+        $cities = $this->rajaongkir->getCities($request["province_id"]);
         return $cities;
     }
 
-    public function estimateCost(){
-        $cities = $this->rajaongkir->getCities();
-        dd($cities);
-//        $cost = $this->rajaongkir->getCost(['city' => 1], ['country' => 11], 50, 'jne');
-//        dd($cost);
+    public function getSubdistricts(Request $request){
+        $subDistrict = $this->rajaongkir->getSubdistricts($request["city_id"]);
+        return $subDistrict;
+    }
+
+    public function estimateCost(Request $request){
+        $costs = $this->rajaongkir->getCost(['city' => $request["origin_id"]],
+            ['subdistrict' => $request["subdistrict_id"]],
+            1000, 'jne');
+
+        return $costs["costs"][1]["cost"][0];
     }
 }
