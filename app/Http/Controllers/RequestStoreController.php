@@ -52,6 +52,9 @@ class RequestStoreController extends Controller
         $requestStore->store_npwp         = $request['store-npwp'];
         $requestStore->store_account_bank = $request['store-account-number'];
         $requestStore->store_account_type = $request['type-bank'];
+        $requestStore->store_province     = $request['store-province'];
+        $requestStore->store_districts    = $request['store-districts'];
+        $requestStore->store_sub_district = $request['store-sub-district'];
         $requestStore->id_status          = $status->id;
         $requestStore->id_user            = Auth::user()->id;
 
@@ -126,6 +129,9 @@ class RequestStoreController extends Controller
         $store->store_account_bank= $requestStore['store_account_bank'];
         $store->store_account_type = $requestStore['store_account_type'];
         $store->store_account_bank_image = $requestStore['store_account_bank_image'];
+        $requestStore->store_province = $requestStore['store_province'];
+        $requestStore->store_districts = $requestStore['store_districts'];
+        $requestStore->store_sub_district = $requestStore['store_sub_district'];
         $store->id_request = $requestStore['id'];
         $store->id_user = $requestStore['id_user'];
 

@@ -182,6 +182,22 @@
                                 <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon" name="store-phone">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-4">
+                                <label>Provinsi</label>
+                                <input type="text" class="form-control" id="storeProvince" placeholder="Provinsi" name="store-province">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Kabupaten</label>
+                                <input type="text" class="form-control" id="storeDistricts" placeholder="Kabupaten" name="store-districts">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Kecamatan</label>
+                                <input type="text" class="form-control" id="storeSubDistrict" placeholder="Kecamatan" name="store-sub-district">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label>Alamat</label>

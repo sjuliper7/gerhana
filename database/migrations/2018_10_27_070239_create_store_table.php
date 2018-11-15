@@ -27,6 +27,9 @@ class CreateStoreTable extends Migration
             $table->string('store_account_bank');
             $table->string('store_account_type');
             $table->string('store_account_bank_image');
+            $table->string('store_province');
+            $table->string('store_districts');
+            $table->string('store_sub_distric');
             $table->integer('id_user')->unsigned();
             $table->integer('id_request')->unsigned();
             $table->timestamps();
