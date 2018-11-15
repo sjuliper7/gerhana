@@ -13,13 +13,13 @@ class ProductTableSeeder extends Seeder
     {
         DB::table('products')->insert(
             [
-                'name'  => "Menunggu Pembayaran",
+                'name'  => "Sor Tali",
                 'price' => "50000",
                 'stock' => "20",
-                'description' => "Dibuat dari bahan yang lembut, tersedia ukuran M,L dan S",
-                'story' => "Produk ini hasil kerajinan tangan Orang Hinalang",
+                'description' => "Dibuat dari bahan yang lembut",
+                'story' => "Produk ini hasil kerajinan tangan Orang Balige",
                 'images'=> "string",
-                'weight'=> "4g",
+                'weight'=> "4",
                 'id_status'=> '2',
                 'id_category'=> '2',
                 'id_store'=> '2',
@@ -28,13 +28,13 @@ class ProductTableSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                'name'  => "Menunggu Pembayaran",
-                'price' => "50000",
+                'name'  => "Kemeja Ulos",
+                'price' => "150000",
                 'stock' => "20",
                 'description' => "Dibuat dari bahan yang lembut, tersedia ukuran M,L dan S",
                 'story' => "Produk ini hasil kerajinan tangan Orang Hinalang",
                 'images'=> "string",
-                'weight'=> "4g",
+                'weight'=> "4",
                 'id_status'=> '2',
                 'id_category'=> '2',
                 'id_store'=> '2',
