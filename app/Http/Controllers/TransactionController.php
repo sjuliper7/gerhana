@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DetailTransaction;
+use App\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -14,6 +17,30 @@ class TransactionController extends Controller
 
     public function confirmPayment(Request $request)
     {
+        $carts = Auth::user()->carts;
+        dd($carts);
+        $transaction = new Transaction();
+        $transaction->total_price =$request["total"];
+        $transaction->shipment_fee = $request["shipment_fee"];
+        $transaction->shipment_etd = $request["shipment_etd"];
+        $transaction->address = $request["address"];
+        $transaction->id_user = Auth::user()->id;
+        $transaction->id_status = 1;
+        $transaction->save();
+
+        foreach ($carts as $cart){
+            $detailTransaksi = new DetailTransaction();
+            $detailTransaksi->quantity = $cart->quantity;
+            $detailTransaksi->comment = $cart->comment;
+            $detailTransaksi->sub_total_price = $cart->sub_total_price;
+            $detailTransaksi->id_transaction = $transaction->id;
+            $detailTransaksi->id_product = $cart->id_product;
+            $detailTransaksi->id_cart = $cart->id;
+//            $detailTransaksi->save();
+            $cart->is_active = false;
+//            $cart->save();
+        }
+        
         dd($request["address"], $request["total"], $request["shipment_fee"], $request["shipment_etd"]);
         return view('transaction.confirm-payment');
     }
