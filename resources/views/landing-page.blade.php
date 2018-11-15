@@ -8,7 +8,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-sm-3 col-3 order-1">
                     <div class="logo_container">
-                        <div class="logo"><a href="#">BatakZone</a></div>
+                        <div class="logo"><a href="#" style="color: #8b0000">BatakZone</a></div>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@
 
                         <!-- Categories Menu -->
 
-                        <div class="cat_menu_container">
+                        <div class="cat_menu_container"style="background-color: #8b0000">
                             <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                 <div class="cat_burger"><span></span><span></span><span></span></div>
                                 <div class="cat_menu_text">categories</div>

@@ -80,8 +80,11 @@ Route::resource('user-status','UserStatusController');
 
 Route::resource('user-profile','UserProfileController');
 
+Route::resource('status-transactions','StatusTransactionController');
+
 Route::POST('get-cities','RajaOngkirController@getCities');
 
 Route::POST('get-subdistricts','RajaOngkirController@getSubdistricts');
 
 Route::POST('estimate-cost','RajaOngkirController@estimateCost');
+
