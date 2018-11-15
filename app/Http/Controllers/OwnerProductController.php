@@ -55,7 +55,7 @@ class OwnerProductController extends Controller
 
         $product->save();
 
-        return redirect(url($store->store_name.'/products'));
+        return redirect(url('/my-store'));
     }
 
     public function show($id){
