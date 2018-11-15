@@ -51,6 +51,30 @@
                     <li><a href="/users">Users</a></li>
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Transaction</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/status-transactions">Status Transactions</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Store</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/status-stores">Status Store</a></li>
+                    <li><a href="/request-stores">Status Request Store</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Bank</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/ref-banks">Referensi Bank</a></li>
+
+                </ul>
+            </li>
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
