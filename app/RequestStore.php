@@ -12,7 +12,7 @@ class RequestStore extends Model
         'store_name', 'store_owner', 'store_email', 'store_phone',
         'store_address','store_ktp','store_ktp_image', 'store_npwp',
         'store_npwp_image','store_account_bank', 'store_account_type',
-        'store_account_bank_image','id_status','comment',
+        'store_account_bank_image','store_province','store_districts','store_sub_districts','id_status','comment',
         'id_user'
     ];
 

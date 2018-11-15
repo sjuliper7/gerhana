@@ -27,6 +27,9 @@ class CreateRequestStoreTale extends Migration
             $table->string('store_account_bank');
             $table->string('store_account_type');
             $table->string('store_account_bank_image');
+            $table->string('store_province');
+            $table->string('store_districts');
+            $table->string('store_sub_distric');
             $table->text('comment');
             $table->integer('id_status')->unsigned();
             $table->integer('id_user')->unsigned();
