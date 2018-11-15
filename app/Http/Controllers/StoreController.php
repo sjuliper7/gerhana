@@ -16,7 +16,7 @@ class StoreController extends Controller
     }
 
     public function myStore(){
-        if(Auth::user()->requestStore == null){
+        if(count(Auth::user()->requestStore) == 0){
             return redirect('request-stores/create');
         }else{
             $request = Auth::user()->requestStore;

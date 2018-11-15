@@ -62,7 +62,7 @@ Route::get('/checkout-detail','TransactionController@checkoutDetail');
 
 Route::get('/upload-payment','TransactionController@uploadPayment');
 
-Route::get('/confirm-payment','TransactionController@confirmPayment');
+Route::POST('confirm-payment','TransactionController@confirmPayment');
 
 Route::get('buy/{name}','LandingPageController@buyProduct');
 
@@ -82,4 +82,9 @@ Route::resource('user-profile','UserProfileController');
 
 Route::resource('status-transactions','StatusTransactionController');
 
+Route::POST('get-cities','RajaOngkirController@getCities');
+
+Route::POST('get-subdistricts','RajaOngkirController@getSubdistricts');
+
+Route::POST('estimate-cost','RajaOngkirController@estimateCost');
 

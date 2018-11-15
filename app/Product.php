@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'price', 'stock', 'description','story','images','id_status','id_category','id_store'
+        'name', 'price', 'stock', 'description','story','images',
+        'weight','id_status','id_category','id_store'
     ];
 
     public function status(){
@@ -24,5 +25,9 @@ class Product extends Model
 
     public function cart(){
         return $this->hasOne('App\Cart','id_product');
+    }
+
+    public function detailTransaction(){
+        return $this->hasOne('App\DetailTransaction','id_product');
     }
 }

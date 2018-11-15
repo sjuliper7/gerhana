@@ -43,51 +43,67 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-row">
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="template/images/phone.png" alt=""></div>+38 068 005 3570</div>
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="template/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Italian</a></li>
-                                            <li><a href="#">Spanish</a></li>
-                                            <li><a href="#">Japanese</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="top_bar_user">
+
+                            <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
                                     <div><a href="#">Register</a></div>
                                     <div><a href="/login">Sign in</a></div>
                                 @else
-                                    <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                <span class="glyphicon glyphicon-user"></span> 
-                                                <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="navbar-login">
-                                                        <div class="row">
-                                                            <div class="col-lg-12" style="margin-left: 5px">
-                                                                <a href=""><p class="text-left">Pesanan</p></a>
-                                                                <a href="" class="btn">Profile</a>
-                                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST">
-                                                                    {{ csrf_field() }}
-                                                                    <input type="submit" value="logout">
-                                                                </form>
+                                    <div class="dropdown" style="width:20em ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-user"></span> 
+                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12" >
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                        <img src="images/kelola_akun.png" style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                    <div class="text-left col-md-6">
+                                                                        <p class="font-weight-normal">Kelola Akun</p>
+                                                                    </div>
+
                                                             </div>
+                                                            </div>
+                                                            <div class="col-md-12" style="margin-top: 0em">
+                                                                <div class="row">
+                                                                        <img src="images/box_closed.png" style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <p class="font-weight-normal">Pesanan Saya</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12" style="margin-top: 2em">
+                                                                <div class="row">
+                                                                    <img src="images/logout.png" style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <form id="logout-form" action="{{ url('/logout') }}"
+                                                                              method="POST" style="border: 0em">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="submit" value="logout">
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 @endif
+
 
 
                             </div>
@@ -189,9 +205,14 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-                        <div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <div
+                        class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+                        <div class="copyright_content">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart"
+                                                                                aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <div class="logos ml-sm-auto">

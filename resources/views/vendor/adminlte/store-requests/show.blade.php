@@ -46,6 +46,26 @@
                     <td>{{$requestStore->store_ktp}}</td>
                 </tr>
                 <tr>
+                    <th>Provinsi</th>
+                    <td>: </td>
+                    <td>{{$requestStore->store_province}}</td>
+                </tr>
+
+
+                <tr>
+                    <th>Kabupaten</th>
+                    <td>: </td>
+                    <td>{{$requestStore->store_districts}}</td>
+                </tr>
+
+
+                <tr>
+                    <th>Kecamatan</th>
+                    <td>: </td>
+                    <td>{{$requestStore->store_sub_district}}</td>
+                </tr>
+
+                <tr>
                     <th>KTP Image</th>
                     <td>: </td>
                     <td>

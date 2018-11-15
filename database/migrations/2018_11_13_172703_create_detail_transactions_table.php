@@ -20,10 +20,12 @@ class CreateDetailTransactionsTable extends Migration
             $table->double('sub_total_price');
             $table->integer('id_transaction')->unsigned();
             $table->integer('id_product')->unsigned();
+            $table->integer('id_cart')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_transaction')->references('id')->on('transactions');
             $table->foreign('id_product')->references('id')->on('products');
+            $table->foreign('id_cart')->references("id")->on('carts');
         });
     }
 

@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert(
             [
-                'name' => "Juliper Simanjuntak",
-                'email' => 'sjuliper7@gmail.com',
+                'name' => "Batak Zone",
+                'email' => 'admin@batakzone.co.id',
                 'password' => bcrypt('qwerty1'),
                 'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
@@ -40,6 +40,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
+
+
 
     }
 }

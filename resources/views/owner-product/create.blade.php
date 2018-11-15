@@ -27,14 +27,19 @@
                              </div>
                          </div>
                          <div class="form-row">
-                             <div class="form-group col-md-6">
+                             <div class="form-group col-md-4">
                                  <label>Price</label>
                                  <input type="text" name="price" class="form-control" placeholder="Price" data-error="Please enter price" required>
                                  <div class="help-block with-errors"></div>
                              </div>
-                             <div class="form-group col-md-6">
+                             <div class="form-group col-md-4">
                                  <label>Stock</label>
                                  <input type="text" name="stock" class="form-control" placeholder="stock" data-error="Please enter stock" required>
+                                 <div class="help-block with-errors"></div>
+                             </div>
+                             <div class="form-group col-md-4">
+                                 <label>Weight</label>
+                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Please enter stock" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
