@@ -29,7 +29,7 @@ class StoresTableSeeder extends Seeder
                 'store_account_bank_image' => "account.jpeg",
                 'store_province'=>"",
                 'store_districts'=>"",
-                'store_sub_districts'=>"",
+                'store_sub_district'=>"",
                 'id_request' => '1',
                 'id_user' => '2',
                 'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
