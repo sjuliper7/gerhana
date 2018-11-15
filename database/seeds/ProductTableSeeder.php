@@ -22,7 +22,7 @@ class ProductTableSeeder extends Seeder
                 'weight'=> "4",
                 'id_status'=> '2',
                 'id_category'=> '2',
-                'id_store'=> '2',
+                'id_store'=> '1',
             ]
         );
 
@@ -37,7 +37,7 @@ class ProductTableSeeder extends Seeder
                 'weight'=> "4",
                 'id_status'=> '2',
                 'id_category'=> '2',
-                'id_store'=> '2',
+                'id_store'=> '1',
             ]
         );
     }
