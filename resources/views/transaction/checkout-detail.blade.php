@@ -1,123 +1,129 @@
 @extends('layouts.index-for-detail')
 
 @section('content')
+    <div class="container py-3">
+        <div class="container">
+            <h2>Checkout</h2>
+            <hr>
+            <div class="form-row">
+                    <div class="col-md-6" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Alamat</label>
+                                <textarea type="text" name="name" class="form-control" placeholder="Alamat" data-error="Please enter name" required></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Provinsi</label>
+                                <select name="category-select" id="province" class="form-control" onclick="getCites()" required style="width: auto">
+                                    <option selected="selected" name="category-selected">Pilih Provinsi</option>
+                                    @foreach($provinces as $province)
+                                        <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Kota/Kabupaten</label>
+                                <select name="status-select" id="cities" class="form-control" onchange="getSubDistrict()" style="width: auto">
+                                    <option selected="selected" name="status-selected">Pilih Kabupaten/Kota</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Kecamatan</label>
+                                <select name="status-select" id="sub-district" class="form-control" style="width: auto">
+                                    <option selected="selected" name="status-selected">Pilih Kecamatan</option>
+                                </select>
+                            </div>
+                        </div>
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="header">
-                <h2>Melakukan Pemesanan</h2>
-            </div>
-        </div>
-        <div class="row py-4">
-            <div class="container col-8">
-                <div class="header">
-                    <h3>Alamat Pengiriman</h3>
-                </div>
-                <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                   <div class="row">
-                       <div class="container col-lg-12   py-3 align-self-center">
-                               <textarea class="form-control" placeholder="Alamat"></textarea>
-                       </div>
-                       {{--<div class="container col-auto align-self-center">--}}
-                           {{--<button type="button" class="btn" style="background-color: darkred; color: white">Ganti Alamat</button>--}}
-                       {{--</div>--}}
-                   </div>
-                </div>
-            </div>
-            <div class="container col-4">
-                <div class="header">
-                    <h3>Ringkasan Belanja</h3>
-                </div>
-                <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                    <div class="container">
-                        <div class="row py-2">
-                            <div class="col-8">
-                                Total Harga (1 Barang)
-                            </div>
-                            <div class="col-auto">
-                                Rp {{number_format($total)}}
-                            </div>
+                        <div style="float: right;margin-bottom: 20px">
+                            <input type="submit" id="add"value="Periksa Ongkis Kirim" onclick="estimateCost()" class="btn btn-info" style="margin-top: 10px;">
                         </div>
-                        <div class="row py-2">
-                            <div class="col-8">
-                                Biaya Pengiriman
-                            </div>
-                            <div class="col-auto">
-                                -
-                            </div>
-                        </div>
-                        <div class="row py-2">
-                            <div class="col-8 text-bold">
-                                Total Belanja
-                            </div>
-                            <div class="col-auto">
-                                Rp {{number_format($total)}}
+
+                    </div>
+
+                    <div class="col-md-5" style="margin-left: 20px">
+                        <div class="form-group">
+                            <h4>Ringkasan Belanja</h4>
+                            <div class="container" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
+                                <div class="container">
+                                    <div class="row py-2">
+                                        <div class="col-8">
+                                            Total Harga (1 Barang)
+                                        </div>
+                                        <div class="col-auto">
+                                            Rp {{number_format($total)}}
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-8">
+                                            Biaya Pengiriman JNE
+                                        </div>
+                                        <div class="col-auto" id="est-cost">
+                                            -
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-8">
+                                            Estimasi Pengiriman
+                                        </div>
+                                        <div class="col-auto" id="est-day">
+                                            -
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-8 text-bold">
+                                            Total Belanja
+                                        </div>
+                                        <div class="col-auto" id="total-price">Rp {{number_format($total)}}</div>
+                                    </div>
+                                    <div class="container align-self-center py-3">
+                                        <form action="{{ url('/confirm-payment') }}" method="" >
+                                            <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container align-self-center py-3">
-                    <form action="{{ url('/confirm-payment') }}" method="" >
-                        <button type="submit" class="btn btn-block" style="background-color: darkred; color: white">Bayar</button>
-                    </form>
-                </div>
-            </div>
         </div>
-
-        <div class="row col-9" >
-            <div class="container row headers">
-                <h4>Kurir Pengiriman</h4>
-            </div>
-        </div>
-        <div class="row "style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                <input type="radio" class="form-check-input" name="optradio">JNE
-                <p>Dapatkan pada 3-5 hari</p>
-                <p>RP 50.000</p>
-            </div>
-            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                <input type="radio" class="form-check-input" name="optradio">Tiki
-                <p>Dapatkan pada 4-6 hari</p>
-                <p>RP 45.000</p>
-            </div>
-
-            <div class="col-sm" style="box-shadow: 0 2px 6px rgba(0,0,0,.12);margin: 1em">
-                <input type="radio" class="form-check-input" name="optradio">Pos Indonesia
-                <p>Dapatkan pada 3-5 hari</p>
-                <p>RP 55.000</p>
-            </div>
-        </div>
-
-        <div class="row py-4" >
-            <div class="container row py-2">
-                <div class="header col-2">
-                    <h4>Semua Barang({{count($carts)}})</h4>
+        <div class="form-row" style="margin-top: 30px">
+                <div class="container row py-2">
+                    <div class="header col-2">
+                        <h4>Semua Barang({{count($carts)}})</h4>
+                    </div>
+                    <div class="header col-2">
+                        <h4>Nama Produk</h4>
+                    </div>
+                    <div class="header col-2" style="margin-left: 30px">
+                        <h4>Harga</h4>
+                    </div>
+                    <div class="header col-2">
+                        <h4>Kuantitas</h4>
+                    </div>
+                    <div class="header col-2">
+                        <h4>Sub Total Harga</h4>
+                    </div>
                 </div>
-                <div class="header col-2">
-                    <h4>Nama Produk</h4>
-                </div>
-                <div class="header col-2">
-                    <h4>Harga</h4>
-                </div>
-                <div class="header col-2">
-                    <h4>Kuantitas</h4>
-                </div>
-                <div class="header col-2">
-                    <h4>Sub Total Harga</h4>
-                </div>
-            </div>
-            @foreach($carts as $cart)
-                <div class="container row col-10" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                    <?php
+                @foreach($carts as $cart)
+                    <div class="container row py-2" style="box-shadow: 0 2px 6px rgba(0,0,0,.12); margin-left: 20px">
+                        <?php
                         $images = json_decode($cart->product->images);
-                    ?>
-                        <div class="col-3 py-3 align-self-center">
+                        ?>
+                        <div class="col-2 py-3 align-self-center">
                             <img src="{{ asset('images/'.$images[0])  }}" style="max-height:70px;max-width:70px;">
                         </div>
                         <div class="col-2 py-3 align-self-center">
                             {{$cart->product->name}}
                         </div>
-                        <div class="col-3 py-3 align-self-center">
+                        <div class="col-2 py-3 align-self-center">
                             Rp {{number_format($cart->product->price)}}
                         </div>
                         <div class="col-2 py-3 align-self-center">
@@ -126,10 +132,116 @@
                         <div class="col-2 py-3 align-self-center">
                             Rp {{number_format($cart->sub_total_price)}}
                         </div>
-                </div>
-            @endforeach
+                    </div>
+                @endforeach
+            </div>
 
         </div>
-        </div>
     </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+        });
+
+        function getCites() {
+            var province_id  =   $("#province").val();
+            $.ajax({
+                type: "POST",
+                url: "get-cities",
+                data: {
+                    province_id : province_id,
+                    _token: '{{ csrf_token() }}',
+                }
+            }).done(function(result) {
+                var $el = $("#cities");
+                $el.empty();
+                if(result != null){
+                    $.each(result, function(key, value) {
+                        $el.append($("<option></option>")
+                            .attr("value", value.city_id).text(value.city_name));
+                    });
+                }else {
+                    $el.append($("<option></option>")
+                        .attr("value",0).text("Pilih Kabupaten Kota"));
+                }
+            });
+        }
+
+        function getSubDistrict() {
+            var city_id  =   $("#cities").val();
+            $.ajax({
+                type: "POST",
+                url: "get-subdistricts",
+                data: {
+                    city_id : city_id,
+                    _token: '{{ csrf_token() }}',
+                }
+            }).done(function(result) {
+                var $el = $("#sub-district");
+                $el.empty();
+                if(result != null){
+                    $.each(result, function(key, value) {
+                        $el.append($("<option></option>")
+                            .attr("value", value.subdistrict_id).text(value.subdistrict_name));
+                    });
+                }else {
+                    $el.append($("<option></option>")
+                        .attr("value",0).text("Pilih Kecamatan"));
+                }
+            });
+        }
+        
+        function estimateCost() {
+            // var city_id  =   $("#cities").val();
+            var subdistrict_id = $("#sub-district").val();
+            var courier = $("#courier").val();
+
+            $.ajax({
+                type:   "POST",
+                url:    "estimate-cost",
+                data: {
+                    origin_id       : 1,
+                    subdistrict_id  : subdistrict_id,
+                    courier         : courier,
+                    _token: '{{ csrf_token() }}',
+                }
+            }).done(function(result) {
+                var totals = $('#total-price')[0].textContent.split(" ");
+                var total = toNumberWithoutCommna(totals[1]);
+
+                var rest = parseInt(total) + parseInt(result.value);
+
+                $("#est-cost").text("Rp "+addCommas(result.value))
+                $("#est-day").text(result.etd +" Hari");
+                $("#total-price").text("Rp "+addCommas(rest));
+            });
+
+        }
+
+        function toNumberWithoutCommna(number) {
+            var result = "";
+            for(var i=0;i<number.length;i++){
+                if(number[i] != ','){
+                    result += number[i];
+                }
+            }
+            return result;
+        }
+
+        function addCommas(nStr) {
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
+
+    </script>
+
 @endsection
