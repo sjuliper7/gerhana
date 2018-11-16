@@ -39,23 +39,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-row">
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 821 6548 5311</div>
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:batakzone@gmail.com">batakzone@gmail.com</a></div>
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 821 6548 5311</div>--}}
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:batakzone@gmail.com">batakzone@gmail.com</a></div>--}}
                         <div class="top_bar_content ml-auto">
                             <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="#">Indonesia<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">English</a></li>
+                                {{--<ul class="standard_dropdown top_bar_dropdown">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">Indonesia<i class="fas fa-chevron-down"></i></a>--}}
+                                        {{--<ul>--}}
+                                            {{--<li><a href="#">English</a></li>--}}
 
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Rp Rupiah<i class="fas fa-chevron-down"></i></a>
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">Rp Rupiah<i class="fas fa-chevron-down"></i></a>--}}
 
-                                    </li>
-                                </ul>
+                                    {{--</li>--}}
+                                {{--</ul>--}}
                             </div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="/template/images/user.svg" alt=""></div>
@@ -77,7 +77,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="index.html">BatakZone</a></div>
+                            <div class="logo"><a href="index.html"style="color: #8b0000">BatakZone</a></div>
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="/template/images/search.png" alt=""></button>
+                                        <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="/template/images/search.png" alt=""></button>
                                     </form>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
                                         <img src="/template/images/cart.png" alt="">
-                                        <div class="cart_count"><span>1</span></div>
+                                        <div class="cart_count"style="background-color: #8b0000"><span>1</span></div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="cart.html">Keranjang</a></div>
@@ -146,11 +146,11 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="main_nav_content d-flex flex-row">
+                        <div class="main_nav_content d-flex flex-row"style="background-color: #8b0000">
 
                             <!-- Categories Menu -->
 
-                            <div class="cat_menu_container">
+                            <div class="cat_menu_container"style="background-color: #8b0000">
                                 <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                     <div class="cat_burger"><span></span><span></span><span></span></div>
                                     <div class="cat_menu_text">Kategori</div>
@@ -187,31 +187,11 @@
 
                             <!-- Main Nav Menu -->
 
-                            <div class="main_nav_menu ml-auto">
+                            <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="index.html">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li class="hassubs">
-                                        <a href="#">Super Deals<i class="fas fa-chevron"></i></a>
-
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Featured Brands<i class="fas fa-chevron"></i></a>
-
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-
-                                            <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                    <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </div>
 
@@ -338,7 +318,7 @@
                         <div class="newsletter_content clearfix">
                             <form action="#" class="newsletter_form">
                                 <input type="email" class="newsletter_input" required="required" placeholder="Masukkan email anda">
-                                <button class="newsletter_button">Berlangganan</button>
+                                <button class="newsletter_button"style="background-color: #8b0000">Berlangganan</button>
                             </form>
 
                         </div>
@@ -354,61 +334,75 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 footer_col">
-                    <div class="footer_column footer_contact">
-                        <div class="logo_container">
-                            <div class="logo"><a href="index.html">BatakZone</a></div>
-                        </div>
-                        <div class="footer_title">Hubungi kami</div>
-                        <div class="footer_phone">+62 821 6548 5311</div>
-                        <div class="footer_contact_text">
-                            <p>Jl.Sisingamangaraja,Sitoluama</p>
-                            <p>Institut Teknologi Del</p>
-                        </div>
-                        <div class="footer_social">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google"></i></a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 offset-lg-2">
+                <div class="col-lg-2">
                     <div class="footer_column">
-                        <div class="footer_title">Kategori</div>
+                        <div class="footer_title"><h4>BatakZone</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Pakaian</a></li>
-                            <li><a href="#">Cinderamata</a></li>
-                            <li><a href="#">Ukiran</a></li>
-                            <li><a href="#">Patung</a></li>
-                            <li><a href="#">Buku</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
                         </ul>
 
-
                     </div>
+
                 </div>
 
-
+                <div class="col-lg-2 ">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Beli</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="col-lg-2">
                     <div class="footer_column">
-                        <div class="footer_title">Bantuan</div>
+                        <div class="footer_title"><h4>Jual</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Akun saya</a></li>
-                            <li><a href="#">Lacak pesanan</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Customer Services</a></li>
-                            <li><a href="#">Pengembalian / Tukar</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Bantuan</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
+
+                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
+                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
 
                         </ul>
                     </div>
                 </div>
 
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
+                        </div>
+
+                        <div class="col-md-8">
+                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
+
+                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
+                            <div class="footer_social">
+                                <ul>
+                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </footer>
