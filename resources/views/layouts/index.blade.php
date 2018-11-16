@@ -78,16 +78,18 @@
 
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-12" style="margin-top: 0em">
-                                                                <div class="row">
-                                                                    <img src="images/box_closed.png"
-                                                                         style="max-width:15%;max-height: 15%">
-                                                                    <div class="col-md-6">
-                                                                        <p class="font-weight-normal">Pesanan Saya</p>
-                                                                    </div>
+                                                            <a href="/transactions">
+                                                                <div class="col-md-12" style="margin-top: 0em">
+                                                                    <div class="row">
+                                                                        <img src="images/box_closed.png"
+                                                                             style="max-width:15%;max-height: 15%">
+                                                                        <div class="col-md-6">
+                                                                            <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        </div>
 
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                            </a>
 
                                                             <div class="col-md-12" style="margin-top: 2em">
                                                                 <div class="row">
