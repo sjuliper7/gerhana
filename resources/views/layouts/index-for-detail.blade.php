@@ -86,7 +86,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#" style="color: black">BatakZone</a></div>
+                            <div class="logo"><a href="#" style="color: #8b0000">BatakZone</a></div>
                         </div>
                     </div>
 
@@ -97,20 +97,7 @@
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix">
                                         <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
-                                        {{--<div class="custom_dropdown">--}}
-                                            {{--<div class="custom_dropdown_list">--}}
-                                                {{--<span class="custom_dropdown_placeholder clc">Semua Kategori</span>--}}
-                                                {{--<i class="fas fa-chevron-down"></i>--}}
-                                                {{--<ul class="custom_list clc">--}}
-                                                    {{--<li><a class="clc" href="#">All Kategori</a></li>--}}
-                                                    {{--<li><a class="clc" href="#">Pakaian</a></li>--}}
-                                                    {{--<li><a class="clc" href="#">Cenderamata</a></li>--}}
-                                                    {{--<li><a class="clc" href="#">Ukiran</a></li>--}}
-                                                    {{--<li><a class="clc" href="#">Patung</a></li>--}}
-                                                    {{--<li><a class="clc" href="#">Buku</a></li>--}}
-                                                {{--</ul>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+
                                         <button type="submit" class="header_search_button trans_300" value="Submit"><img src="/template/images/search.png" alt=""></button>
                                     </form>
                                 </div>
@@ -134,7 +121,7 @@
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
                                         <img src="/template/images/cart.png" alt="">
-                                        <div class="cart_count"><span>10</span></div>
+                                        <div class="cart_count"style="background-color: #8b0000"><span>10</span></div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="#">Cart</a></div>
@@ -378,57 +365,75 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 footer_col">
-                    <div class="footer_column footer_contact">
-                        <div class="logo_container">
-                            <div class="logo"><a href="#">BatakZone</a></div>
-                        </div>
-                        <div class="footer_title">Got Question? Call Us 24/7</div>
-                        <div class="footer_phone">+62 8068 5005 3570</div>
-                        <div class="footer_contact_text">
-                            <p>Jl.Sisingamangaraja 12, Sitoluama</p>
-                            <p>Institut Teknologi Del</p>
-                        </div>
-                        <div class="footer_social">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
-                            </ul>
-                        </div>
+                <div class="col-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>BatakZone</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
+                        </ul>
+
                     </div>
+
                 </div>
 
-                <div class="col-lg-2 offset-lg-2">
+                <div class="col-lg-2 ">
                     <div class="footer_column">
-                        <div class="footer_title">Kategori</div>
+                        <div class="footer_title"><h4>Beli</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Pakaian</a></li>
-                            <li><a href="#">Cinderamata</a></li>
-                            <li><a href="#">Ukiran</a></li>
-                            <li><a href="#">Patung</a></li>
-                            <li><a href="#">Buku</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
                         </ul>
                     </div>
                 </div>
-
 
                 <div class="col-lg-2">
                     <div class="footer_column">
-                        <div class="footer_title">Bantuan</div>
+                        <div class="footer_title"><h4>Jual</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Akun Saya</a></li>
-                            <li><a href="#">Lcak Pesanan</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Customer Services</a></li>
-                            <li><a href="#">Pengembalian</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
                         </ul>
                     </div>
                 </div>
 
+                <div class="col-lg-3">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Bantuan</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
+
+                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
+                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
+                        </div>
+
+                        <div class="col-md-8">
+                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
+
+                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
+                            <div class="footer_social">
+                                <ul>
+                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </footer>
