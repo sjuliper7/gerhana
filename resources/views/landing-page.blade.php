@@ -30,7 +30,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" class="header_search_button trans_300" value="Submit"><img src="template/images/search.png" alt=""></button>
+                                    <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="template/images/search.png" alt=""></button>
                                 </form>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <img src="template/images/cart.png" alt="">
-                                    <div class="cart_count"><span>5</span></div>
+                                    <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="/carts">Cart</a></div>
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="main_nav_content d-flex flex-row">
+                    <div class="main_nav_content d-flex flex-row"style="background-color: #8b0000">
 
                         <!-- Categories Menu -->
 
@@ -84,11 +84,11 @@
 
                         <!-- Main Nav Menu -->
 
-                        <div class="main_nav_menu ml-auto">
+                        <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="/my-store">My Store<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
 
@@ -176,8 +176,8 @@
                 {{--<div class="banner_product_image"><img src="images/banner_product.png" alt=""></div>--}}
                 <div class="col-lg-5 offset-lg-4 fill_height">
                     <div class="banner_content">
-                        <h2 class="banner_text">new era of </h2>
-                        <h4 class="banner_text" style="margin-bottom: 150px">Kerajinan Tangan Tanah Batak</h4>
+                        <h2 class="banner_text"style="color: #8b0000">new era of </h2>
+                        <h4 class="banner_text" style="margin-bottom: 150px;color: #8b0000">Kerajinan Tangan Tanah Batak</h4>
                         {{--<div class="banner_price"><span>$530</span>$460</div>--}}
                         {{--<div class="banner_product_name">Apple Iphone 6s</div>--}}
                         {{--<div class="button banner_button"><a href="#">Shop Now</a></div>--}}
@@ -200,7 +200,7 @@
                             <ul class="clearfix">
                                 <li class="active">Product</li>
                             </ul>
-                            <div class="tabs_line"><span></span></div>
+                            <div class="tabs_line"><span style="background-color: #8b0000"></span></div>
                         </div>
 
                         <!-- Product Panel -->
