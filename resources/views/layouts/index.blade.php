@@ -41,7 +41,7 @@
                             <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
-                                    <div><a href="#">Register</a></div>
+                                    <div><a href="/register">Register</a></div>
                                     <div><a href="/login">Sign in</a></div>
                                 @else
                                     <div class="dropdown" style="width:20em ">
