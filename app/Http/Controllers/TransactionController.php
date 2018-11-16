@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DetailTransaction;
 use App\StatusTransaction;
 use App\Transaction;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,5 +52,20 @@ class TransactionController extends Controller
         }
 
         return view('transaction.confirm-payment');
+    }
+
+    public function indexAdmin() {
+        $transactions = Transaction::all();
+//        dd($transactions);
+
+        return view('adminlte::transaction.index')->with('transactions', $transactions);
+    }
+
+    public function detailTransaction($id) {
+        $detail = DetailTransaction::findOrFail($id);
+
+//        dd($detail);
+
+        return view('adminlte::transaction.show')->with('detail', $detail);
     }
 }
