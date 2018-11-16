@@ -40,7 +40,7 @@
                              </div>
                              <div class="form-group col-md-4">
                                  <label>Weight</label>
-                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Please enter stock" required>
+                                 <input type="text" name="weight" class="form-control" value="{{$product->weight}}" placeholder="Berat" data-error="Please enter stock" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
@@ -75,6 +75,12 @@
                              <div class="form-group col-md-6">
                                  <label>Description</label>
                                  <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required>{{$product->description}}</textarea>
+                             </div>
+                         </div>
+                         <div class="form-row">
+                             <div class="form-group col-md-12">
+                                 <label for="comment">Story:</label>
+                                 <textarea class="form-control" rows="5" id="story" name="story" placeholder="Story" required>{{$product->story}}</textarea>
                              </div>
                          </div>
                          <div style="float: right;margin-bottom: 20px">
@@ -115,6 +121,12 @@
                 height: 100,
                 width : 550,
             });
+
+            $('#story').summernote({
+                placeholder: 'Buat Story',
+                tabsize: 2,
+            });
+
 
             var i=1;
             $('#more').click(function(){

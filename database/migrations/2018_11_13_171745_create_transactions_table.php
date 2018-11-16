@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->double('shipment_fee');
             $table->string('shipment_etd');
             $table->string('address');
-            $table->string('prove-payment');
+            $table->string('prove_payment');
             $table->integer('id_user')->unsigned();
             $table->integer('id_status')->unsigned();
             $table->timestamps();
