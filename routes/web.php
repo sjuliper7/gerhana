@@ -74,6 +74,8 @@ Route::POST('/update-quantity','CartController@toUpdateQuantity');
 
 Route::get('checkout','CheckoutController@index');
 
+Route::get("transactions",'TransactionController@index');
+
 Route::resource('user-types','UserTypeController');
 
 Route::resource('user-status','UserStatusController');
