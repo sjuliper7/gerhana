@@ -96,7 +96,7 @@ class UserProfileController extends Controller
         $profile = UserProfile::findOrFail($id);
         $profile->full_name = $request['full_name'];
         $profile->address = $request['address'];
-
+        $profile->date_of_birth = $request['date_of_birth'];
 
         $img= $request->file('profile_image');
         $filename = $img->getClientOriginalName();
