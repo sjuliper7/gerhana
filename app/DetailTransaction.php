@@ -15,7 +15,7 @@ class DetailTransaction extends Model
     }
 
     public function transaction(){
-        return $this->hasOne('App\Transaction','id_transaction');
+        return $this->belongsTo('App\Transaction','id_transaction');
     }
 
 }

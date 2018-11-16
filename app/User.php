@@ -57,4 +57,8 @@ class User extends Authenticatable
         return $this->hasOne('App\UserStatus','id_user');
     }
 
+    public function transactions(){
+        return $this->hasMany('App\Transaction','id_user');
+    }
+
 }

@@ -12,6 +12,14 @@ class Transaction extends Model
     ];
 
     public function detailTransactions(){
-        return $this->belongsTo('App\DetailTransaction','id_transaction');
+        return $this->hasMany('App\DetailTransaction','id_transaction');
+    }
+
+    public function user(){
+        return $this->hasOne('App\User','id_user');
+    }
+
+    public function status(){
+        return $this->belongsTo('App\StatusTransaction','id_status');
     }
 }

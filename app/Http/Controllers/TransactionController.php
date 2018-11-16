@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class TransactionController extends Controller
 {
 
+    public function index(){
+        $user = Auth::user();
+        $transactions = $user->transactions;
+        return view('transaction.index',compact('transactions'));
+    }
+
     public function uploadPayment(Request $request)
     {
         return view('transaction.upload-payment-transfer');
