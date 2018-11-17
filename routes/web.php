@@ -76,6 +76,8 @@ Route::get('checkout','CheckoutController@index');
 
 Route::get("transactions",'TransactionController@index');
 
+Route::get("transactions/{id}/show",'TransactionController@show');
+
 Route::resource('user-types','UserTypeController');
 
 Route::resource('user-status','UserStatusController');
