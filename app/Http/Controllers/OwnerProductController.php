@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryProduct;
+use App\DetailTransaction;
 use App\Product;
 use App\StatusProduct;
 use App\Store;
@@ -106,4 +107,35 @@ class OwnerProductController extends Controller
         $categoryProducts = CategoryProduct::all();
         return view ('owner-product.edit', compact('product','statusProducts','categoryProducts','images'));
     }
+
+    public function  listTransaction($id)
+    {
+        $ownerStores = Auth::user()->store;
+//        dd($ownerStores);
+        $productTransactions = array();
+        $detailTransactions =  DetailTransaction::all();
+
+
+
+        foreach($detailTransactions as $detailTransaction){
+            if ($detailTransaction->product->store->id == $ownerStores->id){
+                array_push($productTransactions, $detailTransaction);
+//                echo $detailTransaction->product->store->id;
+//                echo $detailTransaction->product->name;
+//                echo $detailTransaction->product->images;
+//                echo $detailTransaction->quantity;
+//                echo $detailTransaction->sub_total_price;
+//                dd($detailTransaction->sub_total_price);
+//                dd($detailTransaction);
+            }
+        }
+
+        return view('owner-product.list_transaction')->with('detailTransactions',$detailTransactions);
+
+        //dd($productTransactions);
+
+
+
+    }
+
 }

@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="product_price" id="price">Rp {{number_format($product->price)}}</div>
                                 <div class="button_container">
-                                    <input type="submit" value="Add to Cart" class="button cart_button">
+                                    <input type="submit" value="Tambah Ke Keranjang" class="button cart_button"<div class="main_nav_menu ml-auto"style="background-color: #8b0000">
                                 </div>
 
                             </form>

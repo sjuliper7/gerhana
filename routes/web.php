@@ -58,6 +58,8 @@ Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
 
+Route::get('/list-transactions/{id}','OwnerProductController@listTransaction');
+
 Route::get('/checkout-detail','TransactionController@checkoutDetail');
 
 Route::get('/upload-payment','TransactionController@uploadPayment');
@@ -75,6 +77,8 @@ Route::POST('/update-quantity','CartController@toUpdateQuantity');
 Route::get('checkout','CheckoutController@index');
 
 Route::get("transactions",'TransactionController@index');
+
+Route::get("transactions/{id}/show",'TransactionController@show');
 
 Route::resource('user-types','UserTypeController');
 

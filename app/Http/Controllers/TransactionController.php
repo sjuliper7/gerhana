@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Auth;
 class TransactionController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         $user = Auth::user();
         $transactions = $user->transactions;
-        return view('transaction.index',compact('transactions'));
+        return view('transaction.index', compact('transactions'));
     }
 
     public function uploadPayment(Request $request)
@@ -55,14 +56,21 @@ class TransactionController extends Controller
         return view('transaction.confirm-payment');
     }
 
-    public function indexAdmin() {
-        $transactions = Transaction::all();
-//        dd($transactions);
+    public function show($id)
+    {
+        $transaction = Transaction::find($id);
+        $detailTransactions = $transaction->detailTransactions;
+        return view('transaction.show', compact('detailTransactions'));
+    }
 
+    public function indexAdmin()
+    {
+        $transactions = Transaction::all();
         return view('adminlte::transaction.index')->with('transactions', $transactions);
     }
 
-    public function detailTransaction($id) {
+    public function detailTransaction($id)
+    {
         $detail = DetailTransaction::findOrFail($id);
         $idProduct = $detail->id_product;
 
@@ -80,5 +88,6 @@ class TransactionController extends Controller
             ->with('decoded', $decoded)
             ->with('detail', $detail)
             ->with('products', $products);
+        return view('adminlte::transaction.show')->with('detail', $detail);
     }
 }
