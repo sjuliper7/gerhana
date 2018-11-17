@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetailTransaction;
+use App\Product;
 use App\StatusTransaction;
 use App\Transaction;
 use App\User;
@@ -63,9 +64,21 @@ class TransactionController extends Controller
 
     public function detailTransaction($id) {
         $detail = DetailTransaction::findOrFail($id);
+        $idProduct = $detail->id_product;
 
-//        dd($detail);
+        $products = Product::all();
 
-        return view('adminlte::transaction.show')->with('detail', $detail);
+        $decoded = json_decode($products, true);
+
+        foreach ($decoded as $key){
+            $data = (json_decode($key['images'], true));
+        }
+
+//        dd($products);
+
+        return view('adminlte::transaction.show', compact('data'))
+            ->with('decoded', $decoded)
+            ->with('detail', $detail)
+            ->with('products', $products);
     }
 }
