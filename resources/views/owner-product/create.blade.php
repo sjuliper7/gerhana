@@ -13,7 +13,7 @@
 
     <div class="container py-3">
         <div class="container">
-            <h2>Create Product</h2>
+            <h2>Tambah Produk</h2>
             <hr>
             <form action="/owner-products" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -21,33 +21,33 @@
                      <div class="col-md-6">
                          <div class="form-row">
                              <div class="form-group col-md-12">
-                                 <label>Name</label>
-                                 <input type="text" name="name" class="form-control" placeholder="Name" data-error="Please enter name" required>
+                                 <label>nama</label>
+                                 <input type="text" name="name" class="form-control" placeholder="nama" data-error="Mohon isi nama produk" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-4">
-                                 <label>Price</label>
-                                 <input type="text" name="price" class="form-control" placeholder="Price" data-error="Please enter price" required>
+                                 <label>Harga</label>
+                                 <input type="text" name="price" class="form-control" placeholder="harga" data-error="Mohon isi harga produk" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                              <div class="form-group col-md-4">
-                                 <label>Stock</label>
-                                 <input type="text" name="stock" class="form-control" placeholder="stock" data-error="Please enter stock" required>
+                                 <label>Stok</label>
+                                 <input type="text" name="stock" class="form-control" placeholder="stok" data-error="Mohon isi stok produk" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                              <div class="form-group col-md-4">
-                                 <label>Weight</label>
-                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Please enter stock" required>
+                                 <label>Berat</label>
+                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Mohon isi berat produk" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-5">
-                                 <label>Category Product</label>
+                                 <label>Kategori Produk</label>
                                  <select name="category-select" id="select-category" class="form-control" required style="width: 100%">
-                                     <option selected="selected" name="category-selected">Select Category</option>
+                                     <option selected="selected" name="category-selected">Pilih Kategori</option>
                                      @foreach($categoryProducts as $categoryProduct)
                                          <option value="{{$categoryProduct->id}}">{{$categoryProduct->name}}</option>
                                      @endforeach
@@ -56,9 +56,9 @@
                              </div>
 
                              <div class="form-group col-md-6">
-                                 <label>Status Product</label>
+                                 <label>Status Produk</label>
                                  <select name="status-select" id="select-status" class="form-control" style="width: auto">
-                                     <option selected="selected" name="status-selected">Select Status</option>
+                                     <option selected="selected" name="status-selected">Pilih Status</option>
                                      @foreach($statusProducts as $statusProduct)
                                          <option value="{{$statusProduct->id}}">{{$statusProduct->name}}</option>
                                      @endforeach
@@ -68,28 +68,28 @@
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-12">
-                                 <label>Description</label>
-                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required></textarea>
+                                 <label>Deskripsi</label>
+                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Deskripsi" required></textarea>
                              </div>
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-12">
-                                 <label for="comment">Story:</label>
-                                 <textarea class="form-control" rows="5" id="story" name="story" placeholder="Story" required></textarea>
+                                 <label for="comment">Cerita:</label>
+                                 <textarea class="form-control" rows="5" id="story" name="story" placeholder="Cerita" required></textarea>
                              </div>
                          </div>
 
 
                          <div style="float: right;margin-bottom: 20px">
-                             <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
-                             <input type="submit" id="add"value="Create Product" class="btn btn-info" style="margin-top: 10px;">
+                             <input type="button" id="cancel" value="Batal" class="btn btn-danger " style="margin-top: 10px;">
+                             <input type="submit" id="add"value="Tambah Produk" class="btn btn-info" style="margin-top: 10px;">
                          </div>
 
                      </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Images</label>
+                            <label>gambar</label>
                             <table class="table" id="dynamic_field">
                                 <tr>
                                     <td>
@@ -98,9 +98,9 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <label class="btn btn-info">Browse<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
+                                        <label class="btn btn-info"style=" background-color:#8b0000">Jelajah<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
                                     </td>
-                                    <td><button type="button" name="addImages" id="more" class="btn btn-success">Add More</button></td>
+                                    <td><button type="button" name="addImages" id="more" class="btn btn-success"style=" background-color:#8b0000">Tambah Foto</button></td>
                                 </tr>
                             </table>
                         </div>
@@ -131,7 +131,7 @@
                 i++;
                 $('#dynamic_field').append('<tr id="row'+i+'">' +
                     '<td><div class="form-group"><img src="http://placehold.it/400x400" id="show_image-'+i+'" style="max-width:100px;max-height:100px;" class="center-block" /></div></td>'+
-                    '<td><label class="btn btn-info">Browse<input type="file" id="input_image-'+i+'" name="images[]" onchange="loadImage(this)" style="display: none"></label></td>' +
+                    '<td><label class="btn btn-info">Jelajah<input type="file" id="input_image-'+i+'" name="images[]" onchange="loadImage(this)" style="display: none;"></label></td>' +
                     '<td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td>' +
                     '</tr>');
             });

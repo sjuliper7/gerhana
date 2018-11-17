@@ -18,10 +18,10 @@
                         <div class="header_search_content">
                             <div class="header_search_form_container">
                                 <form action="#" class="header_search_form clearfix">
-                                    <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                    <input type="search" required="required" class="header_search_input" placeholder="Cari Produk">
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
-                                            <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                            <span class="custom_dropdown_placeholder clc">Semua Kategori</span>
                                             <i class="fas fa-chevron-down"></i>
                                             <ul class="custom_list clc">
                                                 @foreach($categoryProducts as $categoryProduct)
@@ -47,7 +47,7 @@
                                     <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="/carts">Cart</a></div>
+                                    <div class="cart_text"><a href="/carts">Keranjang</a></div>
                                     <div class="cart_price">$85</div>
                                 </div>
                             </div>
