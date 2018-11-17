@@ -36,7 +36,7 @@
                                                 </div>
                                                 <div class="cart_item_price cart_info_col col-lg-2">
                                                     <div class="cart_item_title">Comment</div>
-                                                    <div>{{$detailTransaction->comment}}</div>
+                                                    <div class="text-danger">{{$detailTransaction->comment}}</div>
                                                 </div>
                                             </div>
                                         </li>
@@ -46,7 +46,7 @@
                         @endforeach
                             <div class="cart_buttons">
                                 {{--<a href="/" button type="button" class="btn btn-danger"style="background-color: #FFFFFF;color: #000000">Batal</a>--}}
-                                <a href="{{url('/checkout')}}" type="button" class="btn btn-success"style="background-color: #8b0000">Bayar</a>
+                                <a href="{{url('upload-payment/'.$detailTransaction->transaction->order_id)}}" type="button" class="btn btn-success"style="background-color: #8b0000">Bayar</a>
                             </div>
                     </div>
                 </div>
