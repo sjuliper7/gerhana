@@ -60,7 +60,9 @@ Route::resource('owner-products','OwnerProductController');
 
 Route::get('/checkout-detail','TransactionController@checkoutDetail');
 
-Route::get('/upload-payment','TransactionController@uploadPayment');
+Route::get('/upload-payment/{order_id}','TransactionController@payment');
+
+Route::POST('/upload-payment/{id}','TransactionController@updatePayment');
 
 Route::POST('confirm-payment','TransactionController@confirmPayment');
 
@@ -92,6 +94,6 @@ Route::POST('get-subdistricts','RajaOngkirController@getSubdistricts');
 
 Route::POST('estimate-cost','RajaOngkirController@estimateCost');
 
-Route::get('/transactions','TransactionController@indexAdmin');
+Route::get('/transactions-admin','TransactionController@indexAdmin');
 
 Route::get('transactions/{id}','TransactionController@detailTransaction');
