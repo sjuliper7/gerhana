@@ -96,9 +96,9 @@
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                        <input type="search" required="required" class="header_search_input" placeholder="Cari produk...">
 
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="/template/images/search.png" alt=""></button>
+                                        <button type="submit" class="header_search_button trans_300" style="background-color: #8b0000" value="Submit"><img src="/template/images/search.png" alt=""></button>
                                     </form>
                                 </div>
                             </div>

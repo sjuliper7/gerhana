@@ -56,8 +56,8 @@
                         </div>
 
                         <div class="cart_buttons">
-                            <a href="/" button type="button" class="button cart_button_clear">Cancel</a>
-                            <a href="{{url('/checkout')}}" type="button" class="button cart_button_checkout">Checkout</a>
+                            <a href="/" button type="button" class="btn btn-danger"style="background-color: #FFFFFF;color: #000000">Batal</a>
+                            <a href="{{url('/checkout')}}" type="button" class="btn btn-success"style="background-color: #8b0000">Pesan</a>
                         </div>
                     </div>
                 </div>
