@@ -19,6 +19,18 @@ class StatusTransactionTableSeeder extends Seeder
 
         DB::table('status_transactions')->insert(
             [
+                'name' => "Menunggu Verifikasi",
+            ]
+        );
+
+        DB::table('status_transactions')->insert(
+            [
+                'name' => "Pembayaran Tervirifikasi",
+            ]
+        );
+
+        DB::table('status_transactions')->insert(
+            [
                 'name' => "Order Disiapkan",
             ]
         );
