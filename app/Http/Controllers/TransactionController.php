@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetailTransaction;
+use App\RefBank;
 use App\StatusTransaction;
 use App\Transaction;
 use App\User;
@@ -19,9 +20,28 @@ class TransactionController extends Controller
         return view('transaction.index', compact('transactions'));
     }
 
-    public function uploadPayment(Request $request)
+    public function payment($order_id)
     {
-        return view('transaction.upload-payment-transfer');
+        $transaction = Transaction::where(['order_id' => $order_id])->firstOrFail();
+        $refBanks = RefBank::all();
+        return view('transaction.confirm-payment',compact('transaction', 'refBanks'));
+    }
+
+    public function updatePayment(Request $request, $id){
+        $transaction =Transaction::find($id);
+
+        $status = StatusTransaction::where(['name' => "Menunggu Verifikasi"])->firstOrFail();
+
+        $file       = $request->file('provement');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('provement')->move('images/',$fileName);
+
+        $transaction->prove_payment = $fileName;
+        $transaction->id_status = $status->id;
+
+        $transaction->save();
+
+        return redirect("transactions");
     }
 
     public function confirmPayment(Request $request)
@@ -37,6 +57,7 @@ class TransactionController extends Controller
         $transaction->address = $request["address"];
         $transaction->id_user = Auth::user()->id;
         $transaction->id_status = $statusTransactions->id;
+        $transaction->order_id = str_pad(count(Transaction::all())   + 1, 8, "0", STR_PAD_LEFT);
         $transaction->save();
 
         foreach ($carts as $cart) {
@@ -52,7 +73,7 @@ class TransactionController extends Controller
             $cart->save();
         }
 
-        return view('transaction.confirm-payment');
+        return redirect(url('/upload-payment/'.$transaction->order_id));
     }
 
     public function show($id)
