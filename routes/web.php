@@ -92,3 +92,6 @@ Route::POST('get-subdistricts','RajaOngkirController@getSubdistricts');
 
 Route::POST('estimate-cost','RajaOngkirController@estimateCost');
 
+Route::get('/transactions','TransactionController@indexAdmin');
+
+Route::get('transactions/{id}','TransactionController@detailTransaction');

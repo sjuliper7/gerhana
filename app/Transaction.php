@@ -8,7 +8,7 @@ class Transaction extends Model
 {
     protected $fillable = [
         'total_price', 'shipment_fee', 'shipment_etd', 'address',
-        'prove-payment','id_user','id_status'
+        'prove_payment','id_user','id_status'
     ];
 
     public function detailTransactions(){
@@ -16,7 +16,7 @@ class Transaction extends Model
     }
 
     public function user(){
-        return $this->hasOne('App\User','id_user');
+        return $this->belongsTo('App\User','id_user');
     }
 
     public function status(){
