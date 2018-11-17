@@ -123,7 +123,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="index.html"style="color: #8b0000">BatakZone</a></div>
+                            <div class="logo"><a href="/home"style="color: #8b0000">BatakZone</a></div>
                         </div>
                     </div>
 
@@ -168,7 +168,7 @@
                                         <div class="cart_count"style="background-color: #8b0000"><span>1</span></div>
                                     </div>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="cart.html">Keranjang</a></div>
+                                        <div class="cart_text"><a href="/carts">Keranjang</a></div>
                                         <div class="cart_price">Rp.50.000</div>
                                     </div>
                                 </div>
@@ -229,8 +229,8 @@
 
                             <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
-                                    <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="/home" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                    <li><a href="#"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </div>
