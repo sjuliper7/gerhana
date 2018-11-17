@@ -15,6 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('order_id')->unique();
             $table->double('total_price');
             $table->double('shipment_fee');
             $table->string('shipment_etd');

@@ -25,25 +25,25 @@
             <div class="col-md-6">
                 <h1>{{ $product->name}}</h1>
                 <hr>
-                <p class="lead text-danger">Price : Rp {{ number_format($product->price,2) }} </p>
-                <p class="lead text-success">Stock : {{ $product->stock }} pcs</p>
-                <p class="lead text-success">Category  : {{ $product->category->name}} </p>
+                <p class="lead text-danger">Harga : Rp {{ number_format($product->price,2) }} </p>
+                <p class="lead text-success">Stok : {{ $product->stock }} pcs</p>
+                <p class="lead text-success">Kategori  : {{ $product->category->name}} </p>
                 <p class="lead text-success">Status  : {{ $product->status->name}} </p>
-                <p class="small">Desc  : {!! $product->description !!} </p>
-                <p class="small">Story  : {!! $product->story !!} </p>
+                <p class="small">Deskripsi  : {!! $product->description !!} </p>
+                <p class="small">Cerita  : {!! $product->story !!} </p>
 
 
                 <hr>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $product->id] ]) !!}
-                <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                <a href="{{ url()->previous() }}" class="btn btn-primary">Kembali</a>
                 {{--@can('Edit Post')--}}
-                <a href="{{ route('owner-products.edit', $product->id) }}" class="btn btn-info" role="button">Edit</a>
+                <a href="{{ route('owner-products.edit', $product->id) }}" class="btn btn-info" role="button">Ubah</a>
                 {{--@endcan--}}
                 {{--@can('Delete Post')--}}
                 <form action="{{url('products/'.$product->id)}}" method="post">
                     {{csrf_field()}}
                     <input name="_method" type="hidden" value="DELETE">
-                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
+                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Hapus</button>
                 </form>
                 {{--onclick="return confirm('Are you sure?')"--}}
                 {{--@endcan--}}

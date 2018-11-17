@@ -13,9 +13,9 @@
 
                 <thead>
                     <tr>
-                        <th>ID Produk</th>
+                        <th>Product Name</th>
+                        <th>Preview Product</th>
                         <th>Quantity</th>
-                        <th>Total Price</th>
                         <th>Sub Total Price</th>
                         <th>Comment</th>
                         <th>Prove Payment</th>
@@ -23,15 +23,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($products as $detail)
                     <tr>
-                        <td>{{$detail->id_product}}</td>
-                        <td>{{$detail->quantity}}</td>
-                        <td>{{$detail->transaction->total_price}}</td>
-                        <td>{{$detail->sub_total_price}}</td>
-                        <td>{{$detail->comment}}</td>
-                        <td>{{$detail->transaction->prove_payment}}</td>
-                        <td>{{$detail->transaction->address}}</td>
+                        <td>{{$detail->name}}</td>
+                        <td>
+                            @foreach($data as $img)
+                                <img src="/images/{{ $img}}" style="max-height:200px;max-width: 200px">
+                            @endforeach
+                        </td>
+                        <td>{{$detail->detailTransaction->quantity}}</td>
+                        <td>{{$detail->detailTransaction->sub_total_price}}</td>
+                        <td>{{$detail->detailTransaction->comment}}</td>
+                        <td>{{$detail->detailTransaction->transaction->prove_payment}}</td>
+                        <td>{{$detail->detailTransaction->transaction->address}}</td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

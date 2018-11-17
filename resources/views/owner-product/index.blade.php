@@ -59,8 +59,12 @@
 
 
                     <div class="shop_content">
-                        <div class="row"style="margin-top: 1em">
-                            <button type="button" class="btn btn-primary"style="margin: 0.5em;background-color: #8b0000">Menu 1</button>
+                        <div class="row"style="margin-top: 1em" >
+
+                            <a href="{{ URL::to('list-transactions/' . $store->id ) }}">
+                            <button type="button" class="btn btn-primary"style="margin: 0.5em;background-color: #8b0000">List Transaction</button>
+                            </a>
+
                             <button type="button" class="btn btn-secondary"style="margin: 0.5em;background-color: #8b0000">Menu 2</button>
                             <button type="button" class="btn btn-success"style="margin: 0.5em;background-color: #8b0000">Menu 3</button>
                             <a href="{{url('owner-products/create')}}">
