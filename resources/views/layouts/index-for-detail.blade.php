@@ -45,31 +45,74 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-row">
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 8068 5005 3570</div>
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 8068 5005 3570</div>--}}
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>--}}
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Indonesia</a></li>
+                            <div class="top_bar_user text-center">
+                                @if(Auth::guest())
+                                    <div></div>
+                                    <div><a href="#">Register</a></div>
+                                    <div><a href="/login">Sign in</a></div>
+                                @else
+                                    <div class="dropdown" style="width:20em ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-user"></span> 
+                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <img src="images/kelola_akun.png"
+                                                                         style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                    <div class="text-left col-md-6">
+                                                                        <p class="font-weight-normal">Kelola Akun</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <a href="/transactions">
+                                                                <div class="col-md-12" style="margin-top: 0em">
+                                                                    <div class="row">
+                                                                        <img src="images/box_closed.png"
+                                                                             style="max-width:15%;max-height: 15%">
+                                                                        <div class="col-md-6">
+                                                                            <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+
+                                                            <div class="col-md-12" style="margin-top: 2em">
+                                                                <div class="row">
+                                                                    <img src="images/logout.png"
+                                                                         style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <form id="logout-form"
+                                                                              action="{{ url('/logout') }}"
+                                                                              method="POST" style="border: 0em">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="submit" value="logout">
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Rp<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">EUR Euro</a></li>
-                                            <li><a href="#">GBP British Pound</a></li>
-                                            <li><a href="#">JPY Japanese Yen</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="top_bar_user">
-                                <div class="user_icon"><img src="/template/images/user.svg" alt=""></div>
-                                <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+                                    </div>
+                                @endif
+
+
                             </div>
                         </div>
                     </div>
@@ -108,13 +151,7 @@
                     <!-- Wishlist -->
                     <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon"><img src="/template/images/heart.png" alt=""></div>
-                                <div class="wishlist_content">
-                                    <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                    <div class="wishlist_count">115</div>
-                                </div>
-                            </div>
+
 
                             <!-- Cart -->
                             <div class="cart">
@@ -124,7 +161,7 @@
                                         <div class="cart_count"style="background-color: #8b0000"><span>10</span></div>
                                     </div>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="#">Cart</a></div>
+                                        <div class="cart_text"><a href="#">Keranjang</a></div>
                                         <div class="cart_price">Rp.85</div>
                                     </div>
                                 </div>
@@ -142,11 +179,11 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="main_nav_content d-flex flex-row">
+                        <div class="main_nav_content d-flex flex-row"style="background-color: #8b0000">
 
                             <!-- Kategori Menu -->
 
-                            <div class="cat_menu_container">
+                            <div class="cat_menu_container"style="background-color: #8b0000">
                                 <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                     <div class="cat_burger"><span></span><span></span><span></span></div>
                                     <div class="cat_menu_text">Kategori</div>
@@ -182,45 +219,11 @@
 
                             <!-- Main Nav Menu -->
 
-                            <div class="main_nav_menu ml-auto">
+                            <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Super Deals<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a></li>
-                                    <!--
-                                    <li class="hassubs">
-                                        <a href="#">Super Deals<i class="fas fa-chevron"></i></a>
-                                        <ul>
-                                            <li><a href="#">Pakaian<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Cenderamata<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Ukiran<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Patung<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Buku<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Featured Brands<i class="fas fa-chevron"></i></a>
-                                        <ul>
-
-                                            <li><a href="#">Pakaian<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Cenderamata<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Ukiran<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Patung<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Buku<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li class="hassubs">
-                                        <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                    <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </div>
 
@@ -349,7 +352,7 @@
                         <div class="newsletter_content clearfix">
                             <form action="#" class="newsletter_form">
                                 <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                                <button class="newsletter_button">Subscribe</button>
+                                <button class="newsletter_button">Berlangganan</button>
                             </form>
                             {{--<div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>--}}
                         </div>

@@ -42,25 +42,71 @@
                         {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 821 6548 5311</div>--}}
                         {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:batakzone@gmail.com">batakzone@gmail.com</a></div>--}}
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                {{--<ul class="standard_dropdown top_bar_dropdown">--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Indonesia<i class="fas fa-chevron-down"></i></a>--}}
-                                        {{--<ul>--}}
-                                            {{--<li><a href="#">English</a></li>--}}
+                            <div class="top_bar_user text-center">
+                                @if(Auth::guest())
+                                    <div></div>
+                                    <div><a href="#">Register</a></div>
+                                    <div><a href="/login">Sign in</a></div>
+                                @else
+                                    <div class="dropdown" style="width:20em ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-user"></span> 
+                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <img src="images/kelola_akun.png"
+                                                                         style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                    <div class="text-left col-md-6">
+                                                                        <p class="font-weight-normal">Kelola Akun</p>
+                                                                    </div>
 
-                                        {{--</ul>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Rp Rupiah<i class="fas fa-chevron-down"></i></a>--}}
+                                                                </div>
+                                                            </div>
+                                                            <a href="/transactions">
+                                                                <div class="col-md-12" style="margin-top: 0em">
+                                                                    <div class="row">
+                                                                        <img src="images/box_closed.png"
+                                                                             style="max-width:15%;max-height: 15%">
+                                                                        <div class="col-md-6">
+                                                                            <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        </div>
 
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            </div>
-                            <div class="top_bar_user">
-                                <div class="user_icon"><img src="/template/images/user.svg" alt=""></div>
-                                <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+
+                                                            <div class="col-md-12" style="margin-top: 2em">
+                                                                <div class="row">
+                                                                    <img src="images/logout.png"
+                                                                         style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <form id="logout-form"
+                                                                              action="{{ url('/logout') }}"
+                                                                              method="POST" style="border: 0em">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="submit" value="logout">
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endif
+
+
                             </div>
                         </div>
                     </div>
@@ -112,13 +158,7 @@
                     <!-- Wishlist -->
                     <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon"><img src="/template/images/heart.png" alt=""></div>
-                                <div class="wishlist_content">
-                                    <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                    <div class="wishlist_count">115</div>
-                                </div>
-                            </div>
+
 
                             <!-- Cart -->
                             <div class="cart">
@@ -224,7 +264,7 @@
 
                             <div class="page_menu_search">
                                 <form action="#">
-                                    <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+                                    <input type="search" required="required" class="page_menu_search_input" placeholder="Cari Produk">
                                 </form>
                             </div>
                             <ul class="page_menu_nav">
@@ -331,6 +371,81 @@
     <!-- Footer -->
 
     <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>BatakZone</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2 ">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Beli</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Jual</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Bantuan</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
+
+                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
+                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
+                        </div>
+
+                        <div class="col-md-8">
+                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
+
+                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
+                            <div class="footer_social">
+                                <ul>
+                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer><footer class="footer">
         <div class="container">
             <div class="row">
 
