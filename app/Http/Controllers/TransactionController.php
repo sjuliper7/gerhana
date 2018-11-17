@@ -52,4 +52,10 @@ class TransactionController extends Controller
 
         return view('transaction.confirm-payment');
     }
+
+    public function show($id){
+        $transaction = Transaction::find($id);
+        $detailTransactions = $transaction->detailTransactions;
+        return view('transaction.show',compact('detailTransactions'));
+    }
 }
