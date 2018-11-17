@@ -58,6 +58,8 @@ Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
 
+Route::get('/list-transactions/{id}','OwnerProductController@listTransaction');
+
 Route::get('/checkout-detail','TransactionController@checkoutDetail');
 
 Route::get('/upload-payment','TransactionController@uploadPayment');
