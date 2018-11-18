@@ -19,7 +19,6 @@
                         <th>Customer Name</th>
                         <th>Address</th>
                         <th>Total Price</th>
-                        <th>Prove Payment</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -30,9 +29,8 @@
                             <td>{{ $transaction->user->name }}</td>
                             <td>{{ $transaction->address }}</td>
                             <td>{{ $transaction->total_price }}</td>
-                            <td>{{ $transaction->prove_payment}}</td>
                             <td>
-                                <a href="{{ url('transactions', $transaction->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
+                                <a href="{{url('transactions-admin/'.$transaction->id)}}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
                             </td>
                         </tr>
                     @endforeach
