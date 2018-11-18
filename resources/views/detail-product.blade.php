@@ -11,7 +11,8 @@
                 <div class="col-lg-2 order-lg-1 order-2">
                     <ul class="image_list">
                         @for($i = 1 ; $i< count($images);$i++)
-                            <li data-image="{{ asset('images/'.$images[$i]) }}"><img src="{{ asset('images/'.$images[$i]) }}" alt=""></li>
+                            <li data-image="{{ asset('images/'.$images[$i]) }}"><img
+                                    src="{{ asset('images/'.$images[$i]) }}" alt=""></li>
                         @endfor
                     </ul>
                 </div>
@@ -35,19 +36,26 @@
                                     <!-- Product Quantity -->
                                     <div class="product_quantity clearfix" style="margin-bottom: 40px">
                                         <span>Quantity: </span>
-                                        <input id="quantity_input" name="quantity" type="text" pattern="[0-9]*" value="1">
+                                        <input id="quantity_input" name="quantity" type="text" pattern="[0-9]*"
+                                               value="1">
                                         <div class="quantity_buttons">
-                                            <div id="quantity_inc_button" class="quantity_inc quantity_control" onclick="up()"><i class="fas fa-chevron-up"></i></div>
-                                            <div id="quantity_dec_button" class="quantity_dec quantity_control" onclick="down()"><i class="fas fa-chevron-down"></i></div>
+                                            <div id="quantity_inc_button" class="quantity_inc quantity_control"
+                                                 onclick="up()"><i class="fas fa-chevron-up"></i></div>
+                                            <div id="quantity_dec_button" class="quantity_dec quantity_control"
+                                                 onclick="down()"><i class="fas fa-chevron-down"></i></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <textarea class="form-control" name="comment" placeholder="Catatan Untuk Penjual"></textarea>
+                                    <textarea class="form-control" name="comment"
+                                              placeholder="Catatan Untuk Penjual"></textarea>
                                 </div>
                                 <div class="product_price" id="price">Rp {{number_format($product->price)}}</div>
                                 <div class="button_container">
-                                    <input type="submit" value="Tambah Ke Keranjang" class="button cart_button"<div class="main_nav_menu ml-auto"style="background-color: #8b0000">
+
+                                    <div class="main_nav_menu ml-auto" >
+                                        <input type="submit" value="Tambah Ke Keranjang" class="button cart_button" style="background-color: #8b0000">
+                                    </div>
                                 </div>
 
                             </form>
@@ -62,18 +70,18 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-           // $('#price').text("test");
+            // $('#price').text("test");
         });
-        
+
         function up() {
             var stock = '{{$product->stock}}';
             var qtyGet = $('#quantity_input').val();
             var quantity = parseInt(qtyGet);
-            var setQuantity = quantity+1;
+            var setQuantity = quantity + 1;
 
-            if(setQuantity <= parseInt(stock)){
+            if (setQuantity <= parseInt(stock)) {
                 $('#quantity_input').val(setQuantity);
-            }else {
+            } else {
                 alert("Max Stock");
                 $('#quantity_input').val(stock);
             }
@@ -83,11 +91,11 @@
             var stock = '{{$product->stock}}';
             var qtyGet = $('#quantity_input').val();
             var quantity = parseInt(qtyGet);
-            var setQuantity = quantity-1;
+            var setQuantity = quantity - 1;
 
-            if(setQuantity >= 1){
+            if (setQuantity >= 1) {
                 $('#quantity_input').val(setQuantity);
-            }else {
+            } else {
                 $('#quantity_input').val(1);
             }
         }
