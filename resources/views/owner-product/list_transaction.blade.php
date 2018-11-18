@@ -16,7 +16,8 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Nama Barang</th>
+                    <th>#Kode Transaksi</th>
+                    <th>Nama Produk</th>
                     <th>Harga Satuan</th>
                     <th>Jumlah Barang</th>
                     <th>Total Harga</th>
@@ -26,12 +27,14 @@
                 <tbody>
                     @foreach($detailTransactions as $detailTransaction)
                     <tr>
+                        <td>#{{$detailTransaction->transaction->order_id}}</td>
                         <td>{{$detailTransaction->product->name}}</td>
                         <td>{{$detailTransaction->product->price}}</td>
                         {{--<td>{{$detailTransaction->product->images}}</td>--}}
                         {{--<td><img src="{{ asset('images/'. $detailTransaction->product->images) }}" style="height: 55px; width: 50px; "> </td>--}}
                         <td>{{$detailTransaction->quantity}}</td>
                         <td>{{$detailTransaction->sub_total_price}}</td>
+                        <td class="text-success">{{$detailTransaction->transaction->status->name}}</td>
                         </tr>
                     @endforeach
                 </tbody>
