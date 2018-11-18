@@ -98,4 +98,6 @@ Route::POST('estimate-cost','RajaOngkirController@estimateCost');
 
 Route::get('/transactions-admin','TransactionController@indexAdmin');
 
-Route::get('transactions/{id}','TransactionController@detailTransaction');
+Route::get('transactions-admin/{id}','TransactionController@detailTransaction');
+
+Route::Post('status-transaction-update/{id}','TransactionController@statusTransaction');
