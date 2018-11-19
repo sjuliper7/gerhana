@@ -12,6 +12,29 @@ class StoresTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
+        DB::table('stores')->insert(
+            [
+                'store_name' => 'Batak Zone Merchant',
+                'store_owner' => "Batak Zone",
+                'store_email' => "admin@batakzone.com",
+                'store_phone' => "0812321345111",
+                'store_address' => "Institut Teknologi Del",
+                'store_ktp' => "-",
+                'store_ktp_image' => "-",
+                'store_npwp' => "-",
+                'store_npwp_image' => "-",
+                'store_account_bank' => "987654567898765431",
+                'store_account_type' => "Mandiri",
+                'store_account_bank_image' => "-",
+                'store_province'=>"Sumutera Utara",
+                'store_districts'=>"Kabupaten Tobasamosir",
+                'store_sub_district'=>"Balige",
+                'id_request' => '1',
+                'id_user' => '1',
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
+            ]
+        );
+
 
         DB::table('stores')->insert(
             [
@@ -30,7 +53,7 @@ class StoresTableSeeder extends Seeder
                 'store_province'=>"",
                 'store_districts'=>"",
                 'store_sub_district'=>"",
-                'id_request' => '1',
+                'id_request' => '2',
                 'id_user' => '2',
                 'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
