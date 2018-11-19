@@ -54,6 +54,21 @@
                     </div>
                 </div>
 
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>{{count($requestStores)}}</h3>
+
+                            <p>Transaction</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-paper-plane" style="font-size:72px" ></i>
+                        </div>
+                        <a href="/transactions-admin" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>

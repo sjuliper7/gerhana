@@ -16,13 +16,16 @@ class StoreController extends Controller
     }
 
     public function myStore(){
-        if(Auth::user()->requestStore == null){
+        if(count(Auth::user()->requestStore) == 0){
             return redirect('request-stores/create');
         }else{
             $request = Auth::user()->requestStore;
 
             if($request[count($request)-1]->status->name === "PENDING"){
                 return view('stores.pending');
+            }
+            elseif($request[count($request)-1]->status->name === "REJECTED"){
+                return view('stores.rejected');
             }else{
                 if($request[count($request)-1]->status->name === "REJECTED"){
                     $requestStore = $request[count($request)-1];
@@ -30,8 +33,7 @@ class StoreController extends Controller
                 }else{
                     $store = Auth::user()->store;
                     $products = $store->products;
-
-                    return view('owner-product.index',compact('products'));
+                    return view('owner-product.index',compact('products','store'));
                 }
             }
 

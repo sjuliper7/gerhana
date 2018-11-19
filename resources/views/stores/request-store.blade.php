@@ -158,7 +158,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-10 mx-auto" >
-                <center><h3>Request Toko</h3></center><br>
+                <center><h3 style="color: #8b0000">Request Toko</h3></center><br>
                 <form action="{{url('request-stores')}}" method="post" id="myForm" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="tab">
@@ -278,9 +278,9 @@
                     </div>
                     <div>
                         <div style="float:right;">
-                            <button type="button"  id="prevBtn" class="btn btn-default" onclick="nextPrev(-1)" style="margin-left: 20px">Previous</button>
-                            <button type="button"  id="nextBtn" class="btn btn-success" onclick="nextPrev(1)">Next</button>
-                            <button type="submit"  id="submit" class="btn btn-success" style="display: none">Submit</button>
+                            <button type="button"  id="prevBtn" class="btn btn-success" onclick="nextPrev(-1)" style="margin-left: 20px;background-color: #8b0000">Previous</button>
+                            <button type="button"  id="nextBtn" class="btn btn-success" onclick="nextPrev(1)"style="background-color: #8b0000">Next</button>
+                            <button type="submit"  id="submit" class="btn btn-success" style="display: none;background-color: #8b0000">Submit</button>
                         </div>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->

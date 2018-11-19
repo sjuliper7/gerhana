@@ -1,4 +1,4 @@
-@extends('layouts.index-for-detail')
+@extends('layouts.index-for-listing')
 
 @section('content')
     <div class="home">
@@ -19,13 +19,13 @@
                     <!-- Shop Sidebar -->
                     <div class="shop_sidebar">
                         <div class="sidebar_section">
-                            <div class="sidebar_title">Kategori</div>
+                            <div class="sidebar_title"style="color: #8b0000">Kategori</div>
                             <ul class="sidebar_Kategori">
-                                <li><a href="#">Pakaian</a></li>
-                                <li><a href="#">Cenderamata</a></li>
-                                <li><a href="#">Ukiran</a></li>
-                                <li><a href="#">Patung</a></li>
-                                <li><a href="#">Buku</a></li>
+                                <li><a href="#"style="color: #8b0000">Pakaian</a></li>
+                                <li><a href="#"style="color: #8b0000">Cenderamata</a></li>
+                                <li><a href="#"style="color: #8b0000">Ukiran</a></li>
+                                <li><a href="#"style="color: #8b0000">Patung</a></li>
+                                <li><a href="#"style="color: #8b0000">Buku</a></li>
                             </ul>
                         </div>
 
@@ -39,9 +39,19 @@
                         <img src="images/shop.png" class="img-thumbnail" alt="...">
                     </div>
                     <div class="col-sm-7">
-                        <h3>Toko TB Silalahi</h3>
-                        <h5>johanlbatu@gmail.com</h5>
-                        <h5> Laguboti, Kab. Toba Samosir, Sumatra Utara</h5>
+                        <h3 style="color: #8b0000">{{$store->store_name}}</h3>
+                        <h5>{{$store->store_email}}</h5>
+                        <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img class="" src="images/location_icon.png"style="max-height: 80%;max-width: 80%;margin-left: 0em">
+                            </div>
+                            <div class="col-sm-6">
+                                <h5 style="margin-top: 5px;margin-left: -10px">{{$store->store_address}}</h5>
+                            </div>
+
+                        </div>
+                        </div>
                     </div>
                     </div>
 
@@ -49,17 +59,21 @@
 
 
                     <div class="shop_content">
-                        <div class="row"style="margin-top: 1em">
-                            <button type="button" class="btn btn-primary"style="margin: 0.5em">Menu 1</button>
-                            <button type="button" class="btn btn-secondary"style="margin: 0.5em">Menu 2</button>
-                            <button type="button" class="btn btn-success"style="margin: 0.5em">Menu 3</button>
+                        <div class="row"style="margin-top: 1em" >
+
+                            <a href="{{ URL::to('list-transactions/' . $store->id ) }}">
+                            <button type="button" class="btn btn-primary"style="margin: 0.5em;background-color: #8b0000">List Transaction</button>
+                            </a>
+
+                            <button type="button" class="btn btn-secondary"style="margin: 0.5em;background-color: #8b0000">Menu 2</button>
+                            <button type="button" class="btn btn-success"style="margin: 0.5em;background-color: #8b0000">Menu 3</button>
                             <a href="{{url('owner-products/create')}}">
-                                <button type="button" class="btn btn-primary"style="margin: 0.5em">Create Product</button>
+                                <button type="button" class="btn btn-primary"style="margin: 0.5em;background-color: #8b0000">Tambah Produk</button>
                                 </a>
                         </div>
 
                         <div class="shop_bar clearfix">
-                            <div class="shop_product_count"><span>186</span> products found</div>
+                            <div class="shop_product_count"><span>{{count($products)}}</span> products found</div>
                             <div class="shop_sorting">
                                 <span>Urutkan berdasarkan:</span>
                                 <ul>

@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
              RefBankTableSeeder::class,
              RequestStoreTableSeeder::class,
              StoresTableSeeder::class,
-
+             StatusTransactionTableSeeder::class,
+             ProductTableSeeder::class,
          ]);
 
     }

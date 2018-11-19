@@ -38,6 +38,9 @@ class User extends Authenticatable
         return $this->hasMany('App\RequestStore','id_user');
     }
 
+    public function carts(){
+        return$this->hasMany('App\Cart','id_user');
+    }
 
     public function userType()
     {
@@ -54,8 +57,8 @@ class User extends Authenticatable
         return $this->hasOne('App\UserStatus','id_user');
     }
 
-
-
-
+    public function transactions(){
+        return $this->hasMany('App\Transaction','id_user');
+    }
 
 }

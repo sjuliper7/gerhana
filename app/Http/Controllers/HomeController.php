@@ -8,6 +8,7 @@ use App\StatusStore;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,11 +29,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $status = StatusStore::where('name','PENDING')->firstOrFail();
-//        $products = Product::all();
-        $users = User::all();
-        $requestStores = RequestStore::where(["id_status" => $status->id])->get();
+        if(Auth::user()->hasRole("Admin")){
+            $status = StatusStore::where('name','PENDING')->firstOrFail();
+            $users = User::all();
+            $requestStores = RequestStore::where(["id_status" => $status->id])->get();
 
-        return view('adminlte::home', compact('requestStores','users'));
+            return view('adminlte::home', compact('requestStores','users'));
+        }else{
+            return redirect("/");
+        }
     }
 }
