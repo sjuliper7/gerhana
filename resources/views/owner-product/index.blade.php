@@ -1,4 +1,4 @@
-@extends('layouts.index-for-detail')
+@extends('layouts.index-for-listing')
 
 @section('content')
     <div class="home">
