@@ -6,6 +6,7 @@ use App\CategoryProduct;
 use App\Product;
 use App\StatusProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -16,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderby('id', 'desc')->get();
+        $store = Auth::user()->store;
+        $products = Product::where(['id_store' => $store->id])->orderby('id', 'desc')->get();
         return view('adminlte::products.index', compact('products'));
     }
 
@@ -40,25 +42,37 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $store = Auth::user()->store;
         $product = new Product();
         $product->name = $request['name'];
         $product->price = $request['price'];
         $product->stock = $request['stock'];
-        $product->weight = $request['weight'];
         $product->description = $request['description'];
-
-        $file       = $request->file('image');
-        $fileName   = $file->getClientOriginalName();
-        $request->file('image')->move('images/',$fileName);
-
+        $product->story = $request['story'];
+        $product->weight = $request['weight'];
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
-        $product->image = $fileName;
+        $product->id_store = $store->id;
+
+
+        if($request->hasfile('images'))
+        {
+
+            foreach($request->file('images') as $image)
+            {
+                $name = $image->getClientOriginalName();
+                $image->move('images/', $name);
+                $data[] = $name;
+            }
+        }
+
+        $images = json_encode($data);
+        $product->images = $images;
 
         $product->save();
 
         //Display a successful message upon save
-        return redirect()->route('my-store')
+        return redirect()->route('products.show')
             ->with('flash_message', 'Product,
              '. $product->name.' created');
 
@@ -74,8 +88,9 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('status','category')->findOrFail($id);
-//        dd($product);
-        return view ('adminlte::products.show', compact('product'));
+        $images = json_decode($product->images);
+
+        return view ('adminlte::products.show', compact('product','images'));
     }
 
     /**
@@ -86,10 +101,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::with('status','category')->findOrFail($id);
+        $images = json_decode($product->images);
+
         $statusProducts  = StatusProduct::all();
         $categoryProducts = CategoryProduct::all();
-        return view ('adminlte::products.edit', compact('product','statusProducts','categoryProducts'));
+        return view ('adminlte::products.edit', compact('product','statusProducts','categoryProducts','images'));
     }
 
     /**
@@ -108,19 +125,28 @@ class ProductController extends Controller
         $product->stock = $request['stock'];
         $product->weight = $request['weight'];
         $product->description = $request['description'];
+        $product->story = $request['story'];
+        $product->id_status = $request['status-select'];
+        $product->id_category = $request['category-select'];
 
-        $file       = $request->file('image');
-        $fileName   = $file->getClientOriginalName();
-        if($fileName != $product->image){
-            $request->file('image')->move('images/',$fileName);
-            $product->image = $fileName;
+        if($request->hasfile('images'))
+        {
+            foreach($request->file('images') as $image)
+            {
+                $name = $image->getClientOriginalName();
+                $image->move('images/', $name);
+                $data[] = $name;
+            }
+
+            $images = json_encode($data);
+            $product->images = $images;
         }
 
         $product->save();
 
         return redirect()->route('products.show',
             $product->id)->with('flash_message',
-            'Article, '. $product->name.' updated');
+            'Product, '. $product->name.' updated');
     }
 
     /**
