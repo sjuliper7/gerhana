@@ -17,13 +17,50 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = User::all()->count();
-        if (!($user == 1)) {
-            if (!Auth::user()->hasPermissionTo('Administer roles & permissions')) //If user does //not have this permission
-            {
+        if ($request->is('home'))
+        {
+            if (!Auth::user()->hasPermissionTo('Admin roles & permissions'))
                 abort('401');
-            }
+            else return $next($request);
         }
+
+        //status products
+        if ($request->is('status-products'))
+        {
+            if (!Auth::user()->hasPermissionTo('Access Status Products'))
+                abort('401');
+            else return $next($request);
+        }
+
+        if ($request->is('status-products/create'))
+        {
+            if (!Auth::user()->hasPermissionTo('Create Status Product'))
+                abort('401');
+            else return $next($request);
+        }
+
+        if ($request->is('status-products/*/edit'))
+        {
+            if (!Auth::user()->hasPermissionTo('Edit Status Product'))
+                abort('401');
+            else return $next($request);
+        }
+
+        if ($request->is('status-products/*'))
+        {
+            if (!Auth::user()->hasPermissionTo('Delete Product'))
+                abort('401');
+            else return $next($request);
+        }
+
+        if ($request->is('status-products/*'))
+        {
+            if (!Auth::user()->hasPermissionTo('Delete Product'))
+                abort('401');
+            else return $next($request);
+        }
+
+
 
         return $next($request);
     }
