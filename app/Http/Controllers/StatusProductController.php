@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class StatusProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct() {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
     public function index()
     {
         $statusProducts = StatusProduct::orderby('id', 'desc')->get();
