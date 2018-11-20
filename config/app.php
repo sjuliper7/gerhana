@@ -151,7 +151,6 @@ return [
          * Package Service Providers...
          */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
-        Laravel\Dusk\DuskServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         /*
