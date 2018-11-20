@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class PermissionsTableSeeder extends Seeder
 {
@@ -11,13 +12,13 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+
 
         DB::table('permissions')->insert(
             [
                 'name' => "Administer roles & permissions",
                 'guard_name' => "web",
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
+                'created_at' => Carbon::now(),
             ]
         );
 
@@ -25,7 +26,7 @@ class PermissionsTableSeeder extends Seeder
             [
                 'name' => "Access Store",
                 'guard_name' => "web",
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
+                'created_at' => Carbon::now(),
             ]
         );
 
@@ -33,7 +34,7 @@ class PermissionsTableSeeder extends Seeder
             [
                 'name' => "My Store",
                 'guard_name' => "web",
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
+                'created_at' => Carbon::now(),
             ]
         );
 

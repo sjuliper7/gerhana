@@ -11,7 +11,6 @@ class RequestStoreTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
 
         DB::table('request_stores')->insert(
             [
@@ -33,7 +32,6 @@ class RequestStoreTableSeeder extends Seeder
                 'comment' => '-',
                 'id_status' => '2',
                 'id_user' => '1',
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
@@ -57,7 +55,6 @@ class RequestStoreTableSeeder extends Seeder
                 'comment' => '-',
                 'id_status' => '2',
                 'id_user' => '2',
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
@@ -81,7 +78,6 @@ class RequestStoreTableSeeder extends Seeder
                 'comment' => '-',
                 'id_status' => '1',
                 'id_user' => '3',
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
     }
