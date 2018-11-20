@@ -117,8 +117,8 @@
                         </ul>
 
                         <div class="menu_contact">
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/phone_white.png')}}" alt=""></div>+38 068 005 3570</div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
         <div class="row"style="margin: 1em">
 
             <div class="col">
-                <img src="images/shop.png" class="rounded mx-auto d-block" alt="...">
+                <img src="{{asset('images/shop.png')}}" class="rounded mx-auto d-block" alt="...">
             </div>
 
         </div>
