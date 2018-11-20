@@ -15,6 +15,30 @@ class RequestStoreTableSeeder extends Seeder
 
         DB::table('request_stores')->insert(
             [
+                'store_name' => 'Batak Zone Merchant',
+                'store_owner' => "Batak Zone",
+                'store_email' => "admin@batakzone.com",
+                'store_phone' => "0812321345111",
+                'store_address' => "Institut Teknologi Del",
+                'store_ktp' => "-",
+                'store_ktp_image' => "-",
+                'store_npwp' => "-",
+                'store_npwp_image' => "-",
+                'store_account_bank' => "987654567898765431",
+                'store_account_type' => "Mandiri",
+                'store_account_bank_image' => "-",
+                'store_province'=>"Sumutera Utara",
+                'store_districts'=>"Kabupaten Tobasamosir",
+                'store_sub_district'=>"Balige",
+                'comment' => '-',
+                'id_status' => '2',
+                'id_user' => '1',
+                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
+            ]
+        );
+
+        DB::table('request_stores')->insert(
+            [
                 'store_name' => 'Jhon Toko Haduan',
                 'store_owner' => "Jhon Charles",
                 'store_email' => "jhon-toko@gmail.com",
@@ -27,9 +51,9 @@ class RequestStoreTableSeeder extends Seeder
                 'store_account_bank' => "9876545678987654321",
                 'store_account_type' => "Mandiri",
                 'store_account_bank_image' => "account.jpeg",
-                'store_province'=>"",
-                'store_districts'=>"",
-                'store_sub_districts'=>"",
+                'store_province'=>"Sumatera Utara",
+                'store_districts'=>"Toba Samosir",
+                'store_sub_district'=>"Balige",
                 'comment' => '-',
                 'id_status' => '2',
                 'id_user' => '2',
@@ -51,9 +75,9 @@ class RequestStoreTableSeeder extends Seeder
                 'store_account_bank' => "987654567898765431",
                 'store_account_type' => "Mandiri",
                 'store_account_bank_image' => "account.jpeg",
-                'store_province'=>"",
-                'store_districts'=>"",
-                'store_sub_districts'=>"",
+                'store_province'=>"Sumatera Utara",
+                'store_districts'=>"Toba Samosir",
+                'store_sub_district'=>"Balige",
                 'comment' => '-',
                 'id_status' => '1',
                 'id_user' => '3',

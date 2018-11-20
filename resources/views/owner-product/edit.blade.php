@@ -22,26 +22,31 @@
                      <div class="col-md-6">
                          <div class="form-row">
                              <div class="form-group col-md-12">
-                                 <label>Name</label>
-                                 <input type="text" name="name" value="{{$product->name}}" class="form-control" placeholder="Name" data-error="Please enter name" required>
+                                 <label>Nama</label>
+                                 <input type="text" name="name" value="{{$product->name}}" class="form-control" placeholder="nama" data-error="Please enter name" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
                          <div class="form-row">
-                             <div class="form-group col-md-6">
-                                 <label>Price</label>
-                                 <input type="text" name="price" value="{{$product->price}}" class="form-control" placeholder="Price" data-error="Please enter price" required>
+                             <div class="form-group col-md-4">
+                                 <label>Harga</label>
+                                 <input type="text" name="price" value="{{$product->price}}" class="form-control" placeholder="harga" data-error="Please enter price" required>
                                  <div class="help-block with-errors"></div>
                              </div>
-                             <div class="form-group col-md-6">
-                                 <label>Stock</label>
-                                 <input type="text" name="stock" value="{{$product->stock}}" class="form-control" placeholder="stock" data-error="Please enter stock" required>
+                             <div class="form-group col-md-4">
+                                 <label>Stok</label>
+                                 <input type="text" name="stock" value="{{$product->stock}}" class="form-control" placeholder="stok" data-error="Please enter stock" required>
+                                 <div class="help-block with-errors"></div>
+                             </div>
+                             <div class="form-group col-md-4">
+                                 <label>Berat</label>
+                                 <input type="text" name="weight" class="form-control" value="{{$product->weight}}" placeholder="berat" data-error="Please enter stock" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-5">
-                                 <label>Category Product</label>
+                                 <label>Kategori Produk</label>
                                  <select name="category-select" id="select-category" class="form-control" required style="width: 100%">
                                      @foreach($categoryProducts as $categoryProduct)
                                          @if($categoryProduct->id == $product->id_category)
@@ -54,7 +59,7 @@
                              </div>
 
                              <div class="form-group col-md-6">
-                                 <label>Status Product</label>
+                                 <label>Status Produk</label>
                                  <select name="status-select" id="select-status" class="form-control" style="width: auto">
                                      @foreach($statusProducts as $statusProduct)
                                          @if($statusProduct->id == $product->id_status)
@@ -68,13 +73,19 @@
                          </div>
                          <div class="form-row">
                              <div class="form-group col-md-6">
-                                 <label>Description</label>
-                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="Description" required>{{$product->description}}</textarea>
+                                 <label>Deskripsi</label>
+                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="deskripsi" required>{{$product->description}}</textarea>
+                             </div>
+                         </div>
+                         <div class="form-row">
+                             <div class="form-group col-md-12">
+                                 <label for="comment">Cerita</label>
+                                 <textarea class="form-control" rows="5" id="story" name="story" placeholder="cerita" required>{{$product->story}}</textarea>
                              </div>
                          </div>
                          <div style="float: right;margin-bottom: 20px">
-                             <input type="button" id="cancel" value="Cancel" class="btn btn-danger " style="margin-top: 10px;">
-                             <input type="submit" id="add"value="Update Product" class="btn btn-info" style="margin-top: 10px;">
+                             <input type="button" id="cancel" value="Batal" class="btn btn-danger " style="margin-top: 10px;">
+                             <input type="submit" id="add"value="Ubah Produk" class="btn btn-info" style="margin-top: 10px;">
                          </div>
 
                      </div>
@@ -89,7 +100,7 @@
                             </div>
 
                             <table class="table" id="dynamic_field">
-                                <button type="button" name="addImages" id="more" class="btn btn-success">Update Images</button>
+                                <button type="button" name="addImages" id="more" class="btn btn-success"style="background-color: #8b0000">Ubah Gambar</button>
                             </table>
                         </div>
                     </div>
@@ -111,12 +122,18 @@
                 width : 550,
             });
 
+            $('#story').summernote({
+                placeholder: 'Buat Story',
+                tabsize: 2,
+            });
+
+
             var i=1;
             $('#more').click(function(){
                 i++;
                 $('#dynamic_field').append('<tr id="row'+i+'">' +
                     '<td><div class="form-group"><img src="http://placehold.it/400x400" id="show_image-'+i+'" style="max-width:100px;max-height:100px;" class="center-block" /></div></td>'+
-                    '<td><label class="btn btn-info">Browse<input type="file" id="input_image-'+i+'" name="images[]" onchange="loadImage(this)" style="display: none"></label></td>' +
+                    '<td><label class="btn btn-info">Jelajahi<input type="file" id="input_image-'+i+'" name="images[]" onchange="loadImage(this)" style="display: none"></label></td>' +
                     '<td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td>' +
                     '</tr>');
             });

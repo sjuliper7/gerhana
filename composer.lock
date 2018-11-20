@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6afb5645f2acea4e28e4109eb846353",
+    "content-hash": "3b49a190bfa0c2465be31a49cecfa09b",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -656,6 +656,187 @@
             "time": "2018-02-07T20:20:57+00:00"
         },
         {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2018-04-22T15:46:56+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -1278,6 +1459,276 @@
             "time": "2018-10-10T09:24:14+00:00"
         },
         {
+            "name": "o2system/curl",
+            "version": "v2.1.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/o2system/curl.git",
+                "reference": "9a495c8ebe24594edff0a012e380d07a341539cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/o2system/curl/zipball/9a495c8ebe24594edff0a012e380d07a341539cd",
+                "reference": "9a495c8ebe24594edff0a012e380d07a341539cd",
+                "shasum": ""
+            },
+            "require": {
+                "o2system/kernel": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "O2System\\Curl\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steeven Andrian Salim",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "Founder and Lead Project"
+                },
+                {
+                    "name": "Teguh Rianto",
+                    "email": "teguh.rianto22@gmail.com",
+                    "homepage": "http://teguhrianto22.pusku.com",
+                    "role": "Template Designer"
+                }
+            ],
+            "description": "PHP Lightweight HTTP Request Client Libraries",
+            "keywords": [
+                "driver",
+                "framework",
+                "libraries",
+                "php",
+                "utilities"
+            ],
+            "time": "2018-07-19T06:06:45+00:00"
+        },
+        {
+            "name": "o2system/gear",
+            "version": "v2.1.29",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/o2system/gear.git",
+                "reference": "eec1cc9ed3dd1c96ed69224ea9d49797825903ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/o2system/gear/zipball/eec1cc9ed3dd1c96ed69224ea9d49797825903ea",
+                "reference": "eec1cc9ed3dd1c96ed69224ea9d49797825903ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "O2System\\Gear\\": "src"
+                },
+                "files": [
+                    "src/Helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steeven Andrian Salim",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "Founder and Lead Project"
+                },
+                {
+                    "name": "Teguh Rianto",
+                    "email": "teguh.rianto22@gmail.com",
+                    "homepage": "http://teguhrianto22.pusku.com",
+                    "role": "Template Designer"
+                }
+            ],
+            "description": "PHP Developer Tools Library",
+            "keywords": [
+                "driver",
+                "framework",
+                "libraries",
+                "php",
+                "utilities"
+            ],
+            "time": "2018-10-03T13:32:48+00:00"
+        },
+        {
+            "name": "o2system/kernel",
+            "version": "v1.9.114",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/o2system/kernel.git",
+                "reference": "7405b256000f6201c3019de6b644dc47a4d100cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/o2system/kernel/zipball/7405b256000f6201c3019de6b644dc47a4d100cc",
+                "reference": "7405b256000f6201c3019de6b644dc47a4d100cc",
+                "shasum": ""
+            },
+            "require": {
+                "o2system/gear": "*",
+                "o2system/psr": "*",
+                "o2system/spl": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "O2System\\Kernel\\": "src"
+                },
+                "files": [
+                    "src/Config/Constants.php",
+                    "src/Helpers/Common.php",
+                    "src/Helpers/Inflector.php",
+                    "src/Helpers/Cookie.php",
+                    "src/Kernel.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steeven Andrian Salim",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "Founder and Lead Project"
+                },
+                {
+                    "name": "Teguh Rianto",
+                    "email": "teguh.rianto22@gmail.com",
+                    "homepage": "http://teguhrianto22.pusku.com",
+                    "role": "Template Designer"
+                }
+            ],
+            "description": "O2System Framework Kernel",
+            "keywords": [
+                "driver",
+                "framework",
+                "libraries",
+                "php",
+                "singleton"
+            ],
+            "time": "2018-10-13T03:11:24+00:00"
+        },
+        {
+            "name": "o2system/psr",
+            "version": "v1.2.78",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/o2system/psr.git",
+                "reference": "ab0c9ba7ab7140fc4d8e6046978b9b3b17330019"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/o2system/psr/zipball/ab0c9ba7ab7140fc4d8e6046978b9b3b17330019",
+                "reference": "ab0c9ba7ab7140fc4d8e6046978b9b3b17330019",
+                "shasum": ""
+            },
+            "require": {
+                "o2system/spl": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "O2System\\Psr\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steeven Andrian Salim",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "Founder and Lead Project"
+                },
+                {
+                    "name": "Teguh Rianto",
+                    "email": "teguh.rianto22@gmail.com",
+                    "homepage": "http://teguhrianto22.pusku.com",
+                    "role": "Template Designer"
+                }
+            ],
+            "description": "O2System PSR it's build based on PHP Framework Interop Group (PHP-FIG) standards recommendations. This repository contains a collection of PHP interfaces based on the PSR-0 until the PSR-7.",
+            "keywords": [
+                "framework",
+                "interfaces",
+                "libraries",
+                "php",
+                "utilities"
+            ],
+            "time": "2018-07-20T08:32:50+00:00"
+        },
+        {
+            "name": "o2system/spl",
+            "version": "v1.0.62",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/o2system/spl.git",
+                "reference": "3b8967a70226a367f0314504c0675c8c051861e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/o2system/spl/zipball/3b8967a70226a367f0314504c0675c8c051861e6",
+                "reference": "3b8967a70226a367f0314504c0675c8c051861e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "O2System\\Spl\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steeven Andrian Salim",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "Founder and Lead Project"
+                },
+                {
+                    "name": "Teguh Rianto",
+                    "email": "teguh.rianto22@gmail.com",
+                    "homepage": "http://teguhrianto22.pusku.com",
+                    "role": "Template Designer"
+                }
+            ],
+            "description": "O2System Standard PHP Library (SPL) it's build based on original standard PHP library. It's made up primarily of commonly needed datastructure classes, iterators, handlers and exceptions for O2System PHP Framework, but also can be used independently outside O2System PHP Framework environment.",
+            "keywords": [
+                "framework",
+                "interfaces",
+                "libraries",
+                "php",
+                "utilities"
+            ],
+            "time": "2018-10-07T14:05:40+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -1370,6 +1821,56 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -1685,6 +2186,49 @@
                 "spatie"
             ],
             "time": "2018-10-15T19:10:43+00:00"
+        },
+        {
+            "name": "steevenz/rajaongkir",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/steevenz/rajaongkir.git",
+                "reference": "b1916492ad5213b12fb0940f10c8a7c84b272add"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/steevenz/rajaongkir/zipball/b1916492ad5213b12fb0940f10c8a7c84b272add",
+                "reference": "b1916492ad5213b12fb0940f10c8a7c84b272add",
+                "shasum": ""
+            },
+            "require": {
+                "o2system/curl": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "php-class",
+            "autoload": {
+                "files": [
+                    "src/Rajaongkir.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU General Public License v3.0 License"
+            ],
+            "authors": [
+                {
+                    "name": "Steeve Andrian",
+                    "email": "steevenz@steevenz.com",
+                    "homepage": "http://www.steevenz.com",
+                    "role": "PHP Programmer"
+                }
+            ],
+            "description": "Advanced RajaOngkir API PHP Class",
+            "keywords": [
+                "api",
+                "rajaongkir"
+            ],
+            "time": "2018-03-17T04:09:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

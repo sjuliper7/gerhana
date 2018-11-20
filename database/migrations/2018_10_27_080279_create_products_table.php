@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
             $table->string('images');
             $table->longText('description');
             $table->longText('story');
+            $table->double('weight');
             $table->integer('id_status')->unsigned();
             $table->integer('id_category')->unsigned();
             $table->integer('id_store')->unsigned();

@@ -8,7 +8,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-sm-3 col-3 order-1">
                     <div class="logo_container">
-                        <div class="logo"><a href="#">BatakZone</a></div>
+                        <div class="logo"><a href="/home" style="color: #8b0000">BatakZone</a></div>
                     </div>
                 </div>
 
@@ -18,10 +18,10 @@
                         <div class="header_search_content">
                             <div class="header_search_form_container">
                                 <form action="#" class="header_search_form clearfix">
-                                    <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                    <input type="search" required="required" class="header_search_input" placeholder="Cari Produk">
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
-                                            <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                            <span class="custom_dropdown_placeholder clc">Semua Kategori</span>
                                             <i class="fas fa-chevron-down"></i>
                                             <ul class="custom_list clc">
                                                 @foreach($categoryProducts as $categoryProduct)
@@ -30,7 +30,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" class="header_search_button trans_300" value="Submit"><img src="template/images/search.png" alt=""></button>
+                                    <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="template/images/search.png" alt=""></button>
                                 </form>
                             </div>
                         </div>
@@ -44,10 +44,10 @@
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <img src="template/images/cart.png" alt="">
-                                    <div class="cart_count"><span>5</span></div>
+                                    <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="#">Cart</a></div>
+                                    <div class="cart_text"><a href="/carts">Keranjang</a></div>
                                     <div class="cart_price">$85</div>
                                 </div>
                             </div>
@@ -65,14 +65,14 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="main_nav_content d-flex flex-row">
+                    <div class="main_nav_content d-flex flex-row"style="background-color: #8b0000">
 
                         <!-- Categories Menu -->
 
-                        <div class="cat_menu_container">
+                        <div class="cat_menu_container"style="background-color: #8b0000">
                             <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                 <div class="cat_burger"><span></span><span></span><span></span></div>
-                                <div class="cat_menu_text">categories</div>
+                                <div class="cat_menu_text">KATEGORI</div>
                             </div>
 
                             <ul class="cat_menu">
@@ -84,11 +84,11 @@
 
                         <!-- Main Nav Menu -->
 
-                        <div class="main_nav_menu ml-auto">
+                        <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="/my-store">My Store<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="/home" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                <li><a href="#"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
 
@@ -120,7 +120,7 @@
 
                         <div class="page_menu_search">
                             <form action="#">
-                                <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+                                <input type="search" required="required" class="page_menu_search_input" placeholder="Cari Produk">
                             </form>
                         </div>
                         <ul class="page_menu_nav">
@@ -159,6 +159,13 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("tests");
+        })
+    </script>
+
 @endsection
 
 @section('content')
@@ -169,8 +176,8 @@
                 {{--<div class="banner_product_image"><img src="images/banner_product.png" alt=""></div>--}}
                 <div class="col-lg-5 offset-lg-4 fill_height">
                     <div class="banner_content">
-                        <h2 class="banner_text">new era of </h2>
-                        <h4 class="banner_text" style="margin-bottom: 150px">Kerajinan Tangan Tanah Batak</h4>
+                        <h2 class="banner_text"style="color: #8b0000">new era of </h2>
+                        <h4 class="banner_text" style="margin-bottom: 150px;color: #8b0000">Kerajinan Tangan Tanah Batak</h4>
                         {{--<div class="banner_price"><span>$530</span>$460</div>--}}
                         {{--<div class="banner_product_name">Apple Iphone 6s</div>--}}
                         {{--<div class="button banner_button"><a href="#">Shop Now</a></div>--}}
@@ -193,7 +200,7 @@
                             <ul class="clearfix">
                                 <li class="active">Product</li>
                             </ul>
-                            <div class="tabs_line"><span></span></div>
+                            <div class="tabs_line"><span style="background-color: #8b0000"></span></div>
                         </div>
 
                         <!-- Product Panel -->
@@ -202,35 +209,24 @@
 
                             @foreach($products as $product)
                                 <!-- Slider Item -->
-                                    <div class="featured_slider_item" style="margin-bottom: 20px">
+                                        <div class="featured_slider_item" style="margin-bottom: 20px">
                                         <div class="border_active"></div>
                                         <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
                                             <?php
                                                 $images = json_decode($product->images);
                                             ?>
                                             <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <a href="{{ URL::to('detail-product/' . $product->id ) }}">
+                                                <a href="{{ URL::to('buy/' . $product->name ) }}">
                                                     <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
                                                 </a>
                                             </div>
 
-
                                             <div class="product_content">
                                                 <div class="product_price discount">Rp. {{$product->price}}</div>
-                                                <div class="product_name"><div><a href="{{ URL::to('detail-product/' . $product->id ) }}">{{$product->name}}</a></div></div>
-                                                <div class="product_extras">
-                                                    <a href="{{ URL::to('detail-product/' . $product->id ) }}">
-                                                        <button class="product_cart_button">Buy</button>
-                                                    </a>
-                                                </div>
+                                                <div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>
                                             </div>
-                                            <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                            <ul class="product_marks">
-                                                <li class="product_mark product_discount">-25%</li>
-                                                <li class="product_mark product_new">new</li>
-                                            </ul>
                                         </div>
-                                    </div>
+                                        </div>
                                 @endforeach
 
                             </div>

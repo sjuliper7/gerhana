@@ -13,4 +13,10 @@ class LandingPageController extends Controller
         $products = Product::all();
         return view('landing-page',compact('categoryProducts', 'products'));
     }
+
+    public function buyProduct($name){
+        $product = Product::where(['name' => $name])->firstOrFail();
+        $images = json_decode($product->images);
+        return view('detail-product',compact('product','images'));
+    }
 }

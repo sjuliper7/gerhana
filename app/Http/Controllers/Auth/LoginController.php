@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Cart;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -25,6 +28,21 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
+        $carts = Session::get('carts');
+        if($carts !== null){
+            foreach ($carts as $cart){
+                $crt  = new Cart();
+                $crt->id_product = $cart->id_product;
+                $crt->id_user = Auth::user()->id;
+                $crt->quantity = $cart->quantity;
+                $crt->comment = $cart->comment;
+                $crt->sub_total_price = $cart->sub_total_price;
+                $crt->is_active = true;
+                $crt->save();
+            }
+            Session::forget('carts');
+        }
+
         if ( $user->hasRole('Customer') ) {// do your margic here
             return redirect()->route('landing-page');
         }

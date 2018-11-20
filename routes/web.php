@@ -58,8 +58,46 @@ Route::get('{name}/products','OwnerProductController@index');
 
 Route::resource('owner-products','OwnerProductController');
 
+Route::get('/list-transactions/{id}','OwnerProductController@listTransaction');
+
+Route::get('/checkout-detail','TransactionController@checkoutDetail');
+
+Route::get('/upload-payment/{order_id}','TransactionController@payment');
+
+Route::POST('/upload-payment/{id}','TransactionController@updatePayment');
+
+Route::POST('confirm-payment','TransactionController@confirmPayment');
+
+Route::get('buy/{name}','LandingPageController@buyProduct');
+
+Route::POST('carts','CartController@addToCart');
+
+Route::get('carts','CartController@index');
+
+Route::POST('/update-quantity','CartController@toUpdateQuantity');
+
+Route::get('checkout','CheckoutController@index');
+
+Route::get("transactions",'TransactionController@index');
+
+Route::get("transactions/{id}/show",'TransactionController@show');
+
 Route::resource('user-types','UserTypeController');
 
 Route::resource('user-status','UserStatusController');
 
 Route::resource('user-profile','UserProfileController');
+
+Route::resource('status-transactions','StatusTransactionController');
+
+Route::POST('get-cities','RajaOngkirController@getCities');
+
+Route::POST('get-subdistricts','RajaOngkirController@getSubdistricts');
+
+Route::POST('estimate-cost','RajaOngkirController@estimateCost');
+
+Route::get('/transactions-admin','TransactionController@indexAdmin');
+
+Route::get('transactions-admin/{id}','TransactionController@detailTransaction');
+
+Route::Post('status-transaction-update/{id}','TransactionController@statusTransaction');

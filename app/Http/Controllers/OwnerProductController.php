@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryProduct;
+use App\DetailTransaction;
 use App\Product;
 use App\StatusProduct;
 use App\Store;
@@ -33,6 +34,7 @@ class OwnerProductController extends Controller
         $product->stock = $request['stock'];
         $product->description = $request['description'];
         $product->story = $request['story'];
+        $product->weight = $request['weight'];
         $product->id_status = $request['status-select'];
         $product->id_category = $request['category-select'];
         $product->id_store = $store->id;
@@ -54,7 +56,7 @@ class OwnerProductController extends Controller
 
         $product->save();
 
-        return redirect(url($store->store_name.'/products'));
+        return redirect(url('/my-store'));
     }
 
     public function show($id){
@@ -70,6 +72,7 @@ class OwnerProductController extends Controller
         $product->name = $request['name'];
         $product->price = $request['price'];
         $product->stock = $request['stock'];
+        $product->weight = $request['weight'];
         $product->description = $request['description'];
         $product->story = $request['story'];
         $product->id_status = $request['status-select'];
@@ -90,7 +93,7 @@ class OwnerProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('owner-products.show',
+        return redirect()->route('my-store',
             $product->id)->with('flash_message',
             'Product, '. $product->name.' updated');
     }
@@ -104,4 +107,35 @@ class OwnerProductController extends Controller
         $categoryProducts = CategoryProduct::all();
         return view ('owner-product.edit', compact('product','statusProducts','categoryProducts','images'));
     }
+
+    public function  listTransaction($id)
+    {
+        $ownerStores = Auth::user()->store;
+//        dd($ownerStores);
+        $productTransactions = array();
+        $detailTransactions =  DetailTransaction::all();
+
+
+
+        foreach($detailTransactions as $detailTransaction){
+            if ($detailTransaction->product->store->id == $ownerStores->id){
+                array_push($productTransactions, $detailTransaction);
+//                echo $detailTransaction->product->store->id;
+//                echo $detailTransaction->product->name;
+//                echo $detailTransaction->product->images;
+//                echo $detailTransaction->quantity;
+//                echo $detailTransaction->sub_total_price;
+//                dd($detailTransaction->sub_total_price);
+//                dd($detailTransaction);
+            }
+        }
+
+        return view('owner-product.list_transaction')->with('detailTransactions',$detailTransactions);
+
+        //dd($productTransactions);
+
+
+
+    }
+
 }

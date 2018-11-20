@@ -45,31 +45,74 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-row">
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.jpg" alt=""></div>+62 8068 5005 3570</div>
-                        <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.jpg" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 8068 5005 3570</div>--}}
+                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">batakzone@gmail.com</a></div>--}}
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Indonesia</a></li>
+                            <div class="top_bar_user text-center">
+                                @if(Auth::guest())
+                                    <div></div>
+                                    <div><a href="#">Register</a></div>
+                                    <div><a href="/login">Sign in</a></div>
+                                @else
+                                    <div class="dropdown" style="width:20em ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-user"></span> 
+                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <img src="images/kelola_akun.png"
+                                                                         style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                    <div class="text-left col-md-6">
+                                                                        <p class="font-weight-normal">Kelola Akun</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <a href="/transactions">
+                                                                <div class="col-md-12" style="margin-top: 0em">
+                                                                    <div class="row">
+                                                                        <img src="images/box_closed.png"
+                                                                             style="max-width:15%;max-height: 15%">
+                                                                        <div class="col-md-6">
+                                                                            <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+
+                                                            <div class="col-md-12" style="margin-top: 2em">
+                                                                <div class="row">
+                                                                    <img src="images/logout.png"
+                                                                         style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <form id="logout-form"
+                                                                              action="{{ url('/logout') }}"
+                                                                              method="POST" style="border: 0em">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="submit" value="logout">
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Rp<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">EUR Euro</a></li>
-                                            <li><a href="#">GBP British Pound</a></li>
-                                            <li><a href="#">JPY Japanese Yen</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="top_bar_user">
-                                <div class="user_icon"><img src="images/user.svg" alt=""></div>
-                                <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -86,7 +129,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">BatakZone</a></div>
+                            <div class="logo"><a href="/home" style="color: #8b0000">BatakZone</a></div>
                         </div>
                     </div>
 
@@ -96,22 +139,9 @@
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
-                                        <div class="custom_dropdown">
-                                            <div class="custom_dropdown_list">
-                                                <span class="custom_dropdown_placeholder clc">Semua Kategori</span>
-                                                <i class="fas fa-chevron-down"></i>
-                                                <ul class="custom_list clc">
-                                                    <li><a class="clc" href="#">All Kategori</a></li>
-                                                    <li><a class="clc" href="#">Pakaian</a></li>
-                                                    <li><a class="clc" href="#">Cenderamata</a></li>
-                                                    <li><a class="clc" href="#">Ukiran</a></li>
-                                                    <li><a class="clc" href="#">Patung</a></li>
-                                                    <li><a class="clc" href="#">Buku</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+                                        <input type="search" required="required" class="header_search_input" placeholder="Cari produk...">
+
+                                        <button type="submit" class="header_search_button trans_300" style="background-color: #8b0000" value="Submit"><img src="/template/images/search.png" alt=""></button>
                                     </form>
                                 </div>
                             </div>
@@ -121,23 +151,17 @@
                     <!-- Wishlist -->
                     <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon"><img src="images/heart.jpg" alt=""></div>
-                                <div class="wishlist_content">
-                                    <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                    <div class="wishlist_count">115</div>
-                                </div>
-                            </div>
+
 
                             <!-- Cart -->
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
-                                        <img src="images/cart.jpg" alt="">
-                                        <div class="cart_count"><span>10</span></div>
+                                        <img src="/template/images/cart.png" alt="">
+                                        <div class="cart_count"style="background-color: #8b0000"><span>10</span></div>
                                     </div>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="#">Cart</a></div>
+                                        <div class="cart_text"><a href="/carts">Keranjang</a></div>
                                         <div class="cart_price">Rp.85</div>
                                     </div>
                                 </div>
@@ -155,11 +179,11 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="main_nav_content d-flex flex-row">
+                        <div class="main_nav_content d-flex flex-row"style="background-color: #8b0000">
 
                             <!-- Kategori Menu -->
 
-                            <div class="cat_menu_container">
+                            <div class="cat_menu_container"style="background-color: #8b0000">
                                 <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                     <div class="cat_burger"><span></span><span></span><span></span></div>
                                     <div class="cat_menu_text">Kategori</div>
@@ -195,45 +219,11 @@
 
                             <!-- Main Nav Menu -->
 
-                            <div class="main_nav_menu ml-auto">
+                            <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Super Deals<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a></li>
-                                    <!--
-                                    <li class="hassubs">
-                                        <a href="#">Super Deals<i class="fas fa-chevron"></i></a>
-                                        <ul>
-                                            <li><a href="#">Pakaian<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Cenderamata<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Ukiran<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Patung<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Buku<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Featured Brands<i class="fas fa-chevron"></i></a>
-                                        <ul>
-
-                                            <li><a href="#">Pakaian<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Cenderamata<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Ukiran<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Patung<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Buku<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li class="hassubs">
-                                        <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                    <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </div>
 
@@ -331,8 +321,8 @@
                             </ul>
 
                             <div class="menu_contact">
-                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.jpg" alt=""></div>+38 068 005 3570</div>
-                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.jpg" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="/template/images/phone_white.png" alt=""></div>+38 068 005 3570</div>
+                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="/template/images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                             </div>
                         </div>
                     </div>
@@ -355,16 +345,16 @@
                 <div class="col">
                     <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                         <div class="newsletter_title_container">
-                            <div class="newsletter_icon"><img src="images/send.jpg" alt=""></div>
+                            <div class="newsletter_icon"><img src="/template/images/send.png" alt=""></div>
                             <div class="newsletter_title">Sign up for Newsletter</div>
                             <div class="newsletter_text"><p>...and receive %20 coupon for first shopping.</p></div>
                         </div>
                         <div class="newsletter_content clearfix">
                             <form action="#" class="newsletter_form">
                                 <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                                <button class="newsletter_button">Subscribe</button>
+                                <button class="newsletter_button">Berlangganan</button>
                             </form>
-                            <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
+                            {{--<div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>--}}
                         </div>
                     </div>
                 </div>
@@ -378,57 +368,75 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 footer_col">
-                    <div class="footer_column footer_contact">
-                        <div class="logo_container">
-                            <div class="logo"><a href="#">BatakZone</a></div>
-                        </div>
-                        <div class="footer_title">Got Question? Call Us 24/7</div>
-                        <div class="footer_phone">+62 8068 5005 3570</div>
-                        <div class="footer_contact_text">
-                            <p>Jl.Sisingamangaraja 12, Sitoluama</p>
-                            <p>Institut Teknologi Del</p>
-                        </div>
-                        <div class="footer_social">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
-                            </ul>
-                        </div>
+                <div class="col-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>BatakZone</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
+                        </ul>
+
                     </div>
+
                 </div>
 
-                <div class="col-lg-2 offset-lg-2">
+                <div class="col-lg-2 ">
                     <div class="footer_column">
-                        <div class="footer_title">Kategori</div>
+                        <div class="footer_title"><h4>Beli</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Pakaian</a></li>
-                            <li><a href="#">Cinderamata</a></li>
-                            <li><a href="#">Ukiran</a></li>
-                            <li><a href="#">Patung</a></li>
-                            <li><a href="#">Buku</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
                         </ul>
                     </div>
                 </div>
-
 
                 <div class="col-lg-2">
                     <div class="footer_column">
-                        <div class="footer_title">Bantuan</div>
+                        <div class="footer_title"><h4>Jual</h4></div>
                         <ul class="footer_list">
-                            <li><a href="#">Akun Saya</a></li>
-                            <li><a href="#">Lcak Pesanan</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Customer Services</a></li>
-                            <li><a href="#">Pengembalian</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
                         </ul>
                     </div>
                 </div>
 
+                <div class="col-lg-3">
+                    <div class="footer_column">
+                        <div class="footer_title"><h4>Bantuan</h4></div>
+                        <ul class="footer_list">
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
+                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
+
+                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
+                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
+                        </div>
+
+                        <div class="col-md-8">
+                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
+
+                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
+                            <div class="footer_social">
+                                <ul>
+                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </footer>
@@ -447,10 +455,10 @@
                         </div>
                         <div class="logos ml-sm-auto">
                             <ul class="logos_list">
-                                <li><a href="#"><img src="images/logos_1.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_2.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_3.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/logos_4.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="/template/images/logos_1.png" alt=""></a></li>
+                                <li><a href="#"><img src="/template/images/logos_2.png" alt=""></a></li>
+                                <li><a href="#"><img src="/template/images/logos_3.png" alt=""></a></li>
+                                <li><a href="#"><img src="/template/images/logos_4.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
