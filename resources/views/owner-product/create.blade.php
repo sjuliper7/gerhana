@@ -94,7 +94,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <img src="http://placehold.it/400x400" id="show_image-" style="max-width:100px;max-height:100px;" class="center-block" />
+                                            <img src="{{asset('http://placehold.it/400x400')}}" id="show_image-" style="max-width:100px;max-height:100px;" class="center-block" />
                                         </div>
                                     </td>
                                     <td>

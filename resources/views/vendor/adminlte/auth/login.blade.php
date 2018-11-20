@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
     <div class="text-center" style="margin-top: 0em">
         <a href="{{ url('/home') }}">
-            <img src="images/tittle.png" alt="Responsive image" style="width: 15%;height: 15%">
+            <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="width: 15%;height: 15%">
         </a>
     </div>
 </head>
@@ -18,7 +18,7 @@
         <div class="col-md-6">
             <div class="text-center" style="margin-top: 5em">
                 <a href="{{ url('/home') }}">
-                    <img src="images/new_login.png" alt="Responsive image" style="width: 100%;height: 100%">
+                    <img src="{{asset('images/new_login.png')}}" alt="Responsive image" style="width: 100%;height: 100%">
                 </a>
                 <h3> Selamat datang di BatakZone</h3></b>
                 <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini.</h5>

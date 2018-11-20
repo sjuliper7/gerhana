@@ -7,7 +7,7 @@
         <a href="{{route('products.create')}}" class="btn btn-success" style="margin-bottom: 20px; margin-left: 20px">Create Product</a>
             <div class="row">
                 <div class="col-sm-2"style="margin-left:-1em">
-                    <img src="images/shop.png" class="img-thumbnail" alt="...">
+                    <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
                 </div>
                 <div class="col-sm-7">
                     <h3 style="color: #8b0000">{{Auth::user()->store->store_name}}</h3>
@@ -15,7 +15,7 @@
                     <div class="col-sm-8">
                         <div class="row">
                             <div class="col-sm-2">
-                                <img class="" src="images/location_icon.png"style="max-height: 80%;max-width: 80%;margin-left: 0em">
+                                <img class="" src="{{asset('images/location_icon.png')}}"style="max-height: 80%;max-width: 80%;margin-left: 0em">
                             </div>
                             <div class="col-sm-6">
                                 <h5 style="margin-top: 5px;margin-left: -10px">{{Auth::user()->store->store_address}}</h5>
