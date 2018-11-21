@@ -48,8 +48,8 @@
                             <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
-                                    <div><a href="#">Register</a></div>
-                                    <div><a href="/login">Sign in</a></div>
+                                    <div><a href="/register">Daftar</a></div>
+                                    <div><a href="/login">Masuk</a></div>
                                 @else
                                     <div class="dropdown" style="width:20em ">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -212,7 +212,7 @@
 
                             <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                    <li><a href="/home" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
                                     <li><a href="contact.html"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>

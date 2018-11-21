@@ -45,8 +45,8 @@
                             <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
-                                    <div><a href="#">Register</a></div>
-                                    <div><a href="/login">Sign in</a></div>
+                                    <div><a href="/register">Daftar</a></div>
+                                    <div><a href="/login">Masuk</a></div>
                                 @else
                                     <div class="dropdown" style="width:20em ">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -446,80 +446,7 @@
             </div>
         </div>
     </footer><footer class="footer">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>BatakZone</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-2 ">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Beli</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Jual</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Bantuan</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
-
-                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
-                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
-                        </div>
-
-                        <div class="col-md-8">
-                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
-
-                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
-                            <div class="footer_social">
-                                <ul>
-                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </footer>
 
     <!-- Copyright -->
