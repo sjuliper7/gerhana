@@ -17,11 +17,10 @@ class CrateReviewsTable extends Migration
             $table->increments('id');
             $table->text('comment');
             $table->integer('rating');
-            $table->boolean('approved');
-            $table->boolean('is_spam');
-            $table->timestamps();
+            $table->integer('status');
             $table->integer('id_product');
             $table->integer('id_user');
+            $table->timestamps();
 
             $table->foreign('id_product')->references('id')->on('products');
             $table->foreign('id_user')->references('id')->on('users');
