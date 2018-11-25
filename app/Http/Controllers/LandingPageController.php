@@ -17,6 +17,8 @@ class LandingPageController extends Controller
     public function buyProduct($name){
         $product = Product::where(['name' => $name])->firstOrFail();
         $images = json_decode($product->images);
-        return view('detail-product',compact('product','images'));
+        $reviews = $product->reviews()->paginate(30);
+//        dd(count($reviews));
+        return view('detail-product',compact('product','images','reviews'));
     }
 }
