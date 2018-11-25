@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,6 +19,7 @@ class UsersTableSeeder extends Seeder
                 'name' => "Batak Zone",
                 'email' => 'admin@batakzone.co.id',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => Carbon::now(),
             ]
         );
 
@@ -26,6 +28,7 @@ class UsersTableSeeder extends Seeder
                 'name' => "Jhon Sipahutar",
                 'email' => 'sjhon7@gmail.com',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => Carbon::now(),
             ]
         );
 
@@ -34,6 +37,7 @@ class UsersTableSeeder extends Seeder
                 'name' => "Johan Lumbanbatu",
                 'email' => 'lbjohan7@gmail.com',
                 'password' => bcrypt('qwerty1'),
+                'created_at' => Carbon::now(),
             ]
         );
 
