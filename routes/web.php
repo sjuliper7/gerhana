@@ -103,3 +103,6 @@ Route::get('transactions-admin/{id}','TransactionController@detailTransaction');
 Route::Post('status-transaction-update/{id}','TransactionController@statusTransaction');
 
 Route::resource('reviews','ReviewController');
+
+Route::resource('catalog-products','CatalogController');
+
