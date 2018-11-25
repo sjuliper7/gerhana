@@ -101,3 +101,5 @@ Route::get('/transactions-admin','TransactionController@indexAdmin');
 Route::get('transactions-admin/{id}','TransactionController@detailTransaction');
 
 Route::Post('status-transaction-update/{id}','TransactionController@statusTransaction');
+
+Route::resource('catalog-products','CatalogController');
