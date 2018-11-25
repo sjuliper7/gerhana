@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -13,7 +16,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::orderBy('id','desc')->get();
+        return view('adminlte::reviews.index',compact('reviews'));
     }
 
     /**
@@ -34,7 +38,16 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $review = new Review();
+        $review->rating = $request['rating'];
+        $review->comment = $request['comment'];
+        $review->status = 0;
+        $review->id_product = $request['id_product'];
+        $review->id_user = $user->id;
+        $review->save();
+        $product = Product::find($request['id_product']);
+        return redirect(url('buy/'.$product->name));
     }
 
     /**
@@ -68,7 +81,10 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        $review->status = $request['status'];
+        $review->save();
+        return redirect('reviews');
     }
 
     /**
