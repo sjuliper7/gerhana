@@ -29,9 +29,10 @@
                             <div class="product_name">{{$product->name}}</div>
                         </div>
                         <div class="form-row">
-                            <label>Kategori : {{$product->category->name}}</label>
+                            <label style="margin-right: 10px"><a href="{{url('/products-by/'.$product->category->name)}}"><p class="badge badge-success">{{$product->category->name}}</p></a></label>
+                            <label><a href="{{url('/store/'.$product->store->store_name)}}"><p class="badge badge-success">{{$product->store->store_name}}</p></a></label>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row" style="margin-top: 0px">
                             <label>Penjelasan <p>{!! $product->description !!}</p></label>
                         </div>
                         <div class="form-row">
@@ -96,7 +97,7 @@
                 <div class="col-lg-8 order-lg-2 order-1" style="margin-left: -12px; box-shadow: 0 2px 6px rgba(0,0,0,.12); min-width: 576px; padding: 10px" >
                     <div class="well well-sm">
                         <div class="text-right">
-                            <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Leave a Review</a>
+                            <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Berikan Ulasan</a>
                         </div>
 
                         <div class="row" id="post-review-box" style="display:none;">
@@ -125,7 +126,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     @for ($i=1; $i <= 5 ; $i++)
-                                        <span class="fa fa-star{{ ($i <= $review->rating) ? '' : '-empty'}}"></span>
+                                        <span class="fa fa-star{{ ($i <= $review->rating) ? '' : '-empty'}}" style="color: #ffca08"></span>
                                     @endfor
 
                                     {{$review->user->name}} <span class="pull-right">{{\Carbon\Carbon::createFromTimestamp(strtotime($review->created_at))->diffForHumans()}}</span>
