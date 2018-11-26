@@ -25,7 +25,7 @@
                                             <i class="fas fa-chevron-down"></i>
                                             <ul class="custom_list clc">
                                                 @foreach($categoryProducts as $categoryProduct)
-                                                    <li><a class="clc" href="#">{{$categoryProduct->name}}</a></li>
+                                                    <li><a class="clc" href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -77,7 +77,7 @@
 
                             <ul class="cat_menu">
                                 @foreach($categoryProducts as $categoryProduct)
-                                <li><a href="#">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                <li><a href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
                                 @endforeach
                             </ul>
                         </div>
