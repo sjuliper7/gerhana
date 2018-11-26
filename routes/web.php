@@ -106,3 +106,6 @@ Route::resource('reviews','ReviewController');
 
 Route::resource('catalog-products','CatalogController');
 
+Route::get('store/{name}','LandingPageController@searchByName');
+
+Route::get('products-by/{category}','LandingPageController@searchByCategory');
