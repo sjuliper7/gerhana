@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoryProduct;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
@@ -13,7 +15,9 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        return view('adminlte::catalog-products.index');
+        $categories = CategoryProduct::all();
+        $products = Product::all();
+        return view('adminlte::catalog-products.index',compact('categories','products'));
     }
 
     /**
