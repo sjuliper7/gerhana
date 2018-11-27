@@ -45,8 +45,8 @@
                             <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
-                                    <div><a href="#">Register</a></div>
-                                    <div><a href="/login">Sign in</a></div>
+                                    <div><a href="/register">Daftar</a></div>
+                                    <div><a href="/login">Masuk</a></div>
                                 @else
                                     <div class="dropdown" style="width:20em ">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -61,7 +61,7 @@
                                                         <div class="col-md-12">
                                                             <div class="col-md-12">
                                                                 <div class="row">
-                                                                    <img src="images/kelola_akun.png"
+                                                                    <img src="{{asset('images/kelola_akun.png')}}"
                                                                          style="max-width:15%;max-height: 15%;margin-left: 0em">
                                                                     <div class="text-left col-md-6">
                                                                         <p class="font-weight-normal">Kelola Akun</p>
@@ -72,7 +72,7 @@
                                                             <a href="/transactions">
                                                                 <div class="col-md-12" style="margin-top: 0em">
                                                                     <div class="row">
-                                                                        <img src="images/box_closed.png"
+                                                                        <img src="{{asset('images/box_closed.png')}}"
                                                                              style="max-width:15%;max-height: 15%">
                                                                         <div class="col-md-6">
                                                                             <p class="font-weight-normal">Pesanan Saya</p>
@@ -84,7 +84,7 @@
 
                                                             <div class="col-md-12" style="margin-top: 2em">
                                                                 <div class="row">
-                                                                    <img src="images/logout.png"
+                                                                    <img src="{{asset('images/logout.png')}}"
                                                                          style="max-width:15%;max-height: 15%">
                                                                     <div class="col-md-6">
                                                                         <form id="logout-form"
@@ -148,7 +148,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="/template/images/search.png" alt=""></button>
+                                        <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="{{asset('/template/images/search.png')}}" alt=""></button>
                                     </form>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
-                                        <img src="/template/images/cart.png" alt="">
+                                        <img src="{{asset('/template/images/cart.png')}}" alt="">
                                         <div class="cart_count"style="background-color: #8b0000"><span>1</span></div>
                                     </div>
                                     <div class="cart_content">
@@ -330,8 +330,8 @@
                             </ul>
 
                             <div class="menu_contact">
-                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="/template/images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="/template/images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('/template/images/phone_white.png')}}" alt=""></div>+38 068 005 3570</div>
+                                <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('/template/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                             </div>
                         </div>
                     </div>
@@ -351,7 +351,7 @@
                 <div class="col">
                     <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                         <div class="newsletter_title_container">
-                            <div class="newsletter_icon"><img src="/template/images/send.png" alt=""></div>
+                            <div class="newsletter_icon"><img src="{{asset('/template/images/send.png')}}" alt=""></div>
                             <div class="newsletter_title">Dapatkan kabar dari kami selalu</div>
                             <div class="newsletter_text"><p>...mendapat potongan harga 20% dari pembelian pertama.</p></div>
                         </div>
@@ -413,8 +413,8 @@
                             <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
                             <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
 
-                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
-                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
+                            <div class=""style="margin-bottom: 1em"><img src="{{asset('images/phone_icon.png')}}"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
+                            <div class=""style="margin-bottom: 1em"><img src="{{asset('images/email_icon.png')}}"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
 
                         </ul>
                     </div>
@@ -423,82 +423,7 @@
                 <div class="col-lg-3">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
-                        </div>
-
-                        <div class="col-md-8">
-                            <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
-
-                            <h5 style="color: #8b0000"> Ikuti Kami</h5>
-                            <div class="footer_social">
-                                <ul>
-                                    <li ><a href="#"><i class="fab fa-facebook-f" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </footer><footer class="footer">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>BatakZone</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Tentang Kami</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Hubungi Kami</h5></a></div>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-2 ">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Beli</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Belanja</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pembayaran</h5></a></div>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Jual</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Cara Berjualan Online</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Pencairan Dana</h5></a></div>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="footer_column">
-                        <div class="footer_title"><h4>Bantuan</h4></div>
-                        <ul class="footer_list">
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Syarat dan Ketentuan</h5></a></div>
-                            <div class="footer_subtitle"><a href="#"><h5 style="color: #8b0000"> Kebijakan Privasi</h5></a></div>
-
-                            <div class=""style="margin-bottom: 1em"><img src="images/phone_icon.png"style="max-width: 100%;max-height: 100%">+62 821-6548-5311</div>
-                            <div class=""style="margin-bottom: 1em"><img src="images/email_icon.png"style="max-width: 100%;max-height: 100%"> cs@batakzone.com</div>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="images/mobile.png"style="max-width: 80%;max-height: 80%">
+                            <img src="{{asset('images/mobile.png')}}"style="max-width: 80%;max-height: 80%">
                         </div>
 
                         <div class="col-md-8">
@@ -521,7 +446,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Copyright -->
 
     <div class="copyright">
@@ -536,10 +460,10 @@
                         </div>
                         <div class="logos ml-sm-auto">
                             <ul class="logos_list">
-                                <li><a href="#"><img src="/template/images/logos_1.png" alt=""></a></li>
-                                <li><a href="#"><img src="/template/images/logos_2.png" alt=""></a></li>
-                                <li><a href="#"><img src="/template/images/logos_3.png" alt=""></a></li>
-                                <li><a href="#"><img src="/template/images/logos_4.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('/template/images/logos_1.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('/template/images/logos_2.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('/template/images/logos_3.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('/template/images/logos_4.png')}}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -547,6 +471,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 </body>

@@ -11,7 +11,6 @@ class StoresTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
         DB::table('stores')->insert(
             [
                 'store_name' => 'Batak Zone Merchant',
@@ -31,7 +30,6 @@ class StoresTableSeeder extends Seeder
                 'store_sub_district'=>"Balige",
                 'id_request' => '1',
                 'id_user' => '1',
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
 
@@ -55,7 +53,6 @@ class StoresTableSeeder extends Seeder
                 'store_sub_district'=>"",
                 'id_request' => '2',
                 'id_user' => '2',
-                'created_at' => $faker->dateTimeBetween('-2 months', 'now'),
             ]
         );
     }

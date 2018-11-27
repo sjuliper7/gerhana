@@ -30,7 +30,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="template/images/search.png" alt=""></button>
+                                    <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="{{asset('template/images/search.png')}}" alt=""></button>
                                 </form>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="cart">
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
-                                    <img src="template/images/cart.png" alt="">
+                                    <img src="{{asset('template/images/cart.png')}}" alt="">
                                     <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
                                 </div>
                                 <div class="cart_content">
@@ -151,8 +151,8 @@
                         </ul>
 
                         <div class="menu_contact">
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="template/images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/phone_white.png')}}" alt=""></div>+38 068 005 3570</div>
+                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
