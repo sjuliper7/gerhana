@@ -32,10 +32,59 @@
                             <label>Kategori : {{$product->category->name}}</label>
                         </div>
                         <div class="form-row">
-                            <label>Penjelasan <p>{!! $product->description !!}</p></label>
+                            <label>Penjelasan <p>{!! $product->description !!}<a data-toggle="modal" data-target="#myModal"> Read More..</a> </p></label>
+                            <!-- The Modal -->
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">{{$product->name}}</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            {!! $product->description !!}
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label>Cerita <p>{!! $product->story!!}</p></label>
+                            <label>Cerita <p>{!! $product->story!!} <a data-toggle="modal" data-target="#myModalStory"> Read More..</a> </p></label>
+
+                            <!-- The Modal -->
+                            <div class="modal fade" id="myModalStory">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">{{$product->name}}</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            {!! $product->story !!}
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-row">
                             <label>Harga <h3>Rp {{number_format($product->price)}}</h3></label>
