@@ -2,34 +2,42 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/bootstrap.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
+    <div class="col-lg-12 .col-md-12 .col-sm-12">
     <div class="text-center" style="margin-top: 0em">
         <a href="{{ url('/home') }}">
-            <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="width: 15%;height: 15%">
+            <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
         </a>
+    </div>
     </div>
 </head>
 
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="text-center" style="margin-top: 5em">
+        <div class="text-center" style="margin-top: 5em;">
+        <div class=".col-lg-6 .col-md-6 .col-sm-12">
+
                 <a href="{{ url('/home') }}">
-                    <img src="{{asset('images/new_login.png')}}" alt="Responsive image" style="width: 100%;height: 100%">
+                    <img src="{{asset('images/new_login.png')}}" alt="Responsive image" style="max-width: 100%;height: auto">
                 </a>
                 <h3> Selamat datang di BatakZone</h3></b>
                 <h5 class="font-weight-normal">Masuk dan penuhi berbagai kebutuhanmu disini.</h5>
 
             </div>
         </div>
+        <div class="" style="margin-left: 10em">
 
-        <div class="col-md-6">
+        </div>
+
+        <div class=".col-lg-6 .col-md-6 .col-sm-12">
+            <div class="" style="margin-top: 5em;">
             <div class="row">
-                <div class="col-sm-9 " style="margin-left: 5em">
-                    <div class="card card-signin my-5" >
+                <div class="col-lg-12">
+                    <div class="card card-signin my-4" >
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
                             <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
@@ -70,6 +78,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 
