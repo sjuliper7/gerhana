@@ -10,7 +10,7 @@
     <div class=".col-lg-12 .col-md-12 .col-sm-12">
         <div class="text-center" style="margin-top: 0em">
             <a href="{{ url('/home') }}">
-                <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
+                <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
             </a>
         </div>
     </div>
