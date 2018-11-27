@@ -54,13 +54,8 @@
                             <div class="top_bar_user text-center">
                                 @if(Auth::guest())
                                     <div></div>
-<<<<<<< HEAD
                                     <div><a href="/register">Register</a></div>
                                     <div><a href="/login">Sign in</a></div>
-=======
-                                    <div><a href="/register">Daftar</a></div>
-                                    <div><a href="/login">Masuk</a></div>
->>>>>>> 61e1c6f264b97787a242e508ee6cd349ac0282de
                                 @else
                                     <div class="dropdown" style="width:20em ">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
