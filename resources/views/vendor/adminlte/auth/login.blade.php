@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
     <div class="text-center" style="margin-top: 0em">
         <a href="{{ url('/home') }}">
-            <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="width: 15%;height: 15%">
+            <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="width: 15%;height: 15%">
         </a>
     </div>
 </head>
@@ -33,6 +33,16 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
                             <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <strong>Whoops!</strong>Ada beberapa masalah<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form class="form-signin form-group" action="{{ url('/login') }}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-label-group">

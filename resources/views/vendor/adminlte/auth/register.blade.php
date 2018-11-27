@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
     <div class="text-center" style="margin-top: 0em">
         <a href="{{ url('/home') }}">
-            <img src="{{asset('images/tittle.png')}}" alt="Responsive image" style="width: 15%;height: 15%">
+            <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="width: 15%;height: 15%">
         </a>
     </div>
 
