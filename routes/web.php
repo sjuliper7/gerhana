@@ -101,3 +101,11 @@ Route::get('/transactions-admin','TransactionController@indexAdmin');
 Route::get('transactions-admin/{id}','TransactionController@detailTransaction');
 
 Route::Post('status-transaction-update/{id}','TransactionController@statusTransaction');
+
+Route::resource('reviews','ReviewController');
+
+Route::resource('catalog-products','CatalogController');
+
+Route::get('store/{name}','LandingPageController@searchByName');
+
+Route::get('products-by/{category}','LandingPageController@searchByCategory');
