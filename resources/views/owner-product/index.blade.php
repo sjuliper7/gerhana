@@ -1,39 +1,39 @@
 @extends('layouts.index-for-listing')
 
 @section('content')
-    <div class="home">
-        <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
-        <div class="home_overlay"></div>
-        <div class="home_content d-flex flex-column align-items-center justify-content-center">
-            <h2 class="home_title">Toko</h2>
-        </div>
-    </div>
+    {{--<div class="home">--}}
+        {{--<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>--}}
+        {{--<div class="home_overlay"></div>--}}
+        {{--<div class="home_content d-flex flex-column align-items-center justify-content-center">--}}
+            {{--<h2 class="home_title">Toko</h2>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <!-- Shop -->
 
     <div class="shop">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                {{--<div class="col-lg-3">--}}
 
-                    <!-- Shop Sidebar -->
-                    <div class="shop_sidebar">
-                        <div class="sidebar_section">
-                            <div class="sidebar_title"style="color: #8b0000">Kategori</div>
-                            <ul class="sidebar_Kategori">
-                                <li><a href="#"style="color: #8b0000">Pakaian</a></li>
-                                <li><a href="#"style="color: #8b0000">Cenderamata</a></li>
-                                <li><a href="#"style="color: #8b0000">Ukiran</a></li>
-                                <li><a href="#"style="color: #8b0000">Patung</a></li>
-                                <li><a href="#"style="color: #8b0000">Buku</a></li>
-                            </ul>
-                        </div>
+                    {{--<!-- Shop Sidebar -->--}}
+                    {{--<div class="shop_sidebar">--}}
+                        {{--<div class="sidebar_section">--}}
+                            {{--<div class="sidebar_title"style="color: #8b0000">Kategori</div>--}}
+                            {{--<ul class="sidebar_Kategori">--}}
+                                {{--<li><a href="#"style="color: #8b0000">Pakaian</a></li>--}}
+                                {{--<li><a href="#"style="color: #8b0000">Cenderamata</a></li>--}}
+                                {{--<li><a href="#"style="color: #8b0000">Ukiran</a></li>--}}
+                                {{--<li><a href="#"style="color: #8b0000">Patung</a></li>--}}
+                                {{--<li><a href="#"style="color: #8b0000">Buku</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
 
-                    </div>
+                    {{--</div>--}}
 
-                </div>
+                {{--</div>--}}
 
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="row">
                     <div class="col-sm-2"style="margin-left:-1em">
                         <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
