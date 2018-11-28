@@ -13,6 +13,7 @@
                 <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
             </a>
         </div>
+
     </div>
 </head>
 
@@ -33,6 +34,7 @@
         <div class="" style="margin-left: 10em">
 
         </div>
+
         <div class=".col-lg-6 .col-md-6 .col-sm-12">
             <div class="" style="margin-top: 5em;">
                 <div class="row">
@@ -41,7 +43,6 @@
                             <div class="card-body">
                                 <h5 class="card-title text-center">Sign In</h5>
                                 <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
-
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
                                         <strong>Whoops!</strong>Ada beberapa masalah<br><br>
@@ -52,7 +53,6 @@
                                         </ul>
                                     </div>
                                 @endif
-
                                 <form class="form-signin form-group" action="{{ url('/login') }}" method="post">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-label-group">
@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

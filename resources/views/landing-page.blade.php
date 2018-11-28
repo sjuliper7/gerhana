@@ -1,6 +1,7 @@
 @extends('layouts.index')
 
 @section('header')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="header_main">
         <div class="container">
             <div class="row">
@@ -8,7 +9,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-sm-3 col-3 order-1">
                     <div class="logo_container">
-                        <div class="logo"><a href="/home" style="color: #8b0000">BatakZone</a></div>
+                        <div class="logo"><a href="/" style="color: #8b0000">BatakZone</a></div>
                     </div>
                 </div>
 
@@ -25,7 +26,7 @@
                                             <i class="fas fa-chevron-down"></i>
                                             <ul class="custom_list clc">
                                                 @foreach($categoryProducts as $categoryProduct)
-                                                    <li><a class="clc" href="#">{{$categoryProduct->name}}</a></li>
+                                                    <li><a class="clc" href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -77,7 +78,7 @@
 
                             <ul class="cat_menu">
                                 @foreach($categoryProducts as $categoryProduct)
-                                <li><a href="#">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                <li><a href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -124,35 +125,18 @@
                             </form>
                         </div>
                         <ul class="page_menu_nav">
-                            <li class="page_menu_item has-children">
-                                <a href="#">Language<i class="fa fa-angle-down"></i></a>
-                                <ul class="page_menu_selection">
-                                    <li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
-                                </ul>
-                            </li>
-                            <li class="page_menu_item has-children">
-                                <a href="#">Currency<i class="fa fa-angle-down"></i></a>
-                                <ul class="page_menu_selection">
-                                    <li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
-                                    <li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
-                                </ul>
-                            </li>
+
                             <li class="page_menu_item">
-                                <a href="#">Home<i class="fa fa-angle-down"></i></a>
+                                <a href="/home">Home<i class="fa fa-angle-down"></i></a>
                             </li>
 
-                            <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item"><a href="#">contact<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item"><a href="/my-store">My Store<i class="fa fa-angle-down"></i></a></li>
                         </ul>
 
                         <div class="menu_contact">
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/phone_white.png')}}" alt=""></div>+38 068 005 3570</div>
-                            <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('template/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                            <div class="menu_contact_item"><a href="/login"> Login </a></div>
+                            <div class="menu_contact_item"><a href="/register">Register</a></div>
                         </div>
                     </div>
                 </div>
@@ -170,7 +154,7 @@
 
 @section('content')
     <div class="banner">
-        <div class="banner_background" style="background-image:url('template/images/banner_background.jpg')"></div>
+        <div class="banner_background" style="background-image:url('/template/images/banner_background.jpg')"></div>
         <div class="container fill_height">
             <div class="row fill_height">
                 {{--<div class="banner_product_image"><img src="images/banner_product.png" alt=""></div>--}}

@@ -14,6 +14,7 @@
             </a>
         </div>
     </div>
+    </div>
 
 </head>
 
@@ -24,9 +25,7 @@
         <div class="col-lg-6 .col-md-4 .col-sm-6">
             <div class="text-center">
                 <a href="{{ url('/home') }}">
-
                     <img class="image wrapper" src="images/register.png" alt="" style="width: 100%;height: auto">
-
                 </a>
 
                 <b><h3> Jual beli mudah hanya di BatakZone</h3></b>
@@ -38,7 +37,6 @@
         <div class="" style="margin-left: 5em">
 
         </div>
-
         <div class=".col-lg-6 .col-md-4">
             <div class="row">
                 <div class=".col-lg-12 .col-md-6">
@@ -130,6 +128,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </div>
