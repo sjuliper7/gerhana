@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RequestStore;
 use App\StatusStore;
 use App\Store;
+use App\DetailTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,7 +34,26 @@ class StoreController extends Controller
                 }else{
                     $store = Auth::user()->store;
                     $products = $store->products;
-                    return view('owner-product.index',compact('products','store'));
+
+                    $ownerStores = Auth::user()->store;
+//                    dd($ownerStores);
+                    $productTransactions = array();
+                    $detailTransactions =  DetailTransaction::all();
+
+                    foreach($detailTransactions as $detailTransaction){
+                        if ($detailTransaction->product->store->id == $ownerStores->id){
+                            array_push($productTransactions, $detailTransaction);
+//                            echo $detailTransaction->product->store->id;
+//                            echo $detailTransaction->product->name;
+//                            echo $detailTransaction->product->images;
+//                            echo $detailTransaction->quantity;
+//                            echo $detailTransaction->sub_total_price;
+//                            dd($detailTransaction->sub_total_price);
+//                            dd($detailTransaction);
+                        }
+                    }
+
+                    return view('owner-product.index',compact('products','store', 'detailTransactions'));
                 }
             }
 
