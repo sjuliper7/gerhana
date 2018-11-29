@@ -660,7 +660,7 @@ section
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 300;
-	color: #a3a3a3;
+	color: black;
 	line-height: 48px;
 	cursor: pointer;
 }
@@ -706,7 +706,7 @@ section
 .custom_list li a
 {
 	display: block;
-	color: #a3a3a3;
+	color: black;
 	line-height: 35px;
 	border-bottom: solid 1px #ededed;
 	-webkit-transition: all 200ms ease;

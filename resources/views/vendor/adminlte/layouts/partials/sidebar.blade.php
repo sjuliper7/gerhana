@@ -41,6 +41,17 @@
                     <li><a href="/products">Manage Product</a></li>
                     <li><a href="/category-products">Category Product</a></li>
                     <li><a href="/status-products">Status Product</a></li>
+                    <li class="treeview menu open">
+                        <a href="/catalog-products"><span>Katalog Produk</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="/catalog-products"><i class='fa fa-circle-o'></i> Properti</a></li>
+                            <li><a href="#"><i class='fa fa-circle-o'></i>Buku</a></li>
+                            <li><a href="#"><i class='fa fa-circle-o'></i>Ukiran</a></li>
+                            <li><a href="#"><i class='fa fa-circle-o'></i>Cenderamata</a></li>
+                            <li><a href="#"><i class='fa fa-circle-o'></i>Pakaian</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">

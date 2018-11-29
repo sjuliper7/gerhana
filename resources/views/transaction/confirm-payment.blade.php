@@ -3,10 +3,11 @@
 @section('content')
 
     <div class="container py-5">
+
+        <h2>Pembayaran</h2>
         <div class="row">
-            <div class="header">
-                <h2>Pembayaran</h2>
-            </div>
+            {{--<div class="header">--}}
+            {{--</div>--}}
 
             <div class="container col-8 mt-5 py-3" style="box-shadow: 0 2px 6px rgba(0,0,0,.12); min-width: 576px">
                 <div class="container">
