@@ -160,23 +160,94 @@
                     </div>
 
                     <!-- Wishlist -->
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                    <div class="col-lg-4 col-9 order-lg-3 order-2 ">
+
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-
-
                             <!-- Cart -->
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
-                                        <img src="{{asset('/template/images/cart.png')}}" alt="">
-                                        <div class="cart_count"style="background-color: #8b0000"><span>0</span></div>
+                                        <img src="{{asset('template/images/cart.png')}}" alt="">
+                                        <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="/carts">Keranjang</a></div>
-                                        <div class="cart_price"></div>
+                                        <div class="cart_price">$85</div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="top_bar_user">
+                                @if(Auth::guest())
+                                    <div style="margin-right: 2em">
+                                        <a type="text" href="/login" class="" style="color: #8b0000"> Masuk</a>
+                                    </div>
+                                    <div>
+                                        <a type="text" href="/register" class="">Daftar </a>
+                                    </div>
+
+                                @else
+                                    <div class="top_bar_user" style="width:20em;margin-right: -10em">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-user"></span> 
+                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <img src="{{asset('images/kelola_akun.png')}}"
+                                                                         style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                    <div class="text-left col-md-6">
+                                                                        <p class="font-weight-normal">Kelola Akun</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <a href="/transactions">
+                                                                <div class="col-md-12" style="margin-top: 0em">
+                                                                    <div class="row">
+                                                                        <img src="{{asset('images/box_closed.png')}}"
+                                                                             style="max-width:15%;max-height: 15%">
+                                                                        <div class="col-md-6">
+                                                                            <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+
+                                                            <div class="col-md-12" style="margin-top: 2em">
+                                                                <div class="row">
+                                                                    <img src="{{asset('images/logout.png')}}"
+                                                                         style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <form id="logout-form"
+                                                                              action="{{ url('/logout') }}"
+                                                                              method="POST" style="border: 0em">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="submit" value="logout">
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endif
+
+
+                            </div>
+
                         </div>
                     </div>
                 </div>

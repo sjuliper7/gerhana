@@ -1,8 +1,10 @@
 @extends('layouts.index')
 
 @section('header')
+    <div class="header_main"style="max-height: 10em;margin-top: -3em;">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="header_main">
+    <div class="header_main"style="max-height: 10em">
         <div class="container">
             <div class="row">
 
@@ -23,7 +25,7 @@
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
                                             <span class="custom_dropdown_placeholder clc">Semua Kategori</span>
-                                            <i class="fas fa-chevron-down"></i>
+                                            <i class="fas deals_featuredfa-chevron-down"></i>
                                             <ul class="custom_list clc">
                                                 @foreach($categoryProducts as $categoryProduct)
                                                     <li><a class="clc" href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}</a></li>
@@ -38,7 +40,8 @@
                     </div>
                 </div>
                 <!-- Wishlist -->
-                <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                <div class="col-lg-4 col-9 order-lg-3 order-2 ">
+
                     <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
                         <!-- Cart -->
                         <div class="cart">
@@ -53,10 +56,83 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="top_bar_user">
+                            @if(Auth::guest())
+                                <div style="margin-right: 2em">
+                                    <a type="text" href="/login" class="" style="color: #8b0000"> Masuk</a>
+                                </div>
+                                <div>
+                                    <a type="text" href="/register" class="">Daftar </a>
+                                </div>
+
+                            @else
+                                <div class="top_bar_user" style="width:20em;margin-right: -10em">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span> 
+                                        <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                        <span class="glyphicon glyphicon-chevron-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-12">
+                                                            <div class="row">
+                                                                <img src="{{asset('images/kelola_akun.png')}}"
+                                                                     style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                <div class="text-left col-md-6">
+                                                                    <p class="font-weight-normal">Kelola Akun</p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <a href="/transactions">
+                                                            <div class="col-md-12" style="margin-top: 0em">
+                                                                <div class="row">
+                                                                    <img src="{{asset('images/box_closed.png')}}"
+                                                                         style="max-width:15%;max-height: 15%">
+                                                                    <div class="col-md-6">
+                                                                        <p class="font-weight-normal">Pesanan Saya</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                        <div class="col-md-12" style="margin-top: 2em">
+                                                            <div class="row">
+                                                                <img src="{{asset('images/logout.png')}}"
+                                                                     style="max-width:15%;max-height: 15%">
+                                                                <div class="col-md-6">
+                                                                    <form id="logout-form"
+                                                                          action="{{ url('/logout') }}"
+                                                                          method="POST" style="border: 0em">
+                                                                        {{ csrf_field() }}
+                                                                        <input type="submit" value="logout">
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Main Navigation -->
@@ -176,50 +252,83 @@
     <div class="deals_featured" style="margin-bottom: 30px">
         <div class="container">
             <div class="row">
+                <div class="col d-flex flex-lg-row flex-column align-items-center justify-content-start">
+                    <!-- Featured -->
+                    <div class="featured">
+                        <div class="tabbed_container">
+                            <div class="tabs">
+                                <ul class="clearfix">
+                                    <li class="active">Product</li>
+                                </ul>
+                                <div class="tabs_line"><span style="background-color: #8b0000"></span></div>
+                            </div>
 
-                <!-- Featured -->
-                <div class="featured">
-                    <div class="tabbed_container">
-                        <div class="tabs">
-                            <ul class="clearfix">
-                                <li class="active">Product</li>
-                            </ul>
-                            <div class="tabs_line"><span style="background-color: #8b0000"></span></div>
-                        </div>
+                            <!-- Product Panel -->
+                            <div class="product_panel panel active">
+                                <div class="featured_slider slider">
 
-                        <!-- Product Panel -->
-                        <div class="product_panel panel active">
-                            <div class="featured_slider slider">
-
-                            @foreach($products as $product)
-                                <!-- Slider Item -->
+                                @foreach($products as $product)
+                                    <!-- Slider Item -->
                                         <div class="featured_slider_item" style="margin-bottom: 20px">
-                                        <div class="border_active"></div>
-                                        <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                            <?php
+                                            <div class="border_active"></div>
+                                            <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                                <?php
                                                 $images = json_decode($product->images);
-                                            ?>
-                                            <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <a href="{{ URL::to('buy/' . $product->name ) }}">
-                                                    <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
-                                                </a>
-                                            </div>
+                                                ?>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                                    <a href="{{ URL::to('buy/' . $product->name ) }}">
+                                                        <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
+                                                    </a>
+                                                </div>
 
-                                            <div class="product_content">
-                                                <div class="product_price discount">Rp. {{$product->price}}</div>
-                                                <div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>
+                                                <div class="product_content">
+                                                    <div class="product_price discount">Rp. {{$product->price}}</div>
+                                                    <div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>
+                                                </div>
                                             </div>
                                         </div>
+                                    @endforeach
+
+                                </div>
+                                <div class="featured_slider_dots_cover"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="deals">
+                        <div class="deals_title">Paling Banyak Dilihat</div>
+                        <div class="deals_slider_container">
+
+                            <!-- Deals Slider -->
+                            <div class="owl-carousel owl-theme deals_slider">
+
+                                <!-- Deals Item -->
+                                @foreach($mostProductView as $mv)
+                                    <?php
+                                        $images = json_decode($mv->images);
+                                    ?>
+                                    <div class="owl-item deals_item">
+                                        <div class="deals_image"><img src="{{asset('images/'.$images[0])}}" alt=""></div>
+                                        <div class="deals_content">
+                                            <div class="deals_info_line d-flex flex-row justify-content-start">
+                                                <div class="deals_item_name">{{$mv->name}}</div>
+                                                <div class="deals_item_price ml-auto">Rp {{number_format($mv->price)}}</div>
+                                            </div>
                                         </div>
+                                    </div>
                                 @endforeach
 
                             </div>
-                            <div class="featured_slider_dots_cover"></div>
-                        </div>
 
+                        </div>
+                        <div class="deals_slider_nav_container">
+                            <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i></div>
+                            <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

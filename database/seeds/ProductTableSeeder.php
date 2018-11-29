@@ -20,9 +20,10 @@ class ProductTableSeeder extends Seeder
                 'story' => "Produk ini hasil kerajinan tangan Orang Balige",
                 'images'=> '["tas-batak1.jpg","tas-batak2.jpg"]',
                 'weight'=> "4",
+                'viewed' => 3,
                 'id_status'=> '2',
                 'id_category'=> '2',
-                'id_store'=> '2',
+                'id_store'=> '1',
             ]
         );
 
@@ -37,7 +38,23 @@ class ProductTableSeeder extends Seeder
                 'weight'=> "4",
                 'id_status'=> '2',
                 'id_category'=> '2',
-                'id_store'=> '2',
+                'id_store'=> '1',
+            ]
+        );
+
+        DB::table('products')->insert(
+            [
+                'name'  => "Casing HP Gorga",
+                'price' => "50000",
+                'stock' => "20",
+                'description' => "Dibuat dari bahan yang lembut, tersedia ukuran M,L dan S",
+                'story' => "Produk ini hasil kerajinan tangan Orang Hinalang",
+                'images'=> '["tas-batak1.jpg","tas-batak2.jpg"]',
+                'weight'=> "4",
+                'viewed'=> 5,
+                'id_status'=> '2',
+                'id_category'=> '5',
+                'id_store'=> '1',
             ]
         );
     }

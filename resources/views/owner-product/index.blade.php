@@ -1,31 +1,28 @@
 @extends('layouts.index-for-listing')
 
 @section('content')
-
-    <!-- Shop -->
-
     <div class="shop">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                    <div class="col-sm-2"style="margin-left:-1em">
-                        <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
-                    </div>
-                    <div class="col-sm-7">
-                        <h3 style="color: #8b0000">{{$store->store_name}}</h3>
-                        <h5>{{$store->store_email}}</h5>
-                        <div class="col-sm-8">
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <img class="" src="{{asset('images/location_icon.png')}}"style="max-height: 80%;max-width: 80%;margin-left: 0em">
-                            </div>
-                            <div class="col-sm-6">
-                                <h5 style="margin-top: 5px;margin-left: -10px">{{$store->store_address}}</h5>
+                        <div class="col-sm-2"style="margin-left:-1em">
+                            <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
+                        </div>
+                        <div class="col-sm-7">
+                            <h3 style="color: #8b0000">{{$store->store_name}}</h3>
+                            <h5>{{$store->store_email}}</h5>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img class="" src="{{asset('images/location_icon.png')}}"style="max-height: 80%;max-width: 80%;margin-left: 0em">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h5 style="margin-top: 5px;margin-left: -10px">{{$store->store_address}}</h5>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                    </div>
                     </div>
 
                     <!-- Shop Content -->
@@ -48,25 +45,25 @@
                                 <?php
                                 $images = json_decode($product->images);
                                 ?>
-                                        <!-- Product Item -->
+                                <!-- Product Item -->
 
-                                        <div class="product_item discount">
-                                            <div class="product_border"></div>
-                                            <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <img src="{{ asset('images/'.$images[0]) }}" style="width:120px;height:120px; object-fit: cover;"  >
-                                            </div>
-                                            <div class="product_content">
-                                                <div class="product_price">Rp {{number_format($product->price)}}</div>
-                                                <div class="product_name">
-                                                    <div>
-                                                        {{$product->name}}
-                                                    </div>
+                                    <div class="product_item discount">
+                                        <div class="product_border"></div>
+                                        <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                            <img src="{{ asset('images/'.$images[0]) }}" style="width:120px;height:120px; object-fit: cover;"  >
+                                        </div>
+                                        <div class="product_content">
+                                            <div class="product_price">Rp {{number_format($product->price)}}</div>
+                                            <div class="product_name">
+                                                <div>
+                                                    {{$product->name}}
                                                 </div>
                                             </div>
-                                            <div class="product_category" style="margin-top: 1em">
-                                                <h4 class="product-title"><a href="{{url('owner-products/'.$product->id)}}">Detail Produk</a></h4>
-                                            </div>
                                         </div>
+                                        <div class="product_category" style="margin-top: 1em">
+                                            <h4 class="product-title"><a href="{{url('owner-products/'.$product->id)}}">Detail Produk</a></h4>
+                                        </div>
+                                    </div>
                                 @endforeach
                             </div>
 
@@ -74,28 +71,28 @@
                         <div class="tab-pane fade" id="nav-transaction" role="tabpanel" aria-labelledby="nav-transaction-tab" style="margin-top: 1em">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#Kode Transaksi</th>
-                                        <th scope="col">Nama Produk</th>
-                                        <th scope="col">Harga Satuan</th>
-                                        <th scope="col">Jumlah Barang</th>
-                                        <th scope="col">Total Harga</th>
-                                        <th scope="col">Status Transaksi</th>
-                                    </tr>
+                                <tr>
+                                    <th scope="col">#Kode Transaksi</th>
+                                    <th scope="col">Nama Produk</th>
+                                    <th scope="col">Harga Satuan</th>
+                                    <th scope="col">Jumlah Barang</th>
+                                    <th scope="col">Total Harga</th>
+                                    <th scope="col">Status Transaksi</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($detailTransactions as $detailTransaction)
-                                        <tr>
-                                            <td scope="row">#{{$detailTransaction->transaction->order_id}}</td>
-                                            <td>{{$detailTransaction->product->name}}</td>
-                                            <td>{{$detailTransaction->product->price}}</td>
-                                            <td>{{$detailTransaction->product->images}}</td>
-                                            <td><img src="{{ asset('images/'. $detailTransaction->product->images) }}" style="height: 55px; width: 50px; "> </td>
-                                            <td>{{$detailTransaction->quantity}}</td>
-                                            <td>{{$detailTransaction->sub_total_price}}</td>
-                                            <td class="text-success">{{$detailTransaction->transaction->status->name}}</td>
-                                        </tr>
-                                    @endforeach
+                                @foreach($detailTransactions as $detailTransaction)
+                                    <tr>
+                                        <td scope="row">#{{$detailTransaction->transaction->order_id}}</td>
+                                        <td>{{$detailTransaction->product->name}}</td>
+                                        <td>{{$detailTransaction->product->price}}</td>
+                                        <td>{{$detailTransaction->product->images}}</td>
+                                        <td><img src="{{ asset('images/'. $detailTransaction->product->images) }}" style="height: 55px; width: 50px; "> </td>
+                                        <td>{{$detailTransaction->quantity}}</td>
+                                        <td>{{$detailTransaction->sub_total_price}}</td>
+                                        <td class="text-success">{{$detailTransaction->transaction->status->name}}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -108,4 +105,5 @@
             </div>
         </div>
     </div>
+
 @endsection

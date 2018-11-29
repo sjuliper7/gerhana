@@ -13,7 +13,7 @@
 
     <div class="container py-3">
         <div class="container">
-            <h2>Create Product</h2>
+            <h2>Edit Product</h2>
             <hr>
             <form action="{{url('/owner-products/'.$product->id)}}" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
