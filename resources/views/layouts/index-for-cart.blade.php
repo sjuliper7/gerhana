@@ -35,20 +35,78 @@
 
         <!-- Top Bar -->
 
-        <div class="top_bar">
+
+
+        <!-- Header Main -->
+
+        <div class="header_main">
             <div class="container">
                 <div class="row">
-                    <div class="col d-flex flex-row">
-                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/phone.png" alt=""></div>+62 821 6548 5311</div>--}}
-                        {{--<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="/template/images/mail.png" alt=""></div><a href="mailto:batakzone@gmail.com">batakzone@gmail.com</a></div>--}}
-                        <div class="top_bar_content ml-auto">
-                            <div class="top_bar_user text-center">
+
+                    <!-- Logo -->
+                    <div class="col-lg-2 col-sm-3 col-3 order-1">
+                        <div class="logo_container">
+                            <div class="logo"><a href="/home"style="color: #8b0000">BatakZone</a></div>
+                        </div>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="header_search">
+                            <div class="header_search_content">
+                                <div class="header_search_form_container">
+                                    <form action="#" class="header_search_form clearfix">
+                                        <input type="search" required="required" class="header_search_input" placeholder="Cari produk...">
+                                        <div class="custom_dropdown">
+                                            <div class="custom_dropdown_list">
+                                                <span class="custom_dropdown_placeholder clc">Semua kategori</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                                <ul class="custom_list clc">
+                                                    <li><a class="clc" href="#">Pakaian</a></li>
+                                                    <li><a class="clc" href="#">Cenderamata</a></li>
+                                                    <li><a class="clc" href="#">Ukiran</a></li>
+                                                    <li><a class="clc" href="#">Patung</a></li>
+                                                    <li><a class="clc" href="#">Buku</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="{{asset('/template/images/search.png')}}" alt=""></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <div class="col-lg-4 col-9 order-lg-3 order-2 ">
+
+                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+                            <!-- Cart -->
+                            <div class="cart">
+                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                                    <div class="cart_icon">
+                                        <img src="{{asset('template/images/cart.png')}}" alt="">
+                                        <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
+                                    </div>
+                                    <div class="cart_content">
+                                        <div class="cart_text"><a href="/carts">Keranjang</a></div>
+                                        <div class="cart_price">$85</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="top_bar_user">
                                 @if(Auth::guest())
-                                    <div></div>
-                                    <div><a href="/register">Daftar</a></div>
-                                    <div><a href="/login">Masuk</a></div>
+                                    <div style="margin-right: 2em">
+                                        <a type="text" href="/login" class="" style="color: #8b0000"> Masuk</a>
+                                    </div>
+                                    <div>
+                                        <a type="text" href="/register" class="">Daftar </a>
+                                    </div>
+
                                 @else
-                                    <div class="dropdown" style="width:20em ">
+                                    <div class="top_bar_user" style="width:20em;margin-right: -10em">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                             <span class="glyphicon glyphicon-user"></span> 
                                             <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
@@ -108,71 +166,7 @@
 
 
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Header Main -->
-
-        <div class="header_main">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Logo -->
-                    <div class="col-lg-2 col-sm-3 col-3 order-1">
-                        <div class="logo_container">
-                            <div class="logo"><a href="/home"style="color: #8b0000">BatakZone</a></div>
-                        </div>
-                    </div>
-
-                    <!-- Search -->
-                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                        <div class="header_search">
-                            <div class="header_search_content">
-                                <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Cari produk...">
-                                        <div class="custom_dropdown">
-                                            <div class="custom_dropdown_list">
-                                                <span class="custom_dropdown_placeholder clc">Semua kategori</span>
-                                                <i class="fas fa-chevron-down"></i>
-                                                <ul class="custom_list clc">
-                                                    <li><a class="clc" href="#">Pakaian</a></li>
-                                                    <li><a class="clc" href="#">Cenderamata</a></li>
-                                                    <li><a class="clc" href="#">Ukiran</a></li>
-                                                    <li><a class="clc" href="#">Patung</a></li>
-                                                    <li><a class="clc" href="#">Buku</a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="header_search_button trans_300"style="background-color: #8b0000" value="Submit"><img src="{{asset('/template/images/search.png')}}" alt=""></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Wishlist -->
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-
-
-                            <!-- Cart -->
-                            <div class="cart">
-                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon">
-                                        <img src="{{asset('/template/images/cart.png')}}" alt="">
-                                        <div class="cart_count"style="background-color: #8b0000"><span>1</span></div>
-                                    </div>
-                                    <div class="cart_content">
-                                        <div class="cart_text"><a href="/carts">Keranjang</a></div>
-                                        <div class="cart_price">Rp.50.000</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
