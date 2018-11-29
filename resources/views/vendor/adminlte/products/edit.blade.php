@@ -3,13 +3,7 @@
 @section('title', '| Edit Product')
 
 @section('main-content')
-    {{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>--}}
-    {{--<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"></script>--}}
-    <script src="{{asset('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}"></script>
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')}}"></script>
-    <script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')}}"></script>
-    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css')}}" rel="stylesheet">
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js')}}"></script>
+
 
     <div class="container py-3">
         <div class="container">
@@ -72,7 +66,7 @@
 
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label>Deskripsi</label>
                                 <textarea name="description" id="summernote" class="form-control" rows="4" placeholder="deskripsi" required>{{$product->description}}</textarea>
                             </div>
@@ -99,7 +93,7 @@
                                 @endfor
                             </div>
 
-                            <table class="table" id="dynamic_field">
+                            <table class="table" id="dynamic_field" style="margin-top: 20px">
                                 <button type="button" name="addImages" id="more" class="btn btn-success"style="background-color: #8b0000">Ubah Gambar</button>
                             </table>
                         </div>
@@ -111,28 +105,12 @@
     </div>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
-
-
-            $('#summernote').summernote({
-                placeholder: 'Hello bootstrap 4',
-                tabsize: 2,
-                height: 100,
-                width : 550,
-            });
-
-            $('#story').summernote({
-                placeholder: 'Buat Story',
-                tabsize: 2,
-            });
-
-
             var i=1;
             $('#more').click(function(){
                 i++;
                 $('#dynamic_field').append('<tr id="row'+i+'">' +
-                    '<td><div class="form-group"><img src="http://placehold.it/400x400" id="show_image-'+i+'" style="max-width:100px;max-height:100px;" class="center-block" /></div></td>'+
+                    '<td><div class="form-group"><img src="http://placehold.it/400x400" id="show_image-'+i+'" style="max-width:100px;max-height:100px;" /></div></td>'+
                     '<td><label class="btn btn-info">Jelajahi<input type="file" id="input_image-'+i+'" name="images[]" onchange="loadImage(this)" style="display: none"></label></td>' +
                     '<td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td>' +
                     '</tr>');
@@ -162,9 +140,6 @@
             }
 
         }
-
-
-
     </script>
 @endsection
 
