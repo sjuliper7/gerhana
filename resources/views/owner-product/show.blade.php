@@ -25,12 +25,12 @@
             <div class="col-md-6">
                 <h1>{{ $product->name}}</h1>
                 <hr>
-                <p class="lead text-danger">Harga : Rp {{ number_format($product->price,2) }} </p>
-                <p class="lead text-success">Stok : {{ $product->stock }} pcs</p>
-                <p class="lead text-success">Kategori  : {{ $product->category->name}} </p>
-                <p class="lead text-success">Status  : {{ $product->status->name}} </p>
-                <p class="small">Deskripsi  : {!! $product->description !!} </p>
-                <p class="small">Cerita  : {!! $product->story !!} </p>
+                <b><p class="lead text-danger">Harga : Rp {{ number_format($product->price,2) }} </p></b>
+                <p>Stok : {{ $product->stock }} pcs</p>
+                <p>Kategori  : {{ $product->category->name}} </p>
+                <p>Status  : {{ $product->status->name}} </p>
+                <p>Deskripsi  : {!! $product->description !!} </p>
+                <p>Cerita  : {!! $product->story !!} </p>
 
 
                 <hr>
