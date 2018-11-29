@@ -8,7 +8,7 @@
           href="{!! asset('template/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
     <div class=".col-lg-12 .col-md-12 .col-sm-12">
-        <div class="text-center" style="margin-top: 0em">
+        <div class="text-center" style="margin-top: 2em">
             <a href="{{ url('/home') }}">
                 <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
             </a>
@@ -34,7 +34,7 @@
 
         </div>
 
-        <div class="" style="margin-left: 5em">
+        <div class="" style="margin-left: 10em">
 
         </div>
         <div class=".col-lg-6 .col-md-4">
