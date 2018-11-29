@@ -13,11 +13,12 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
-                    <img src="{{ asset('images/'.$images[0])  }}" class="rounded mx-auto d-block"  style="max-height:425px;max-width:425px;margin-top:10px; object-fit: cover;">
+                    <img src="http://localhost:8000/images/tas-batak1.jpg" style="/*! max-height:425px; *//*! max-width:425px; */margin-top:30px; margin-left: 80px;/*! object-fit: cover; */width: 70%;" class="rounded  d-block">
+                    {{--<img src="{{ asset('images/'.$images[0])  }}" class="rounded mx-auto d-block"  style="max-height:425px;max-width:425px;margin-top:10px; object-fit: cover;">--}}
                 </div>
                 <div class="row">
                     @for($i = 1; $i<count($images);$i++)
-                        <img src="{{ asset('images/'.$images[$i])  }}" class="rounded mx-auto d-block" style="max-height:70px;max-width:70px;margin-top:10px; object-fit: cover;">
+                        <img src="{{ asset('images/'.$images[$i])  }}" class="rounded mx-auto d-block" style="max-height:100px;max-width:100px;margin-top:20px; object-fit: cover;">
                     @endfor
                 </div>
             </div>
