@@ -96,7 +96,7 @@
                                 <input type="text" value="{{$product->id}}"name="id_product"hidden>
                                 <div class="form-row">
                                     <label>Jumlah</label>
-                                    <input type="number"class="form-control" name="quantity" placeholder="1"max="{{$product->stock}}" min="1">
+                                    <input type="number"class="form-control" name="quantity" value="1"max="{{$product->stock}}" min="1">
                                     </div>
                                     <div class="form-row py-1">
                                         <label>Comment</label>
