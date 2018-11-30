@@ -251,6 +251,54 @@
         </div>
     </div>
 
+    <div class="characteristics shadow p-3 mb-5 bg-white rounded">
+        <div class="container ">
+            <div class="row">
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon">
+                            <img src="images/char_3.png">
+                        </div>
+                        <div class="char_content">
+                            <div class="char_title">Transaksi</div>
+                            <div class="char_subtitle">Transaksi Aman dan Mudah</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon"><img src="images/contact_1.png" alt=""></div>
+                        <div class="char_content">
+                            <div class="char_title">Support</div>
+                            <div class="char_subtitle">Layanan 24 Jam</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon"><img src="images/char_4.png" alt=""></div>
+                        <div class="char_content">
+                            <div class="char_title">Kualitas</div>
+                            <div class="char_subtitle">Jaminan Kualitas Produk Lokal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+
+            </div>
+        </div>
+    </div>
+
     <!-- Deals of the week -->
 
     <div class="deals_featured" style="margin-bottom: 30px">
