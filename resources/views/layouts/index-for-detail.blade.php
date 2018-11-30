@@ -415,11 +415,11 @@
 
                 <div class="col-lg-3">
                     <div class="row">
-                        <div class="col-md-2">
-                            <img src="{{asset('images/mobile.png')}}"style="width: 60px;height: 120px">
+                        <div class="col-sm-2">
+                            <img src="{{asset('images/mobile.png')}}"style="width: 40px;height: 80px; ">
                         </div>
 
-                        <div class="col-md-10">
+                        <div class="col-sm-10">
                             <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
 
                             <h5 style="color: #8b0000"> Ikuti Kami</h5>
@@ -429,7 +429,7 @@
                                     <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
                                     <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
                                     <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                    {{--<li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>--}}
                                 </ul>
                             </div>
                         </div>
