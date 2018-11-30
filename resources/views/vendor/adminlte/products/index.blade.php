@@ -5,7 +5,7 @@
 @section('main-content')
     <div class="container" style="margin: 3em">
         <div class="col-lg-offset-0 col-lg-11">
-            {{--<a href="{{route('products.create')}}" class="btn btn-success" style="margin-bottom: 20px; margin-left: 20px">Create Product</a>--}}
+
             <div class="row" style="margin-left:-2em">
                 <div class="col-sm-2">
                     <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
@@ -37,6 +37,10 @@
 
                 <div class="tab-content">
                     <div id="nav-product" class="tab-pane fade in active">
+                        <div style="margin-top: 1em">
+                            <a href="{{route('products.create')}}" class="btn btn-success">Create Product</a>
+                        </div>
+
                         @foreach($products as $product)
                             <?php
                             $images = json_decode($product->images);
