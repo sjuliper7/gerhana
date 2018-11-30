@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Create New Ref Banks</h1>
+            <h1>Create New Ref Bank</h1>
             <hr>
 
             <form action="/ref-banks" method="post" data-toggle="validator" role="form">

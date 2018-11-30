@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Create New Status</h1>
+            <h1>Create Status Transaction</h1>
             <hr>
 
             <form action="/status-transactions" method="post" data-toggle="validator" role="form">
