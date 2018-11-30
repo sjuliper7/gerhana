@@ -123,4 +123,10 @@ class CartController extends Controller
 //        dd($temp,Session::get('carts'));
         return "success";
     }
+
+    function getAllCartByUser($id_user){
+        $carts = Cart::where(['id_user' => $id_user])->get();
+
+        return count($carts);
+    }
 }

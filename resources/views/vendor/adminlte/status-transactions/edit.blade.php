@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Edit Status Product</h1>
+            <h1>Edit Status Transaction</h1>
             <hr>
 
             <form action="{{ url('status-transactions/'.$statusTransaction->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">

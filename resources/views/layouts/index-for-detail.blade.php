@@ -81,11 +81,11 @@
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
                                         <img src="{{asset('template/images/cart.png')}}" alt="">
-                                        <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
+                                        <div class="cart_count"style="background-color: #8b0000"><span id="cart_value">0</span></div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="/carts">Keranjang</a></div>
-                                        <div class="cart_price">$85</div>
+                                        {{--<div class="cart_price">$85</div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -328,7 +328,28 @@
                 </div>
             </div>
         </div>
-
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if("{{Auth::guest()}}"){
+                    $("#cart_value").text("0");
+                }else{
+                    $.ajax({
+                        url: '/get-user',
+                        type: 'GET',
+                        success: function (id) {
+                            $.ajax({
+                                url: '/get-carts/'+id,
+                                type: 'GET',
+                                success: function (data) {
+                                    console.log(data)
+                                    $("#cart_value").text(data);
+                                }
+                            });
+                        }
+                    });
+                }
+            })
+        </script>
     </header>
 
     <!-- Home -->
@@ -415,11 +436,11 @@
 
                 <div class="col-lg-3">
                     <div class="row">
-                        <div class="col-md-2">
-                            <img src="{{asset('images/mobile.png')}}"style="width: 60px;height: 120px">
+                        <div class="col-sm-2">
+                            <img src="{{asset('images/mobile.png')}}"style="width: 40px;height: 80px; ">
                         </div>
 
-                        <div class="col-md-10">
+                        <div class="col-sm-10">
                             <a href="" > <h5 style="color: #8b0000"> Dapatkan Aplikasi Mobile BatakZone >></h5></a>
 
                             <h5 style="color: #8b0000"> Ikuti Kami</h5>
@@ -429,7 +450,7 @@
                                     <li><a href="#"><i class="fab fa-twitter" style="color: #8b0000"></i></a></li>
                                     <li><a href="#"><i class="fab fa-youtube" style="color: #8b0000"></i></a></li>
                                     <li><a href="#"><i class="fab fa-google" style="color: #8b0000"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>
+                                    {{--<li><a href="#"><i class="fab fa-vimeo-v" style="color: #8b0000"></i></a></li>--}}
                                 </ul>
                             </div>
                         </div>

@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1>Edit Category Product</h1>
+            <h1>Edit Ref Bank</h1>
             <hr>
 
             <form action="{{ url('ref-banks/'.$refBanks->id) }}" method="post" data-toggle="validator" role="form" enctype="multipart/form-data">

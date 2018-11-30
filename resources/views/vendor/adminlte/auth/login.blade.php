@@ -36,6 +36,16 @@
         </div>
 
         <div class=".col-lg-6 .col-md-6 .col-sm-12">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong>Ada beberapa masalah<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="" >
                 <div class="row">
                     <div class="col-lg-12">
@@ -43,16 +53,6 @@
                             <div class="card-body">
                                 <h5 class="card-title text-center">Sign In</h5>
                                 <p class="text-center font-weight-normal">Belum punya akun BatakZone? <a href="{{ url('/register') }}"> Daftar</a></p><br>
-                                @if (count($errors) > 0)
-                                    <div class="alert alert-danger">
-                                        <strong>Whoops!</strong>Ada beberapa masalah<br><br>
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
                                 <form class="form-signin form-group" action="{{ url('/login') }}" method="post">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-label-group">
