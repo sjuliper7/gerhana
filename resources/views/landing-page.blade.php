@@ -78,39 +78,43 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12" style="margin-bottom: -5em">
                                                             <div class="row">
                                                                 <img src="{{asset('images/kelola_akun.png')}}"
-                                                                     style="max-width:15%;max-height: 15%;margin-left: 0em">
+                                                                     style="max-width:10%;max-height: 10%">
                                                                 <div class="text-left col-md-6">
                                                                     <p class="font-weight-normal">Kelola Akun</p>
                                                                 </div>
 
                                                             </div>
+
                                                         </div>
+
                                                         <a href="/transactions">
-                                                            <div class="col-md-12" style="margin-top: 0em">
+                                                            <div class="col-md-12">
                                                                 <div class="row">
                                                                     <img src="{{asset('images/box_closed.png')}}"
-                                                                         style="max-width:15%;max-height: 15%">
+                                                                         style="max-width:10%;max-height: 10%">
                                                                     <div class="col-md-6">
-                                                                        <p class="font-weight-normal">Pesanan Saya</p>
+                                                                        <p class="font-weight-normal">Pesanan
+                                                                            Saya</p>
                                                                     </div>
 
                                                                 </div>
                                                             </div>
                                                         </a>
 
-                                                        <div class="col-md-12" style="margin-top: 2em">
+
+                                                        <div class="col-md-12" style="margin-top:0em">
                                                             <div class="row">
-                                                                <img src="{{asset('images/logout.png')}}"
-                                                                     style="max-width:15%;max-height: 15%">
+                                                                <img src="{{asset('images/off.png')}}"
+                                                                     style="max-width:10%;max-height: 10%">
                                                                 <div class="col-md-6">
                                                                     <form id="logout-form"
                                                                           action="{{ url('/logout') }}"
                                                                           method="POST" style="border: 0em">
                                                                         {{ csrf_field() }}
-                                                                        <input type="submit" value="logout">
+                                                                        <input type="submit" value="Logout" style="background: transparent;border: none; font-size: 14px;line-height: 1.7;font-weight: 400;color: #535353;">
                                                                     </form>
                                                                 </div>
 
@@ -163,7 +167,7 @@
 
                         <div class="main_nav_menu ml-auto"style="background-color: #8b0000;margin-right: 2em">
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a href="/home" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
+                                <li><a href="/" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
                                 <li><a href="#"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
@@ -243,6 +247,54 @@
                         {{--<div class="button banner_button"><a href="#">Shop Now</a></div>--}}
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="characteristics shadow p-3 mb-5 bg-white rounded">
+        <div class="container ">
+            <div class="row">
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon">
+                            <img src="images/char_3.png">
+                        </div>
+                        <div class="char_content">
+                            <div class="char_title">Transaksi</div>
+                            <div class="char_subtitle">Transaksi Aman dan Mudah</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon"><img src="images/contact_1.png" alt=""></div>
+                        <div class="char_content">
+                            <div class="char_title">Support</div>
+                            <div class="char_subtitle">Layanan 24 Jam</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+                <div class="col-lg-4 col-md-6 char_col">
+
+                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                        <div class="char_icon"><img src="images/char_4.png" alt=""></div>
+                        <div class="char_content">
+                            <div class="char_title">Kualitas</div>
+                            <div class="char_subtitle">Jaminan Kualitas Produk Lokal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char. Item -->
+
             </div>
         </div>
     </div>
