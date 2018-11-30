@@ -48,11 +48,11 @@
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <img src="{{asset('template/images/cart.png')}}" alt="">
-                                    <div class="cart_count"style="background-color: #8b0000"><span>5</span></div>
+                                    <div class="cart_count"style="background-color: #8b0000"><span id="cart_value">0</span></div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="/carts">Keranjang</a></div>
-                                    <div class="cart_price">$85</div>
+                                    {{--<div class="cart_price">$85</div>--}}
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,25 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            console.log("tests");
+            if("{{Auth::guest()}}"){
+                $("#cart_value").text("0");
+            }else{
+                $.ajax({
+                    url: '/get-user',
+                    type: 'GET',
+                    success: function (id) {
+                        console.log(id)
+                        $.ajax({
+                            url: '/get-carts/'+id,
+                            type: 'GET',
+                            success: function (data) {
+                                console.log(data)
+                                $("#cart_value").text(data);
+                            }
+                        });
+                    }
+                });
+            }
         })
     </script>
 
@@ -348,7 +366,7 @@
                         </div>
                     </div>
                     <div class="deals">
-                        <div class="deals_title">Paling Banyak Dilihat</div>
+                        <div class="deals_title">Promo</div>
                         <div class="deals_slider_container">
 
                             <!-- Deals Slider -->
@@ -376,6 +394,51 @@
                         <div class="deals_slider_nav_container">
                             <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i></div>
                             <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="viewed">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="viewed_title_container">
+                        <h3 class="viewed_title">Paling Banyak Dilihat</h3>
+                        <div class="viewed_nav_container">
+                            <div class="viewed_nav viewed_prev"><i class="fas fa-chevron-left"></i></div>
+                            <div class="viewed_nav viewed_next"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="viewed_slider_container">
+
+                        <!-- Recently Viewed Slider -->
+
+                        <div class="owl-carousel owl-theme viewed_slider">
+
+                            <!-- Recently Viewed Item -->
+                            @foreach($mostProductView as $mv)
+                                <?php
+                                $images = json_decode($mv->images);
+                                ?>
+                                <div class="owl-item">
+                                    <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                        <div class="viewed_image"><img src="{{asset('images/'.$images[0])}}" alt=""></div>
+                                        <div class="viewed_content text-center">
+                                            <div class="viewed_price">Rp {{number_format($mv->price)}}</div>
+                                            <div class="viewed_name"><a href="#">{{$mv->name}}</a></div>
+                                        </div>
+                                        <ul class="item_marks">
+                                            {{--<li class="item_mark item_discount">-25%</li>--}}
+                                            {{--<li class="item_mark item_new">new</li>--}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
