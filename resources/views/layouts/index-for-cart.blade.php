@@ -90,11 +90,11 @@
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
                                         <img src="{{asset('template/images/cart.png')}}" alt="">
-                                        <div class="cart_count" style="background-color: #8b0000"><span>5</span></div>
+                                        <div class="cart_count" style="background-color: #8b0000"><span id="cart_value">0</span></div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="/carts">Keranjang</a></div>
-                                        <div class="cart_price">$85</div>
+                                        {{--<div class="cart_price">$85</div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +352,28 @@
                 </div>
             </div>
         </div>
-
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if("{{Auth::guest()}}"){
+                    $("#cart_value").text("0");
+                }else{
+                    $.ajax({
+                        url: '/get-user',
+                        type: 'GET',
+                        success: function (id) {
+                            $.ajax({
+                                url: '/get-carts/'+id,
+                                type: 'GET',
+                                success: function (data) {
+                                    console.log(data)
+                                    $("#cart_value").text(data);
+                                }
+                            });
+                        }
+                    });
+                }
+            })
+        </script>
     </header>
 
 @yield('content')
