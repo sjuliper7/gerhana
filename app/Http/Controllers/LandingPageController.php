@@ -6,6 +6,7 @@ use App\CategoryProduct;
 use App\Product;
 use App\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
 {
@@ -26,9 +27,9 @@ class LandingPageController extends Controller
             }
         }
 
-        $max = 5;
+        $max = 6;
 
-        if(count($productsView ) < 5){
+        if(count($productsView ) < 6){
             $max = count($productsView);
         }
 
@@ -62,5 +63,9 @@ class LandingPageController extends Controller
         $products = Product::where(['id_category'=> $category_->id])->get();
 
         return view('category-product',compact('products','category'));
+    }
+
+    public function getUser(){
+        return Auth::user()->id;
     }
 }
