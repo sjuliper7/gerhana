@@ -4,7 +4,7 @@
     <div class="shop">
         <div class="container">
             <div class="row">
-                @if(is_null($products))
+                @if(count($products) != 0)
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-sm-2"style="margin-left:-1em">
