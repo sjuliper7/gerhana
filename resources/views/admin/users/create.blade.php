@@ -6,9 +6,8 @@
 
    <div class="content">
        <div class="container-fluid">
-           <div class='col-lg-4'>
+           <div class='col-lg-4 col-lg-offset-4' style="padding: 20px; box-shadow: 0 0px 2px rgba(0,0,0,0.6);">
 
-               <h1><i class='fa fa-user-plus'></i> Add User</h1>
                <hr>
 
                {{-- @include ('errors.list') --}}
@@ -52,5 +51,10 @@
            </div>
        </div>
    </div>
-
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#brand-title').text("Create User")
+           $('#rbac').addClass("active")
+       });
+   </script>
 @endsection

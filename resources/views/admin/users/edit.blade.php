@@ -6,10 +6,7 @@
 
     <div class="content">
         <div class="container-fluid">
-            <div class='col-lg-4 col-lg-offset-4'>
-
-                <h1><i class='fa fa-user-plus'></i> Edit {{$user->name}}</h1>
-                <hr>
+            <div class='col-lg-4 col-lg-offset-4' style="padding: 20px; box-shadow: 0 0px 2px rgba(0,0,0,0.6);">
                 {{-- @include ('errors.list') --}}
 
                 {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }} {{-- Form model binding to automatically populate our fields with user data --}}
@@ -28,8 +25,8 @@
 
                 <div class='form-group'>
                     @foreach ($roles as $role)
-{{--                        {{ Form::checkbox('roles[]',  $role->id, $user->roles ) }}--}}
-{{--                        {{ Form::label($role->name, ucfirst($role->name)) }}<br>--}}
+                        {{ Form::checkbox('roles[]',  $role->id, $user->roles ) }}
+                        {{ Form::label($role->name, ucfirst($role->name)) }}<br>
                     @endforeach
                 </div>
 
@@ -41,5 +38,12 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#brand-title').text("Edit Users")
+            $('#rbac').addClass("active")
+        });
+    </script>
 
 @endsection
