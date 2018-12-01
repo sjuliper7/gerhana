@@ -1,3 +1,4 @@
+
 @extends('layouts.index-for-listing')
 
 @section('content')
