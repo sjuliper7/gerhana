@@ -22,7 +22,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('adminlte::roles.index')->with('roles', $roles);
+        return view('admin.roles.index')->with('roles', $roles);
     }
     /**
      * Show the form for creating a new resource.
@@ -32,7 +32,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all();
-        return view('adminlte::roles.create', ['permissions'=>$permissions]);
+        return view('admin.roles.create', ['permissions'=>$permissions]);
     }
     /**
      * Store a newly created resource in storage.
@@ -81,7 +81,7 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
-        return view('adminlte::roles.edit', compact('role', 'permissions'));
+        return view('admin.roles.edit', compact('role', 'permissions'));
     }
     /**
      * Update the specified resource in storage.
