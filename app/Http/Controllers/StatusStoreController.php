@@ -15,7 +15,7 @@ class StatusStoreController extends Controller
     public function index()
     {
         $statusStores = StatusStore::orderby('id', 'desc')->get();
-        return view('adminlte::status-stores.index', compact('statusStores'));
+        return view('admin.status-stores.index', compact('statusStores'));
     }
 
     /**
@@ -25,7 +25,7 @@ class StatusStoreController extends Controller
      */
     public function create()
     {
-        return view('adminlte::status-stores.create');
+        return view('admin.status-stores.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class StatusStoreController extends Controller
     public function edit($id)
     {
         $statusStore = StatusStore::findOrFail($id);
-        return view ('adminlte::status-stores.edit', compact('statusStore'));
+        return view ('admin.status-stores.edit', compact('statusStore'));
     }
 
     /**
