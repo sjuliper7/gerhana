@@ -16,7 +16,7 @@ class StatusTransactionController extends Controller
     {
         $statusTransactions = StatusTransaction::orderby('id', 'desc')->get();
 
-        return view('adminlte::status-transactions.index', compact('statusTransactions'));
+        return view('admin.status-transactions.index', compact('statusTransactions'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StatusTransactionController extends Controller
      */
     public function create()
     {
-        return view('adminlte::status-transactions.create');
+        return view('admin.status-transactions.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class StatusTransactionController extends Controller
     public function edit($id)
     {
         $statusTransaction = StatusTransaction::findOrFail($id);
-        return view ('adminlte::status-transactions.edit', compact('statusTransaction'));
+        return view ('admin.status-transactions.edit', compact('statusTransaction'));
     }
 
     /**
