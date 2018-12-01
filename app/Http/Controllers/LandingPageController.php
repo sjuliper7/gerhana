@@ -59,10 +59,12 @@ class LandingPageController extends Controller
     }
 
     public function searchByCategory($category){
+        $categoryProducts = CategoryProduct::all();
+
         $category_ = CategoryProduct::where(['name' => $category])->firstOrFail();
         $products = Product::where(['id_category'=> $category_->id])->get();
 
-        return view('category-product',compact('products','category'));
+        return view('category-product',compact('products','category','categoryProducts'));
     }
 
     public function getUser(){
