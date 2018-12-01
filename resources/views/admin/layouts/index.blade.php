@@ -202,7 +202,7 @@
                         </li>
                     </ul>
                 </li>
-                <li id="store" class="">
+                <li id="bank" class="">
                     <a href="#" class="tree-toggler">
                         <i class="ti-wallet"></i>
                         <p>Bank</p>
@@ -211,7 +211,7 @@
                         <li style="margin-top: -5px;">
                             <a href="/ref-banks">
                                 <i class="ti-link" style="font-size: 20px"></i>
-                                <p>Ref Banks</p>
+                                <p>Referensi Banks</p>
                             </a>
                         </li>
                     </ul>
