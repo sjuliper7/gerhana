@@ -15,7 +15,7 @@ class UserStatusController extends Controller
     public function index()
     {
         $userStatuss = UserStatus::orderby('id', 'desc')->get();
-        return view('adminlte::user-status.index', compact('userStatuss'));
+        return view('admin.user-status.index', compact('userStatuss'));
     }
 
     /**
@@ -25,7 +25,7 @@ class UserStatusController extends Controller
      */
     public function create()
     {
-        return view('adminlte::user-status.create');
+        return view('admin.user-status.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class UserStatusController extends Controller
     public function edit($id)
     {
         $userStatus= UserStatus::findOrFail($id);
-        return view('adminlte::user-status.edit',compact('userStatus'));
+        return view('admin.user-status.edit',compact('userStatus'));
 
     }
 
