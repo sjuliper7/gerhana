@@ -166,21 +166,21 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nama Toko</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Nama Toko" name="store-name">
+                                <input type="text" class="form-control" id="storeName" placeholder="Nama Toko" name="store-name" required>
                             </div>
                             <div class="col-sm-6">
                                 <label>Nama Pemilik</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nama Pemilik" name="store-owner">
+                                <input type="text" class="form-control" id="storeOwner" placeholder="Nama Pemilik" name="store-owner" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Email</label>
-                                <input type="text" class="form-control" id="storeName" placeholder="Email" name="store-email">
+                                <input type="text" class="form-control" id="storeName" placeholder="Email" name="store-email" required>
                             </div>
                             <div class="col-sm-6">
                                 <label>Nomor Telepon</label>
-                                <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon" name="store-phone">
+                                <input type="text" class="form-control" id="storeOwner" placeholder="Nomor Telepon" name="store-phone" required>
                             </div>
                         </div>
 
@@ -211,7 +211,7 @@
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label>Alamat</label>
-                                <textarea class="form-control" name="store-address"></textarea>
+                                <textarea class="form-control" name="store-address" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -219,18 +219,18 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor KTP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor KTP" name="store-ktp">
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor KTP" name="store-ktp" required>
                             </div>
                             <div class="col-sm-6">
                                 <label>Foto KTP</label>
                                 <div class="form-group">
-                                    <img src="http://placehold.it/400x400" id="show_ktp" style="max-width:200px;max-height:200px;" class="center-block" />
+                                    <img src="http://placehold.it/400x400" id="show_ktp" style="max-width:200px;max-height:200px;" class="center-block" required/>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="btn btn-info center-block">
                                         Browse
-                                        <input type="file" id="input_ktp" name="ktp-image" style="display: none">
+                                        <input type="file" id="input_ktp" name="ktp-image" style="display: none" required>
                                     </label>
                                 </div>
                             </div>
@@ -240,12 +240,12 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor NPWP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp">
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp"  required>                                    <img src="http://placehold.it/400x400" id="show_ktp" style="max-width:200px;max-height:200px;" class="center-block" required/>>
                             </div>
                             <div class="col-sm-6">
                                 <label>Foto NPWP</label>
                                 <div class="form-group">
-                                    <img src="http://placehold.it/400x400" id="show_npwp" style="max-width:200px;max-height:200px;" class="center-block" />
+                                    <img src="http://placehold.it/400x400" id="show_npwp" style="max-width:200px;max-height:200px;" class="center-block" required/>
                                 </div>
 
                                 <div class="form-group">

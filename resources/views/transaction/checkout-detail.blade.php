@@ -19,7 +19,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Provinsi</label>
-                                    <select name="province-select" id="province" class="form-control" onclick="getCites()" required style="width: auto">
+                                    <select name="province-select" id="province" class="form-control" onclick="getCites()"  style="width: auto" required>
                                         <option selected="selected" name="category-selected">Pilih Provinsi</option>
                                         @foreach($provinces as $province)
                                             <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>

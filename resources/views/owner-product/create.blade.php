@@ -46,8 +46,8 @@
                          <div class="form-row">
                              <div class="form-group col-md-5">
                                  <label>Kategori Produk</label>
-                                 <select name="category-select" id="select-category" class="form-control" required style="width: 100%">
-                                     <option selected="selected" name="category-selected">Pilih Kategori</option>
+                                 <select name="category-select" id="select-category" class="form-control" style="width: 100%" required>
+                                     <option selected="selected" name="category-selected" value="">Pilih Kategori</option>
                                      @foreach($categoryProducts as $categoryProduct)
                                          <option value="{{$categoryProduct->id}}">{{$categoryProduct->name}}</option>
                                      @endforeach
@@ -57,8 +57,8 @@
 
                              <div class="form-group col-md-6">
                                  <label>Status Produk</label>
-                                 <select name="status-select" id="select-status" class="form-control" style="width: auto">
-                                     <option selected="selected" name="status-selected">Pilih Status</option>
+                                 <select name="status-select" id="select-status" class="form-control" style="width: auto" required>
+                                     <option selected="selected" name="status-selected" value="">Pilih Status</option>
                                      @foreach($statusProducts as $statusProduct)
                                          <option value="{{$statusProduct->id}}">{{$statusProduct->name}}</option>
                                      @endforeach
@@ -94,13 +94,13 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <img src="{{asset('http://placehold.it/400x400')}}" id="show_image-" style="max-width:100px;max-height:100px;" class="center-block" />
+                                            <img src="{{asset('http://placehold.it/400x400')}}" id="show_image-" style="max-width:100px;max-height:100px;" class="center-block"  />
                                         </div>
                                     </td>
                                     <td>
-                                        <label class="btn btn-info"style=" background-color:#8b0000">Jelajah<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
+                                        <label class="btn btn-info"style=" background-color:#8b0000" >Jelajah<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
                                     </td>
-                                    <td><button type="button" name="addImages" id="more" class="btn btn-success"style=" background-color:#8b0000">Tambah Foto</button></td>
+                                    <td><button type="button" name="addImages" id="more" class="btn btn-success"style=" background-color:#8b0000" required>Tambah Foto</button></td>
                                 </tr>
                             </table>
                         </div>
