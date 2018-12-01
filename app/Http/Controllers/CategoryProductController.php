@@ -16,7 +16,7 @@ class CategoryProductController extends Controller
     {
         $categoryProducts = CategoryProduct::orderby('id', 'desc')->get();
 
-        return view('adminlte::category-products.index', compact('categoryProducts'));
+        return view('admin.category-products.index', compact('categoryProducts'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryProductController extends Controller
      */
     public function create()
     {
-        return view('adminlte::category-products.create');
+        return view('admin.category-products.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class CategoryProductController extends Controller
     public function edit($id)
     {
         $categoryProduct = CategoryProduct::findOrFail($id);
-        return view ('adminlte::category-products.edit', compact('categoryProduct'));
+        return view ('admin.category-products.edit', compact('categoryProduct'));
     }
 
     /**
