@@ -5,29 +5,30 @@
 @section('content')
 
     <div class="content">
-        <div class='col-lg-4 col-lg-offset-4'>
+       <div class="container-fluid">
+           <div class='col-lg-4 col-lg-offset-4' style="padding: 20px; box-shadow: 0 0px 0.1px rgba(0,0,0,0.6);">
 
-            {{-- @include ('errors.list') --}}
+               {{-- @include ('errors.list') --}}
 
-            <h1>Edit {{$permission->name}}</h1>
-            <br>
-            {{ Form::model($permission, array('route' => array('permissions.update', $permission->id), 'method' => 'PUT')) }}
+               <br>
+               {{ Form::model($permission, array('route' => array('permissions.update', $permission->id), 'method' => 'PUT')) }}
 
-            <div class="form-group">
-                {{ Form::label('name', 'Permission Name') }}
-                {{ Form::text('name', null, array('class' => 'form-control')) }}
-            </div>
-            <br>
-            {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
+               <div class="form-group">
+                   {{ Form::label('name', 'Permission Name') }}
+                   {{ Form::text('name', null, array('class' => 'form-control')) }}
+               </div>
+               <br>
+               {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
 
-            {{ Form::close() }}
+               {{ Form::close() }}
 
-        </div>
+           </div>
+       </div>
     </div>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#brand-title').text("Permissions")
+            $('#brand-title').text("Edit Permissions")
             $('#rbac').addClass("active")
         });
     </script>

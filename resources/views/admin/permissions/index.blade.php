@@ -6,7 +6,7 @@
 
    <div class="content">
        <div class="container">
-           <div class="col-lg-10 col-lg-offset-1">
+           <div class="col-lg-10">
                <h1>
                    <a href="{{ route('users.index') }}" class="btn btn-default pull-right" style="margin-bottom: 1em">Users</a>
                    <a href="{{ route('roles.index') }}" class="btn btn-default pull-right" style="margin-bottom: 1em">Roles</a>
