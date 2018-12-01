@@ -3,11 +3,11 @@
 @section('title', '| Product')
 
 @section('main-content')
-    <div class="container">
+    <div class="container" style="margin: 3em">
         <div class="col-lg-offset-0 col-lg-11">
-            <a href="{{route('products.create')}}" class="btn btn-success" style="margin-bottom: 20px; margin-left: 20px">Create Product</a>
-            <div class="row">
-                <div class="col-sm-2"style="margin-left:-1em">
+
+            <div class="row" style="margin-left:-2em">
+                <div class="col-sm-2">
                     <img src="{{asset('images/shop.png')}}" class="img-thumbnail" alt="...">
                 </div>
                 <div class="col-sm-7">
@@ -25,25 +25,53 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br>
+            </div>
 
-            <div class="row">
-                @foreach($products as $product)
-                    <?php
-                    $images = json_decode($product->images);
-                    ?>
-                    <div class="col-lg-3 col-xs-5">
-                        <!-- small box -->
-                        <div class="card" style="width: 17rem">
-                            <img class="card-img-top center-block" src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px;margin-bottom: 10px; object-fit: cover;" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{$product->name}}</h5>
-                                <p class="card-text" style="text-align: center; font-weight:550; font-size: large; color: #262323 " >Rp {{number_format($product->price)}}</p>
-                                <a href="{{ route('products.show', $product->id ) }}" class="btn btn-info btn-block">Detail</a>
-                            </div>
+            <div class="row" style="margin-top:1em">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#nav-product">Produk</a></li>
+                    <li><a data-toggle="tab" href="#nav-transaction">List Transaksi</a></li>
+                    <li><a data-toggle="tab" href="#nav-review">Ulasan</a></li>
+                    <li><a data-toggle="tab" href="#nav-promotion">Promo</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="nav-product" class="tab-pane fade in active">
+                        <div style="margin-top: 1em">
+                            <a href="{{route('products.create')}}" class="btn btn-success">Create Product</a>
                         </div>
+
+                        @foreach($products as $product)
+                            <?php
+                            $images = json_decode($product->images);
+                            ?>
+                            <div class="col-lg-3 col-xs-5" style="margin-top: 1em; margin-left: -2em">
+                                <!-- small box -->
+                                <div class="card" style="width: 17rem">
+                                    <img class="card-img-top center-block" src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px;margin-bottom: 10px; object-fit: cover;" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{$product->name}}</h5>
+                                        <p class="card-text" style="text-align: center; font-weight:550; font-size: large; color: #262323 " >Rp {{number_format($product->price)}}</p>
+                                        <a href="{{ route('products.show', $product->id ) }}" class="btn btn-info btn-block">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
+
+                    <div id="nav-transaction" class="tab-pane fade">
+
+                    </div>
+
+                    <div id="nav-review" class="tab-pane fade">
+
+                    </div>
+
+                    <div id="nav-promotion" class="tab-pane fade">
+
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

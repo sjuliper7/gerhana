@@ -186,15 +186,24 @@
                         <div class="form-group row">
                             <div class="col-sm-4">
                                 <label>Provinsi</label>
-                                <input type="text" class="form-control" id="storeProvince" placeholder="Provinsi" name="store-province">
+                                <select name="store_province" id="province" class="form-control" onchange="getCites()" required >
+                                    <option selected="selected" name="category-selected">Pilih Provinsi</option>
+                                    @foreach($provinces as $province)
+                                        <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col-sm-4">
-                                <label>Kabupaten</label>
-                                <input type="text" class="form-control" id="storeDistricts" placeholder="Kabupaten" name="store-districts">
+                                <label>Kota/Kabupaten</label>
+                                <select name="store_districts" id="cities" class="form-control" onchange="getSubDistrict()">
+                                    <option selected="selected" name="status-selected">Pilih Kabupaten/Kota</option>
+                                </select>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label>Kecamatan</label>
-                                <input type="text" class="form-control" id="storeSubDistrict" placeholder="Kecamatan" name="store-sub-district">
+                                <select name="store_sub_districts" id="sub-district" class="form-control">
+                                    <option selected="selected" name="status-selected">Pilih Kecamatan</option>
+                                </select>
                             </div>
                         </div>
 
@@ -367,13 +376,55 @@
             showTab(currentTab);
         }
 
-
         function fixStepIndicator(n) {
             var i, x = document.getElementsByClassName("step");
             for (i = 0; i < x.length; i++) {
                 x[i].className = x[i].className.replace(" active", "");
             }
             x[n].className += " active";
+        }
+
+        function getCites() {
+            var province_id  =   $("#province").val();
+            $.ajax({
+                type: "POST",
+                url: "get-cities",
+                data: {
+                    province_id : province_id,
+                    _token: '{{ csrf_token() }}',
+                }
+            }).done(function(result) {
+                var $el = $("#cities");
+                $el.empty();
+                if(result != null){
+                    $.each(result, function(key, value) {
+                        $el.append($("<option></option>")
+                            .attr("value", value.city_id).text(value.city_name));
+                    });
+                }else {
+                    $el.append($("<option></option>")
+                        .attr("value",0).text("Pilih Kabupaten Kota"));
+                }
+            });
+        }
+
+        function getSubDistrict() {
+            var city_id  =   $("#cities").val();
+            $.ajax({type: "POST", url: "get-subdistricts", data: {city_id : city_id, _token: '{{ csrf_token() }}',
+                }
+            }).done(function(result) {
+                var $el = $("#sub-district");
+                $el.empty();
+                if(result != null){
+                    $.each(result, function(key, value) {
+                        $el.append($("<option></option>")
+                            .attr("value", value.subdistrict_id).text(value.subdistrict_name));
+                    });
+                }else {
+                    $el.append($("<option></option>")
+                        .attr("value",0).text("Pilih Kecamatan"));
+                }
+            });
         }
 
     </script>
