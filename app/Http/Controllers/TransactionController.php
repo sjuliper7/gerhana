@@ -87,7 +87,7 @@ class TransactionController extends Controller
     public function indexAdmin()
     {
         $transactions = Transaction::all();
-        return view('adminlte::transaction.index')->with('transactions', $transactions);
+        return view('admin.transaction.index')->with('transactions', $transactions);
     }
 
     public function detailTransaction($id)
@@ -96,7 +96,7 @@ class TransactionController extends Controller
         $detailTransactions = $transaction->detailTransactions;
         $status = StatusTransaction::all();
 
-        return view('adminlte::transaction.show', compact('detailTransactions','status'));
+        return view('admin.transaction.show', compact('detailTransactions','status'));
     }
 
     public function statusTransaction(Request $request,$id){
