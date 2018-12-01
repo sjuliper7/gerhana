@@ -15,7 +15,7 @@ class RefBankController extends Controller
     public function index()
     {
         $refBanks = RefBank::orderBy('id', 'desc')->get();
-        return view('adminlte::ref-banks.index', compact('refBanks'));
+        return view('admin.ref-banks.index', compact('refBanks'));
     }
 
     /**
@@ -25,7 +25,7 @@ class RefBankController extends Controller
      */
     public function create()
     {
-        return view('adminlte::ref-banks.create');
+        return view('admin.ref-banks.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class RefBankController extends Controller
     public function edit($id)
     {
         $refBanks = RefBank::findOrFail($id);
-        return view ('adminlte::ref-banks.edit', compact('refBanks'));
+        return view ('admin.ref-banks.edit', compact('refBanks'));
     }
 
     /**
