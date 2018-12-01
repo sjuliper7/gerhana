@@ -24,41 +24,41 @@ class AdminMiddleware
             else return $next($request);
         }
 
-        //status products
-        if ($request->is('status-products'))
-        {
-            if (!Auth::user()->hasPermissionTo('Access Status Products'))
-                abort('401');
-            else return $next($request);
-        }
-
-        if ($request->is('status-products/create'))
-        {
-            if (!Auth::user()->hasPermissionTo('Create Status Product'))
-                abort('401');
-            else return $next($request);
-        }
-
-        if ($request->is('status-products/*/edit'))
-        {
-            if (!Auth::user()->hasPermissionTo('Edit Status Product'))
-                abort('401');
-            else return $next($request);
-        }
-
-        if ($request->is('status-products/*'))
-        {
-            if (!Auth::user()->hasPermissionTo('Delete Product'))
-                abort('401');
-            else return $next($request);
-        }
-
-        if ($request->is('status-products/*'))
-        {
-            if (!Auth::user()->hasPermissionTo('Delete Product'))
-                abort('401');
-            else return $next($request);
-        }
+//        //status products
+//        if ($request->is('status-products'))
+//        {
+//            if (!Auth::user()->hasPermissionTo('Access Status Products'))
+//                abort('401');
+//            else return $next($request);
+//        }
+//
+//        if ($request->is('status-products/create'))
+//        {
+//            if (!Auth::user()->hasPermissionTo('Create Status Product'))
+//                abort('401');
+//            else return $next($request);
+//        }
+//
+//        if ($request->is('status-products/*/edit'))
+//        {
+//            if (!Auth::user()->hasPermissionTo('Edit Status Product'))
+//                abort('401');
+//            else return $next($request);
+//        }
+//
+//        if ($request->is('status-products/*'))
+//        {
+//            if (!Auth::user()->hasPermissionTo('Delete Product'))
+//                abort('401');
+//            else return $next($request);
+//        }
+//
+//        if ($request->is('status-products/*'))
+//        {
+//            if (!Auth::user()->hasPermissionTo('Delete Product'))
+//                abort('401');
+//            else return $next($request);
+//        }
 
 
 

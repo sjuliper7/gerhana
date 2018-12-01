@@ -16,7 +16,7 @@ class StatusProductController extends Controller
     {
         $statusProducts = StatusProduct::orderby('id', 'desc')->get();
 
-        return view('adminlte::status-products.index', compact('statusProducts'));
+        return view('admin.status-products.index', compact('statusProducts'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StatusProductController extends Controller
      */
     public function create()
     {
-        return view('adminlte::status-products.create');
+        return view('admin.status-products.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class StatusProductController extends Controller
     public function edit($id)
     {
         $statusProduct = StatusProduct::findOrFail($id);
-        return view ('adminlte::status-products.edit', compact('statusProduct'));
+        return view ('admin.status-products.edit', compact('statusProduct'));
     }
 
     /**

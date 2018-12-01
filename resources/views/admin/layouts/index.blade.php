@@ -53,15 +53,6 @@
 
             // demo.initChartist();
 
-            $.notify({
-                icon: 'ti-gift',
-                message: "Welcome to <b>BatakZone Dashboard</b> ."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
             $('a.tree-toggler').click(function () {
                 $(this).parent().children('ul.tree').toggle(300);
             });
@@ -96,12 +87,12 @@
 
             <ul class="nav">
                 <li id="dashboard" class="">
-                    <a href="/test">
+                    <a href="/home">
                         <i class="ti-panel"></i>
                         <p class="nav"><b>Dashboard</b></p>
                     </a>
                 </li>
-                <li>
+                <li id="product" class="">
                     <a href="#" class="tree-toggler">
                         <i class="ti-bag"></i>
                         <p>Product</p>
@@ -127,7 +118,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li id="rbac" class="">
                     <a href="#" class="tree-toggler">
                         <i class="ti-pulse"></i>
                         <p>Manage RBAC</p>
@@ -187,7 +178,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" id="brand-title">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">

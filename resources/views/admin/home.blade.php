@@ -85,7 +85,16 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function(){
+            $.notify({
+                icon: 'ti-gift',
+                message: "Welcome to <b>BatakZone Dashboard</b> ."
+
+            },{
+                type: 'success',
+                timer: 4000
+            });
             $('#dashboard').addClass("active")
+            $('#brand-title').text("Dashboard")
         });
     </script>
 @endsection

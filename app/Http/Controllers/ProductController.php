@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $store = Auth::user()->store;
         $products = Product::where(['id_store' => $store->id])->orderby('id', 'desc')->get();
-        return view('adminlte::products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         $statusProducts = StatusProduct::all();
         $categoryProducts = CategoryProduct::all();
-        return view('adminlte::products.create', compact('statusProducts','categoryProducts'));
+        return view('admin.products.create', compact('statusProducts','categoryProducts'));
     }
 
     /**
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $product = Product::with('status','category')->findOrFail($id);
         $images = json_decode($product->images);
 
-        return view ('adminlte::products.show', compact('product','images'));
+        return view ('admin.products.show', compact('product','images'));
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductController extends Controller
 
         $statusProducts  = StatusProduct::all();
         $categoryProducts = CategoryProduct::all();
-        return view ('adminlte::products.edit', compact('product','statusProducts','categoryProducts','images'));
+        return view ('admin.products.edit', compact('product','statusProducts','categoryProducts','images'));
     }
 
     /**
