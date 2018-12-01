@@ -1,22 +1,24 @@
-@extends('adminlte::layouts.app')
+@extends('admin.layouts.index')
 
 @section('title', '| Status Products')
 
-@section('main-content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Status Transaction</h3></div>
-                    <a href="{{ URL::to('status-transactions/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Status Transaction</a>
-                    <table class="table table-hover">
-                        <thead>
+@section('content')
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Status Transaction</h3></div>
+                        <a href="{{ URL::to('status-transactions/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Status Transaction</a>
+                        <table class="table table-hover">
+                            <thead>
                             <tr>
                                 <th>Name</th>
                                 <th colspan="2">Actions</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
                             @foreach($statusTransactions as $statusTransaction)
                                 <tr>
                                     <td>{{$statusTransaction->name}}</td>
@@ -32,10 +34,19 @@
                                     </td>
                                 </tr>
                             @endforeach
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#brand-title').text("Status Transaction")
+            $('#transactions').addClass("active")
+        });
+    </script>
+
 @endsection

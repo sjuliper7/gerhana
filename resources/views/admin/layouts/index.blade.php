@@ -156,20 +156,20 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li id="transactions" class="">
                     <a href="#" class="tree-toggler">
                         <i class="ti-wallet"></i>
                         <p>Transactions</p>
                     </a>
                     <ul class="nav tree" style="margin-top: -25px;margin-left: 10px"  >
                         <li style="margin-top: -5px;">
-                            <a href="/permissions">
+                            <a href="/transactions-admin">
                                 <i class="ti-link" style="font-size: 20px"></i>
                                 <p>Transactions</p>
                             </a>
                         </li>
                         <li style="margin-top: -25px;">
-                            <a href="/roles">
+                            <a href="/status-transactions">
                                 <i class="ti-link" style="font-size: 20px"></i>
                                 <p>Status Transactions</p>
                             </a>
