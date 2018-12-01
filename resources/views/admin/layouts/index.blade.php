@@ -176,6 +176,46 @@
                         </li>
                     </ul>
                 </li>
+                <li id="store" class="">
+                    <a href="#" class="tree-toggler">
+                        <i class="ti-wallet"></i>
+                        <p>Store</p>
+                    </a>
+                    <ul class="nav tree" style="margin-top: -25px;margin-left: 10px"  >
+                        <li style="margin-top: -5px;">
+                            <a href="/stores">
+                                <i class="ti-link" style="font-size: 20px"></i>
+                                <p>Store</p>
+                            </a>
+                        </li>
+                        <li style="margin-top: -25px;">
+                            <a href="/request-stores">
+                                <i class="ti-link" style="font-size: 20px"></i>
+                                <p>Store Requests</p>
+                            </a>
+                        </li>
+                        <li style="margin-top: -25px;">
+                            <a href="/status-stores">
+                                <i class="ti-link" style="font-size: 20px"></i>
+                                <p>Status Store</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="store" class="">
+                    <a href="#" class="tree-toggler">
+                        <i class="ti-wallet"></i>
+                        <p>Bank</p>
+                    </a>
+                    <ul class="nav tree" style="margin-top: -25px;margin-left: 10px"  >
+                        <li style="margin-top: -5px;">
+                            <a href="/ref-banks">
+                                <i class="ti-link" style="font-size: 20px"></i>
+                                <p>Ref Banks</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
