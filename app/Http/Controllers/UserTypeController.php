@@ -16,7 +16,7 @@ class UserTypeController extends Controller
     {
         $userTypes = UserType::orderby('id', 'desc')->get();
 
-        return view('adminlte::user-types.index', compact('userTypes'));
+        return view('admin.user-types.index', compact('userTypes'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserTypeController extends Controller
 
     public function create()
     {
-        return view('adminlte::user-types.create');
+        return view('admin.user-types.create');
     }
 
 
@@ -69,7 +69,7 @@ class UserTypeController extends Controller
     public function edit($id)
     {
         $userType = UserType::findOrFail($id);
-        return view ('adminlte::user-types.edit', compact('userType'));
+        return view ('admin.user-types.edit', compact('userType'));
     }
 
     /**
