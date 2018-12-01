@@ -15,9 +15,18 @@ class RequestStoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $rajaOngkir;
+
+    public function __construct() {
+        $this->middleware(['auth']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->rajaOngkir = new RajaOngkirController();
+    }
+
     public function index()
     {
         $stores = RequestStore::orderby('id', 'desc')->get();
+
         return view('adminlte::store-requests.index',compact('stores'));
     }
 
@@ -28,7 +37,9 @@ class RequestStoreController extends Controller
      */
     public function create()
     {
-        return view('stores.request-store');
+        $provinces = $this->rajaOngkir->getProvinces();
+
+        return view('stores.request-store',compact('provinces'));
     }
 
     /**
