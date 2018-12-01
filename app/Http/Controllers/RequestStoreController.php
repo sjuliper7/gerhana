@@ -27,7 +27,7 @@ class RequestStoreController extends Controller
     {
         $stores = RequestStore::orderby('id', 'desc')->get();
 
-        return view('adminlte::store-requests.index',compact('stores'));
+        return view('admin.store-requests.index',compact('stores'));
     }
 
     /**
@@ -100,7 +100,7 @@ class RequestStoreController extends Controller
     public function show($id)
     {
         $requestStore = RequestStore::findOrFail($id);
-        return view("adminlte::store-requests.show",compact('requestStore'));
+        return view("admin.store-requests.show",compact('requestStore'));
     }
 
     /**
