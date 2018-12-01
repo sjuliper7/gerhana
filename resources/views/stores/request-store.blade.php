@@ -1,6 +1,7 @@
 @extends('layouts.index-for-detail')
 
 @section('header')
+
     <nav class="main_nav">
         <div class="container">
             <div class="row">
@@ -186,8 +187,8 @@
                         <div class="form-group row">
                             <div class="col-sm-4">
                                 <label>Provinsi</label>
-                                <select name="store_province" id="province" class="form-control" onchange="getCites()" required >
-                                    <option selected="selected" name="category-selected">Pilih Provinsi</option>
+                                <select name="province-select" id="province" class="form-control" onchange="getCites()" required >
+                                    <option selected="selected" name="store_province">Pilih Provinsi</option>
                                     @foreach($provinces as $province)
                                         <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
                                     @endforeach
@@ -195,14 +196,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <label>Kota/Kabupaten</label>
-                                <select name="store_districts" id="cities" class="form-control" onchange="getSubDistrict()">
-                                    <option selected="selected" name="status-selected">Pilih Kabupaten/Kota</option>
+                                <select name="city-select" id="cities" class="form-control" onchange="getSubDistrict()">
+                                    <option selected="selected" name="store_districts">Pilih Kabupaten/Kota</option>
                                 </select>
                             </div>
                             <div class="col-sm-3">
                                 <label>Kecamatan</label>
-                                <select name="store_sub_districts" id="sub-district" class="form-control">
-                                    <option selected="selected" name="status-selected">Pilih Kecamatan</option>
+                                <select name="sub-district-select" id="sub-district" class="form-control">
+                                    <option selected="selected" name="store_sub_districts">Pilih Kecamatan</option>
                                 </select>
                             </div>
                         </div>
@@ -384,15 +385,17 @@
             x[n].className += " active";
         }
 
+
+
         function getCites() {
             var province_id  =   $("#province").val();
             $.ajax({
                 type: "POST",
-                url: "get-cities",
+                url: "/get-cities",
                 data: {
                     province_id : province_id,
                     _token: '{{ csrf_token() }}',
-                }
+                },
             }).done(function(result) {
                 var $el = $("#cities");
                 $el.empty();
@@ -410,7 +413,7 @@
 
         function getSubDistrict() {
             var city_id  =   $("#cities").val();
-            $.ajax({type: "POST", url: "get-subdistricts", data: {city_id : city_id, _token: '{{ csrf_token() }}',
+            $.ajax({type: "POST", url: "/get-subdistricts", data: {city_id : city_id, _token: '{{ csrf_token() }}',
                 }
             }).done(function(result) {
                 var $el = $("#sub-district");

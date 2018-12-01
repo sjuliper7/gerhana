@@ -63,9 +63,9 @@ class RequestStoreController extends Controller
         $requestStore->store_npwp         = $request['store-npwp'];
         $requestStore->store_account_bank = $request['store-account-number'];
         $requestStore->store_account_type = $request['type-bank'];
-        $requestStore->store_province     = $request['store-province'];
-        $requestStore->store_districts    = $request['store-districts'];
-        $requestStore->store_sub_district = $request['store-sub-district'];
+        $requestStore->store_province     = $request['province-select'];
+        $requestStore->store_districts    = $request['city-select'];
+        $requestStore->store_sub_district = $request['sub-district-select'];
         $requestStore->id_status          = $status->id;
         $requestStore->id_user            = Auth::user()->id;
 
