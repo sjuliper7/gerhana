@@ -34,26 +34,26 @@ class StoresTableSeeder extends Seeder
         );
 
 
-        DB::table('stores')->insert(
-            [
-                'store_name' => 'Johan Toko Kita',
-                'store_owner' => "Johan Amanada",
-                'store_email' => "johan-toko-kita@gmail.com",
-                'store_phone' => "0812321345111",
-                'store_address' => "Jalan Sie Rampah",
-                'store_ktp' => "098765432121",
-                'store_ktp_image' => "ktp.jpg",
-                'store_npwp' => "2245y56543235432",
-                'store_npwp_image' => "npwp.jpeg",
-                'store_account_bank' => "987654567898765431",
-                'store_account_type' => "Mandiri",
-                'store_account_bank_image' => "account.jpeg",
-                'store_province'=>"",
-                'store_districts'=>"",
-                'store_sub_district'=>"",
-                'id_request' => '2',
-                'id_user' => '2',
-            ]
-        );
+//        DB::table('stores')->insert(
+//            [
+//                'store_name' => 'Johan Toko Kita',
+//                'store_owner' => "Johan Amanada",
+//                'store_email' => "johan-toko-kita@gmail.com",
+//                'store_phone' => "0812321345111",
+//                'store_address' => "Jalan Sie Rampah",
+//                'store_ktp' => "098765432121",
+//                'store_ktp_image' => "ktp.jpg",
+//                'store_npwp' => "2245y56543235432",
+//                'store_npwp_image' => "npwp.jpeg",
+//                'store_account_bank' => "987654567898765431",
+//                'store_account_type' => "Mandiri",
+//                'store_account_bank_image' => "account.jpeg",
+//                'store_province'=>"",
+//                'store_districts'=>"",
+//                'store_sub_district'=>"",
+//                'id_request' => '2',
+//                'id_user' => '2',
+//            ]
+//        );
     }
 }
