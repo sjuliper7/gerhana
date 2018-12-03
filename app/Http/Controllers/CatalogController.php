@@ -17,7 +17,7 @@ class CatalogController extends Controller
     {
         $categories = CategoryProduct::all();
         $products = Product::all();
-        return view('adminlte::catalog-products.index',compact('categories','products'));
+        return view('admin.catalog-products.index',compact('categories','products'));
     }
 
     /**
