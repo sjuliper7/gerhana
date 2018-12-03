@@ -46,8 +46,21 @@ class LandingPageController extends Controller
         $images = json_decode($product->images);
         $reviews = $product->reviews()->paginate(30);
         $product->save();
+        $desc = "";
+        $story = "";
+        for($i = 0 ;$i<50;$i++){
+            $desc .= $product->description[$i];
+        }
+
+        for($i = 0 ;$i<50;$i++){
+            $story .= $product->story[$i];
+        }
+
+        $desc .= "... ";
+        $story .= "... ";
+
 //        dd(count($reviews));
-        return view('detail-product',compact('product','images','reviews'));
+        return view('detail-product',compact('product','images','reviews','desc','story'));
     }
 
 

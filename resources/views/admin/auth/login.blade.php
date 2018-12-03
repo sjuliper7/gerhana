@@ -9,8 +9,8 @@
 
     <div class="col-lg-12 .col-md-12 .col-sm-12">
         <div class="text-center" style="margin-top: 2em">
-            <a href="{{ url('/home') }}">
-                <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
+            <a href="{{ url('/') }}">
+                <h1 style="font-weight: bold;color: #8b0000;">BatakZone</h1>
             </a>
         </div>
 
@@ -38,10 +38,10 @@
         <div class=".col-lg-6 .col-md-6 .col-sm-12">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
-                    <strong>Whoops!</strong>Ada beberapa masalah<br><br>
+                    {{--<strong>Whoops!</strong>Ada beberapa masalah<br><br>--}}
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            {{ $error }}
                         @endforeach
                     </ul>
                 </div>

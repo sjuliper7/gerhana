@@ -269,46 +269,49 @@
         </div>
     </div>
 
-    <div class="characteristics shadow p-3 mb-5 bg-white rounded">
-        <div class="container ">
+    <div class="characteristics shadow p-3 mb-5 bg-white rounded ">
+        <div class="container char_item" style="padding: 20px">
             <div class="row">
 
                 <!-- Char. Item -->
                 <div class="col-lg-4 col-md-6 char_col">
-
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon">
-                            <img src="images/char_3.png">
+                    {{--<a href="#">--}}
+                        <div class="d-flex flex-row align-items-center justify-content-start">
+                            <div class="char_icon">
+                                <img src="images/char_3.png">
+                            </div>
+                            <div class="char_content">
+                                <div class="char_title">Transaksi</div>
+                                <div class="char_subtitle">Transaksi Aman dan Mudah</div>
+                            </div>
                         </div>
-                        <div class="char_content">
-                            <div class="char_title">Transaksi</div>
-                            <div class="char_subtitle">Transaksi Aman dan Mudah</div>
-                        </div>
-                    </div>
+                    {{--</a>--}}
                 </div>
 
                 <!-- Char. Item -->
                 <div class="col-lg-4 col-md-6 char_col">
-
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="images/contact_1.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Support</div>
-                            <div class="char_subtitle">Layanan 24 Jam</div>
+                    {{--<a href="#">--}}
+                        <div class=" d-flex flex-row align-items-center justify-content-start">
+                            <div class="char_icon"><img src="images/contact_1.png" alt=""></div>
+                            <div class="char_content">
+                                <div class="char_title">Support</div>
+                                <div class="char_subtitle">Layanan 24 Jam</div>
+                            </div>
                         </div>
-                    </div>
+                    {{--</a>--}}
                 </div>
 
                 <!-- Char. Item -->
                 <div class="col-lg-4 col-md-6 char_col">
-
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="images/char_4.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Kualitas</div>
-                            <div class="char_subtitle">Jaminan Kualitas Produk Lokal</div>
+                    {{--<a href="#">--}}
+                        <div class=" d-flex flex-row align-items-center justify-content-start">
+                            <div class="char_icon"><img src="images/char_4.png" alt=""></div>
+                            <div class="char_content">
+                                <div class="char_title">Kualitas</div>
+                                <div class="char_subtitle">Jaminan Kualitas Produk Lokal</div>
+                            </div>
                         </div>
-                    </div>
+                    {{--</a>--}}
                 </div>
 
                 <!-- Char. Item -->
@@ -319,7 +322,7 @@
 
     <!-- Deals of the week -->
 
-    <div class="deals_featured" style="margin-bottom: 30px">
+    <div class="deals_featured" style="margin-bottom: 30px; margin-top: -70px">
         <div class="container">
             <div class="row">
                 <div class="col d-flex flex-lg-row flex-column align-items-center justify-content-start">
@@ -418,7 +421,6 @@
                         <!-- Recently Viewed Slider -->
 
                         <div class="owl-carousel owl-theme viewed_slider">
-
                             <!-- Recently Viewed Item -->
                             @foreach($mostProductView as $mv)
                                 <?php
@@ -438,7 +440,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
                         </div>
                     </div>
                 </div>

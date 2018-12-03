@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Cart;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Validator;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -115,5 +118,16 @@ class LoginController extends Controller
             ['email' => $request->input('username'), 'password' => $request->input('password')],
             $request->has('remember')
         );
+    }
+
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        $user = User::where(['email' => $request['email']])->get();
+        if(count($user) == 0){
+            throw ValidationException::withMessages(["Email ".$request['email']." Belum Terdaftar!"]);
+        }else{
+            throw ValidationException::withMessages(["Email atau Password Anda Salah!"]);
+        }
+
     }
 }

@@ -33,7 +33,7 @@
                             <label><a href="{{url('/store/'.$product->store->store_name)}}"><p class="badge badge-success">{{$product->store->store_name}}</p></a></label>
                         </div>
                         <div class="form-row">
-                            <label>Penjelasan <p>{!! $product->description !!}<a data-toggle="modal" data-target="#myModal"> Read More..</a> </p></label>
+                            <label>Penjelasan <p>{!! $desc !!} <br><a data-toggle="modal" data-target="#myModal"> Read More</a> </p></label>
                             <!-- The Modal -->
                             <div class="modal fade" id="myModal">
                                 <div class="modal-dialog modal-lg">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <label>Cerita <p>{!! $product->story!!} <a data-toggle="modal" data-target="#myModalStory"> Read More..</a> </p></label>
+                            <label>Cerita <p>{!! $story!!}<br> <a data-toggle="modal" data-target="#myModalStory"> Read More</a> </p></label>
 
                             <!-- The Modal -->
                             <div class="modal fade" id="myModalStory">

@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('template/styles/bootstrap4/login.css') !!}">
     <div class=".col-lg-12 .col-md-12 .col-sm-12">
         <div class="text-center" style="margin-top: 2em">
-            <a href="{{ url('/home') }}">
-                <img src="{{asset('images/tittle.PNG')}}" alt="Responsive image" style="max-width: 100%;max-height: 100%">
+            <a href="{{ url('/') }}">
+                <h1 style="font-weight: bold;color: #8b0000;">BatakZone</h1>
             </a>
         </div>
     </div>
@@ -37,23 +37,18 @@
         <div class="" style="margin-left: 10em">
 
         </div>
-        <div class=".col-lg-6 .col-md-4">
+        <div class=".col-lg-6 .col-md-4 .col-sm-12">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
+                </div>
+            @endif
             <div class="row">
                 <div class=".col-lg-12 .col-md-6">
                     <div class="card card-signin my-10">
                         <div class="card-body">
-
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
                             <b><h5 class="card-title text-center">Daftar Sekarang</h5></b>
                             <p class="text-center font-weight-normal">Sudah punya akun BatakZone? <a
                                     href="{{ url('/login') }}"> Masuk</a></p><br>
