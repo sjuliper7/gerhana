@@ -35,8 +35,8 @@
                             <td>{{ $store->store_name }}</td>
                             <td>{{ $store->store_name }}</td>
                             <td>{{ $store->store_owner }}</td>
-                            <td>{{ $store->created_at->format('F d, Y h:ia') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
-
+                            <td>{{ $store->created_at }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
+                            {{--->format('F d, Y h:ia')--}}
                             <td>
                                 @if($store->status->name === "PENDING")
                                     <a href="{{ route('request-stores.show', $store->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
