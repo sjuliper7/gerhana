@@ -11,6 +11,7 @@ use Session;
 class CartController extends Controller
 {
     public function index(){
+        $categoryProducts = CategoryProduct::all();
         if(!Auth::guest()){
             $carts = Cart::where(['id_user' => Auth::user()->id, 'is_active' => true])->get();
             $total = 0;
@@ -19,7 +20,7 @@ class CartController extends Controller
                 $total += $cart->sub_total_price;
             }
 
-            return view('cart',compact('carts', 'total'));
+            return view('cart',compact('carts', 'total','categoryProducts'));
         }else{
             $total = 0;
             $carts = Session::get('carts');

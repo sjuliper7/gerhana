@@ -198,11 +198,9 @@
                                 </div>
 
                                 <ul class="cat_menu">
-                                    <li><a href="#">Pakaian <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                                    <li><a href="#">Cenderamata<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Ukiran<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Patung<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Buku<i class="fas fa-chevron-right"></i></a></li>
+                                    @foreach($categoryProducts as $categoryProduct)
+                                        <li><a href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
 

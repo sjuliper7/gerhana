@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoryProduct;
 use App\RequestStore;
 use App\StatusStore;
 use App\Store;
@@ -17,20 +18,21 @@ class StoreController extends Controller
     }
 
     public function myStore(){
+        $categoryProducts = CategoryProduct::all();
         if(count(Auth::user()->requestStore) == 0){
             return redirect('request-stores/create');
         }else{
             $request = Auth::user()->requestStore;
 
             if($request[count($request)-1]->status->name === "PENDING"){
-                return view('stores.pending');
+                return view('stores.pending', compact('categoryProducts'));
             }
             elseif($request[count($request)-1]->status->name === "REJECTED"){
-                return view('stores.rejected');
+                return view('stores.rejected', compact('categoryProducts'));
             }else{
                 if($request[count($request)-1]->status->name === "REJECTED"){
                     $requestStore = $request[count($request)-1];
-                    return view('stores.rejected',compact('requestStore'));
+                    return view('stores.rejected',compact('requestStore', 'categoryProducts'));
                 }else{
                     $store = Auth::user()->store;
                     $products = $store->products;
@@ -43,17 +45,10 @@ class StoreController extends Controller
                     foreach($detailTransactions as $detailTransaction){
                         if ($detailTransaction->product->store->id == $ownerStores->id){
                             array_push($productTransactions, $detailTransaction);
-//                            echo $detailTransaction->product->store->id;
-//                            echo $detailTransaction->product->name;
-//                            echo $detailTransaction->product->images;
-//                            echo $detailTransaction->quantity;
-//                            echo $detailTransaction->sub_total_price;
-//                            dd($detailTransaction->sub_total_price);
-//                            dd($detailTransaction);
                         }
                     }
 
-                    return view('owner-product.index',compact('products','store', 'detailTransactions'));
+                    return view('owner-product.index',compact('products','store', 'detailTransactions','$categoryProducts'));
                 }
             }
 

@@ -187,32 +187,10 @@
                                     <div class="cat_burger"><span></span><span></span><span></span></div>
                                     <div class="cat_menu_text">Kategori</div>
                                 </div>
-
                                 <ul class="cat_menu">
-                                    <li><a href="#">Pakaian <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                                    <li><a href="#">Cenderamata<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Ukiran<i class="fas fa-chevron-right"></i></a></li>
-                                    <!--
-                                    <li class="hassubs">
-                                        <a href="#">Ukiran<i class="fas fa-chevron-right"></i></a>
-                                        <ul>
-                                            <li class="hassubs">
-                                                <a href="#">Menu Item<i class="fas fa-chevron-right"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                        </ul>
-                                    </li>
-                                -->
-                                    <li><a href="#">Patung<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Buku<i class="fas fa-chevron-right"></i></a></li>
+                                    @foreach($categoryProducts as $categoryProduct)
+                                        <li><a href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
 
