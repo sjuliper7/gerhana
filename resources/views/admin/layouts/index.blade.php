@@ -116,6 +116,12 @@
                                 <p>Status Product</p>
                             </a>
                         </li>
+                        <li style="margin-top: -25px;">
+                            <a href="/catalog-products">
+                                <i class="ti-link" style="font-size: 17px"></i>
+                                <p>Catalog Product</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li id="rbac" class="">
@@ -178,7 +184,7 @@
                 </li>
                 <li id="store" class="">
                     <a href="#" class="tree-toggler">
-                        <i class="ti-wallet"></i>
+                        <i class="ti-package"></i>
                         <p>Store</p>
                     </a>
                     <ul class="nav tree" style="margin-top: -25px;margin-left: 10px"  >
@@ -204,7 +210,7 @@
                 </li>
                 <li id="bank" class="">
                     <a href="#" class="tree-toggler">
-                        <i class="ti-wallet"></i>
+                        <i class="ti-money"></i>
                         <p>Bank</p>
                     </a>
                     <ul class="nav tree" style="margin-top: -25px;margin-left: 10px"  >
