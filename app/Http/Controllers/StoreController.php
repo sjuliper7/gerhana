@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RequestStore;
 use App\StatusStore;
 use App\Store;
+use App\CategoryProduct;
 use App\DetailTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,8 @@ class StoreController extends Controller
                     $store = Auth::user()->store;
                     $products = $store->products;
 
+                    $categoryProducts = CategoryProduct::all();
+
                     $ownerStores = Auth::user()->store;
 //                    dd($ownerStores);
                     $productTransactions = array();
@@ -53,7 +56,7 @@ class StoreController extends Controller
                         }
                     }
 
-                    return view('owner-product.index',compact('products','store', 'detailTransactions'));
+                    return view('owner-product.index',compact('products','store', 'detailTransactions','categoryProducts'));
                 }
             }
 
