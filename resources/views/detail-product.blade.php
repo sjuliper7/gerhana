@@ -33,7 +33,7 @@
                             <label><a href="{{url('/store/'.$product->store->store_name)}}"><p class="badge badge-success">{{$product->store->store_name}}</p></a></label>
                         </div>
                         <div class="form-row">
-                            <label>Penjelasan <p>{!! $product->description !!}<a data-toggle="modal" data-target="#myModal"> Read More..</a> </p></label>
+                            <label>Penjelasan <p>{!! $desc !!} <br><a data-toggle="modal" data-target="#myModal"> Read More</a> </p></label>
                             <!-- The Modal -->
                             <div class="modal fade" id="myModal">
                                 <div class="modal-dialog modal-lg">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <label>Cerita <p>{!! $product->story!!} <a data-toggle="modal" data-target="#myModalStory"> Read More..</a> </p></label>
+                            <label>Cerita <p>{!! $story!!}<br> <a data-toggle="modal" data-target="#myModalStory"> Read More</a> </p></label>
 
                             <!-- The Modal -->
                             <div class="modal fade" id="myModalStory">
@@ -99,7 +99,7 @@
                                     <input type="number"class="form-control" name="quantity" value="1"max="{{$product->stock}}" min="1">
                                     </div>
                                     <div class="form-row py-1">
-                                        <label>Comment</label>
+                                        <label>Catatan Untuk Penjual</label>
                                         <textarea class="form-control" name="comment" placeholder="Catatan Untuk Penjual"></textarea>
                                     </div>
                                     <div class="form-row py-4">

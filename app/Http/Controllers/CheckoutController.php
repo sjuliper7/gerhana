@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\CategoryProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +16,7 @@ class CheckoutController extends Controller
     }
 
     public function index(){
+        $categoryProducts = CategoryProduct::all();
         $carts = Cart::where(['id_user' => Auth::user()->id, 'is_active' => true])->get();
         $provinces = $this->rajaOngkir->getProvinces();
 
@@ -23,7 +25,7 @@ class CheckoutController extends Controller
             foreach ($carts as $cart){
                 $total += $cart->sub_total_price;
             }
-            return view('transaction.checkout-detail',compact('carts','total', 'provinces'));
+            return view('transaction.checkout-detail',compact('carts','total', 'provinces','categoryProducts'));
         }else{
             return redirect('/login')->with('message','Anda Harus Login!');
         }

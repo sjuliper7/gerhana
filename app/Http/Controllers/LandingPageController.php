@@ -41,21 +41,48 @@ class LandingPageController extends Controller
     }
 
     public function buyProduct($name){
+        $categoryProducts = CategoryProduct::all();
         $product = Product::where(['name' => $name])->firstOrFail();
         $product->viewed = $product->viewed + 1;
         $images = json_decode($product->images);
         $reviews = $product->reviews()->paginate(30);
         $product->save();
-//        dd(count($reviews));
-        return view('detail-product',compact('product','images','reviews'));
+        $desc = "";
+        $story = "";
+
+        if(strlen($product->description) < 50 ){
+            for($i = 0 ;$i<strlen($product->description);$i++){
+                $desc .= $product->description[$i];
+            }
+        }else{
+            for($i = 0 ;$i<50;$i++){
+                $desc .= $product->description[$i];
+            }
+        }
+
+        if(strlen($product->story) < 50 ){
+            for($i = 0 ;$i<strlen($product->story);$i++){
+                $story .= $product->story[$i];
+            }
+        }else{
+            for($i = 0 ;$i<50;$i++){
+                $story .= $product->story[$i];
+            }
+        }
+
+        $desc .= "... ";
+        $story .= "... ";
+
+        return view('detail-product',compact('product','images','reviews','desc','story','categoryProducts'));
     }
 
 
     public function searchByName($name){
+        $categoryProducts = CategoryProduct::all();
         $store = Store::where(['store_name' => $name])->firstOrFail();
         $products = $store->products;
 
-        return view('owner-product.index',compact('products','store'));
+        return view('store',compact('products','store','categoryProducts'));
     }
 
     public function searchByCategory($category){

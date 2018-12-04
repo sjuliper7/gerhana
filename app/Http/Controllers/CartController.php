@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\CategoryProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,7 @@ use Session;
 class CartController extends Controller
 {
     public function index(){
+        $categoryProducts = CategoryProduct::all();
         if(!Auth::guest()){
             $carts = Cart::where(['id_user' => Auth::user()->id, 'is_active' => true])->get();
             $total = 0;
@@ -19,7 +21,7 @@ class CartController extends Controller
                 $total += $cart->sub_total_price;
             }
 
-            return view('cart',compact('carts', 'total'));
+            return view('cart',compact('carts', 'total','categoryProducts'));
         }else{
             $total = 0;
             $carts = Session::get('carts');
@@ -31,7 +33,7 @@ class CartController extends Controller
                 $carts = array();
             }
 
-            return view('cart',compact('carts', 'total'));
+            return view('cart',compact('carts', 'total','categoryProducts'));
         }
     }
 
@@ -125,7 +127,7 @@ class CartController extends Controller
     }
 
     function getAllCartByUser($id_user){
-        $carts = Cart::where(['id_user' => $id_user])->get();
+        $carts = Cart::where(['id_user' => $id_user, 'is_active' => true])->get();
 
         return count($carts);
     }

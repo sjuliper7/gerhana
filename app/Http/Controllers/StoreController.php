@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoryProduct;
 use App\RequestStore;
 use App\StatusStore;
 use App\Store;
-use App\CategoryProduct;
 use App\DetailTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,41 +18,29 @@ class StoreController extends Controller
     }
 
     public function myStore(){
+        $categoryProducts = CategoryProduct::all();
         if(count(Auth::user()->requestStore) == 0){
             return redirect('request-stores/create');
         }else{
             $request = Auth::user()->requestStore;
 
-            if($request[count($request)-1]->status->name === "PENDING"){
-                return view('stores.pending');
+            if($request[count($request)-1]->status->name === "PENDING"){return view('stores.pending', compact('categoryProducts'));
             }
-            elseif($request[count($request)-1]->status->name === "REJECTED"){
-                return view('stores.rejected');
+            elseif($request[count($request)-1]->status->name === "REJECTED"){return view('stores.rejected', compact('categoryProducts'));
             }else{
                 if($request[count($request)-1]->status->name === "REJECTED"){
                     $requestStore = $request[count($request)-1];
-                    return view('stores.rejected',compact('requestStore'));
+                    return view('stores.rejected',compact('requestStore', 'categoryProducts'));
                 }else{
                     $store = Auth::user()->store;
                     $products = $store->products;
-
                     $categoryProducts = CategoryProduct::all();
-
                     $ownerStores = Auth::user()->store;
-//                    dd($ownerStores);
                     $productTransactions = array();
                     $detailTransactions =  DetailTransaction::all();
 
                     foreach($detailTransactions as $detailTransaction){
-                        if ($detailTransaction->product->store->id == $ownerStores->id){
-                            array_push($productTransactions, $detailTransaction);
-//                            echo $detailTransaction->product->store->id;
-//                            echo $detailTransaction->product->name;
-//                            echo $detailTransaction->product->images;
-//                            echo $detailTransaction->quantity;
-//                            echo $detailTransaction->sub_total_price;
-//                            dd($detailTransaction->sub_total_price);
-//                            dd($detailTransaction);
+                        if ($detailTransaction->product->store->id == $ownerStores->id){array_push($productTransactions, $detailTransaction);
                         }
                     }
 

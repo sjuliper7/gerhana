@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\DB;
 use App\UserProfile;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 
 /**
  * Class RegisterController
@@ -74,6 +76,34 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function register(Request $request)
+    {
+        $rules = [
+            'name'     => 'required|max:255',
+            'username' => 'sometimes|required|max:255|unique:users',
+            'email'    => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'terms'    => 'required',
+        ];
+
+        $customMessages = [
+            'required' => 'Anda harus mengisi field :attribute.',
+            'confirmed' => 'Password dan Konfirmasi Password Tidak Sesuai.',
+            'unique' => 'Silahkan gunakan email lain. Email ini telah digunakan.',
+            'max' => 'Panjang karakter yang anda input melebihi yang seharusnnya',
+        ];
+
+        $this->validate($request, $rules, $customMessages);
+
+//        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
     /**
      * Create a new user instance after a valid registration.
      *

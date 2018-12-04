@@ -109,10 +109,13 @@
                                     </div>
 
                                 @else
-                                    <div class="top_bar_user" style="width:20em;margin-right: -10em">
+                                    <div class="top_bar_user" style="width:20em;margin-right: -10em; margin-left: -1em">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <span class="glyphicon glyphicon-user"></span> 
-                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-user"></span>
+                                            <?php
+                                            $name = explode(" ",Auth::user()->name);
+                                            ?> 
+                                            Hello <strong class="fa fa-user-circle"> {{$name[0]}}</strong>
                                             <span class="glyphicon glyphicon-chevron-down"></span>
                                         </a>
                                         <ul class="dropdown-menu">
@@ -198,11 +201,9 @@
                                 </div>
 
                                 <ul class="cat_menu">
-                                    <li><a href="#">Pakaian <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                                    <li><a href="#">Cenderamata<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Ukiran<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Patung<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Buku<i class="fas fa-chevron-right"></i></a></li>
+                                    @foreach($categoryProducts as $categoryProduct)
+                                        <li><a href="{{url('/products-by/'.$categoryProduct->name)}}">{{$categoryProduct->name}}<i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
 

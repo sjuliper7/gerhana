@@ -8,9 +8,8 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cart_container">
-
                         @foreach($carts as $cart)
-                            <div class="cart_items">
+                            <div class="cart_items" style="margin-bottom: -50px">
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
                                         <?php
@@ -48,7 +47,7 @@
                         @endforeach
 
                         <!-- Order Total -->
-                        <div class="order_total">
+                        <div class="order_total" style="margin-top: 70px">
                             <div class="order_total_content text-md-right">
                                 <div class="order_total_title">Total Pemesanan:</div>
                                 <div class="order_total_amount" id="order_total" >Rp {{number_format($total)}}</div>
