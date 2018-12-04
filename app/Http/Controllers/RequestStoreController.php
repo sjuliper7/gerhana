@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoryProduct;
 use App\RequestStore;
 use App\StatusStore;
 use App\Store;
@@ -37,9 +38,10 @@ class RequestStoreController extends Controller
      */
     public function create()
     {
+        $categoryProducts = CategoryProduct::all();
         $provinces = $this->rajaOngkir->getProvinces();
 
-        return view('stores.request-store',compact('provinces'));
+        return view('stores.request-store',compact('provinces','categoryProducts'));
     }
 
     /**
