@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoryProduct;
 use App\DetailTransaction;
 use App\RefBank;
 use App\Product;
@@ -16,19 +17,34 @@ class TransactionController extends Controller
 
     public function index()
     {
+        $categoryProducts = CategoryProduct::all();
         $user = Auth::user();
         $transactions = $user->transactions;
-        return view('transaction.index', compact('transactions'));
+        return view('transaction.index', compact('transactions','categoryProducts'));
     }
 
     public function payment($order_id)
     {
+        $categoryProducts = CategoryProduct::all();
         $transaction = Transaction::where(['order_id' => $order_id])->firstOrFail();
         $refBanks = RefBank::all();
-        return view('transaction.confirm-payment',compact('transaction', 'refBanks'));
+        return view('transaction.confirm-payment',compact('transaction', 'refBanks','categoryProducts'));
     }
 
     public function updatePayment(Request $request, $id){
+        $categoryProducts = CategoryProduct::all();
+        $rules = [
+            'provement'     => 'required | mimes:jpeg,jpg,png | max:1000',
+        ];
+
+        $customMessages = [
+            'required' => 'Bukti Pembayaran harus disi Harus diisi.',
+            'mimes' => 'Bukti Pembayaran harus format jpeg,jpg,png',
+            'max' => 'Maksimal 1Mb'
+        ];
+
+        $this->validate($request, $rules, $customMessages);
+
         $transaction =Transaction::find($id);
 
         $status = StatusTransaction::where(['name' => "Menunggu Verifikasi"])->firstOrFail();
@@ -42,11 +58,12 @@ class TransactionController extends Controller
 
         $transaction->save();
 
-        return redirect("transactions");
+        return redirect("transactions",compact('categoryProducts'));
     }
 
     public function confirmPayment(Request $request)
     {
+        $categoryProducts = CategoryProduct::all();
         $carts = Auth::user()->carts;
         $statusTransactions = StatusTransaction::where(['name' => "Menunggu Pembayaran"])->firstOrFail();
 
@@ -79,9 +96,10 @@ class TransactionController extends Controller
 
     public function show($id)
     {
+        $categoryProducts = CategoryProduct::all();
         $transaction = Transaction::find($id);
         $detailTransactions = $transaction->detailTransactions;
-        return view('transaction.show', compact('detailTransactions'));
+        return view('transaction.show', compact('detailTransactions', 'categoryProducts'));
     }
 
     public function indexAdmin()

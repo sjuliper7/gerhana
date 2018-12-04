@@ -171,6 +171,7 @@
                     $el.append($("<option></option>")
                         .attr("value",0).text("Pilih Kabupaten Kota"));
                 }
+                getSubDistrict();
             });
         }
 
@@ -208,8 +209,8 @@
                     _token: '{{ csrf_token() }}',
                 }
             }).done(function(result) {
-                var totals = $('#total-price')[0].textContent.split(" ");
-                var total = toNumberWithoutCommna(totals[1]);
+                var total = '{{$total}}';
+                // var total = toNumberWithoutCommna(totals[1]);
 
                 var rest = parseInt(total) + parseInt(result.value);
                 $("#total-price2").val(rest);
@@ -218,6 +219,8 @@
                 $("#est-cost").text("Rp "+addCommas(result.value))
                 $("#est-day").text(result.etd +" Hari");
                 $("#total-price").text("Rp "+addCommas(rest));
+                $("#est-cost").addClass("bg-success");
+                window.location.hash = '#est-cost';
             });
 
         }

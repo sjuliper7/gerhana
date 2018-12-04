@@ -11,6 +11,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 
 /**
  * Class RegisterController
@@ -86,9 +87,10 @@ class RegisterController extends Controller
         ];
 
         $customMessages = [
-            'required' => 'The :attribute Harus diisi.',
-            'confirmed' => 'Password dan Password confirmasi Tidak Cocok.',
-            'unique' => 'Email telah digunakan, gunakan email lain.'
+            'required' => 'Anda harus mengisi field :attribute.',
+            'confirmed' => 'Password dan Konfirmasi Password Tidak Sesuai.',
+            'unique' => 'Silahkan gunakan email lain. Email ini telah digunakan.',
+            'max' => 'Panjang karakter yang anda input melebihi yang seharusnnya',
         ];
 
         $this->validate($request, $rules, $customMessages);

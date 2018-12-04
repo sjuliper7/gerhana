@@ -33,25 +33,23 @@
                     </div>
                 </div>
 
-                @foreach($refBanks as $refBank)
-                    <div class="container col-8" style="box-shadow: 0 2px 6px rgba(0,0,0,.12)">
-                        <div class="row p-3 mandiri">
-                            <div class="col-md-5 pt-2">
-                                {{$refBank->account_vendor}}
-                            </div>
-                            <div class="col-md-5 pt-2">
-                                <h4>{{$refBank->account_number}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
 
                 <form action="{{url('/upload-payment/'.$transaction->id)}}"  method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="container col-8">
                         <div class="container col-lg-12">
                             <label for="imgUpload" class="container col-form-label">Upload Bukti Pembayaran</label>
-                            <input style="margin-left: 15px" type="file" id="imgUpload" name="provement" value="Upload Bukti Pembayaran" />
+                            <input style="margin-left: 15px" type="file" id="imgUpload" name="provement" value="Upload Bukti Pembayaran" /><br>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    {{--<strong>Whoops!</strong>Ada beberapa masalah<br><br>--}}
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            {{ $error }}
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="container col-4 py-4">

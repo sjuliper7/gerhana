@@ -49,18 +49,30 @@ class LandingPageController extends Controller
         $product->save();
         $desc = "";
         $story = "";
-        for($i = 0 ;$i<50;$i++){
-            $desc .= $product->description[$i];
+
+        if(strlen($product->description) < 50 ){
+            for($i = 0 ;$i<strlen($product->description);$i++){
+                $desc .= $product->description[$i];
+            }
+        }else{
+            for($i = 0 ;$i<50;$i++){
+                $desc .= $product->description[$i];
+            }
         }
 
-        for($i = 0 ;$i<50;$i++){
-            $story .= $product->story[$i];
+        if(strlen($product->story) < 50 ){
+            for($i = 0 ;$i<strlen($product->story);$i++){
+                $story .= $product->story[$i];
+            }
+        }else{
+            for($i = 0 ;$i<50;$i++){
+                $story .= $product->story[$i];
+            }
         }
 
         $desc .= "... ";
         $story .= "... ";
 
-//        dd(count($reviews));
         return view('detail-product',compact('product','images','reviews','desc','story','categoryProducts'));
     }
 

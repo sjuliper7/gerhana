@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\CategoryProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,7 @@ class CartController extends Controller
                 $carts = array();
             }
 
-            return view('cart',compact('carts', 'total'));
+            return view('cart',compact('carts', 'total','categoryProducts'));
         }
     }
 
@@ -126,7 +127,7 @@ class CartController extends Controller
     }
 
     function getAllCartByUser($id_user){
-        $carts = Cart::where(['id_user' => $id_user])->get();
+        $carts = Cart::where(['id_user' => $id_user, 'is_active' => true])->get();
 
         return count($carts);
     }

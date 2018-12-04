@@ -109,10 +109,13 @@
                                     </div>
 
                                 @else
-                                    <div class="top_bar_user" style="width:20em;margin-right: -10em">
+                                    <div class="top_bar_user" style="width:20em;margin-right: -10em; margin-left: -1em">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <span class="glyphicon glyphicon-user"></span> 
-                                            <strong class="fa fa-user-circle"> {{Auth::user()->name}}</strong>
+                                            <span class="glyphicon glyphicon-user"></span>
+                                            <?php
+                                            $name = explode(" ",Auth::user()->name);
+                                            ?> 
+                                            Hello <strong class="fa fa-user-circle"> {{$name[0]}}</strong>
                                             <span class="glyphicon glyphicon-chevron-down"></span>
                                         </a>
                                         <ul class="dropdown-menu">

@@ -99,7 +99,7 @@
                                     <input type="number"class="form-control" name="quantity" value="1"max="{{$product->stock}}" min="1">
                                     </div>
                                     <div class="form-row py-1">
-                                        <label>Comment</label>
+                                        <label>Catatan Untuk Penjual</label>
                                         <textarea class="form-control" name="comment" placeholder="Catatan Untuk Penjual"></textarea>
                                     </div>
                                     <div class="form-row py-4">
