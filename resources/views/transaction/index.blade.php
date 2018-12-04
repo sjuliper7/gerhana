@@ -6,7 +6,7 @@
     <div class="cart_section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
+                <div class="col-lg-12 ">
                     <div class="cart_container">
 
                         @foreach($transactions as $transaction)
@@ -14,7 +14,13 @@
                                 <div class="cart_items">
                                     <ul class="cart_list">
                                         <li class="cart_item clearfix">
-                                            <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between col-lg-12">
+                                            <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between col-lg-8">
+
+                                                <div class="cart_item_name cart_info_col col-lg-2">
+                                                    <div class="cart_item_title">Id Order</div>
+                                                    <div>#{{$transaction->order_id}}</div>
+                                                </div>
+
                                                 <div class="cart_item_name cart_info_col col-lg-3">
                                                     <div class="cart_item_title">Total Harga</div>
                                                     <div>Rp {{number_format($transaction->total_price)}}</div>
@@ -35,6 +41,7 @@
                                                     <div class="cart_item_title">Status Barang</div>
                                                     <div class=""><p class="text-danger">{{$transaction->status->name}}</p></div>
                                                 </div>
+
                                             </div>
                                         </li>
                                     </ul>
