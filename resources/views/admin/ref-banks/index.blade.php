@@ -5,12 +5,13 @@
 @section('content')
 
     <div class="content">
-        <div class="container">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Referensi Banks</h3></div>
-                        <a href="{{ URL::to('ref-banks/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Ref Bank</a>
+                        <div class="panel-heading" style="background-color: white">
+                            <a href="{{ URL::to('ref-banks/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Ref Bank</a>
+                        </div>
                         <table class="table table-hover">
                             <thead>
                             <tr>

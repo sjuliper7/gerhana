@@ -63,11 +63,39 @@
                         </div>
 
                         <div id="nav-transaction" class="tab-pane fade">
-
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#Kode Transaksi</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Nama Produk</th>
+                                    <th scope="col">Harga Satuan</th>
+                                    <th scope="col">Jumlah Barang</th>
+                                    <th scope="col">Total Harga</th>
+                                    <th scope="col">Status Transaksi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($detailTransactions as $detailTransaction)
+                                    <tr>
+                                        <td scope="row">#{{$detailTransaction->transaction->order_id}}</td>
+                                        <?php
+                                            $images = json_decode($detailTransaction->product->images);
+                                        ?>
+                                        <td><img src="{{ asset('images/'. $images[0]) }}" style="height: 55px; width: 50px; "> </td>
+                                        <td>{{$detailTransaction->product->name}}</td>
+                                        <td>Rp {{number_format($detailTransaction->product->price)}}</td>
+                                        <td>{{number_format($detailTransaction->quantity)}}</td>
+                                        <td>Rp {{number_format($detailTransaction->sub_total_price)}}</td>
+                                        <td class="text-success">{{$detailTransaction->transaction->status->name}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
 
                         <div id="nav-review" class="tab-pane fade">
-
+                            <center><h4>Belum ada Ulasan..</h4></center>
                         </div>
 
                         <div id="nav-promotion" class="tab-pane fade">

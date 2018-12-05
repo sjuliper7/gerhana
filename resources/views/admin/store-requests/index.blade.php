@@ -14,7 +14,6 @@
                 </div>
             @endif
 
-            <h1>Store Request</h1>
             <hr>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">

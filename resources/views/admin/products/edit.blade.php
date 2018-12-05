@@ -3,10 +3,8 @@
 @section('title', '| Edit Product')
 
 @section('content')
-    <div class="container py-3">
-        <div class="container">
-            <h2>Edit Product</h2>
-            <hr>
+    <div class="content">
+        <div class="container-fluid">
             <form action="{{url('/products/'.$product->id)}}" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
@@ -92,7 +90,7 @@
                             </div>
 
                             <table class="table" id="dynamic_field" style="margin-top: 20px">
-                                <button type="button" name="addImages" id="more" class="btn btn-success"style="background-color: #8b0000">Ubah Gambar</button>
+                                <button type="button" name="addImages" id="more" class="btn btn-success">Ubah Gambar</button>
                             </table>
                         </div>
                     </div>
@@ -104,6 +102,9 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#brand-title').text("Edit Produk")
+            $('#product').addClass("active")
+
             var i=1;
             $('#more').click(function(){
                 i++;

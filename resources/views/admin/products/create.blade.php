@@ -5,16 +5,14 @@
 @section('content')
     {{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>--}}
     {{--<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"></script>--}}
-    <script src="{{asset('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}"></script>
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')}}"></script>
-    <script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')}}"></script>
-    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css')}}" rel="stylesheet">
-    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js')}}"></script>
+    {{--<script src="{{asset('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}"></script>--}}
+    {{--<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')}}"></script>--}}
+    {{--<script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')}}"></script>--}}
+    {{--<link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css')}}" rel="stylesheet">--}}
+    {{--<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js')}}"></script>--}}
 
-    <div class="container py-3">
-        <div class="container">
-            <h2>Tambah Produk</h2>
-            <hr>
+    <div class="content">
+        <div class="container-fluid">
             <form action="/products" method="post" id="myForm" data-toggle="validator" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-row">
@@ -98,9 +96,9 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <label class="btn btn-info"style=" background-color:#8b0000">Jelajah<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
+                                        <label class="btn btn-info">Jelajah<input type="file" id="input_image-" name="images[]" style="display: none" onchange="loadImage(this)"></label>
                                     </td>
-                                    <td><button type="button" name="addImages" id="more" class="btn btn-success"style=" background-color:#8b0000">Tambah Foto</button></td>
+                                    <td><button type="button" name="addImages" id="more" class="btn btn-success">Tambah Foto</button></td>
                                 </tr>
                             </table>
                         </div>
@@ -115,16 +113,8 @@
 
         $(document).ready(function () {
 
-            $('#summernote').summernote({
-                placeholder: 'Hello bootstrap 4',
-                tabsize: 2,
-            });
-
-            $('#story').summernote({
-                placeholder: 'Buat Story',
-                tabsize: 2,
-            });
-
+            $('#brand-title').text("Tambah Produk")
+            $('#product').addClass("active")
 
             var i=1;
             $('#more').click(function(){

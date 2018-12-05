@@ -7,7 +7,7 @@
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10">
                     <div class="panel panel-default">
                         <div class="panel-heading"><h3>Status Transaction</h3></div>
                         <a href="{{ URL::to('status-transactions/create') }}" class="btn btn-success" style="margin-top: 5px; margin-left: 10px">Create Status Transaction</a>
