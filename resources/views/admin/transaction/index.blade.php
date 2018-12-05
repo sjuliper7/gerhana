@@ -5,11 +5,8 @@
 @section('content')
 
     <div class="content">
-        <div class="container">
-            <div class="col-lg-11 col-lg-offset-0">
-                <h1>
-                    All Transactions
-                </h1>
+        <div class="container-fluid">
+            <div class="col-lg-12">
                 <hr>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
@@ -28,7 +25,7 @@
                             <tr>
                                 <td>{{ $transaction->user->name }}</td>
                                 <td>{{ $transaction->address }}</td>
-                                <td>{{ $transaction->total_price }}</td>
+                                <td>Rp {{ number_format($transaction->total_price) }}</td>
                                 <td>
                                     <a href="{{url('transactions-admin/'.$transaction->id)}}" class="btn btn-info pull-left" style="margin-right: 3px;">Detail</a>
                                 </td>
