@@ -6,7 +6,7 @@
     <div class="cart_section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
+                <div class="col-lg-12 ">
                     <div class="cart_container">
 
                         @foreach($transactions as $transaction)
@@ -56,7 +56,6 @@
                                                     {{--<div class="cart_item_title">Status Barang</div>--}}
                                                     {{--<div class=""> <p class="text-danger">{{$transaction->status->name}}</p></div>--}}
                                                 {{--</div>--}}
-                                            </div>
                                         </li>
                                     </ul>
                                 </div>
