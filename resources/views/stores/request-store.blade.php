@@ -190,7 +190,7 @@
                                 <select name="province-select" id="province" class="form-control" onchange="getCites()" required >
                                     <option selected="selected" name="store_province">Pilih Provinsi</option>
                                     @foreach($provinces as $province)
-                                        <option value="{{$province["province_id"]}}">{{$province["province"]}}</option>
+                                        <option value="{{$province["province"]}}">{{$province["province"]}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -240,7 +240,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Nomor NPWP</label>
-                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp"  required>                                    <img src="http://placehold.it/400x400" id="show_ktp" style="max-width:200px;max-height:200px;" class="center-block" required/>>
+                                <input type="text" class="form-control" id="idKtp" placeholder="Nomor NPWP" name="store-npwp"  required>
                             </div>
                             <div class="col-sm-6">
                                 <label>Foto NPWP</label>
@@ -360,6 +360,8 @@
                 document.getElementById("nextBtn").hidden = true;
                 $("#submit").show();
             } else {
+                $("#submit").hide();
+                document.getElementById("nextBtn").hidden = false;
                 document.getElementById("nextBtn").innerHTML = "Next";
             }
 
@@ -402,7 +404,7 @@
                 if(result != null){
                     $.each(result, function(key, value) {
                         $el.append($("<option></option>")
-                            .attr("value", value.city_id).text(value.city_name));
+                            .attr("value", value.city_name).text(value.city_name));
                     });
                 }else {
                     $el.append($("<option></option>")
@@ -421,7 +423,7 @@
                 if(result != null){
                     $.each(result, function(key, value) {
                         $el.append($("<option></option>")
-                            .attr("value", value.subdistrict_id).text(value.subdistrict_name));
+                            .attr("value", value.subdistrict_name).text(value.subdistrict_name));
                     });
                 }else {
                     $el.append($("<option></option>")
