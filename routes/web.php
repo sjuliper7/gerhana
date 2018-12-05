@@ -113,3 +113,5 @@ Route::get('products-by/{category}','LandingPageController@searchByCategory');
 Route::get('get-carts/{id_user}','CartController@getAllCartByUser');
 
 Route::get('get-user','LandingPageController@getUser');
+
+Route::Post('/search','LandangPageController@search');
