@@ -49,7 +49,7 @@
                             <div class="footer">
                                 <hr />
                                 <div class="stats">
-                                    <a href="/users"><i class="ti-arrow-right"></i> More info</a>
+                                    <a href="/request-stores"><i class="ti-arrow-right"></i> More info</a>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             <div class="footer">
                                 <hr />
                                 <div class="stats">
-                                    <a href="/users"><i class="ti-arrow-right"></i> More info</a>
+                                    <a href="/transactions-admin"><i class="ti-arrow-right"></i> More info</a>
                                 </div>
                             </div>
                         </div>
