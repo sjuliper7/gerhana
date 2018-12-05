@@ -26,7 +26,9 @@ class StoreController extends Controller
 
             if($request[count($request)-1]->status->name === "PENDING"){return view('stores.pending', compact('categoryProducts'));
             }
-            elseif($request[count($request)-1]->status->name === "REJECTED"){return view('stores.rejected', compact('categoryProducts'));
+            elseif($request[count($request)-1]->status->name === "REJECTED"){
+                $requestStore = $request[count($request)-1];
+                return view('stores.rejected', compact('categoryProducts','requestStore'));
             }else{
                 if($request[count($request)-1]->status->name === "REJECTED"){
                     $requestStore = $request[count($request)-1];
