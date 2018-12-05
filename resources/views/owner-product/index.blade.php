@@ -69,6 +69,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">#Kode Transaksi</th>
+                                        <th scope="col">Gambar</th>
                                         <th scope="col">Nama Produk</th>
                                         <th scope="col">Harga Satuan</th>
                                         <th scope="col">Jumlah Barang</th>
@@ -80,12 +81,14 @@
                                     @foreach($detailTransactions as $detailTransaction)
                                         <tr>
                                             <td scope="row">#{{$detailTransaction->transaction->order_id}}</td>
+                                            <?php
+                                            $images = json_decode($detailTransaction->product->images);
+                                            ?>
+                                            <td><img src="{{ asset('images/'. $images[0]) }}" style="height: 55px; width: 50px; "> </td>
                                             <td>{{$detailTransaction->product->name}}</td>
-                                            <td>{{$detailTransaction->product->price}}</td>
-                                            <td>{{$detailTransaction->product->images}}</td>
-                                            <td><img src="{{ asset('images/'. $detailTransaction->product->images) }}" style="height: 55px; width: 50px; "> </td>
-                                            <td>{{$detailTransaction->quantity}}</td>
-                                            <td>{{$detailTransaction->sub_total_price}}</td>
+                                            <td>Rp {{number_format($detailTransaction->product->price)}}</td>
+                                            <td>{{number_format($detailTransaction->quantity)}}</td>
+                                            <td>Rp {{number_format($detailTransaction->sub_total_price)}}</td>
                                             <td class="text-success">{{$detailTransaction->transaction->status->name}}</td>
                                         </tr>
                                     @endforeach
@@ -93,7 +96,7 @@
                                 </table>
                             </div>
                             <div class="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab">
-                                ....
+                                Belum ada Ulasan..
                             </div>
                         </div>
                     </div>
