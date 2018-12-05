@@ -142,9 +142,9 @@ class RequestStoreController extends Controller
         $store->store_account_bank= $requestStore['store_account_bank'];
         $store->store_account_type = $requestStore['store_account_type'];
         $store->store_account_bank_image = $requestStore['store_account_bank_image'];
-        $requestStore->store_province = $requestStore['store_province'];
-        $requestStore->store_districts = $requestStore['store_districts'];
-        $requestStore->store_sub_district = $requestStore['store_sub_district'];
+        $store->store_province = $requestStore['store_province'];
+        $store->store_districts = $requestStore['store_districts'];
+        $store->store_sub_district = $requestStore['store_sub_district'];
         $store->id_request = $requestStore['id'];
         $store->id_user = $requestStore['id_user'];
 
