@@ -7,8 +7,10 @@
     <div class="content">
         <div class="container-fluid">
             <div class="col-lg-12">
-                <h1><a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
-                    <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
+                <div class="row" style="margin-bottom: 1em">
+                    <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
+                    <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a>
+                </div>
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
@@ -16,9 +18,9 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Date/Time Added</th>
-                            <th>User Roles</th>
+                            <th width="20%">Email</th>
+                            <th width="25%">Date/Time Added</th>
+                            <th width="15%">User Roles</th>
                             <th>Operations</th>
                         </tr>
                         </thead>
