@@ -114,18 +114,18 @@
 
         $(document).ready(function () {
 
-
-            $('#summernote').summernote({
-                placeholder: 'Hello bootstrap 4',
-                tabsize: 2,
-                height: 100,
-                width : 550,
-            });
-
-            $('#story').summernote({
-                placeholder: 'Buat Story',
-                tabsize: 2,
-            });
+            //
+            // $('#summernote').summernote({
+            //     placeholder: 'Hello bootstrap 4',
+            //     tabsize: 2,
+            //     height: 100,
+            //     width : 550,
+            // });
+            //
+            // $('#story').summernote({
+            //     placeholder: 'Buat Story',
+            //     tabsize: 2,
+            // });
 
 
             var i=1;
