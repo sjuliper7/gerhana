@@ -32,15 +32,14 @@ class TransactionController extends Controller
     }
 
     public function updatePayment(Request $request, $id){
-        $categoryProducts = CategoryProduct::all();
         $rules = [
             'provement'     => 'required | mimes:jpeg,jpg,png | max:1000',
         ];
 
         $customMessages = [
-            'required' => 'Bukti Pembayaran harus disi Harus diisi.',
-            'mimes' => 'Bukti Pembayaran harus format jpeg,jpg,png',
-            'max' => 'Maksimal 1Mb'
+            'required' => 'Bukti Pembayaran harus disi Harus diisi. ',
+            'mimes' => 'Bukti Pembayaran harus format jpeg,jpg,png. ',
+            'max' => 'Maksimal 1Mb. '
         ];
 
         $this->validate($request, $rules, $customMessages);
@@ -58,7 +57,7 @@ class TransactionController extends Controller
 
         $transaction->save();
 
-        return redirect("transactions",compact('categoryProducts'));
+        return redirect("transactions");
     }
 
     public function confirmPayment(Request $request)
