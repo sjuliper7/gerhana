@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryProduct;
+use App\DetailTransaction;
 use App\Product;
 use App\StatusProduct;
 use Illuminate\Http\Request;
@@ -18,8 +19,16 @@ class ProductController extends Controller
     public function index()
     {
         $store = Auth::user()->store;
+        $productTransactions = array();
+        $detailTransactions =  DetailTransaction::all();
+
+        foreach($detailTransactions as $detailTransaction){
+            if ($detailTransaction->product->store->id == $store->id){
+                array_push($productTransactions, $detailTransaction);
+            }
+        }
         $products = Product::where(['id_store' => $store->id])->orderby('id', 'desc')->get();
-        return view('admin.products.index', compact('products'));
+        return view('admin.products.index', compact('products','detailTransactions'));
     }
 
     /**
