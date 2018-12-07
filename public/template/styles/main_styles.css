@@ -2538,7 +2538,7 @@ select option
 {
 	background: #FFFFFF;
 	border-radius: 8px;
-	padding: 25px;
+	padding: 0px;
 }
 .bestsellers_slider .slick-slide > div:first-child
 {
