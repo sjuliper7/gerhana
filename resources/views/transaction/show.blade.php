@@ -13,32 +13,29 @@
                                 <div class="cart_items col-lg-12">
                                     <ul class="cart_list">
                                         <li class="cart_item clearfix">
-                                            <?php
-                                            $images = json_decode($detailTransaction->product->images);
-                                            ?>
-                                            <div class="cart_item_image"><img src="{{ asset('images/'.$images[0]) }}" style="max-height: 150px;max-width: 100px; margin-right: 10px" alt=""></div>
-                                            <div class="cart_item_info d-flex flex-md-row  justify-content-between col-lg-12">
-                                                <div class="cart_item_name cart_info_col col-lg-2">
-                                                    <div class="cart_item_title">Nama Product</div>
-                                                    <div>{{  $detailTransaction->product->name}}</div>
-                                                </div>
-                                                <div class="cart_item_name cart_info_col col-lg-2">
-                                                    <div class="cart_item_title">Nama Toko</div>
-                                                    <div>{{  $detailTransaction->product->store->store_name}}</div>
-                                                </div>
-                                                <div class="cart_item_name cart_info_col col-lg-2">
-                                                    <div class="cart_item_title">Sub Total Harga</div>
-                                                    <div>Rp {{number_format($detailTransaction->sub_total_price)}}</div>
-                                                </div>
-                                                <div class="cart_item_price cart_info_col col-lg-2">
-                                                    <div class="cart_item_title">Total Barang</div>
-                                                    <div>{{$detailTransaction->quantity}}</div>
-                                                </div>
-                                                <div class="cart_item_price cart_info_col col-lg-2">
-                                                    <div class="cart_item_title">Comment</div>
-                                                    <div class="text-danger">{{$detailTransaction->comment}}</div>
-                                                </div>
-                                            </div>
+                                            <table class="table" style="margin-bottom: -10px;margin-top: -10px">
+                                                <tr>
+                                                    <th style="border-top: none;" width="15%">Nomor Order</th>
+                                                    <th style="border-top: none;">Gambar Produk</th>
+                                                    <th style="border-top: none;" width="20%">Nama Product</th>
+                                                    <th style="border-top: none;" width="18%">Nama Toko</th>
+                                                    <th style="border-top: none;" width="20%">Jumlah Barang</th>
+                                                    <th style="border-top: none;" width="15%">Total Barang</th>
+                                                    <th style="border-top: none;" width="25%">Comment</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>#{{$detailTransaction->transaction->order_id}}</td>
+                                                    <?php
+                                                    $images = json_decode($detailTransaction->product->images);
+                                                    ?>
+                                                    <td><img src="{{ asset('images/'.$images[0]) }}" style="max-height: 150px;max-width: 100px; margin-right: 10px" alt=""></td>
+                                                    <td>{{$detailTransaction->product->name}}</td>
+                                                    <td>{{$detailTransaction->product->store->store_name}}</td>
+                                                    <td>Rp {{number_format($detailTransaction->sub_total_price)}}</td>
+                                                    <td>{{$detailTransaction->quantity}}</td>
+                                                    <td class="text-danger">{{$detailTransaction->comment}}</td>
+                                                </tr>
+                                            </table>
                                         </li>
                                     </ul>
                                 </div>
