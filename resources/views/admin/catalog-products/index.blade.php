@@ -79,10 +79,7 @@
                                                         <td>{{$product->store->store_name}}</td>
                                                         <td>{{$product->name}}</td>
                                                         <td>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider"></span>
-                                                            </label>
+                                                            <a href="{{ route('catalog-products.show', $product->id ) }}" class="btn btn-info btn-block">Detail</a>
                                                         </td>
                                                     </tr>
                                                 @endif
