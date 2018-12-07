@@ -339,27 +339,7 @@
 
                                 <li class="page_menu_item"><a href="#">contact<i class="fa fa-angle-down"></i></a></li>
                                 <li class="page_menu_item"><a href="/my-store">My Store<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item"><a href="/carts"class="text-white">Keranjang<i class="fa fa-angle-down"></i></a></li>
                             </ul>
-
-
-                        </div>
-
-                            <div class="page_menu_search">
-                                <form action="#">
-                                    <input type="search" required="required" class="page_menu_search_input" placeholder="Cari Produk">
-                                </form>
-                            </div>
-                            <ul class="page_menu_nav">
-
-                                <li class="page_menu_item">
-                                    <a href="/">Home<i class="fa fa-angle-down"></i></a>
-                                </li>
-
-                                <li class="page_menu_item"><a href="#">contact<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item"><a href="/my-store">My Store<i class="fa fa-angle-down"></i></a></li>
-                            </ul>
-
                             <div class="menu_contact">
                                 <div class="menu_contact_item"><a href="/login"> Masuk </a></div>
                                 <div class="menu_contact_item"><a href="/register">Daftar</a></div>
