@@ -12,14 +12,14 @@
                     <ul class="image_list">
                         @for($i = 1 ; $i< count($images);$i++)
                             <li data-image="{{ asset('images/'.$images[$i]) }}"><img
-                                    src="{{ asset('images/'.$images[$i]) }}" alt=""></li>
+                                    src="{{ asset('images/'.$images[$i]) }}" id="{{"image".$i}}" onclick="changeImage(this)" alt=""></li>
                         @endfor
                     </ul>
                 </div>
 
                 <!-- Selected Image -->
                 <div class="col-lg-5 order-lg-2 order-1">
-                    <div class="image_selected"><img src="{{ asset('images/'.$images[0]) }}" alt=""></div>
+                    <div class="image_selected"><img id="image" src="{{ asset('images/'.$images[0]) }}" alt=""></div>
                 </div>
 
                 <!-- Description -->
@@ -101,6 +101,13 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        function changeImage(img) {
+            var temp = $('#image').attr('src')
+            $("#image").attr('src',img.src)
+            img.src = temp
+        }
+    </script>
 
     {{--<style>--}}
         {{--@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);--}}
