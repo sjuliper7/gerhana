@@ -486,20 +486,59 @@
                                     <!-- Slider Item -->
                                         <div class="featured_slider_item" style="margin-bottom: 20px">
                                             <div class="border_active"></div>
+
+
+                                            {{--<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">--}}
+
+
+                                                {{--<div class="product_image d-flex flex-column align-items-center justify-content-center">--}}
+                                                    {{--<a href="{{ URL::to('buy/' . $product->name ) }}">--}}
+                                                        {{--<img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+
+                                                {{--<div class="product_content">--}}
+                                                    {{--<div class="bestsellers_item discount">--}}
+                                                        {{--<div class="bestsellers_price discount">Rp.{{$product->price}}<span>Rp.{{$product->price}}</span></div>--}}
+                                                    {{--</div>--}}
+
+                                                    {{--<div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>--}}
+                                                {{--</div>--}}
+                                                {{--<ul class="product_marks">--}}
+                                                    {{--<li class="product_mark product_discount">{{$product->discount}}%</li>--}}
+                                                    {{--<li class="product_mark product_new">new</li>--}}
+                                                {{--</ul>--}}
+                                            {{--</div>--}}
+
+
                                             <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
+
                                                 <?php
                                                 $images = json_decode($product->images);
                                                 ?>
+
                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center">
                                                     <a href="{{ URL::to('buy/' . $product->name ) }}">
-                                                        <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
+                                                    <img src="{{ asset('images/'.$images[0])  }}" style="width:150px;height:150px; object-fit: cover;" >
                                                     </a>
                                                 </div>
 
                                                 <div class="product_content">
-                                                    <div class="product_price discount">Rp. {{$product->price}}</div>
+                                                    <div class="bestsellers_item discount">
+                                                        <div class="bestsellers_price discount">Rp.{{$product->price}}<span>Rp.{{$product->price}}</span></div>
+                                                    </div>
                                                     <div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>
                                                 </div>
+
+                                                 <ul class="product_marks">
+                                                     <li class="product_mark product_discount">{{$product->discount}}%</li>
+                                                     <li class="product_mark product_new">new</li>
+                                                 </ul>
+
+                                                {{--<div class="product_content">--}}
+                                                    {{--<div class="product_price discount">Rp. {{$product->price}}</div>--}}
+                                                    {{--<div class="product_name"><div><a href="{{ URL::to('buy/' . $product->name ) }}">{{$product->name}}</a></div></div>--}}
+                                                {{--</div>--}}
                                             </div>
                                         </div>
                                     @endforeach
