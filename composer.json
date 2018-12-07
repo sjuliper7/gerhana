@@ -6,15 +6,13 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
-        "laravel/framework": "5.7",
-        "creativeorange/gravatar": "*",
-        "fideloper/proxy": "*",
-        "guzzlehttp/guzzle": "*",
-        "laravel/tinker": "*",
-        "laravelcollective/html": "*",
-        "spatie/laravel-permission": "*",
-        "steevenz/rajaongkir": "*",
-        "fzaninotto/faker": "*"
+        "creativeorange/gravatar": "~1.0",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "5.7.*",
+        "laravel/passport": "^7.0",
+        "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.6.0",
+        "spatie/laravel-permission": "^2.23"
     },
     "require-dev": {
         "filp/whoops": "*",
