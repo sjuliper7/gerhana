@@ -13,6 +13,12 @@ class LandingPageController extends Controller
     public function index(){
         $categoryProducts = CategoryProduct::all();
         $products = Product::all();
+//        $firstPrice= $products->price;
+//        dd($products);
+//        $discount= $products->discount;
+//        $price_discount= $discount/100*$firstPrice;
+//        $lastPrice = $firstPrice - $price_discount;
+
         $productsView = Product::where('viewed', '!=' , 0)->get();
 
         $mostProductView = array();
@@ -37,7 +43,7 @@ class LandingPageController extends Controller
             array_push($mostProductView, $productsView[$i]);
         }
 
-        return view('landing-page',compact('categoryProducts', 'products','mostProductView'));
+        return view('landing-page',compact('categoryProducts', 'products','mostProductView','lastPrice'));
     }
 
     public function buyProduct($name){
