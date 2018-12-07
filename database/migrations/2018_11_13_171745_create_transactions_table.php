@@ -19,6 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->double('total_price');
             $table->double('shipment_fee');
             $table->string('shipment_etd');
+            $table->string('shipment_number')->default('-');
             $table->string('address');
             $table->string('prove_payment');
             $table->integer('id_user')->unsigned();
