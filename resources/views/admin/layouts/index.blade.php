@@ -243,14 +243,14 @@
                         <li class="dropdown user user-menu" id="user_menu" style="max-width: 280px;white-space: nowrap;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="max-width: 280px;white-space: nowrap;overflow: hidden;overflow-text: ellipsis">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ Gravatar::get($user->email) }}" class="user-image" style="max-width: 20px" alt="User Image"/>
+                                <img src="{{ Gravatar::get(Auth::user()->email) }}" class="user-image" style="max-width: 20px" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs" data-toggle="tooltip" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu" style="width: 150px">
                                 <!-- The user image in the menu -->
                                 <li style="height: 120px; padding: 10px; text-align: center;">
-                                    <img src="{{ Gravatar::get($user->email) }}" class="img-circle" alt="User Image" />
+                                    <img src="{{ Gravatar::get(Auth::user()->email) }}" class="img-circle" alt="User Image" />
                                     <p>
                                         <span data-toggle="tooltip" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
                                     </p>
