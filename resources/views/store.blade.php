@@ -25,42 +25,44 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Shop Content -->
-                        <nav style="margin-top: 1em">
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-product-tab" data-toggle="tab" href="#nav-product" role="tab" aria-controls="nav-product" aria-selected="true">Produk</a>
+                        <br>
+                        <div class="shop_content">
+                            <div class="shop_bar clearfix">
+                                <div class="shop_product_count"><span>{{count($products)}}</span> products found</div>
+                                <div class="shop_sorting">
+                                    <span>Urutkan berdasarkan:</span>
+                                    <ul>
+                                        <li>
+                                            <span class="sorting_text">highest rated<i class="fas fa-chevron-down"></i></span>
+                                            <ul>
+                                                <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
+                                                <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
+                                                <li class="shop_sorting_button"data-isotope-option='{ "sortBy": "price" }'>price</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab">
-                                <a href="{{url('owner-products/create')}}">
-                                    <button type="button" class="btn btn-primary" style="margin-top: 1em;background-color: #8b0000;" >Tambah Produk</button>
-                                </a>
-                                <div class="product_grid">
-                                @foreach($products as $product)
-                                    <?php
-                                    $images = json_decode($product->images);
-                                    ?>
-                                    <!-- Product Item -->
-                                        <div class="product_item discount">
-                                            <div class="product_border"></div>
-                                            <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <img src="{{ asset('images/'.$images[0]) }}" style="width:120px;height:120px; object-fit: cover;"  >
-                                            </div>
-                                            <div class="product_content">
-                                                <div class="product_price">Rp {{number_format($product->price)}}</div>
-                                                <div class="product_name">
-                                                    <div>
-                                                        {{$product->name}}
+                            <div class="product_grid">
+                                <div class="product_grid_border"></div>
+                                    @foreach($products as $product)
+                                        <?php
+                                        $images = json_decode($product->images);
+                                        ?>
+                                        <!-- Product Item -->
+                                            <a href="{{ URL::to('buy/' . $product->name ) }}">
+                                                <div class="product_item discount">
+                                                    <div class="product_border"></div>
+                                                    <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                                        <img src="{{ asset('images/'.$images[0]) }}" style="width:120px;height:120px; object-fit: cover;"  >
+                                                    </div>
+                                                    <div class="product_content">
+                                                        <div class="product_price">Rp {{number_format($product->price)}}</div>
+                                                        <div class="product_name"><div><a href="product.html" tabindex="0">{{$product->name}}</a></div></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="product_category" style="margin-top: 1em">
-                                                <h4 class="product-title"><a href="{{url('owner-products/'.$product->id)}}">Detail Produk</a></h4>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
+                                            </a>
+                                @endforeach
                             </div>
                         </div>
                     </div>

@@ -45,7 +45,7 @@
                             $images = json_decode($product->images);
                             ?>
                             <!-- Product Item -->
-                                <a href="{{url('owner-products/'.$product->id)}}">
+                                <a href="{{ URL::to('buy/' . $product->name ) }}">
                                     <div class="product_item discount">
                                         <div class="product_border"></div>
                                         <div class="product_image d-flex flex-column align-items-center justify-content-center">
