@@ -208,6 +208,9 @@
                                 <li><a href="/" class="text-white">Home<i class="fas fa-chevron-down "></i></a></li>
                                 <li><a href="#"class="text-white">Contact<i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="/my-store"class="text-white">My Store<i class="fas fa-chevron-down"></i></a></li>
+
+
+
                             </ul>
                         </div>
 
@@ -235,27 +238,103 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="page_menu_content">
+                    <div class="page_menu_content" style="background-color: #d63031">
+
+                        <div class="top_bar_user text-right">
+                            @if(Auth::guest())
+                                <div class="text-right" style="margin-right: 2em">
+                                    <a type="text" href="/login" class="" style="color: #FFFFFF"> Masuk</a>
+                                </div>
+                                <div>
+                                    <a type="text" href="/register" class=""style="color: #FFFFFF">Daftar </a>
+                                </div>
+
+                            @else
+                                <div class="top_bar_user" style="width:20em;margin-right: -10em; margin-left: -1em">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        <?php
+                                        $name = explode(" ",Auth::user()->name);
+                                        ?> 
+                                        Hello <strong class="fa fa-user-circle"> {{$name[0]}}</strong>
+                                        <span class="glyphicon glyphicon-chevron-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-12" style="margin-bottom: -5em">
+                                                            <div class="row">
+                                                                <img src="{{asset('images/kelola_akun.png')}}"
+                                                                     style="max-width:10%;max-height: 10%">
+                                                                <div class="text-left col-md-6">
+                                                                    <p class="font-weight-normal">Kelola Akun</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <a href="/transactions">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <img src="{{asset('images/box_closed.png')}}"
+                                                                         style="max-width:10%;max-height: 10%">
+                                                                    <div class="col-md-6">
+                                                                        <p class="font-weight-normal">Pesanan
+                                                                            Saya</p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+
+                                                        <div class="col-md-12" style="margin-top:0em">
+                                                            <div class="row">
+                                                                <img src="{{asset('images/off.png')}}"
+                                                                     style="max-width:10%;max-height: 10%">
+                                                                <div class="col-md-6">
+                                                                    <form id="logout-form"
+                                                                          action="{{ url('/logout') }}"
+                                                                          method="POST" style="border: 0em">
+                                                                        {{ csrf_field() }}
+                                                                        <input type="submit" value="Logout" style="background: transparent;border: none; font-size: 14px;line-height: 1.7;font-weight: 400;color: #535353;">
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
+
+
+                        </div>
 
                         <div class="page_menu_search">
                             <form action="#">
-                                <input type="search" required="required" class="page_menu_search_input" placeholder="Cari Produk" style="textcol">
+                                <input type="search" required="required" class="page_menu_search_input" placeholder="Cari Produk">
                             </form>
                         </div>
                         <ul class="page_menu_nav">
 
                             <li class="page_menu_item">
-                                <a href="/home">Home<i class="fa fa-angle-down"></i></a>
+                                <a href="/">Home<i class="fa fa-angle-down"></i></a>
                             </li>
 
                             <li class="page_menu_item"><a href="#">contact<i class="fa fa-angle-down"></i></a></li>
                             <li class="page_menu_item"><a href="/my-store">My Store<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item"><a href="/carts"class="text-white">Keranjang<i class="fa fa-angle-down"></i></a></li>
                         </ul>
 
-                        <div class="menu_contact">
-                            <div class="menu_contact_item"><a href="/login"> Login </a></div>
-                            <div class="menu_contact_item"><a href="/register">Register</a></div>
-                        </div>
+
                     </div>
                 </div>
             </div>
