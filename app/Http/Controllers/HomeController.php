@@ -36,8 +36,7 @@ class HomeController extends Controller
             $statusStore = StatusStore::where('name','PENDING')->firstOrFail();
             $users = User::all();
             $requestStores = RequestStore::where(["id_status" => $statusStore->id])->get();
-            $statusTransaction = StatusTransaction::where('name',"Menunggu Pembayaran")->firstOrFail();
-            $transactions = Transaction::where(['id_status'=> $statusTransaction->id])->get();
+            $transactions = Transaction::where([['id_status','!=' ,5], ['id_status','!=' ,6]])->get();
             return view('admin.home', compact('requestStores','users','transactions'));
         }else{
             return redirect("/");

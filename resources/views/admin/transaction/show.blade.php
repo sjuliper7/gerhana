@@ -49,7 +49,7 @@
                         <div class="form-row" style="margin-top: 20px">
                             <form action="{{url('status-transaction-update/'.$detailTransactions[0]->id)}}" method="POST">
                                 {{csrf_field()}}
-                                <select class="form-control" name="status" style="margin-bottom: 20px">
+                                <select class="form-control" name="status" style="margin-bottom: 20px" onchange="f()" id="status">
                                     @foreach ($status as $st)
                                         @if($detailTransactions[0]->transaction->id_status == $st->id)
                                             <option selected value="{{$st->id}}">{{$st->name}}</option>
@@ -58,7 +58,7 @@
                                         @endif
                                     @endforeach
                                 </select>
-
+                                <input type="text" class="form-control" name="shipment_number" id="shipment_number" placeholder="Shipment Number" style="margin-bottom: 20px;display: none">
                                 <input value="Update Status" type="submit" class="btn btn-success">
                             </form>
                         </div>
@@ -105,6 +105,15 @@
             $('#brand-title').text("Transactions")
             $('#transactions').addClass("active")
         });
+
+        function f() {
+            if($('#status').val() == "5"){
+                $('#shipment_number').show();
+            }else{
+                $('#shipment_number').hide();
+            }
+        }
+
     </script>
 
 @endsection
