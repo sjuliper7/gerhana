@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Catalog;
 use App\CategoryProduct;
 use App\Product;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -49,7 +50,10 @@ class CatalogController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::with('status','category')->findOrFail($id);
+        $images = json_decode($product->images);
+
+        return view ('admin.catalog-products.show', compact('product','images'));
     }
 
     /**
