@@ -8,7 +8,7 @@ class Transaction extends Model
 {
     protected $fillable = [
         'total_price', 'shipment_fee', 'shipment_etd', 'address',
-        'prove_payment','id_user','id_status'
+        'prove_payment','id_user','id_status','shipment_number'
     ];
 
     public function detailTransactions(){
