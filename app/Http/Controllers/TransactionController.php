@@ -117,7 +117,13 @@ class TransactionController extends Controller
 
     public function statusTransaction(Request $request,$id){
         $transaction = Transaction::findOrFail($id);
-        $transaction->id_status = $request['status'];
+        if($request['shipment_number'] == null){
+            $transaction->id_status = $request['status'];
+        }else{
+            $transaction->id_status = $request['status'];
+            $transaction->shipment_number = $request['shipment_number'];
+        }
+
         $transaction->save();
 
         return redirect(url('transactions-admin/'.$transaction->id));
