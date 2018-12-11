@@ -27,24 +27,22 @@
                              </div>
                          </div>
                          <div class="form-row">
-                             <div class="form-group col-md-4">
+                             <div class="form-group col-md-6">
                                  <label>Harga</label>
                                  <input type="text" name="price" class="form-control" placeholder="harga" data-error="Mohon isi harga produk" required>
                                  <div class="help-block with-errors"></div>
                              </div>
-                             <div class="form-group col-md-4">
-                                 <label>Stok</label>
-                                 <input type="text" name="stock" class="form-control" placeholder="stok" data-error="Mohon isi stok produk" required>
-                                 <div class="help-block with-errors"></div>
-                             </div>
-                             <div class="form-group col-md-4">
-                                 <label>Berat</label>
-                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Mohon isi berat produk" required>
+
+                             <div class="form-group col-md-6">
+                                 <label>Discount (%)</label>
+                                 <input type="text" name="discount"  value="0" class="form-control" placeholder="discount" data-error="Mohon isi harga diskon" required>
                                  <div class="help-block with-errors"></div>
                              </div>
                          </div>
+
+
                          <div class="form-row">
-                             <div class="form-group col-md-5">
+                             <div class="form-group col-md-6">
                                  <label>Kategori Produk</label>
                                  <select name="category-select" id="select-category" class="form-control" style="width: 100%" required>
                                      <option selected="selected" name="category-selected" value="">Pilih Kategori</option>
@@ -52,12 +50,11 @@
                                          <option value="{{$categoryProduct->id}}">{{$categoryProduct->name}}</option>
                                      @endforeach
                                  </select>
-
                              </div>
 
                              <div class="form-group col-md-6">
                                  <label>Status Produk</label>
-                                 <select name="status-select" id="select-status" class="form-control" style="width: auto" required>
+                                 <select name="status-select" id="select-status" class="form-control" style="width: 100%" required>
                                      <option selected="selected" name="status-selected" value="">Pilih Status</option>
                                      @foreach($statusProducts as $statusProduct)
                                          <option value="{{$statusProduct->id}}">{{$statusProduct->name}}</option>
@@ -66,6 +63,21 @@
                              </div>
 
                          </div>
+
+
+                        <div class="form-row">
+                             <div class="form-group col-md-6">
+                                 <label>Stok</label>
+                                 <input type="text" name="stock" class="form-control" placeholder="stok" data-error="Mohon isi stok produk" required>
+                                 <div class="help-block with-errors"></div>
+                             </div>
+                             <div class="form-group col-md-5">
+                                 <label>Berat</label>
+                                 <input type="text" name="weight" class="form-control" placeholder="Berat" data-error="Mohon isi berat produk" required>
+                                 <div class="help-block with-errors"></div>
+                             </div>
+                        </div>
+
                          <div class="form-row">
                              <div class="form-group col-md-12">
                                  <label>Deskripsi</label>
