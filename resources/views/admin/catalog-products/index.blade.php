@@ -24,7 +24,11 @@
                                         <div class="panel-heading col-12"style="max-height: 5em">
 
                                             <h5>{{$category->name}}</h5>
-                                            <a href="#" class="btn btn-default pull-right" style="margin-top:-3em">Terbitkan</a>
+                                            <form action="{{url('/list-catalog/')}}" method="GET">
+                                                {{csrf_field()}}
+                                                <input type="Submit" onclick="list()" class="btn btn-info text-left" role="button">
+                                            </form>
+
                                         </div>
                                         <table class="table table-hover">
                                             <thead>

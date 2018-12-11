@@ -62,7 +62,10 @@ class OwnerProductController extends Controller
     public function show($id){
         $product = Product::with('status','category')->findOrFail($id);
         $images = json_decode($product->images);
-        return view ('owner-product.show', compact('product','images'));
+
+
+        $categoryProducts = CategoryProduct::all();
+        return view ('owner-product.show', compact('product','images','categoryProducts'));
     }
 
     public function update(Request $request, $id)

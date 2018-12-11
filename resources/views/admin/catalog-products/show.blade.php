@@ -39,8 +39,13 @@
 
                     <a href="{{ url()->previous() }}" class="btn btn-primary">Kembali</a>
                     {{--@can('Edit Post')--}}
+                    <form action="{{url('/add-catalog/'.$product->id)}}" method="POST">
+                        {{csrf_field()}}
+                        <input type="submit" onclick="save()" class="btn btn-info" role="button">
+                    </form>
 
-                    <a href="" class="btn btn-info" role="button">Tampilkan</a>
+
+
 
                 </div>
 
@@ -48,5 +53,17 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        function save(){
+
+        }
+
+    </script>
+
 
 @endsection
