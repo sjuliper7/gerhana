@@ -115,3 +115,7 @@ Route::get('get-carts/{id_user}','CartController@getAllCartByUser');
 Route::get('get-user','LandingPageController@getUser');
 
 Route::Post('/search','LandangPageController@search');
+
+Route::Post('/add-catalog/{id}','CatalogController@save');
+
+Route::get('/list-catalog','CatalogController@list');
